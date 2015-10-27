@@ -167,6 +167,16 @@ table {
   position: relative;
 }
 
+.baseEvents__mainMenu {
+  position: absolute;
+  top: 17px;
+  left: 17px;
+}
+
+.baseEvents__mainMenu img {
+  width: 25px;
+}
+
 .baseEvents__header {
   text-align: center;
 }
@@ -176,7 +186,7 @@ table {
 }
 
 .baseEvents__menu {
-  width: 100%;
+  white-space: nowrap;
   position: absolute;
   transform-origin: bottom left;
   top: 20px;
