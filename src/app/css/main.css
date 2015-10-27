@@ -1,6 +1,9 @@
 @import 'reset.css';
 @import 'fonts.css';
 @import 'colors.css';
+@import 'baseEvents.css';
+@import 'feedBackPopUp.css';
+@import 'baseFooter.css';
 
 body, html {
     width: 100%;

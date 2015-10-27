@@ -35,6 +35,7 @@
     "postcss-css-variables": "^0.5.1",
     "postcss-cssnext": "^2.2.0",
     "postcss-import": "^7.1.0",
+    "postcss-inherit": "^1.0.0",
     "postcss-mixins": "^2.1.0",
     "postcss-nested": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"

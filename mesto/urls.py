@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^$', generic.TemplateView.as_view(template_name='mesto/main.html'), name='main'),
     url(r'^events/', include(events_urls, namespace='events')),
     url(r'^news/', include(news_urls, namespace='news')),
+    url(r'^feedback/', generic.TemplateView.as_view(template_name='mesto/feedBack.html'), name='feedback'),
 ]

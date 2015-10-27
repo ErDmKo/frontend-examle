@@ -15,6 +15,7 @@ var postcssImport = require('postcss-import');
 var cssMqpacker = require('css-mqpacker');
 var postcssNested = require('postcss-nested');
 var postcssVariables = require('postcss-css-variables');
+var postcssInherit  = require('postcss-inherit');
 var plugins = require('gulp-load-plugins')();
 
 gulp.task('css', function () {
@@ -22,13 +23,13 @@ gulp.task('css', function () {
         postcssMixins,
         autoprefixer({
             browsers: ['last 2 versions', 'ie >= 8', '> 1%'],
-            cascade: false
         }),
         cssnext,
         postcssImport({
             from: dirs.src + '/css/main.css'
         }),
         postcssNested,
+        postcssInherit,
         postcssVariables,
         cssMqpacker
      ];
