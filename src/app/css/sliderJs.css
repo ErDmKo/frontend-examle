@@ -1,0 +1,27 @@
+.sliderJs {
+    &__prev, &__next {
+        position: absolute;
+        top: 50%;
+        width: 15px;
+        height: 15px;
+        opacity: .5;
+        transform: scale(1, 1.5) rotate(45deg);
+        &:hover {
+            cusor: pointer;
+        }
+    }
+    &__prev {
+        left: 10px;
+        border-left: 2px solid #252324;
+        border-bottom: 2px solid #252324;
+    }
+    &__next {
+        right: 10px;
+        border-right: 2px solid #252324;
+        border-top: 2px solid #252324;
+    }
+    &__slide {
+        display: inline-block;
+        vertical-align: top;
+    }
+}

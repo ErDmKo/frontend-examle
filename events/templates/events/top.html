@@ -1,23 +1,25 @@
 {% extends 'events/base.html' %}
 {% load staticfiles %}
 {% block 'main_content' %}
-    <ul class="topEventList">
-        <div class="topEventList__next">
+    <div class="sliderJs">
+        <div class="sliderJs__next">
         </div>
-        <div class="topEventList__prev">
+        <div class="sliderJs__prev">
         </div>
-        {% for event in object_list %}
-        <li class="topEventList__slide">
-            <article class="topEventList__item">
-                <figure class="topEventList__figure">
-                    <img class="topEventList__image" src="{{ event.image.url }}"/>
-                    <figcaption class="topEventList__header">{{ event.title }}</figcaption>
-                </figure>
-                <section class="topEventList__content">
-                    {{ event.short_desc }}
-                </section>
-            <article>
-        </li>
-    {% endfor %}
-    </ul>
+        <ul class="topEventList sliderJs__content">
+            {% for event in object_list %}
+            <li class="topEventList__slide sliderJs__item">
+                <article class="topEventList__item">
+                    <figure class="topEventList__figure">
+                        <img class="topEventList__image" src="{{ event.image.url }}"/>
+                        <figcaption class="topEventList__header">{{ event.title }}</figcaption>
+                    </figure>
+                    <section class="topEventList__content">
+                        {{ event.short_desc }}
+                    </section>
+                <article>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
 {% endblock %}

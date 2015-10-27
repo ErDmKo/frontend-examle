@@ -5,6 +5,7 @@
 @import 'feedBackPopUp.css';
 @import 'baseFooter.css';
 @import 'topEventList.css';
+@import 'sliderJs.css';
 
 body, html {
     width: 100%;
