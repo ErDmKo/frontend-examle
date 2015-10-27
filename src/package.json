@@ -1,0 +1,40 @@
+{
+  "name": "mesto",
+  "version": "1.0.0",
+  "description": "mesto frontEnd",
+  "main": "manage.py",
+  "dev-configs": {
+    "directories": {
+      "dist": "../mesto/static/mesto/",
+      "src": "app"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/sli_dev/mesto.git"
+  },
+  "keywords": [
+    "mesto"
+  ],
+  "author": "ErDmKo",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/sli_dev/mesto#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.0.3",
+    "babelify": "^6.4.0",
+    "browserify": "^12.0.0",
+    "css-mqpacker": "^4.0.0",
+    "cssnext": "^1.8.4",
+    "gulp": "^3.9.0",
+    "gulp-load-plugins": "^1.0.0",
+    "gulp-postcss": "^6.0.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "postcss-import": "^7.1.0",
+    "postcss-mixins": "^2.1.0",
+    "postcss-nested": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
