@@ -16,10 +16,11 @@
         <title>{% block object.seo_title %}
             {% if object.seo_title %}{{ object.seo_title }}{% else %}{{ page.seo_title }}{% endif %}
         {% endblock %}</title>
-        <link href='{% static 'css/style.css' %}' rel='stylesheet' type='text/css'>
+        <link href='{% static 'mesto/css/main.css' %}' rel='stylesheet' type='text/css'>
     </head>
     <body>
         {% block 'content' %}
         {% endblock %}
     </body>
+    <script src="{% static 'mesto/js/main.js' %}"></script>
 </html>
