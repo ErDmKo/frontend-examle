@@ -153,13 +153,6 @@ table {
   opacity: .3;
 }
 
-.baseEvents__footer__item {
-  font: 14px Arial;
-  text-decoration: none;
-  color: #000;
-  opacity: .3;
-}
-
 .baseFooter__item {
   font: 14px Arial;
   text-decoration: none;
@@ -191,30 +184,11 @@ table {
   transform: translate(-30px, -100%) rotate(90deg);
 }
 
+.baseEvents__menu__item {
+  margin-right: 10px;
+}
+
 .baseEvents__menu__item.active {
-  opacity: 1;
-}
-
-.baseEvents__footer {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  text-align: justify;
-}
-
-.baseEvents__footer__item,
-.baseEvents__footer:after {
-  display: inline-block;
-}
-
-.baseEvents__footer:after {
-  content: '';
-  width: 100%;
-}
-
-.baseEvents__footer__item {
-  display: inline-block;
   opacity: 1;
 }
 
@@ -333,6 +307,68 @@ table {
 .baseFooter__item {
   display: inline-block;
   opacity: 1;
+}
+
+.topEventList {
+  margin-top: 60px;
+  white-space: nowrap;
+  position: relative;
+}
+
+.topEventList__prev,
+.topEventList__next {
+  position: absolute;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  opacity: .5;
+  transform: scale(1, 1.5) rotate(45deg);
+}
+
+.topEventList__prev:hover,
+.topEventList__next:hover {
+  cusor: pointer;
+}
+
+.topEventList__prev {
+  left: 10px;
+  border-left: 2px solid #252324;
+  border-bottom: 2px solid #252324;
+}
+
+.topEventList__next {
+  right: 10px;
+  border-right: 2px solid #252324;
+  border-top: 2px solid #252324;
+}
+
+.topEventList__slide {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.topEventList__item {
+  white-space: normal;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.topEventList__header {
+  text-align: left;
+  font: 25px/23px 'anglecia_pro_titleregular';
+  margin: 15px 0px;
+}
+
+.topEventList__content {
+  font: 15px 'anglecia_pro_titleregular';
+}
+
+.topEventList__figure {
+  text-align: center;
+}
+
+.topEventList__image {
+  width: 100%;
 }
 
 body,

@@ -25,28 +25,10 @@
         transform: translate(-30px, -100%) rotate(90deg);
         &__item {
             inherit: %item;
+            margin-right: 10px;
             &.active {
                 opacity: 1;
             }
-        }
-    }
-    &__footer {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        right: 20px;
-        text-align: justify;
-        &__item, &:after {
-            display: inline-block;
-        }
-        &:after {
-            content: '';
-            width: 100%;
-        }
-        &__item {
-            inherit: %item;
-            display: inline-block;
-            opacity: 1;
         }
     }
 }

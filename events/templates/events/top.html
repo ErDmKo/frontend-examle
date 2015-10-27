@@ -1,10 +1,22 @@
 {% extends 'events/base.html' %}
 {% block 'main_content' %}
-    <h1>Events</h1>
-    <a href="{% url 'events:all' %}">All events</a>
-    <ul>
-    {% for event in object_list %}
-        <li>{{ event }}</li>
+    <ul class="topEventList">
+        <div class="topEventList__next">
+        </div>
+        <div class="topEventList__prev">
+        </div>
+        {% for event in object_list %}
+        <li class="topEventList__slide">
+            <article class="topEventList__item">
+                <figure class="topEventList__figure">
+                    <img class="topEventList__image" src="{{ event.image.url }}"/>
+                    <figcaption class="topEventList__header">{{ event.title }}</figcaption>
+                </figure>
+                <section class="topEventList__content">
+                    {{ event.short_desc }}
+                </section>
+            <article>
+        </li>
     {% endfor %}
     </ul>
 {% endblock %}

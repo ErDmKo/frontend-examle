@@ -1,0 +1,49 @@
+.topEventList {
+    margin-top: 60px;
+    white-space: nowrap;
+    position: relative;
+    &__prev, &__next {
+        position: absolute;
+        top: 50%;
+        width: 15px;
+        height: 15px;
+        opacity: .5;
+        transform: scale(1, 1.5) rotate(45deg);
+        &:hover {
+            cusor: pointer;
+        }
+    }
+    &__prev {
+        left: 10px;
+        border-left: 2px solid #252324;
+        border-bottom: 2px solid #252324;
+    }
+    &__next {
+        right: 10px;
+        border-right: 2px solid #252324;
+        border-top: 2px solid #252324;
+    }
+    &__slide {
+        display: inline-block;
+        vertical-align: top;
+    }
+    &__item {
+        white-space: normal;
+        width: 70%;
+        margin: 0 auto;
+    }
+    &__header {
+        text-align: left;
+        font: 25px/23px 'anglecia_pro_titleregular';
+        margin: 15px 0px;
+    }
+    &__content {
+        font: 15px 'anglecia_pro_titleregular';
+    }
+    &__figure {
+        text-align: center;
+    }
+    &__image {
+        width: 100%;
+    }
+}

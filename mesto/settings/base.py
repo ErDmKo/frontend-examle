@@ -55,6 +55,8 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'mesto.urls'
+MEDIA_ROOT = os.path.abspath(os.path.join(BASE_DIR, '..', 'media'))
+MEDIA_URL = '/media/'
 
 
 TEMPLATES = [
