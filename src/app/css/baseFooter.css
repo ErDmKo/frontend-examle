@@ -1,0 +1,20 @@
+.baseFooter {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    text-align: justify;
+    &__item, &:after {
+        display: inline-block;
+    }
+    &:after {
+        content: '';
+        width: 100%;
+    }
+    &__item {
+        inherit: %item;
+        display: inline-block;
+        opacity: 1;
+    }
+}
+

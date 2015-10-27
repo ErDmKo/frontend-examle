@@ -1,0 +1,56 @@
+.feedBackPopUp {
+    --padding: 17px;
+    --color: #ccdde1;
+    height: 100%;
+    box-sizing: border-box;
+    padding: var(--padding);
+    position: relative;
+    &__header {
+        text-align: center;
+        font: 30px 'anglecia_pro_titleregular';
+        margin: 30px 0px;
+    }
+    &__form {
+        margin-top: 40px;
+        --color: #2C2D33;
+        input, textarea {
+          font: 15px Arial;
+          opacity: .3;
+          &::-webkit-input-placeholder,
+          &::-moz-placeholder,
+          &:-ms-input-placeholder,
+          &:-moz-placeholder {
+             font: 15px Arial;
+             color: var(--color); 
+          }
+        }
+    }
+    &__text, &__button {
+         width: 100%;
+        display: block;
+        background: #ccdde1;
+        box-sizing: border-box;
+        border: 2px solid #ccdde1;
+        margin: 10px 0px;
+        border-radius: 3px;
+        color: #2C2D33;
+        padding: 13px; 
+    }
+    &__button {
+        background: #B8C9CC;
+        font-size: 20px;
+        color: #fff;
+        border: 0;
+        padding: 17px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &__text {
+        &:focus {
+            opacity: 1;
+            background: #fff;
+            outline: 0;
+        }
+    }
+}

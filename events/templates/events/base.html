@@ -1,0 +1,18 @@
+{% extends 'mesto/base.html' %}
+{% load staticfiles %}
+{% block 'content' %}
+    <div class="baseEvents">
+        <header class="baseEvents__header">
+            <img class="baseEvents__header__img" src="{% static 'mesto/img/logo_black.svg' %}"/>
+        </header>
+        <main class="baseEvents__content">
+            {% block 'main_content' %}
+            {% endblock %}
+        </main>
+        <nav class="baseEvents__menu">
+            <a class="baseEvents__menu__item active" href="{% url 'events:top' %}">Мероприятия</a>
+            <a class="baseEvents__menu__item" href="{% url 'news:top' %}">Новости</a>
+        </nav>
+    </div>
+    {% include 'events/inc/baseFooter.html' %}
+{% endblock %}

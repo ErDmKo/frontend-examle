@@ -1,0 +1,10 @@
+<menu class="baseFooter">
+    <a class="baseFooter__item" href="{% url 'events:all' %}">Все события</a>
+    <a 
+        target="_blank"
+        class="baseFooter__item"
+        href='{{ settings.URL_INSTAGRAM|default:"https://instagram.com/grissli_rus/" }}'>
+        Instagram
+    </a>
+    <a class="baseFooter__item" href="{% url 'feedback' %}">Написать нам</a>
+</menu>
