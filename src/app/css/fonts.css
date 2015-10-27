@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'anglecia_pro_titleregular';
+    src: url('../fonts/angleciaprotitleregular-webfont.eot');
+    src: url('../fonts/angleciaprotitleregular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/angleciaprotitleregular-webfont.woff2') format('woff2'),
+         url('../fonts/angleciaprotitleregular-webfont.woff') format('woff'),
+         url('../fonts/angleciaprotitleregular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -10,10 +10,11 @@ var source = require('vinyl-source-stream');
 var gulp = require('gulp');
 var postcssMixins = require('postcss-mixins');
 var autoprefixer = require('autoprefixer');
-var cssnext = require('cssnext');
+var cssnext = require('postcss-cssnext');
 var postcssImport = require('postcss-import');
 var cssMqpacker = require('css-mqpacker');
 var postcssNested = require('postcss-nested');
+var postcssVariables = require('postcss-css-variables');
 var plugins = require('gulp-load-plugins')();
 
 gulp.task('css', function () {
@@ -23,18 +24,20 @@ gulp.task('css', function () {
             browsers: ['last 2 versions', 'ie >= 8', '> 1%'],
             cascade: false
         }),
-        cssnext(),
+        cssnext,
         postcssImport({
             from: dirs.src + '/css/main.css'
         }),
         postcssNested,
+        postcssVariables,
         cssMqpacker
      ];
     return gulp.src(dirs.src + '/css/main.css')
         .pipe(plugins.sourcemaps.init())
         .pipe(plugins.postcss(processors))
         .pipe(plugins.sourcemaps.write('.'))
-        .pipe(gulp.dest(dirs.dist + '/css'));
+        .pipe(gulp.dest(dirs.dist + '/css'))
+        .pipe(plugins.livereload());
 });
 gulp.task('js', function() {
     browserify({
@@ -49,4 +52,5 @@ gulp.task('js', function() {
 gulp.task('default', function() {
     gulp.watch(jsDirs, ['js']);
     gulp.watch(cssDirs, ['css']);
+    plugins.livereload.listen();
 });

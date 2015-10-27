@@ -1,3 +1,35 @@
-body {
-    background: red;
+@import 'reset.css';
+@import 'fonts.css';
+@import 'colors.css';
+
+body, html {
+    width: 100%;
+    height: 100%;    
+}
+.mainPage {
+    background: url('../img/main_bg.jpg');
+    text-align: center;
+    &__wrapper, &:after {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &__nav {
+      margin-top: 70px;  
+    }
+    &__item {
+        margin: 20px;
+        display: block;
+        text-decoration: none;
+        color: var(--black);
+        font: 30px 'anglecia_pro_titleregular';
+        &.disabled {
+            opacity: 0.2;
+        }
+    }
+    
+    &:after {
+        content: '';
+        height: 100%;
+    }
+    height: 100%;
 }

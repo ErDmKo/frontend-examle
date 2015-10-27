@@ -2,9 +2,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Language" content="ru">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="format-detection" content="telephone=no">
-        <meta name="viewport" content="width=device-width, initial-scale=0.7">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="Description" content="{% block seo_desc %}
             {% if object.seo_desc %}{{ object.seo_desc }}{% else %}{{ page.seo_desc }}{% endif %}
         {% endblock %}" />
@@ -23,4 +24,8 @@
         {% endblock %}
     </body>
     <script src="{% static 'mesto/js/main.js' %}"></script>
+    <script>
+      document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+      ':35729/livereload.js?snipver=1"></' + 'script>')
+    </script>
 </html>
