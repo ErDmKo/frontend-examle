@@ -2,6 +2,7 @@
     margin-top: 60px;
     white-space: nowrap;
     position: relative;
+    overflow-x: auto;
     &__prev, &__next {
         position: absolute;
         top: 50%;
