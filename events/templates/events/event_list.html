@@ -15,5 +15,16 @@
             </a>
         {% endfor %}
         </article>
+        {% if is_paginated %}
+        <ul class="pagesList">
+            {% for page in paginator.page_range %} 
+                <a 
+                    class="pagesList__item {% if page_obj.number == page %} active {% endif %}"
+                    href="{% url 'events:all' %}?page={{ page }}">
+                    {{ page }}
+                </a>
+            {% endfor %}
+        </ul>
+        {% endif %}
 </section>
 {% endblock %}

@@ -12,6 +12,7 @@
 @import 'socialList.css';
 @import 'mainMenu.css';
 @import 'itemsListAll.css';
+@import 'pagesList.css';
 
 body, html {
     width: 100%;
