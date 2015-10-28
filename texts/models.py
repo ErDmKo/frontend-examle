@@ -1,10 +1,42 @@
 # -*- coding:utf-8 -*-
 
-import datetime, logging
+import logging
+
+from django.utils import timezone
 
 from django.db import models
 from django.core.urlresolvers import reverse
 from ckeditor_uploader.fields import RichTextUploadingField
+
+class Feedback(models.Model):
+    first_name = models.CharField(
+        max_length=250,
+        verbose_name='Имя'
+    )
+    phone = models.CharField(
+        max_length=250,
+        verbose_name='Телефoн'
+    )
+    email = models.EmailField(
+        max_length=250,
+        blank=True,
+        verbose_name='E-mail'
+    )
+    comment = models.TextField(
+        blank=True,
+        verbose_name='Сообщение'
+    )
+    def get_absolute_url(self):
+        from django.core.urlresolvers import reverse
+        return reverse('thanks')
+    
+    def __src__(self):
+        return self.first_name
+
+    class Meta:
+        ordering = ['-pk']
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'
 
 class SeoFieldsModel(models.Model):
     seo_title = models.CharField(
@@ -37,8 +69,8 @@ class Text(SeoFieldsModel):
         unique=True, default='0', verbose_name='название в url')
     title = models.CharField(max_length=250, verbose_name='Заголовок')
     desc = RichTextUploadingField(verbose_name='Описание')
-    date = models.DateField(
-        default=datetime.date.today, verbose_name='Дата публикации',
+    date = models.DateTimeField(
+        default=timezone.now, verbose_name='Дата публикации',
     )
 
     def __str__(self):

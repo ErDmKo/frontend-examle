@@ -4,13 +4,35 @@
         <header class="feedBackPopUp__header">
             Написать нам
         </header>
-        <form class="feedBackPopUp__form">
-            <input class="feedBackPopUp__text" type="text" placeholder="Имя*"/>
-            <input class="feedBackPopUp__text" type="text" placeholder="Телефон*"/>
-            <input class="feedBackPopUp__text" type="email" placeholder="E-mail"/>
+        {% for field in form %}
+            {% if field.errors %}
+                {{ field.label }} - {{ field.errors }}
+            {% endif %}
+        {% endfor %}
+        <form method="POST" class="feedBackPopUp__form">
+            {% csrf_token %}
+            <input 
+                name="first_name"
+                value="{{ form.first_name.value|default:'' }}"
+                class="feedBackPopUp__text"
+                type="text"
+                placeholder="Имя*"/>
+            <input
+                name="phone"
+                value="{{ form.phone.value|default:'' }}"
+                class="feedBackPopUp__text"
+                type="text"
+                placeholder="Телефон*"/>
+            <input 
+                name="email"
+                value="{{ form.email.value|default:'' }}"
+                class="feedBackPopUp__text"
+                type="email"
+                placeholder="E-mail"/>
             <textarea 
+                name="comment"
                 class="feedBackPopUp__textarea feedBackPopUp__text"
-                placeholder="Сообщение"></textarea>
+                placeholder="Сообщение">{{ form.comment.value|default:'' }}</textarea>
             <button class="feedBackPopUp__button">
                  Отправить сообщение
             </button>
