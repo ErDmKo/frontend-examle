@@ -1,4 +1,15 @@
 @font-face {
+    font-family: 'anglecia_pro_titleitalic';
+    src: url('../fonts/angleciaprotitleitalic-webfont.eot');
+    src: url('../fonts/angleciaprotitleitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/angleciaprotitleitalic-webfont.woff2') format('woff2'),
+         url('../fonts/angleciaprotitleitalic-webfont.woff') format('woff'),
+         url('../fonts/angleciaprotitleitalic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
     font-family: 'anglecia_pro_titleregular';
     src: url('../fonts/angleciaprotitleregular-webfont.eot');
     src: url('../fonts/angleciaprotitleregular-webfont.eot?#iefix') format('embedded-opentype'),

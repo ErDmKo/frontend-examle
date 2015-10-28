@@ -4,6 +4,7 @@ import datetime, logging
 
 from django.db import models
 from django.core.urlresolvers import reverse
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class SeoFieldsModel(models.Model):
     seo_title = models.CharField(
@@ -35,7 +36,7 @@ class Text(SeoFieldsModel):
     slug = models.SlugField(max_length=200,
         unique=True, default='0', verbose_name='название в url')
     title = models.CharField(max_length=250, verbose_name='Заголовок')
-    desc = models.TextField(verbose_name='Описание')
+    desc = RichTextUploadingField(verbose_name='Описание')
     date = models.DateField(
         default=datetime.date.today, verbose_name='Дата публикации',
     )

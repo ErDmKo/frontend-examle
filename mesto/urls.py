@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^events/', include(events_urls, namespace='events')),
     url(r'^news/', include(news_urls, namespace='news')),
     url(r'^feedback/', generic.TemplateView.as_view(template_name='mesto/feedBack.html'), name='feedback'),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

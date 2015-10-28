@@ -21,7 +21,7 @@
             <img class="itemPage__image" src="{{ object.image.url }}"/>
         </figure>
         <section class="itemPage__content">
-            {{ object.desc }}
+            {{ object.desc|safe }}
         </section>
     </article>
     {% with url=request.build_absolute_uri %}

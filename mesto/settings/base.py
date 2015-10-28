@@ -41,6 +41,8 @@ INSTALLED_APPS = (
     'events',
     'news',
     'texts',
+    'ckeditor',
+    'ckeditor_uploader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -56,6 +58,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'mesto.urls'
 MEDIA_ROOT = os.path.abspath(os.path.join(BASE_DIR, '..', 'media'))
+CKEDITOR_UPLOAD_PATH = "uploads/"
 MEDIA_URL = '/media/'
 
 

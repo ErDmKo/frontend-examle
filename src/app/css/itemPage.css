@@ -18,4 +18,15 @@
     &__desc, &__content {
         font: 15px anglecia_pro_titleregular;
     }
+     &__content {
+         p {
+             margin: 10px 0px;
+         }
+         em, a {
+             font-family: anglecia_pro_titleitalic;
+         }
+         a {
+            color: inherit; 
+         }
+     }
 }
