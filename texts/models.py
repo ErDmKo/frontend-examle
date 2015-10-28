@@ -32,7 +32,7 @@ class TextSettings(models.Model):
         verbose_name_plural = 'текстовые переменные'
 
 class Text(SeoFieldsModel):
-    slug = models.CharField(max_length=200,
+    slug = models.SlugField(max_length=200,
         unique=True, default='0', verbose_name='название в url')
     title = models.CharField(max_length=250, verbose_name='Заголовок')
     desc = models.TextField(verbose_name='Описание')

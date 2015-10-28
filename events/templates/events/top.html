@@ -9,15 +9,21 @@
         <ul class="topEventList sliderJs__content">
             {% for event in object_list %}
             <li class="topEventList__slide sliderJs__item">
+                <time class="topEventList__date">
+                    <span class="topEventList__date__day">{{ event.date|date:"d" }}</span>
+                    <span class="topEventList__date__month">/{{ event.date|date:"m" }}</span>
+                </time>
                 <article class="topEventList__item">
-                    <figure class="topEventList__figure">
-                        <img class="topEventList__image" src="{{ event.image.url }}"/>
-                        <figcaption class="topEventList__header">{{ event.title }}</figcaption>
-                    </figure>
-                    <section class="topEventList__content">
-                        {{ event.short_desc }}
-                    </section>
-                <article>
+                    <a href="{% url 'events:detail' slug=event.slug %}" class="topEventList__wrapper">
+                        <figure class="topEventList__figure">
+                            <img class="topEventList__image" src="{{ event.image.url }}"/>
+                            <figcaption class="topEventList__header">{{ event.title }}</figcaption>
+                        </figure>
+                        <section class="topEventList__content">
+                            {{ event.short_desc }}
+                        </section>
+                    </a>
+                </article>
             </li>
         {% endfor %}
         </ul>

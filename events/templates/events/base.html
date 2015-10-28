@@ -17,5 +17,7 @@
             <a class="baseEvents__menu__item" href="{% url 'news:top' %}">Новости</a>
         </nav>
     </div>
-    {% include 'events/inc/baseFooter.html' %}
+    {% block footer %}
+        {% include 'events/inc/baseFooter.html' %}
+    {% endblock %}
 {% endblock %}

@@ -1,4 +1,19 @@
-{% extends 'mesto/base.html' %}
-{% block 'content' %}
-    <h1>Event</h1>
+{% extends 'events/base.html' %}
+{% block 'main_content' %}
+    <arcticle>
+        <header>
+            <h1>{{ object.title }}</h1>
+        </header>
+        <figure>
+            <figcaption>
+                {{ object.short_desc }}
+            </figcaption>
+            <img class="topEventList__image" src="{{ object.image.url }}"/>
+        </figure>
+        <section>
+            {{ object.desc }}
+        </section>
+    </article>
+{% endblock %}
+{% block footer %}
 {% endblock %}
