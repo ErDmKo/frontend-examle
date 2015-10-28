@@ -52,9 +52,16 @@
         <header class="nextBlock__header">
             Следующие новости
         </header>
-        <section>
+        <section class="nextBlock__item">
             {% include 'events/inc/itemPreview.html' %}
         </section>
+        {% with object=object.get_next_by_date %}
+            {% if object %}
+            <section class="nextBlock__item">
+                {% include 'events/inc/itemPreview.html' %}
+            </section>
+            {% endif %}
+        {% endwith %}
     </article>
     {% endif %}
     {% endwith %}

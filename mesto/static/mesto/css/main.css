@@ -338,6 +338,10 @@ table {
   opacity: 1;
 }
 
+.baseFooter__item.active {
+  opacity: .5;
+}
+
 .topEventList {
   white-space: nowrap;
   position: relative;
@@ -493,6 +497,10 @@ table {
   margin: 30px 0px;
   font: 25px anglecia_pro_titleregular;
   text-align: center;
+}
+
+.nextBlock__item {
+  margin: 30px 0px;
 }
 
 .socialList {

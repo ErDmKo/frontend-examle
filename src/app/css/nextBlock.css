@@ -4,4 +4,7 @@
         font: 25px anglecia_pro_titleregular;
         text-align: center;
     }
+    &__item {
+        margin: 30px 0px;
+    }
 }

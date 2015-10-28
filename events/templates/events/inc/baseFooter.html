@@ -1,10 +1,18 @@
 <menu class="baseFooter {% if static %} static {% endif %}">
-    <a class="baseFooter__item" href="{% url 'events:all' %}">Все события</a>
+    <a 
+        class="{% if select == 1  %} active {% endif %}baseFooter__item"
+        href="{% url 'events:all' %}">
+        Все события
+    </a>
     <a 
         target="_blank"
-        class="baseFooter__item"
+        class="{% if select == 2  %} active {% endif %}baseFooter__item"
         href='{{ settings.URL_INSTAGRAM|default:"https://instagram.com/grissli_rus/" }}'>
         Instagram
     </a>
-    <a class="baseFooter__item" href="{% url 'feedback' %}">Написать нам</a>
+    <a 
+        class="{% if select == 3  %} active {% endif %}baseFooter__item"
+        href="{% url 'feedback' %}">
+        Написать нам
+    </a>
 </menu>
