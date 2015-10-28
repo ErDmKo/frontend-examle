@@ -12,12 +12,22 @@
         <meta name="Keywords" content="{% block seo_keyw %}
                 {% if object.seo_keyw %}{{ object.seo_keyw }}{% else %}{{ page.seo_keyw }}{% endif %}
         {% endblock %}" />
+        <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="
+            {% if object.seo_title %}{{ object.seo_title }}{% else %}{{ page.seo_title }}{% endif %}
+        " />
+        <meta property="og:description" content="
+            {% if object.seo_desc %}{{ object.seo_desc }}{% else %}{{ page.seo_desc }}{% endif %}
+        " />
         <meta name="language" content="ru-ru" />
         <meta name="Robots" content="all" />
         <title>{% block object.seo_title %}
             {% if object.seo_title %}{{ object.seo_title }}{% else %}{{ page.seo_title }}{% endif %}
         {% endblock %}</title>
         <link href='{% static 'mesto/css/main.css' %}' rel='stylesheet' type='text/css'>
+        {% block 'head' %}
+        {% endblock %}
     </head>
     <body>
         {% block 'content' %}

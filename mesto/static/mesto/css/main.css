@@ -146,15 +146,26 @@ table {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'hcyrregular';
+  src: url('../fonts/hcyr-regular-webfont.eot');
+  src: url('../fonts/hcyr-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/hcyr-regular-webfont.woff2') format('woff2'),
+         url('../fonts/hcyr-regular-webfont.woff') format('woff'),
+         url('../fonts/hcyr-regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .baseEvents__menu__item {
-  font: 14px Arial;
+  font: 14px hcyrregular;
   text-decoration: none;
   color: #000;
   opacity: .3;
 }
 
 .baseFooter__item {
-  font: 14px Arial;
+  font: 14px hcyrregular;
   text-decoration: none;
   color: #000;
   opacity: .3;
@@ -223,47 +234,47 @@ table {
 
 .feedBackPopUp__form input,
 .feedBackPopUp__form textarea {
-  font: 15px Arial;
+  font: 15px hcyrregular;
   opacity: .3;
 }
 
 .feedBackPopUp__form input::-webkit-input-placeholder {
-  font: 15px Arial;
+  font: 15px hcyrregular;
   color: #2C2D33;
 }
 
 .feedBackPopUp__form input::-moz-placeholder {
-  font: 15px Arial;
+  font: 15px hcyrregular;
   color: #2C2D33;
 }
 
 .feedBackPopUp__form input:-ms-input-placeholder {
-  font: 15px Arial;
+  font: 15px hcyrregular;
   color: #2C2D33;
 }
 
 .feedBackPopUp__form input:-moz-placeholder {
-  font: 15px Arial;
+  font: 15px hcyrregular;
   color: #2C2D33;
 }
 
 .feedBackPopUp__form textarea::-webkit-input-placeholder {
-  font: 15px Arial;
+  font: 15px hcyrregular;
   color: #2C2D33;
 }
 
 .feedBackPopUp__form textarea::-moz-placeholder {
-  font: 15px Arial;
+  font: 15px hcyrregular;
   color: #2C2D33;
 }
 
 .feedBackPopUp__form textarea:-ms-input-placeholder {
-  font: 15px Arial;
+  font: 15px hcyrregular;
   color: #2C2D33;
 }
 
 .feedBackPopUp__form textarea:-moz-placeholder {
-  font: 15px Arial;
+  font: 15px hcyrregular;
   color: #2C2D33;
 }
 
@@ -282,7 +293,7 @@ table {
 
 .feedBackPopUp__button {
   background: #B8C9CC;
-  font-size: 20px;
+  font: 20px hcyrregular;
   color: #fff;
   border: 0;
   padding: 17px;
@@ -428,7 +439,7 @@ table {
   color: #CCDDE1;
   margin: 20px 0px;
   display: block;
-  font: 13px Arial;
+  font: 13px hcyrregular;
 }
 
 .itemPage__image {
@@ -468,6 +479,35 @@ table {
   margin: 30px 0px;
   font: 25px anglecia_pro_titleregular;
   text-align: center;
+}
+
+.socialList {
+  text-align: center;
+  margin: 50px;
+}
+
+.socialList__item {
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 100%;
+  font: 14px hcyrregular;
+  width: 20px;
+  height: 20px;
+  margin: 0px 5px;
+}
+
+.socialList__item.vk {
+  background: #48729E;
+}
+
+.socialList__item.fb {
+  background: #4C7CFF;
+}
+
+.socialList__item.tw {
+  background: #01ACED;
 }
 
 body,

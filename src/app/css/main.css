@@ -9,6 +9,7 @@
 @import 'itemPage.css';
 @import 'itemPreview.css';
 @import 'nextBlock.css';
+@import 'socialList.css';
 
 body, html {
     width: 100%;

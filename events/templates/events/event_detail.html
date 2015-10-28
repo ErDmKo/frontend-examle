@@ -1,4 +1,7 @@
 {% extends 'events/base.html' %}
+{% block 'head' %}
+    <meta property="og:image" content="{{ request.is_secure|yesno:"https,http" }}://{{ request.get_host }}{{ object.image.url }}" />
+{% endblock %}
 {% block 'main_content' %}
     <arcticle class="itemPage">
         <header class="itemPage__header">
@@ -17,6 +20,28 @@
             {{ object.desc }}
         </section>
     </article>
+    {% with url=request.build_absolute_uri %}
+    <menu class="socialList">
+        <a
+            class="socialList__item vk"
+            href="http://vk.com/share.php?url={{ url }}"
+            onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            Vk
+        </a>
+        <a 
+            class="socialList__item fb"
+            href="http://www.facebook.com/share.php?u={{ url }}&title={{ object.title|urlencode }}"
+            onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            Fb
+        </a>
+        <a 
+            class="socialList__item tw"
+            href="http://twitter.com/intent/tweet?status={{ object.title|urlencode }}+{{ url}}"
+            onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            Tw
+        </a>
+    </menu>
+    {% endwith %}
     {% with object=object.get_next_by_date %}
     {% if object %}
     <article class="nextBlock">

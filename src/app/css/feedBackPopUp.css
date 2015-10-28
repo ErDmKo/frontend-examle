@@ -14,13 +14,13 @@
         margin-top: 40px;
         --color: #2C2D33;
         input, textarea {
-          font: 15px Arial;
+          font: 15px hcyrregular;
           opacity: .3;
           &::-webkit-input-placeholder,
           &::-moz-placeholder,
           &:-ms-input-placeholder,
           &:-moz-placeholder {
-             font: 15px Arial;
+             font: 15px hcyrregular;
              color: var(--color); 
           }
         }
@@ -38,10 +38,11 @@
     }
     &__button {
         background: #B8C9CC;
-        font-size: 20px;
+        font: 20px hcyrregular;
         color: #fff;
         border: 0;
         padding: 17px;
+        
         &:hover {
             cursor: pointer;
         }

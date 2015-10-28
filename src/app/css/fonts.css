@@ -8,3 +8,14 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'hcyrregular';
+    src: url('../fonts/hcyr-regular-webfont.eot');
+    src: url('../fonts/hcyr-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/hcyr-regular-webfont.woff2') format('woff2'),
+         url('../fonts/hcyr-regular-webfont.woff') format('woff'),
+         url('../fonts/hcyr-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
