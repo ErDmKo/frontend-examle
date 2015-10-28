@@ -5,7 +5,7 @@ from texts import models as texts_models
 class Event(texts_models.Text):
     on_top = models.BooleanField(
         default=False,
-        verbose_name = 'Отображать в топе')
+        verbose_name = 'Вывод на главную')
     short_desc = models.CharField(
         max_length=255,
         verbose_name='Короткое описание')
