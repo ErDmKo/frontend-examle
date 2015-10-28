@@ -43,23 +43,7 @@
     }
     &__wrapper {
         width: 70%;
-        color: inherit;
-        text-decoration: none;
         display: block;
         margin: 0 auto;
-    }
-    &__header {
-        text-align: left;
-        font: 25px/23px 'anglecia_pro_titleregular';
-        margin: 15px 0px;
-    }
-    &__content {
-        font: 15px 'anglecia_pro_titleregular';
-    }
-    &__figure {
-        text-align: center;
-    }
-    &__image {
-        width: 100%;
     }
 }

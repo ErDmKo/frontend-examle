@@ -1,19 +1,35 @@
 {% extends 'events/base.html' %}
 {% block 'main_content' %}
-    <arcticle>
-        <header>
-            <h1>{{ object.title }}</h1>
+    <arcticle class="itemPage">
+        <header class="itemPage__header">
+            <h1 class="itemPage__header__text">{{ object.title }}</h1>
         </header>
-        <figure>
-            <figcaption>
+        <time class="itemPage__date">
+            {{ object.date|date:"M j Y" }}
+        </time>
+        <figure class="itemPage__desc">
+            <figcaption class="itemPage__shortDesc">
                 {{ object.short_desc }}
             </figcaption>
-            <img class="topEventList__image" src="{{ object.image.url }}"/>
+            <img class="itemPage__image" src="{{ object.image.url }}"/>
         </figure>
-        <section>
+        <section class="itemPage__content">
             {{ object.desc }}
         </section>
     </article>
+    {% with object=object.get_next_by_date %}
+    {% if object %}
+    <article class="nextBlock">
+        <header class="nextBlock__header">
+            Следующие новости
+        </header>
+        <section>
+            {% include 'events/inc/itemPreview.html' %}
+        </section>
+    </article>
+    {% endif %}
+    {% endwith %}
+    {% include 'events/inc/baseFooter.html' with static=True %}
 {% endblock %}
 {% block footer %}
 {% endblock %}

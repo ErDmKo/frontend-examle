@@ -1,0 +1,21 @@
+.itemPage {
+    display: block;
+    box-sizing: border-box;
+    &__header {
+        margin: 50px 0px 20px;
+        font: 25px/100% 'anglecia_pro_titleregular';
+    }
+    &__date {
+        color: #CCDDE1;
+        margin: 20px 0px;
+        display: block;
+        font: 13px Arial;
+    }
+    &__image {
+        width: 100%;
+        margin: 20px 0px;
+    }
+    &__desc, &__content {
+        font: 15px anglecia_pro_titleregular;
+    }
+}

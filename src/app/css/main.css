@@ -6,6 +6,9 @@
 @import 'baseFooter.css';
 @import 'topEventList.css';
 @import 'sliderJs.css';
+@import 'itemPage.css';
+@import 'itemPreview.css';
+@import 'nextBlock.css';
 
 body, html {
     width: 100%;

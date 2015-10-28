@@ -1,4 +1,4 @@
-<menu class="baseFooter">
+<menu class="baseFooter {% if static %} static {% endif %}">
     <a class="baseFooter__item" href="{% url 'events:all' %}">Все события</a>
     <a 
         target="_blank"

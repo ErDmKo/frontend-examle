@@ -14,15 +14,9 @@
                     <span class="topEventList__date__month">/{{ event.date|date:"m" }}</span>
                 </time>
                 <article class="topEventList__item">
-                    <a href="{% url 'events:detail' slug=event.slug %}" class="topEventList__wrapper">
-                        <figure class="topEventList__figure">
-                            <img class="topEventList__image" src="{{ event.image.url }}"/>
-                            <figcaption class="topEventList__header">{{ event.title }}</figcaption>
-                        </figure>
-                        <section class="topEventList__content">
-                            {{ event.short_desc }}
-                        </section>
-                    </a>
+                    <div class="topEventList__wrapper">
+                    {% include 'envents/inc/itemPreview.html' %}
+                    </div>
                 </article>
             </li>
         {% endfor %}

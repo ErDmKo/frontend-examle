@@ -37,8 +37,8 @@ class Text(SeoFieldsModel):
     title = models.CharField(max_length=250, verbose_name='Заголовок')
     desc = models.TextField(verbose_name='Описание')
     date = models.DateField(
-        default=datetime.date.today, verbose_name='Дата публикации', null=True,
-        blank=True)
+        default=datetime.date.today, verbose_name='Дата публикации',
+    )
 
     def __str__(self):
         return self.title

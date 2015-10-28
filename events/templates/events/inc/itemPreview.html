@@ -1,0 +1,9 @@
+<a href="{% url 'events:detail' slug=object.slug %}" class="itemPreview">
+    <figure class="itemPreview__figure">
+        <img class="itemPreview__image" src="{{ object.image.url }}"/>
+        <figcaption class="itemPreview__header">{{ object.title }}</figcaption>
+    </figure>
+    <section class="itemPreview__content">
+        {{ object.short_desc }}
+    </section>
+</a>
