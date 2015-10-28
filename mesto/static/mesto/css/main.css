@@ -179,16 +179,6 @@ table {
   position: relative;
 }
 
-.baseEvents__mainMenu {
-  position: absolute;
-  top: 17px;
-  left: 17px;
-}
-
-.baseEvents__mainMenu img {
-  width: 25px;
-}
-
 .baseEvents__header {
   text-align: center;
 }
@@ -405,7 +395,7 @@ table {
 
 .sliderJs__prev:hover,
 .sliderJs__next:hover {
-  cusor: pointer;
+  cursor: pointer;
 }
 
 .sliderJs__prev {
@@ -453,7 +443,7 @@ table {
 }
 
 .itemPreview {
-  color: inherit;
+  color: #2C2D33;
   text-decoration: none;
 }
 
@@ -508,6 +498,100 @@ table {
 
 .socialList__item.tw {
   background: #01ACED;
+}
+
+.mainMenu {
+  position: absolute;
+  z-index: 1;
+  top: 17px;
+  left: 17px;
+  white-space: nowrap;
+}
+
+.mainMenu.white .mainMenu__item.back:after {
+  border-left: 1px solid #fff;
+  border-top: 1px solid #fff;
+}
+
+.mainMenu__item {
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  margin-right: 10px;
+}
+
+.mainMenu__item.back:after {
+  content: '';
+  position: absolute;
+  transform: translateY(-50%) scaleY(1.3) rotate(-45deg);
+  width: 10px;
+  height: 10px;
+  border-left: 1px solid #252324;
+  border-top: 1px solid #252324;
+  top: 0px;
+}
+
+.mainMenu__item img {
+  width: 25px;
+}
+
+.itemsListAll {
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+}
+
+.itemsListAll .mainMenu {
+  margin-top: 10px;
+}
+
+.itemsListAll__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.itemsListAll__item {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background: no-repeat 50% 50%;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  position: relative;
+}
+
+.itemsListAll__item:nth-child(2) {
+  background: #fff;
+}
+
+.itemsListAll__item:nth-child(2):after {
+  background: #DCECEF;
+}
+
+.itemsListAll__item:nth-child(2) .itemsListAll__header {
+  color: #2C2D33;
+}
+
+.itemsListAll__item:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44,45,51,.6);
+}
+
+.itemsListAll__header {
+  text-align: center;
+  font: 25px anglecia_pro_titleregular;
+  position: relative;
+  z-index: 1;
+  color: #808185;
 }
 
 body,

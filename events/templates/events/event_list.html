@@ -1,11 +1,19 @@
 {% extends 'mesto/base.html' %}
 {% block 'content' %}
-    <h1>Events</h1>
-    <a href="{% url 'events:all' %}">All events</a>
-    <ul>
-    {% for event in object_list %}
-        <li><a href="{% url 'events:detail' slug=event.slug %}">{{ event }}</a></li>
-    {% endfor %}
-    </ul>
-    </ul>
+    <section class="itemsListAll">
+        <menu class="mainMenu white">
+            <a class="mainMenu__item back" href="{% url 'events:top' %}">
+            </a>
+        </menu>
+        <article class="itemsListAll__list">
+        {% for object in object_list %}
+            <a 
+                class="itemsListAll__item"
+                style="background-image: url('{{ object.image.url }}')"
+                href="{% url 'events:detail' slug=object.slug %}">
+                 <header class="itemsListAll__header">{{ object.title }}</header>
+            </a>
+        {% endfor %}
+        </article>
+</section>
 {% endblock %}

@@ -5,9 +5,17 @@
         <header class="baseEvents__header">
             <img class="baseEvents__header__img" src="{% static 'mesto/img/logo_black.svg' %}"/>
         </header>
-        <a class="baseEvents__mainMenu" href="{% url 'main' %}">
-           <img src="{% static 'mesto/img/menu.svg' %}">
-        </a>
+        <menu class="mainMenu">
+            {% block 'menu_button' %}
+            <a class="mainMenu__item" href="{% url 'main' %}">
+                <img src="{% static 'mesto/img/menu.svg' %}"/>
+            </a>
+            {% endblock %}
+            {% block 'menu_back' %}
+            <a class="mainMenu__item back" href="{% url 'main' %}">
+            </a>
+            {% endblock %}
+        </menu>
         <main class="baseEvents__content">
             {% block 'main_content' %}
             {% endblock %}

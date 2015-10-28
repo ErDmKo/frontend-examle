@@ -1,0 +1,51 @@
+.itemsListAll {
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    .mainMenu {
+        margin-top: 10px;
+        
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    &__item {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        background: no-repeat 50% 50%;
+        background-size: cover;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        position: relative;
+        &:nth-child(2) {
+            background: #fff;
+            &:after {
+                background: #DCECEF;
+            }
+            .itemsListAll__header {
+                color: #2C2D33;
+            }
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44,45,51,.6);
+        }
+
+    }    
+    &__header {
+        text-align: center;
+        font: 25px anglecia_pro_titleregular;
+        position: relative;
+        z-index: 1;
+        color: #808185;
+    }
+}

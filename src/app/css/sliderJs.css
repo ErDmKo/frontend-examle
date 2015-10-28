@@ -7,7 +7,7 @@
         opacity: .5;
         transform: scale(1, 1.5) rotate(45deg);
         &:hover {
-            cusor: pointer;
+            cursor: pointer;
         }
     }
     &__prev {

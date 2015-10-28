@@ -1,4 +1,8 @@
 {% extends 'events/base.html' %}
+{% block 'menu_back' %}
+<a class="mainMenu__item back" href="{% url 'events:top' %}">
+</a>
+{% endblock %}
 {% block 'head' %}
     <meta property="og:image" content="{{ request.is_secure|yesno:"https,http" }}://{{ request.get_host }}{{ object.image.url }}" />
 {% endblock %}

@@ -10,6 +10,8 @@
 @import 'itemPreview.css';
 @import 'nextBlock.css';
 @import 'socialList.css';
+@import 'mainMenu.css';
+@import 'itemsListAll.css';
 
 body, html {
     width: 100%;

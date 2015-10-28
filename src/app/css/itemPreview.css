@@ -1,7 +1,8 @@
 .itemPreview {
-    color: inherit;
+    color: #2C2D33;
     text-decoration: none;
     &__content {
+        
         font: 15px 'anglecia_pro_titleregular';
     }
     &__header {
