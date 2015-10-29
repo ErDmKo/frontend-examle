@@ -3,12 +3,12 @@
 {% block 'content' %}
     <menu class="mainMenu">
         <a class="mainMenu__item" href="{% url 'main' %}">
-            <img src="{% static 'mesto/img/menu.svg' %}"/>
+            <img src="{% static 'mesto/img/black_cross.svg' %}"/>
         </a>
     </menu>
     <main class="feedBackPopUp">
-        <header class="feedBackPopUp__header">
-            Спасибо за сообщение!
+        <header class="feedBackPopUp__header center">
+            <h1 class="feedBackPopUp__header__text">Спасибо за сообщение!</h1>
         </header>
     </main>
 {% endblock %}
