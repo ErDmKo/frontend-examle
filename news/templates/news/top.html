@@ -1,10 +1,7 @@
-{% extends 'mesto/base.html' %}
-{% block 'content' %}
-    <h1>Top news</h1>
-    <a href="{% url 'news:all' %}">All news</a>
-    <ul>
-    {% for news in object_list %}
-        <li>{{ news }}</li>
-    {% endfor %}
-    </ul>
+{% extends 'events/top.html' %}
+{% block 'events_active' %}{% endblock %}
+{% block 'news_active' %} active{% endblock %}
+{% block footer %}
+    {% include 'events/inc/baseFooter.html' with all_items_title="Все новости" %}
 {% endblock %}
+

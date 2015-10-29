@@ -1,8 +1,8 @@
 <menu class="baseFooter {% if static %} static {% endif %}">
     <a 
         class="{% if select == 1  %} active {% endif %}baseFooter__item"
-        href="{% url 'events:all' %}">
-        Все события
+        href="{% url request.resolver_match.namespace|default:"events"|add:":all" %}">
+        {{ all_items_title|default:"Все события" }}
     </a>
     <a 
         target="_blank"

@@ -1,7 +1,9 @@
 {% extends 'events/base.html' %}
 {% block 'menu_back' %}
-<a class="mainMenu__item back" href="{% url 'events:top' %}">
+<a class="mainMenu__item back" href="{% url request.resolver_match.namespace|add:":top" %}">
 </a>
+{% endblock %}
+{% block 'news_active' %}
 {% endblock %}
 {% block 'head' %}
     <meta property="og:image" content="{{ request.is_secure|yesno:"https,http" }}://{{ request.get_host }}{{ object.image.url }}" />
@@ -65,7 +67,9 @@
     </article>
     {% endif %}
     {% endwith %}
-    {% include 'events/inc/baseFooter.html' with static=True %}
+    {% block 'event_footer' %}
+        {% include 'events/inc/baseFooter.html' with static=True %}
+    {% endblock %}
 {% endblock %}
 {% block footer %}
 {% endblock %}

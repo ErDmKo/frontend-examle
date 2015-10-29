@@ -1,4 +1,4 @@
-<a href="{% url 'events:detail' slug=object.slug %}" class="itemPreview">
+<a href="{% url request.resolver_match.namespace|add:":detail" slug=object.slug %}" class="itemPreview">
     <figure class="itemPreview__figure">
         <img class="itemPreview__image" src="{{ object.image.url }}"/>
         <figcaption class="itemPreview__header">{{ object.title }}</figcaption>

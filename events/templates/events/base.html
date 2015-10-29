@@ -21,8 +21,16 @@
             {% endblock %}
         </main>
         <nav class="baseEvents__menu">
-            <a class="baseEvents__menu__item active" href="{% url 'events:top' %}">Мероприятия</a>
-            <a class="baseEvents__menu__item" href="{% url 'news:top' %}">Новости</a>
+            <a 
+                class="baseEvents__menu__item {% block 'events_active' %}active {% endblock %}"
+                href="{% url 'events:top' %}">
+                Мероприятия
+            </a>
+            <a
+                class="baseEvents__menu__item {% block 'news_active' %}active {% endblock %}" 
+                href="{% url 'news:top' %}">
+                Новости
+            </a>
         </nav>
     </div>
     {% block footer %}

@@ -1,7 +1,6 @@
 from django.conf.urls import include, url
 from django.views import generic
 from . import models
-from . import views
 
 urlpatterns = [
     url(
@@ -16,12 +15,11 @@ urlpatterns = [
             queryset=models.Event.objects.all(),
             paginate_by = 3,
             template_name='events/event_list.html'
-        ), name='all'),
+    ), name='all'),
     url(
         r'^(?P<slug>[\w\-]+)/$',
         generic.detail.DetailView.as_view(
             model = models.Event,
         ),
-        name='detail'
-    )
+    name='detail')
 ]

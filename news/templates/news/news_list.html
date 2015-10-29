@@ -1,10 +1,1 @@
-{% extends 'mesto/base.html' %}
-{% block 'content' %}
-    <h1>News list</h1>
-    <a href="{% url 'news:all' %}">All news</a>
-    <ul>
-    {% for event in object_list %}
-        <li>{{ event }}</li>
-    {% endfor %}
-    </ul>
-{% endblock %}
+{% extends 'events/event_list.html' %}
