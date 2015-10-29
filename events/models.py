@@ -15,6 +15,7 @@ class Event(texts_models.Text):
     related_events = models.ManyToManyField(
         'self',
         verbose_name='Связанные события',
+        symmetrical=False,
         blank=True) 
     ord = models.SmallIntegerField(default=50, verbose_name = 'Порядок')
 

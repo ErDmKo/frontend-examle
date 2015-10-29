@@ -20,18 +20,18 @@ var plugins = require('gulp-load-plugins')();
 
 gulp.task('css', function () {
     var processors = [
-        postcssMixins,
         autoprefixer({
             browsers: ['last 2 versions', 'ie >= 8', '> 1%'],
         }),
+        cssMqpacker,
         cssnext,
+        postcssMixins,
         postcssImport({
             from: dirs.src + '/css/main.css'
         }),
-        postcssNested,
         postcssInherit,
         postcssVariables,
-        cssMqpacker
+        postcssNested,
      ];
     return gulp.src(dirs.src + '/css/main.css')
         .pipe(plugins.sourcemaps.init())
