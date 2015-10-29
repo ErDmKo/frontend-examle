@@ -19,21 +19,24 @@ body, html {
     height: 100%;    
 }
 .mainPage {
-    background: url('../img/main_bg.jpg');
+    background: url('../img/main_bg.png');
     text-align: center;
     &__wrapper, &:after {
         display: inline-block;
         vertical-align: middle;
     }
+    &__svg {
+        width: 233px;
+    }
     &__nav {
       margin-top: 70px;  
     }
     &__item {
-        margin: 20px;
+        margin: 15px 0px;
         display: block;
         text-decoration: none;
         color: var(--black);
-        font: 30px 'anglecia_pro_titleregular';
+        font: 25px/100% hcyrregular;
         &.disabled {
             opacity: 0.2;
         }

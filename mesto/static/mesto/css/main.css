@@ -658,7 +658,7 @@ html {
 }
 
 .mainPage {
-  background: url('../img/main_bg.jpg');
+  background: url('../img/main_bg.png');
   text-align: center;
   height: 100%;
 }
@@ -669,16 +669,20 @@ html {
   vertical-align: middle;
 }
 
+.mainPage__svg {
+  width: 233px;
+}
+
 .mainPage__nav {
   margin-top: 70px;
 }
 
 .mainPage__item {
-  margin: 20px;
+  margin: 15px 0px;
   display: block;
   text-decoration: none;
   color: #000;
-  font: 30px 'anglecia_pro_titleregular';
+  font: 25px/100% hcyrregular;
 }
 
 .mainPage__item.disabled {

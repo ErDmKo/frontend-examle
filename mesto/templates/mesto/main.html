@@ -4,7 +4,7 @@
     <main class="mainPage">
         <div class="mainPage__wrapper">
             <header class="mainPage__header">
-                <img src="{% static 'mesto/img/logo.png' %}"/>
+                {% include 'mesto/inc/logo_main.svg' %}
             </header>
             <nav class="mainPage__nav">
                 <a class="mainPage__item" href="{% url 'events:top' %}">Events</a>

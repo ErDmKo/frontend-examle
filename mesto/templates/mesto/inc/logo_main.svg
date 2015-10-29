@@ -1,0 +1,116 @@
+{% load staticfiles %}
+<svg version="1.1" class="mainPage__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 238.5 67.5" enable-background="new 0 0 238.5 67.5" xml:space="preserve">
+<g>
+	<g>
+		<defs>
+			<path id="SVGID_1_" d="M193,43.8c0,13.2,10.1,18.4,10.1,18.4V25.4C203.1,25.4,193,30.6,193,43.8z"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		<g id="_x38_6DWvC.tif_3_" clip-path="url(#SVGID_2_)">
+            <image overflow="visible" width="1990" height="836" id="Layer_0_2_" xlink:href="{% static 'mesto/img/logoO.png' %}"  transform="matrix(4.800017e-02 0 0 5.042972e-02 172.2061 22.4784)">
+			</image>
+		</g>
+	</g>
+	<g>
+		<defs>
+			<path id="SVGID_3_" d="M235.7,43.8c0,13.2-10.1,18.4-10.1,18.4V25.4C225.5,25.4,235.7,30.6,235.7,43.8z"/>
+		</defs>
+		<clipPath id="SVGID_4_">
+			<use xlink:href="#SVGID_3_"  overflow="visible"/>
+		</clipPath>
+		<g id="_x38_6DWvC.tif_2_" clip-path="url(#SVGID_4_)">
+			
+				<image overflow="visible" width="1990" height="836" id="Layer_0_1_" xlink:href="{% static 'mesto/img/logoO.png' %}"  transform="matrix(-4.800017e-02 0 0 -5.042972e-02 248.7286 67.5931)">
+			</image>
+		</g>
+	</g>
+	<g>
+		<defs>
+			<polygon id="SVGID_5_" points="32.7,51.1 27.4,63.2 2.6,8.8 2.6,3 11.4,3 			"/>
+		</defs>
+		<clipPath id="SVGID_6_">
+			<use xlink:href="#SVGID_5_"  overflow="visible"/>
+		</clipPath>
+		<g id="KUK5a0_5_" clip-path="url(#SVGID_6_)">
+			
+				<image overflow="visible" width="2448" height="2448" id="KUK5a0_3_" xlink:href="{% static 'mesto/img/logoM.jpg' %}"  transform="matrix(2.709900e-02 0 0 2.709900e-02 -24.1248 0.1715)">
+			</image>
+		</g>
+	</g>
+	<g>
+		<defs>
+			<rect id="SVGID_7_" x="52.8" y="2.9" width="9.8" height="60.9"/>
+		</defs>
+		<clipPath id="SVGID_8_">
+			<use xlink:href="#SVGID_7_"  overflow="visible"/>
+		</clipPath>
+		<g id="KUK5a0_2_" clip-path="url(#SVGID_8_)">
+			
+				<image overflow="visible" width="2448" height="2448" id="KUK5a0_1_" xlink:href="{% static 'mesto/img/logoM.jpg' %}"  transform="matrix(-3.145611e-02 5.978758e-03 -5.978758e-03 -3.145611e-02 124.2965 64.525)">
+			</image>
+		</g>
+	</g>
+	<g>
+		<defs>
+			<path id="SVGID_9_" d="M76.4,43.8c0,13.2,10.1,18.4,10.1,18.4V25.4C86.5,25.4,76.4,30.6,76.4,43.8z"/>
+		</defs>
+		<clipPath id="SVGID_10_">
+			<use xlink:href="#SVGID_9_"  overflow="visible"/>
+		</clipPath>
+		<g clip-path="url(#SVGID_10_)">
+				<image overflow="visible" width="2448" height="2448" xlink:href="{% static 'mesto/img/logoEST.jpg' %}"  transform="matrix(3.377537e-02 0 0 3.377537e-02 67.0735 5.1121)">
+			</image>
+		</g>
+	</g>
+	<g>
+		<defs>
+			<path id="SVGID_11_" d="M151.2,59.1c-1.5-2.6-4-3.8-6.3-5.2c-2.1-1.3-4.1-2.6-6.1-3.9c-2.2-1.4-4.4-2.7-6.5-4.1
+				c-2.5-1.7-5.1-3.1-7.3-5.3c-1.3-1.3-2.1-2.9-2.3-4.8c0-3.3,1.8-7.1,2.1-7.7c0.4,1,0.8,1.3,1.1,1.7c1,0.9,2,1.8,3.1,2.6
+				c1.6,1.1,3.2,2.1,4.9,3.1c1.8,1.2,3.6,2.3,5.4,3.5c3,1.9,5.9,3.8,8.8,5.8c1.6,1.1,3.1,2.3,4.1,4c0.9,1.5,1.1,3.1,1,4.8
+				C153,55.1,151.4,58.7,151.2,59.1z"/>
+		</defs>
+		<clipPath id="SVGID_12_">
+			<use xlink:href="#SVGID_11_"  overflow="visible"/>
+		</clipPath>
+		<g clip-path="url(#SVGID_12_)">
+			
+				<image overflow="visible" width="2448" height="2448" xlink:href="{% static 'mesto/img/logoEST.jpg' %}"  transform="matrix(3.377537e-02 0 0 3.377537e-02 115.3371 9.4533)">
+			</image>
+		</g>
+	</g>
+	<g>
+		<defs>
+			<path id="SVGID_13_" d="M113.8,41.2c-1-12.2-10.7-17-10.7-17v17H113.8z"/>
+		</defs>
+		<clipPath id="SVGID_14_">
+			<use xlink:href="#SVGID_13_"  overflow="visible"/>
+		</clipPath>
+		<g id="_x38_6DWvC.tif_1_" clip-path="url(#SVGID_14_)">
+			
+				<image overflow="visible" width="1990" height="836" id="Layer_0_4_" xlink:href="{% static 'mesto/img/logoO.png' %}"  transform="matrix(6.730103e-02 0 0 7.070751e-02 71.6866 7.2706)">
+			</image>
+		</g>
+		<g clip-path="url(#SVGID_14_)">
+			
+				<image overflow="visible" width="2448" height="2448" xlink:href="{% static 'mesto/img/logoEST.jpg' %}"  transform="matrix(3.377537e-02 0 0 3.377537e-02 94.2608 2.2169)">
+			</image>
+		</g>
+	</g>
+	<g>
+		<defs>
+			<path id="SVGID_15_" d="M175.4,9.5l-9.3,6.8v39.5v0c0,4.8,3.9,8.6,8.6,8.6c0.2,0,0.4,0,0.7,0v-8.6l0,0V9.5z"/>
+		</defs>
+		<clipPath id="SVGID_16_">
+			<use xlink:href="#SVGID_15_"  overflow="visible"/>
+		</clipPath>
+		<g clip-path="url(#SVGID_16_)">
+			
+				<image overflow="visible" width="2448" height="2448" xlink:href="{% static 'mesto/img/logoEST.jpg' %}"  transform="matrix(3.377537e-02 0 0 3.377537e-02 137.9209 9.4533)">
+			</image>
+		</g>
+	</g>
+</g>
+</svg>
