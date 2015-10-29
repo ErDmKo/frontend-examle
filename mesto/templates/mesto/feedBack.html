@@ -1,6 +1,12 @@
 {% extends 'mesto/base.html' %}
+{% load staticfiles %}
 {% block 'content' %}
     <main class="feedBackPopUp">
+        <menu class="mainMenu">
+            <a class="mainMenu__item" href="{% url 'main' %}">
+                <img src="{% static 'mesto/img/black_cross.svg' %}"/>
+            </a>
+        </menu>
         <header class="feedBackPopUp__header">
             Написать нам
         </header>
