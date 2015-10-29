@@ -2,6 +2,9 @@
 {% block 'content' %}
     <section class="itemsListAll">
         <menu class="mainMenu white">
+            <a class="mainMenu__item" href="{% url 'main' %}">
+                {% include 'mesto/inc/menu.svg' %}
+            </a>
             <a class="mainMenu__item back" href="{% url request.resolver_match.namespace|add:":top" %}">
             </a>
         </menu>

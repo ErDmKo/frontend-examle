@@ -8,7 +8,7 @@
         <menu class="mainMenu">
             {% block 'menu_button' %}
             <a class="mainMenu__item" href="{% url 'main' %}">
-                <img src="{% static 'mesto/img/menu.svg' %}"/>
+                {% include 'mesto/inc/menu.svg' %}
             </a>
             {% endblock %}
             {% block 'menu_back' %}

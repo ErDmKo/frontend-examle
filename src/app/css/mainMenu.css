@@ -4,7 +4,15 @@
     top: 17px;
     left: 17px;
     white-space: nowrap;
+    &__svg {
+        width: 32px;
+    }
     &.white {
+         .mainMenu__svg {
+            rect {
+                fill: #fff;
+            }
+         }
          .mainMenu__item {
               &.back:after {
                   border-left: 1px solid #fff;

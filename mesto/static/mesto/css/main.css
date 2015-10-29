@@ -587,6 +587,14 @@ table {
   white-space: nowrap;
 }
 
+.mainMenu__svg {
+  width: 32px;
+}
+
+.mainMenu.white .mainMenu__svg rect {
+  fill: #fff;
+}
+
 .mainMenu.white .mainMenu__item.back:after {
   border-left: 1px solid #fff;
   border-top: 1px solid #fff;
