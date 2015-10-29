@@ -15,7 +15,10 @@ class News(texts_models.Text):
     def __src__(self):
         return self.title
 
+    def get_next(self):
+        return self.get_next_by_date()
+
     class Meta:
-        ordering = ['-pk']
+        ordering = ['-date']
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'

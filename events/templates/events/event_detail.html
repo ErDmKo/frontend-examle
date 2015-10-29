@@ -48,7 +48,7 @@
         </a>
     </menu>
     {% endwith %}
-    {% with object=object.get_next_by_date %}
+    {% with object=object.get_next %}
     {% if object %}
     <article class="nextBlock">
         <header class="nextBlock__header">
@@ -57,7 +57,7 @@
         <section class="nextBlock__item">
             {% include 'events/inc/itemPreview.html' %}
         </section>
-        {% with object=object.get_next_by_date %}
+        {% with object=object.get_next %}
             {% if object %}
             <section class="nextBlock__item">
                 {% include 'events/inc/itemPreview.html' %}

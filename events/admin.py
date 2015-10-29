@@ -1,5 +1,8 @@
 from django.contrib import admin
 from . import models
 
-admin.site.register(models.Event)
+class EventAdmin(admin.ModelAdmin):
+    filter_horizontal = 'related_events',
+    
+admin.site.register(models.Event, EventAdmin)
 
