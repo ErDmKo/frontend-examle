@@ -2,7 +2,7 @@
 {% block 'content' %}
     <section class="itemsListAll">
         <menu class="mainMenu white">
-            <a class="mainMenu__item back" href="{% url 'events:top' %}">
+            <a class="mainMenu__item back" href="{% url request.resolver_match.namespace|add:":top" %}">
             </a>
         </menu>
         <article class="itemsListAll__list">
@@ -10,7 +10,7 @@
             <a 
                 class="itemsListAll__item"
                 style="background-image: url('{{ object.image.url }}')"
-                href="{% url 'events:detail' slug=object.slug %}">
+                href="{% url request.resolver_match.namespace|add:":detail" slug=object.slug %}">
                  <header class="itemsListAll__header">{{ object.title }}</header>
             </a>
         {% endfor %}
@@ -20,7 +20,7 @@
             {% for page in paginator.page_range %} 
                 <a 
                     class="pagesList__item {% if page_obj.number == page %} active {% endif %}"
-                    href="{% url 'events:all' %}?page={{ page }}">
+                    href="{% url request.resolver_match.namespace|add:":all" %}?page={{ page }}">
                     {{ page }}
                 </a>
             {% endfor %}
