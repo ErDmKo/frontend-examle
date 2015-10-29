@@ -15,7 +15,7 @@
             <li class="topEventList__slide sliderJs__item">
                 <time class="topEventList__date">
                     <span class="topEventList__date__day">{{ forloop.counter|stringformat:"02d" }}</span>
-                    <span class="topEventList__date__month">/{{ object_list|length }}</span>
+                    <span class="topEventList__date__month">/{{ object_list|length|stringformat:"02d" }}</span>
                 </time>
                 <article class="topEventList__item">
                     <div class="topEventList__wrapper">
