@@ -13,7 +13,7 @@ class Feedback(models.Model):
         max_length=250,
         verbose_name='Имя'
     )
-    phone = models.CharField(
+    phone = models.IntegerField(
         max_length=250,
         verbose_name='Телефoн'
     )

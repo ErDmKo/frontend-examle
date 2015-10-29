@@ -25,6 +25,6 @@ class Event(texts_models.Text):
         return self.related_events.filter(ord__gte=self.ord).exclude(pk=self.pk).first()
 
     class Meta:
-        ordering = ['-ord']
+        ordering = ['ord']
         verbose_name = 'Мероприятие'
         verbose_name_plural = 'Мероприятия'
