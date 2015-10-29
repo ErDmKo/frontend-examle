@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='feedback',
             name='phone',
-            field=models.IntegerField(verbose_name='Телефoн', max_length=250),
+            field=models.IntegerField(verbose_name='Телефoн'),
         ),
     ]
