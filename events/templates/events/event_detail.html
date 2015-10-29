@@ -49,7 +49,7 @@
     </menu>
     {% endwith %}
     {% block 'next_block' %}
-        {% include 'events/inc/nextBlock.html' with object=object.get_next %}
+        {% include 'events/inc/nextBlock.html' with object_list=object.get_next %}
     {% endblock %}
     {% block 'event_footer' %}
         {% include 'events/inc/baseFooter.html' with static=True %}

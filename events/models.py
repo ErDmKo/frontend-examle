@@ -22,7 +22,7 @@ class Event(texts_models.Text):
         return self.title
 
     def get_next(self):
-        return self.related_events.filter(ord__gte=self.ord).exclude(pk=self.pk).first()
+        return self.related_events.all()
 
     class Meta:
         ordering = ['ord']

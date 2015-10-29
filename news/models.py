@@ -16,7 +16,7 @@ class News(texts_models.Text):
         return self.title
 
     def get_next(self):
-        return self.get_next_by_date()
+        return [self.get_next_by_date()]
 
     class Meta:
         ordering = ['-date']
