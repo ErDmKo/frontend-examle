@@ -14,7 +14,6 @@ class Feedback(models.Model):
         verbose_name='Имя'
     )
     phone = models.IntegerField(
-        max_length=250,
         verbose_name='Телефoн'
     )
     email = models.EmailField(

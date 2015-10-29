@@ -14,24 +14,24 @@
             <input 
                 name="first_name"
                 value="{{ form.first_name.value|default:'' }}"
-                class="feedBackPopUp__text"
+                class="{% if form.first_name.errors %}error {% endif %} feedBackPopUp__text"
                 type="text"
                 placeholder="Имя*"/>
             <input
                 name="phone"
                 value="{{ form.phone.value|default:'' }}"
-                class="feedBackPopUp__text"
+                class="{% if form.phone.errors %}error {% endif %}feedBackPopUp__text"
                 type="number"
                 placeholder="Телефон*"/>
             <input 
                 name="email"
                 value="{{ form.email.value|default:'' }}"
-                class="feedBackPopUp__text"
+                class="{% if form.email.errors %}error {% endif %}feedBackPopUp__text"
                 type="email"
                 placeholder="E-mail"/>
             <textarea 
                 name="comment"
-                class="feedBackPopUp__textarea feedBackPopUp__text"
+                class="{% if form.comment.errors %}error {% endif %}feedBackPopUp__textarea feedBackPopUp__text"
                 placeholder="Сообщение">{{ form.comment.value|default:'' }}</textarea>
             <button class="feedBackPopUp__button">
                  Отправить сообщение

@@ -48,6 +48,15 @@
         }
     }
     &__text {
+        &.error {
+            background: #EF3737;
+            &::-webkit-input-placeholder,
+            &::-moz-placeholder,
+            &:-ms-input-placeholder,
+            &:-moz-placeholder {
+                color: #fff;
+            }
+        }
         &:focus {
             opacity: 1;
             background: #fff;

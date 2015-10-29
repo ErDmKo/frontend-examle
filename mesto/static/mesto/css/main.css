@@ -304,6 +304,17 @@ table {
   cursor: pointer;
 }
 
+.feedBackPopUp__text.error {
+  background: #EF3737;
+}
+
+.feedBackPopUp__text.error::-webkit-input-placeholder,
+.feedBackPopUp__text.error::-moz-placeholder,
+.feedBackPopUp__text.error:-ms-input-placeholder,
+.feedBackPopUp__text.error:-moz-placeholder {
+  color: #fff;
+}
+
 .feedBackPopUp__text:focus {
   opacity: 1;
   background: #fff;
