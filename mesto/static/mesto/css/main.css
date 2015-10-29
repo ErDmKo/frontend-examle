@@ -320,7 +320,7 @@ table {
 
 .baseFooter.static {
   position: static;
-  margin: 20px 0px;
+  padding: 20px 0px;
 }
 
 .baseFooter__item,
@@ -670,7 +670,7 @@ html {
 }
 
 .mainPage__svg {
-  width: 233px;
+  width: 230px;
 }
 
 .mainPage__nav {

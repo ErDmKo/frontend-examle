@@ -1,0 +1,17 @@
+{% if object %}
+<article class="nextBlock">
+    <header class="nextBlock__header">
+        {{ block_header|default:"Другие события" }}
+    </header>
+    <section class="nextBlock__item">
+        {% include 'events/inc/itemPreview.html' %}
+    </section>
+    {% with object=object.get_next %}
+        {% if object %}
+        <section class="nextBlock__item">
+            {% include 'events/inc/itemPreview.html' %}
+        </section>
+        {% endif %}
+    {% endwith %}
+</article>
+{% endif %}

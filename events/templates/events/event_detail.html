@@ -48,25 +48,9 @@
         </a>
     </menu>
     {% endwith %}
-    {% with object=object.get_next %}
-    {% if object %}
-    <article class="nextBlock">
-        <header class="nextBlock__header">
-            Следующие новости
-        </header>
-        <section class="nextBlock__item">
-            {% include 'events/inc/itemPreview.html' %}
-        </section>
-        {% with object=object.get_next %}
-            {% if object %}
-            <section class="nextBlock__item">
-                {% include 'events/inc/itemPreview.html' %}
-            </section>
-            {% endif %}
-        {% endwith %}
-    </article>
-    {% endif %}
-    {% endwith %}
+    {% block 'next_block' %}
+        {% include 'events/inc/nextBlock.html' with object=object.get_next %}
+    {% endblock %}
     {% block 'event_footer' %}
         {% include 'events/inc/baseFooter.html' with static=True %}
     {% endblock %}
