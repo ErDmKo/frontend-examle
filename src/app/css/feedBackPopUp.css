@@ -1,7 +1,7 @@
 .feedBackPopUp {
     --padding: 17px;
     --color: #ccdde1;
-    height: 100%;
+    min-height: 100%;
     box-sizing: border-box;
     padding: var(--padding);
     position: relative;
@@ -11,7 +11,7 @@
         margin: 30px 0px;
     }
     &__form {
-        margin-top: 40px;
+        padding: 40px 0px;
         --color: #2C2D33;
         input, textarea {
           font: 15px hcyrregular;
