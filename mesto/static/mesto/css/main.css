@@ -196,10 +196,14 @@ table {
   white-space: nowrap;
   position: absolute;
   z-index: 1;
-  transform-origin: bottom left;
+  -webkit-transform-origin: bottom left;
+      -ms-transform-origin: bottom left;
+          transform-origin: bottom left;
   top: 20px;
   left: 100%;
-  transform: translate(-30px, -100%) rotate(90deg);
+  -webkit-transform: translate(-30px, -100%) rotate(90deg);
+      -ms-transform: translate(-30px, -100%) rotate(90deg);
+          transform: translate(-30px, -100%) rotate(90deg);
 }
 
 .baseEvents__menu__item {
@@ -224,16 +228,31 @@ table {
 }
 
 .feedBackPopUp__header.center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100%;
   margin: -17px 0px;
 }
 
 .feedBackPopUp__header__text {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .feedBackPopUp__form {
@@ -347,7 +366,7 @@ table {
 .topEventList {
   white-space: nowrap;
   position: relative;
-  overflow-x: auto;
+  overflow-x: hidden;
   box-sizing: border-box;
 }
 
@@ -356,7 +375,9 @@ table {
   bottom: 10px;
   left: 50%;
   opacity: .3;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
   font: 53px/100% 'anglecia_pro_titleregular';
   display: block;
   color: #CCDDE1;
@@ -400,6 +421,10 @@ table {
   margin: 0 auto;
 }
 
+.sliderJs {
+  overflow: hidden;
+}
+
 .sliderJs__prev,
 .sliderJs__next {
   position: absolute;
@@ -407,12 +432,26 @@ table {
   width: 15px;
   height: 15px;
   opacity: .5;
-  transform: scale(1, 1.5) rotate(45deg);
+  z-index: 2;
+  -webkit-transform: scale(1, 1.5) rotate(45deg);
+      -ms-transform: scale(1, 1.5) rotate(45deg);
+          transform: scale(1, 1.5) rotate(45deg);
 }
 
 .sliderJs__prev:hover,
 .sliderJs__next:hover {
   cursor: pointer;
+}
+
+.sliderJs__prev:after,
+.sliderJs__next:after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  -webkit-transform: translateY(-50%) translateX(-10px);
+      -ms-transform: translateY(-50%) translateX(-10px);
+          transform: translateY(-50%) translateX(-10px);
 }
 
 .sliderJs__prev {
@@ -425,6 +464,11 @@ table {
   right: 10px;
   border-right: 2px solid #252324;
   border-top: 2px solid #252324;
+}
+
+.sliderJs__next:after {
+  top: 10px;
+  left: 0px;
 }
 
 .sliderJs__slide {
@@ -575,7 +619,9 @@ table {
 .mainMenu__item.back:after {
   content: '';
   position: absolute;
-  transform: translateY(-50%) scaleY(1.3) rotate(-45deg);
+  -webkit-transform: translateY(-50%) scaleY(1.3) rotate(-45deg);
+      -ms-transform: translateY(-50%) scaleY(1.3) rotate(-45deg);
+          transform: translateY(-50%) scaleY(1.3) rotate(-45deg);
   width: 10px;
   height: 10px;
   border-left: 1px solid #252324;
@@ -590,6 +636,9 @@ table {
 .itemsListAll {
   box-sizing: border-box;
   height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -598,19 +647,35 @@ table {
 }
 
 .itemsListAll__list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
 }
 
 .itemsListAll__item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   height: 100%;
   width: 100%;
   background: no-repeat 50% 50%;
   background-size: cover;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-decoration: none;
   position: relative;
 }

@@ -10,8 +10,13 @@
         </div>
         <div slider-controll="-1" class="sliderJs__prev">
         </div>
-        <ul slider-content class="topEventList sliderJs__content"> {% for event in object_list %}
-            <li slider-item class="topEventList__slide sliderJs__item">
+        <ul 
+            slider-content
+            dragg-controller
+            class="topEventList sliderJs__content"> {% for event in object_list %}
+            <li
+                slider-item
+                class="topEventList__slide sliderJs__item">
                 <time class="topEventList__date">
                     <span class="topEventList__date__day">{{ forloop.counter|stringformat:"02d" }}</span>
                     <span class="topEventList__date__month">/{{ object_list|length|stringformat:"02d" }}</span>

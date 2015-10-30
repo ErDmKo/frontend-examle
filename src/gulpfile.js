@@ -29,9 +29,6 @@ gulp.task('copy', function() {
 });
 gulp.task('css', function () {
     var processors = [
-        autoprefixer({
-            browsers: ['last 2 versions', 'ie >= 8', '> 1%'],
-        }),
         cssnext,
         postcssMixins,
         postcssImport({
@@ -39,8 +36,11 @@ gulp.task('css', function () {
         }),
         postcssVariables,
         postcssNested,
+        cssMqpacker,
         postcssInherit,
-        cssMqpacker
+        autoprefixer({
+            browsers: ['last 2 versions', 'ie >= 8', '> 1%'],
+        }),
      ];
     return gulp.src(dirs.src + '/css/main.css')
         .pipe(plugins.sourcemaps.init())

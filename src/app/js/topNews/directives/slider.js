@@ -15,16 +15,19 @@ class SliderController {
     addContent(handler) {
         this.scrollHandler = handler;
     }
+    next(delta) {
+        let next = this.slide + delta;
+        if (next >= this.items.length) {
+            next = 0;
+        } else if(next < 0) {
+            next = this.items.length - 1;
+        }
+        this.slide = next;
+        this.moveToSlide(this.slide);
+    }
     addController(delta) {
         let handler = (e) => {
-            let next = this.slide + delta;
-            if (next >= this.items.length) {
-                next = 0;
-            } else if(next < 0) {
-                next = this.items.length - 1;
-            }
-            this.slide = next;
-            this.moveToSlide(this.slide);
+            this.next(delta);
         }
         return handler;
     }
