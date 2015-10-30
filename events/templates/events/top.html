@@ -5,14 +5,13 @@
 {% block 'menu_back' %}
 {% endblock %}
 {% block 'main_content' %}
-    <div class="sliderJs">
-        <div class="sliderJs__next">
+    <div slider-main class="sliderJs">
+        <div slider-controll="1" class="sliderJs__next">
         </div>
-        <div class="sliderJs__prev">
+        <div slider-controll="-1" class="sliderJs__prev">
         </div>
-        <ul class="topEventList sliderJs__content">
-            {% for event in object_list %}
-            <li class="topEventList__slide sliderJs__item">
+        <ul slider-content class="topEventList sliderJs__content"> {% for event in object_list %}
+            <li slider-item class="topEventList__slide sliderJs__item">
                 <time class="topEventList__date">
                     <span class="topEventList__date__day">{{ forloop.counter|stringformat:"02d" }}</span>
                     <span class="topEventList__date__month">/{{ object_list|length|stringformat:"02d" }}</span>

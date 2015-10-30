@@ -168,13 +168,7 @@ table {
   font-style: normal;
 }
 
-.baseEvents__menu__item {
-  font: 14px hcyrregular;
-  text-decoration: none;
-  color: #000;
-  opacity: .3;
-}
-
+.baseEvents__menu__item,
 .baseFooter__item {
   font: 14px hcyrregular;
   text-decoration: none;
@@ -202,14 +196,10 @@ table {
   white-space: nowrap;
   position: absolute;
   z-index: 1;
-  -webkit-transform-origin: bottom left;
-      -ms-transform-origin: bottom left;
-          transform-origin: bottom left;
+  transform-origin: bottom left;
   top: 20px;
   left: 100%;
-  -webkit-transform: translate(-30px, -100%) rotate(90deg);
-      -ms-transform: translate(-30px, -100%) rotate(90deg);
-          transform: translate(-30px, -100%) rotate(90deg);
+  transform: translate(-30px, -100%) rotate(90deg);
 }
 
 .baseEvents__menu__item {
@@ -234,31 +224,16 @@ table {
 }
 
 .feedBackPopUp__header.center {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   margin: -17px 0px;
 }
 
 .feedBackPopUp__header__text {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .feedBackPopUp__form {
@@ -271,41 +246,25 @@ table {
   opacity: .3;
 }
 
-.feedBackPopUp__form input::-webkit-input-placeholder {
-  font: 15px hcyrregular;
-  color: #2C2D33;
-}
-
-.feedBackPopUp__form input::-moz-placeholder {
-  font: 15px hcyrregular;
-  color: #2C2D33;
-}
-
-.feedBackPopUp__form input:-ms-input-placeholder {
-  font: 15px hcyrregular;
-  color: #2C2D33;
-}
-
-.feedBackPopUp__form input:-moz-placeholder {
-  font: 15px hcyrregular;
-  color: #2C2D33;
-}
-
+.feedBackPopUp__form input::-webkit-input-placeholder,
 .feedBackPopUp__form textarea::-webkit-input-placeholder {
   font: 15px hcyrregular;
   color: #2C2D33;
 }
 
+.feedBackPopUp__form input::-moz-placeholder,
 .feedBackPopUp__form textarea::-moz-placeholder {
   font: 15px hcyrregular;
   color: #2C2D33;
 }
 
+.feedBackPopUp__form input:-ms-input-placeholder,
 .feedBackPopUp__form textarea:-ms-input-placeholder {
   font: 15px hcyrregular;
   color: #2C2D33;
 }
 
+.feedBackPopUp__form input:-moz-placeholder,
 .feedBackPopUp__form textarea:-moz-placeholder {
   font: 15px hcyrregular;
   color: #2C2D33;
@@ -397,9 +356,7 @@ table {
   bottom: 10px;
   left: 50%;
   opacity: .3;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   font: 53px/100% 'anglecia_pro_titleregular';
   display: block;
   color: #CCDDE1;
@@ -416,7 +373,7 @@ table {
 }
 
 .topEventList__slide {
-  overflow-y: hidden;
+  overflow: hidden;
   box-sizing: border-box;
   padding-top: 60px;
   margin-top: -27px;
@@ -431,10 +388,10 @@ table {
   z-index: 1;
   display: block;
   white-space: normal;
-  padding: 0 auto;
   box-sizing: border-box;
   height: 100%;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .topEventList__wrapper {
@@ -450,9 +407,7 @@ table {
   width: 15px;
   height: 15px;
   opacity: .5;
-  -webkit-transform: scale(1, 1.5) rotate(45deg);
-      -ms-transform: scale(1, 1.5) rotate(45deg);
-          transform: scale(1, 1.5) rotate(45deg);
+  transform: scale(1, 1.5) rotate(45deg);
 }
 
 .sliderJs__prev:hover,
@@ -620,9 +575,7 @@ table {
 .mainMenu__item.back:after {
   content: '';
   position: absolute;
-  -webkit-transform: translateY(-50%) scaleY(1.3) rotate(-45deg);
-      -ms-transform: translateY(-50%) scaleY(1.3) rotate(-45deg);
-          transform: translateY(-50%) scaleY(1.3) rotate(-45deg);
+  transform: translateY(-50%) scaleY(1.3) rotate(-45deg);
   width: 10px;
   height: 10px;
   border-left: 1px solid #252324;
@@ -637,9 +590,6 @@ table {
 .itemsListAll {
   box-sizing: border-box;
   height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -648,35 +598,19 @@ table {
 }
 
 .itemsListAll__list {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
 }
 
 .itemsListAll__item {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   height: 100%;
   width: 100%;
   background: no-repeat 50% 50%;
   background-size: cover;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   position: relative;
 }
