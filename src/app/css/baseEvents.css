@@ -27,9 +27,19 @@
         transform: translate(-30px, -100%) rotate(90deg);
         &__item {
             inherit: %item;
-            margin-right    : 10px;
+            margin-right: 10px;
+            position: relative;
             &.active {
                 opacity: 1;
+                &:after {
+                    content: '';
+                    width: 15px;
+                    height: 2px;
+                    background: #000;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;   
+                }
             }
         }
     }

@@ -208,10 +208,21 @@ table {
 
 .baseEvents__menu__item {
   margin-right: 10px;
+  position: relative;
 }
 
 .baseEvents__menu__item.active {
   opacity: 1;
+}
+
+.baseEvents__menu__item.active:after {
+  content: '';
+  width: 15px;
+  height: 2px;
+  background: #000;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .feedBackPopUp {
