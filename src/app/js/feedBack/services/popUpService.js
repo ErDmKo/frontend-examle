@@ -17,6 +17,12 @@ export class PopUpService {
         this.popUps[itemName] = new PopUp(handler);
     }
     close(itemName) {
+        if (!itemName) {
+            Object.keys(this.popUps).forEach((key)=>{
+                this.popUps[key].toggleItem();
+            })
+            return;
+        }
         return (e) => {
             let popUp = this.popUps[itemName]
             if (popUp) {

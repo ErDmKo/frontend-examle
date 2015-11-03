@@ -24,6 +24,7 @@
     &__form {
         padding: 40px 0px;
         --color: #2C2D33;
+
         input, textarea {
           font: 15px hcyrregular;
           opacity: .3;
@@ -59,7 +60,9 @@
         }
     }
     &__text {
-        &.error {
+        &.error,
+        .ng-dirty &.ng-invalid,
+        &.ng-invalid.ng-touched {
             background: #EF3737;
             &::-webkit-input-placeholder,
             &::-moz-placeholder,

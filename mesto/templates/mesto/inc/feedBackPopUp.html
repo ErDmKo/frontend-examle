@@ -1,5 +1,5 @@
 {% load staticfiles %}
-    <main ng-controller="feedbackFormController" class="feedBackPopUp">
+    <main ng-controller="feedbackFormController as vm" class="feedBackPopUp">
         <menu class="mainMenu">
             <a mesto-feedback-close="feedBackPopUp" class="mainMenu__item" href="{% url 'main' %}">
                 <img src="{% static 'mesto/img/black_cross.svg' %}"/>
@@ -8,40 +8,49 @@
         <header class="feedBackPopUp__header">
             Написать нам
         </header>
-        {% for field in form %}
-            {% if field.errors %}
-                {{ field.label }} - {{ field.errors }}
-            {% endif %}
-        {% endfor %}
+        <div  class="feedBackPopUp__errors" ng-bind="vm.errors">
+            {% for field in form %}
+                {% if field.errors %}
+                    {{ field.label }} - {{ field.errors }}
+                {% endif %}
+            {% endfor %}
+        </div>
         <form 
             {% if not js %} action="{% url 'feedback' %}" {% endif %}
             novalidate
+            name="feedbackForm"
             method="POST"
             class="feedBackPopUp__form">
             {% csrf_token %}
             <input 
                 name="first_name"
+                required
+                ng-model="vm.formData.first_name"
                 value="{{ form.first_name.value|default:'' }}"
                 class="{% if form.first_name.errors %}error {% endif %} feedBackPopUp__text"
                 type="text"
                 placeholder="Имя*"/>
             <input
                 name="phone"
+                required
+                ng-model="vm.formData.phone"
                 value="{{ form.phone.value|default:'' }}"
                 class="{% if form.phone.errors %}error {% endif %}feedBackPopUp__text"
                 type="number"
                 placeholder="Телефон*"/>
             <input 
                 name="email"
+                ng-model="vm.formData.email"
                 value="{{ form.email.value|default:'' }}"
                 class="{% if form.email.errors %}error {% endif %}feedBackPopUp__text"
                 type="email"
                 placeholder="E-mail"/>
             <textarea 
                 name="comment"
+                ng-model="vm.formData.comment"
                 class="{% if form.comment.errors %}error {% endif %}feedBackPopUp__textarea feedBackPopUp__text"
                 placeholder="Сообщение">{{ form.comment.value|default:'' }}</textarea>
-            <button class="feedBackPopUp__button">
+            <button ng-click="vm.submit(feedbackForm)" class="feedBackPopUp__button">
                  Отправить сообщение
             </button>
         </form>

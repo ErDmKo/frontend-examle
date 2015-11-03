@@ -29,8 +29,8 @@ class Feedback(models.Model):
         from django.core.urlresolvers import reverse
         return reverse('thanks')
     
-    def __src__(self):
-        return self.first_name
+    def __str__(self):
+        return '{} - {}'.format(self.pk, self.first_name)
 
     class Meta:
         ordering = ['-pk']

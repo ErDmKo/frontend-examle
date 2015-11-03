@@ -10,7 +10,7 @@ import {
 import { PopUpService } from './feedBack/services/popUpService';
 import { FeedbackResource } from './feedBack/services/feedbackResource';
 import { FeedbackFormController } from './feedBack/controllers/FormController';
-var app = angular.module('mesto', []);
+var app = angular.module('mesto', ['ngResource']);
 
 register('mesto')
     .directive('sliderMain', SliderMain)
@@ -27,7 +27,11 @@ register('mesto')
 
     .service('feedbackResource', FeedbackResource)
     .controller('feedbackFormController', FeedbackFormController)
-
+app.config(($resourceProvider, $httpProvider)=> {
+    $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+    $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+    $resourceProvider.defaults.stripTrailingSlashes = false;
+})
 angular
     .element(document)
     .ready(angular.bootstrap.bind(angular, document, ['mesto']));

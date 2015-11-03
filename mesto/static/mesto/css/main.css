@@ -325,14 +325,24 @@ table {
   cursor: pointer;
 }
 
-.feedBackPopUp__text.error {
+.feedBackPopUp__text.error,
+.ng-dirty .feedBackPopUp__text.ng-invalid,
+.feedBackPopUp__text.ng-invalid.ng-touched {
   background: #EF3737;
 }
 
 .feedBackPopUp__text.error::-webkit-input-placeholder,
 .feedBackPopUp__text.error::-moz-placeholder,
 .feedBackPopUp__text.error:-ms-input-placeholder,
-.feedBackPopUp__text.error:-moz-placeholder {
+.feedBackPopUp__text.error:-moz-placeholder,
+.ng-dirty .feedBackPopUp__text.ng-invalid::-webkit-input-placeholder,
+.ng-dirty .feedBackPopUp__text.ng-invalid::-moz-placeholder,
+.ng-dirty .feedBackPopUp__text.ng-invalid:-ms-input-placeholder,
+.ng-dirty .feedBackPopUp__text.ng-invalid:-moz-placeholder,
+.feedBackPopUp__text.ng-invalid.ng-touched::-webkit-input-placeholder,
+.feedBackPopUp__text.ng-invalid.ng-touched::-moz-placeholder,
+.feedBackPopUp__text.ng-invalid.ng-touched:-ms-input-placeholder,
+.feedBackPopUp__text.ng-invalid.ng-touched:-moz-placeholder {
   color: #fff;
 }
 

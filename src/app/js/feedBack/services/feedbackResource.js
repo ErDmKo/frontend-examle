@@ -1,5 +1,6 @@
 export class FeedbackResource {
-    constructor(){
-        console.log('Hello world');
+    /*@ngInject*/
+    constructor($resource) {
+        return $resource(CONFIG.urls.feedbackForm);
     }
 }
