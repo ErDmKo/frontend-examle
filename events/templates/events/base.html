@@ -9,12 +9,12 @@
         </header>
         <menu class="mainMenu">
             {% block 'menu_button' %}
-            <a class="mainMenu__item" href="{% url 'main' %}">
+            <a class="mainMenu__item fadeAnimator__ancor" href="{% url 'main' %}">
                 {% include 'mesto/inc/menu.svg' %}
             </a>
             {% endblock %}
             {% block 'menu_back' %}
-            <a class="mainMenu__item back" href="{% url 'main' %}">
+            <a class="mainMenu__item back fadeAnimator__ancor" href="{% url 'main' %}">
             </a>
             {% endblock %}
         </menu>
@@ -24,12 +24,12 @@
         </main>
         <nav class="baseEvents__menu">
             <a 
-                class="baseEvents__menu__item {% block 'events_active' %}active {% endblock %}"
+                class="baseEvents__menu__item fadeAnimator__ancor {% block 'events_active' %}active {% endblock %}"
                 href="{% url 'events:top' %}">
                 Мероприятия
             </a>
             <a
-                class="baseEvents__menu__item {% block 'news_active' %}active {% endblock %}" 
+                class="baseEvents__menu__item fadeAnimator__ancor {% block 'news_active' %}active {% endblock %}" 
                 href="{% url 'news:top' %}">
                 Новости
             </a>

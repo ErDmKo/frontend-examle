@@ -7,6 +7,7 @@ import {
     MestoFeedbackClose,
     MestoFeedbackContnier
 } from './feedBack/directives/feedBack';
+import { MestoClickFade } from './clickFade/directives/clickFade';
 import { PopUpService } from './feedBack/services/popUpService';
 import { FeedbackResource } from './feedBack/services/feedbackResource';
 import { FeedbackFormController } from './feedBack/controllers/FormController';
@@ -27,6 +28,9 @@ register('mesto')
 
     .service('feedbackResource', FeedbackResource)
     .controller('feedbackFormController', FeedbackFormController)
+
+    .directive('mestoClickFade', MestoClickFade)
+
 app.config(($resourceProvider, $httpProvider)=> {
     $httpProvider.defaults.xsrfCookieName = 'csrftoken';
     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';

@@ -1,6 +1,6 @@
 {% extends 'events/base.html' %}
 {% block 'menu_back' %}
-<a class="mainMenu__item back" href="{% url request.resolver_match.namespace|add:":top" %}">
+<a class="mainMenu__item back fadeAnimator__ancor" href="{% url request.resolver_match.namespace|add:":top" %}">
 </a>
 {% endblock %}
 {% block 'news_active' %}

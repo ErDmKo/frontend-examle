@@ -1,0 +1,7 @@
+.fadeAnimator {
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+    &.fade {
+        opacity: 0;
+    }
+}

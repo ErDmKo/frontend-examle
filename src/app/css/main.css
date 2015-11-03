@@ -14,6 +14,7 @@
 @import 'itemsListAll.css';
 @import 'pagesList.css';
 @import 'popUpAnimator.css';
+@import 'fadeAnimator.css';
 
 body, html {
     width: 100%;

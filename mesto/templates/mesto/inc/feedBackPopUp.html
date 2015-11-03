@@ -1,7 +1,10 @@
 {% load staticfiles %}
     <main ng-controller="feedbackFormController as vm" class="feedBackPopUp">
         <menu class="mainMenu">
-            <a mesto-feedback-close="feedBackPopUp" class="mainMenu__item" href="{% url 'main' %}">
+            <a 
+                mesto-feedback-close="feedBackPopUp"
+                class="mainMenu__item"
+                href="{% url 'main' %}">
                 <img src="{% static 'mesto/img/black_cross.svg' %}"/>
             </a>
         </menu>

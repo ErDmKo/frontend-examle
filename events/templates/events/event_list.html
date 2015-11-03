@@ -2,16 +2,20 @@
 {% block 'content' %}
     <section class="itemsListAll">
         <menu class="mainMenu white">
-            <a class="mainMenu__item" href="{% url 'main' %}">
+            <a 
+                class="mainMenu__item  fadeAnimator__ancor"
+                href="{% url 'main' %}">
                 {% include 'mesto/inc/menu.svg' %}
             </a>
-            <a class="mainMenu__item back" href="{% url request.resolver_match.namespace|add:":top" %}">
+            <a 
+                class="mainMenu__item back fadeAnimator__ancor"
+                href="{% url request.resolver_match.namespace|add:":top" %}">
             </a>
         </menu>
         <article class="itemsListAll__list">
         {% for object in object_list %}
             <a 
-                class="itemsListAll__item"
+                class="itemsListAll__item fadeAnimator__ancor"
                 style="background-image: url('{{ object.image.url }}')"
                 href="{% url request.resolver_match.namespace|add:":detail" slug=object.slug %}">
                  <header class="itemsListAll__header">{{ object.title }}</header>
@@ -22,7 +26,7 @@
         <ul class="pagesList">
             {% for page in paginator.page_range %} 
                 <a 
-                    class="pagesList__item {% if page_obj.number == page %} active {% endif %}"
+                    class="pagesList__item fadeAnimator__ancor {% if page_obj.number == page %} active {% endif %}"
                     href="{% url request.resolver_match.namespace|add:":all" %}?page={{ page }}">
                     {{ page }}
                 </a>

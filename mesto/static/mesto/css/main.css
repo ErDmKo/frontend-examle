@@ -797,6 +797,16 @@ table {
   position: fixed;
 }
 
+.fadeAnimator {
+  opacity: 1;
+  -webkit-transition: opacity .5s ease-in-out;
+          transition: opacity .5s ease-in-out;
+}
+
+.fadeAnimator.fade {
+  opacity: 0;
+}
+
 body,
 html {
   width: 100%;
