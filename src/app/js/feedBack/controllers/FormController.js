@@ -1,10 +1,10 @@
 export class FeedbackFormController { 
     /*@ngInject*/
-    constructor($scope, feedbackResource, popUpSerivice) {
+    constructor($scope, feedbackResource) {
         this.feedbackResource = feedbackResource;
-        this.popUpSerivice = popUpSerivice;
         this.formData = {};
         this.errors = '';
+        this.success = false;
     }
     submit(form){
         if (form.$invalid) {
@@ -13,7 +13,7 @@ export class FeedbackFormController {
             let feedback = new this.feedbackResource(this.formData);
             feedback.$save()
                 .then(() =>{
-                    this.popUpSerivice.close();
+                    this.success = true;
                 })
                 .catch((response) => {
                     this.error = response;

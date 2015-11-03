@@ -20,9 +20,16 @@
             display: flex;
             justify-content: center;
         }
+        &__img {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30%;
+        }
     }
     &__form {
-        padding: 40px 0px;
+        padding: 20px 0px;
         --color: #2C2D33;
 
         input, textarea {

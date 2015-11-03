@@ -5,54 +5,60 @@
                 <img src="{% static 'mesto/img/black_cross.svg' %}"/>
             </a>
         </menu>
-        <header class="feedBackPopUp__header">
-            Написать нам
+        <header ng-show="vm.success" class="feedBackPopUp__header center">
+            <img class="feedBackPopUp__header__img" src="{% static 'mesto/img/logo_black.svg' %}"/>
+            <h1 class="feedBackPopUp__header__text">Спасибо за сообщение!</h1>
         </header>
-        <div  class="feedBackPopUp__errors" ng-bind="vm.errors">
-            {% for field in form %}
-                {% if field.errors %}
-                    {{ field.label }} - {{ field.errors }}
-                {% endif %}
-            {% endfor %}
+        <div ng-hide="vm.success"> 
+            <header ng-hide="vm.success" class="feedBackPopUp__header">
+                Написать нам
+            </header>
+            <div  class="feedBackPopUp__errors" ng-bind="vm.errors">
+                {% for field in form %}
+                    {% if field.errors %}
+                        {{ field.label }} - {{ field.errors }}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <form 
+                {% if not js %} action="{% url 'feedback' %}" {% endif %}
+                novalidate
+                name="feedbackForm"
+                method="POST"
+                class="feedBackPopUp__form">
+                {% csrf_token %}
+                <input 
+                    name="first_name"
+                    required
+                    ng-model="vm.formData.first_name"
+                    value="{{ form.first_name.value|default:'' }}"
+                    class="{% if form.first_name.errors %}error {% endif %} feedBackPopUp__text"
+                    type="text"
+                    placeholder="Имя*"/>
+                <input
+                    name="phone"
+                    required
+                    ng-model="vm.formData.phone"
+                    value="{{ form.phone.value|default:'' }}"
+                    class="{% if form.phone.errors %}error {% endif %}feedBackPopUp__text"
+                    type="number"
+                    placeholder="Телефон*"/>
+                <input 
+                    name="email"
+                    ng-model="vm.formData.email"
+                    value="{{ form.email.value|default:'' }}"
+                    class="{% if form.email.errors %}error {% endif %}feedBackPopUp__text"
+                    type="email"
+                    placeholder="E-mail"/>
+                <textarea 
+                    name="comment"
+                    ng-model="vm.formData.comment"
+                    class="{% if form.comment.errors %}error {% endif %}feedBackPopUp__textarea feedBackPopUp__text"
+                    placeholder="Сообщение">{{ form.comment.value|default:'' }}</textarea>
+                <button ng-click="vm.submit(feedbackForm)" class="feedBackPopUp__button">
+                     Отправить сообщение
+                </button>
+            </form>
+            {% include 'events/inc/baseFooter.html' with select=3 %}
         </div>
-        <form 
-            {% if not js %} action="{% url 'feedback' %}" {% endif %}
-            novalidate
-            name="feedbackForm"
-            method="POST"
-            class="feedBackPopUp__form">
-            {% csrf_token %}
-            <input 
-                name="first_name"
-                required
-                ng-model="vm.formData.first_name"
-                value="{{ form.first_name.value|default:'' }}"
-                class="{% if form.first_name.errors %}error {% endif %} feedBackPopUp__text"
-                type="text"
-                placeholder="Имя*"/>
-            <input
-                name="phone"
-                required
-                ng-model="vm.formData.phone"
-                value="{{ form.phone.value|default:'' }}"
-                class="{% if form.phone.errors %}error {% endif %}feedBackPopUp__text"
-                type="number"
-                placeholder="Телефон*"/>
-            <input 
-                name="email"
-                ng-model="vm.formData.email"
-                value="{{ form.email.value|default:'' }}"
-                class="{% if form.email.errors %}error {% endif %}feedBackPopUp__text"
-                type="email"
-                placeholder="E-mail"/>
-            <textarea 
-                name="comment"
-                ng-model="vm.formData.comment"
-                class="{% if form.comment.errors %}error {% endif %}feedBackPopUp__textarea feedBackPopUp__text"
-                placeholder="Сообщение">{{ form.comment.value|default:'' }}</textarea>
-            <button ng-click="vm.submit(feedbackForm)" class="feedBackPopUp__button">
-                 Отправить сообщение
-            </button>
-        </form>
-        {% include 'events/inc/baseFooter.html' with select=3 %}
     </main>

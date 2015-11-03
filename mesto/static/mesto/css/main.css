@@ -266,8 +266,18 @@ table {
           justify-content: center;
 }
 
+.feedBackPopUp__header__img {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 30%;
+}
+
 .feedBackPopUp__form {
-  padding: 40px 0px;
+  padding: 20px 0px;
 }
 
 .feedBackPopUp__form input,
