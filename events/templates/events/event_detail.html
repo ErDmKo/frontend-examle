@@ -9,7 +9,7 @@
     <meta property="og:image" content="{{ request.is_secure|yesno:"https,http" }}://{{ request.get_host }}{{ object.image.url }}" />
 {% endblock %}
 {% block 'main_content' %}
-    <arcticle class="itemPage">
+    <article class="itemPage">
         <header class="itemPage__header">
             <h1 class="itemPage__header__text">{{ object.title }}</h1>
         </header>
@@ -54,6 +54,11 @@
     {% block 'event_footer' %}
         {% include 'events/inc/baseFooter.html' with static=True %}
     {% endblock %}
+    <div 
+        mesto-feedback-item="feedBackPopUp"
+        class="popUpAnimator__content">
+        {% include 'mesto/inc/feedBackPopUp.html' with js=True %}
+    </div>
 {% endblock %}
 {% block footer %}
 {% endblock %}

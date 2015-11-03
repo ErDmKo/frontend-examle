@@ -1,0 +1,22 @@
+.popUpAnimator {
+    overflow-y: auto;
+    &.fixedPopUp {
+        overflow: hidden;
+    }
+    &__content {
+        background: #fff;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        z-index: 3;
+        height: 0;
+        overflow: hidden;
+        transform: translateY(100%);
+        &.active {
+            transform: translateY(0%);
+            height: 100%;
+            position: fixed;
+        }
+    }
+}

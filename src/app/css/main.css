@@ -13,6 +13,7 @@
 @import 'mainMenu.css';
 @import 'itemsListAll.css';
 @import 'pagesList.css';
+@import 'popUpAnimator.css';
 
 body, html {
     width: 100%;

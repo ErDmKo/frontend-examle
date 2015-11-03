@@ -1,7 +1,7 @@
 {% load staticfiles %}
-    <main class="feedBackPopUp">
+    <main ng-controller="feedbackFormController" class="feedBackPopUp">
         <menu class="mainMenu">
-            <a class="mainMenu__item" href="{% url 'main' %}">
+            <a mesto-feedback-close="feedBackPopUp" class="mainMenu__item" href="{% url 'main' %}">
                 <img src="{% static 'mesto/img/black_cross.svg' %}"/>
             </a>
         </menu>
@@ -13,7 +13,11 @@
                 {{ field.label }} - {{ field.errors }}
             {% endif %}
         {% endfor %}
-        <form action="{% url 'feedback' %}" novalidate method="POST" class="feedBackPopUp__form">
+        <form 
+            {% if not js %} action="{% url 'feedback' %}" {% endif %}
+            novalidate
+            method="POST"
+            class="feedBackPopUp__form">
             {% csrf_token %}
             <input 
                 name="first_name"

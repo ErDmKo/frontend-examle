@@ -9,7 +9,7 @@
     height: 100%;
     box-sizing: border-box;
     padding: var(--padding);
-    padding-bottom: 40px;
+    padding-bottom: 35px;
     position: relative;
     &__header {
         text-align: center;

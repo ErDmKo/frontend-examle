@@ -2,7 +2,8 @@
     position: absolute;
     &.static {
         position: static;
-        padding: 20px 0px;
+        padding: 20px 0px 0px;
+        margin-bottom: -15px;
     }
     bottom: 20px;
     left: 20px;

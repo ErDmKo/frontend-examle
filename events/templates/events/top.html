@@ -30,7 +30,9 @@
         {% endfor %}
         </ul>
     </div>
-    <div style="display: none" type="text/ng-template">
-        {% include 'mesto/inc/feedBackPopUp.html' %}
+    <div 
+        mesto-feedback-item="feedBackPopUp"
+        class="popUpAnimator__content">
+        {% include 'mesto/inc/feedBackPopUp.html' with js=True %}
     </div>
 {% endblock %}

@@ -19,6 +19,7 @@ var postcssInherit  = require('postcss-inherit');
 var plugins = require('gulp-load-plugins')();
 var libs = [
     'node_modules/angular/angular.min.js',
+    'node_modules/angular-resource/angular-resource.min.js',
 ]
 
 gulp.task('copy', function() {

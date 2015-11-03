@@ -180,7 +180,7 @@ table {
   height: 100%;
   box-sizing: border-box;
   padding: 17px;
-  padding-bottom: 40px;
+  padding-bottom: 35px;
   position: relative;
 }
 
@@ -352,7 +352,8 @@ table {
 
 .baseFooter.static {
   position: static;
-  padding: 20px 0px;
+  padding: 20px 0px 0px;
+  margin-bottom: -15px;
 }
 
 .baseFooter__item,
@@ -744,6 +745,36 @@ table {
 
 .pagesList__item.active {
   opacity: 1;
+}
+
+.popUpAnimator {
+  overflow-y: auto;
+}
+
+.popUpAnimator.fixedPopUp {
+  overflow: hidden;
+}
+
+.popUpAnimator__content {
+  background: #fff;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 3;
+  height: 0;
+  overflow: hidden;
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.popUpAnimator__content.active {
+  -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+          transform: translateY(0%);
+  height: 100%;
+  position: fixed;
 }
 
 body,
