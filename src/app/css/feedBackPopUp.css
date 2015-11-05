@@ -68,7 +68,7 @@
     }
     &__text {
         &.error,
-        .ng-dirty &.ng-invalid,
+        .ng-submitted &.ng-invalid,
         &.ng-invalid.ng-touched {
             background: #EF3737;
             &::-webkit-input-placeholder,
