@@ -4,7 +4,11 @@
     text-align: center;
     position: relative;
     &__background {
+        @media (max-width: 800px) {
+            display: none;
+        }
         margin: 0;
+        boreder: 0;
         padding: 0;
         position: absolute;
         top: 0;

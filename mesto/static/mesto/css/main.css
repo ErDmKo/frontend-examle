@@ -372,6 +372,7 @@ table {
 
 .mainPage__background {
   margin: 0;
+  boreder: 0;
   padding: 0;
   position: absolute;
   top: 0;
@@ -986,6 +987,13 @@ html {
 body a,
 html a {
   -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 800px) {
+
+  .mainPage__background {
+    display: none;
+  }
 }
 
 @media (min-width: 800px) {
