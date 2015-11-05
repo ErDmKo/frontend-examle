@@ -411,6 +411,7 @@ table {
 
 .mainPage__svg {
   width: 230px;
+  margin-bottom: -80px;
 }
 
 .mainPage__nav {
