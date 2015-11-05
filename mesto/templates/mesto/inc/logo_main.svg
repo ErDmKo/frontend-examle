@@ -11,7 +11,7 @@
     xml:space="preserve">
 <g> 
     <g id="mestoLogoM" mesto-logo-hover="eventsSection" class="svgLogo__item">
-        <g transform="translate(1.5, 90)">
+        <g transform="translate(2, 90)">
             <text x="0" y="0">Events</text>
         </g>
         <rect
