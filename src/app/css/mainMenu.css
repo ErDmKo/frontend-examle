@@ -2,6 +2,10 @@
     position: absolute;
     z-index: 1;
     top: 17px;
+    &.right {
+        right: 0px;
+        left: auto;
+    }
     left: 17px;
     white-space: nowrap;
     &__svg {

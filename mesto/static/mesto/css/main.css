@@ -623,6 +623,11 @@ table {
   white-space: nowrap;
 }
 
+.mainMenu.right {
+  right: 0px;
+  left: auto;
+}
+
 .mainMenu__svg {
   width: 32px;
 }
