@@ -423,12 +423,12 @@ table {
   text-decoration: none;
   color: #000;
   font: 25px/100% hcyrregular;
-  -webkit-transition: color 1s;
-          transition: color 1s;
+  -webkit-transition: opacity 1s;
+          transition: opacity 1s;
 }
 
 .mainPage__item.active {
-  color: #fff;
+  opacity: 1;
 }
 
 .mainPage__item.disabled {
@@ -1019,6 +1019,15 @@ html a {
 
   .mainPage__item {
     display: inline-block;
+  }
+
+  .mainPage__item {
+    opacity: 0;
+    color: #fff;
+  }
+
+  .mainPage__item.disabled {
+    display: none;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -72,11 +72,18 @@
         text-decoration: none;
         color: var(--black);
         font: 25px/100% hcyrregular;
-        transition: color 1s;
+        transition: opacity 1s;
+        @media (min-width: 800px) {
+            opacity: 0;
+            color: #fff;
+        }
         &.active {
-            color: var(--white);
+            opacity: 1
         }
         &.disabled {
+            @media (min-width: 800px) {
+                display: none;
+            }
             opacity: 0.2;
         }
     }
