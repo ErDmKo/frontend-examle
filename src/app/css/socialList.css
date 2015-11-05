@@ -1,9 +1,13 @@
 .socialList {
+    --vkColor: #48729E; 
+    --fbColor: #4C7CFF; 
+    --twColor: #01ACED; 
+
     text-align: center;
     margin: 50px;
     &__item {
         text-decoration: none;
-        color: #fff;
+        color: var(--white);
         display: inline-block;
         padding: 10px;
         border-radius: 100%;
@@ -12,13 +16,13 @@
         height: 20px;
         margin: 0px 5px;
         &.vk {
-            background: #48729E;
+            background: var(--vkColor);
         }
         &.fb {
-            background: #4C7CFF;
+            background: var(--fbColor);
         }
         &.tw {
-            background: #01ACED;
+            background: var(--twColor);
         }
     }
 }

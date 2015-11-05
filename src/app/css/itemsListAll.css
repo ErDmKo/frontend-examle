@@ -1,4 +1,7 @@
 .itemsListAll {
+    --darkBackgroundColor: rgba(44,45,51,.8); 
+    --headerColor: #808185;
+
     box-sizing: border-box;
     height: 100%;
     display: flex;
@@ -22,12 +25,12 @@
         text-decoration: none;
         position: relative;
         &:nth-child(2) {
-            background: #fff;
+            background: var(--white);
             &:after {
-                background: #DCECEF;
+                background: var(--grayBlue);
             }
             .itemsListAll__header {
-                color: #2C2D33;
+                color: var(--darkColor);
             }
         }
         &:after {
@@ -37,7 +40,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(44,45,51,.8);
+            background: var(--darkBackgroundColor);
         }
 
     }    
@@ -46,6 +49,6 @@
         font: 25px anglecia_pro_titleregular;
         position: relative;
         z-index: 1;
-        color: #808185;
+        color: var(--headerColor);
     }
 }

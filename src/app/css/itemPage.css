@@ -6,7 +6,7 @@
         font: 25px/100% 'anglecia_pro_titleregular';
     }
     &__date {
-        color: #CCDDE1;
+        color: var(--grayBlue);
         margin: 20px 0px;
         display: block;
         font: 13px hcyrregular;

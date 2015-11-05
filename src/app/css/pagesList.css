@@ -4,14 +4,14 @@
     right: 0;
     z-index: 1;
     &__item {
-        color: #fff;
+        color: var(--white);
         text-decoration: none;
         padding: 5px;
         display: inline-block;
         text-align: center;
         width: 15px;
         height: 15px;
-        border: 1px solid #fff;
+        border: 1px solid var(--white);
         border-radius: 100%;
         opacity: .5;
         margin: 0px 3px;

@@ -21,13 +21,13 @@
     }
     &__prev {
         left: 10px;
-        border-left: 2px solid #252324;
-        border-bottom: 2px solid #252324;
+        border-left: 2px solid var(--nearBlack);
+        border-bottom: 2px solid var(--nearBlack);
     }
     &__next {
         right: 10px;
-        border-right: 2px solid #252324;
-        border-top: 2px solid #252324;
+        border-right: 2px solid var(--nearBlack);
+        border-top: 2px solid var(--nearBlack);
         &:after {
             top: 10px;
             left: 0px;

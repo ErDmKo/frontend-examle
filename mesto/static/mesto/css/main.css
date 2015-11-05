@@ -310,7 +310,18 @@ table {
   color: #2C2D33;
 }
 
-.feedBackPopUp__text,
+.feedBackPopUp__text {
+  width: 100%;
+  display: block;
+  background: #ccdde1;
+  box-sizing: border-box;
+  border: 2px solid #ccdde1;
+  margin: 10px 0px;
+  border-radius: 3px;
+  color: #2C2D33;
+  padding: 13px;
+}
+
 .feedBackPopUp__button {
   width: 100%;
   display: block;
@@ -335,25 +346,37 @@ table {
   cursor: pointer;
 }
 
-.feedBackPopUp__text.error,
-.ng-submitted .feedBackPopUp__text.ng-invalid,
-.feedBackPopUp__text.ng-invalid.ng-touched {
+.feedBackPopUp__text.error {
   background: #EF3737;
 }
 
 .feedBackPopUp__text.error::-webkit-input-placeholder,
 .feedBackPopUp__text.error::-moz-placeholder,
 .feedBackPopUp__text.error:-ms-input-placeholder,
-.feedBackPopUp__text.error:-moz-placeholder,
+.feedBackPopUp__text.error:-moz-placeholder {
+  color: var(--white);
+}
+
+.ng-submitted .feedBackPopUp__text.ng-invalid {
+  background: #EF3737;
+}
+
 .ng-submitted .feedBackPopUp__text.ng-invalid::-webkit-input-placeholder,
 .ng-submitted .feedBackPopUp__text.ng-invalid::-moz-placeholder,
 .ng-submitted .feedBackPopUp__text.ng-invalid:-ms-input-placeholder,
-.ng-submitted .feedBackPopUp__text.ng-invalid:-moz-placeholder,
+.ng-submitted .feedBackPopUp__text.ng-invalid:-moz-placeholder {
+  color: var(--white);
+}
+
+.feedBackPopUp__text.ng-invalid.ng-touched {
+  background: #EF3737;
+}
+
 .feedBackPopUp__text.ng-invalid.ng-touched::-webkit-input-placeholder,
 .feedBackPopUp__text.ng-invalid.ng-touched::-moz-placeholder,
 .feedBackPopUp__text.ng-invalid.ng-touched:-ms-input-placeholder,
 .feedBackPopUp__text.ng-invalid.ng-touched:-moz-placeholder {
-  color: #fff;
+  color: var(--white);
 }
 
 .feedBackPopUp__text:focus {
@@ -364,6 +387,7 @@ table {
 
 .baseFooter {
   position: absolute;
+  z-index: 2;
   bottom: 20px;
   left: 20px;
   right: 20px;
@@ -412,7 +436,7 @@ table {
           transform: translateX(-50%);
   font: 53px/100% 'anglecia_pro_titleregular';
   display: block;
-  color: #CCDDE1;
+  color: #ccdde1;
 }
 
 .topEventList__date__day,
@@ -527,7 +551,7 @@ table {
 }
 
 .itemPage__date {
-  color: #CCDDE1;
+  color: #ccdde1;
   margin: 20px 0px;
   display: block;
   font: 13px hcyrregular;
@@ -740,7 +764,7 @@ table {
 }
 
 .itemsListAll__item:nth-child(2):after {
-  background: #DCECEF;
+  background: #ccdde1;
 }
 
 .itemsListAll__item:nth-child(2) .itemsListAll__header {

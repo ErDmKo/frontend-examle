@@ -11,7 +11,7 @@
         transform: translateX(-50%);
         font: 53px/100% 'anglecia_pro_titleregular';
         display: block;
-        color: #CCDDE1;
+        color: var(--grayBlue);
         &__day, &__month {
             display: inline-block;
             vertical-align: top;

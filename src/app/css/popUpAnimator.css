@@ -4,7 +4,7 @@
         overflow: hidden;
     }
     &__content {
-        background: #fff;
+        background: var(--white);
         position: absolute;
         top: 0px;
         left: 0px;

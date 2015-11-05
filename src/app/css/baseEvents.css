@@ -35,7 +35,7 @@
                     content: '';
                     width: 15px;
                     height: 2px;
-                    background: #000;
+                    background: var(--black);
                     position: absolute;
                     bottom: 0;
                     left: 0;   

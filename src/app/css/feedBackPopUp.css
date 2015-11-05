@@ -1,6 +1,8 @@
 .feedBackPopUp {
     --padding: 17px;
-    --color: #ccdde1;
+    --buttonColor: #B8C9CC; 
+    --invalidColor: #EF3737; 
+
     min-height: 100%;
     box-sizing: border-box;
     padding: var(--padding);
@@ -30,7 +32,6 @@
     }
     &__form {
         padding: 20px 0px;
-        --color: #2C2D33;
 
         input, textarea {
           font: 15px hcyrregular;
@@ -40,23 +41,23 @@
           &:-ms-input-placeholder,
           &:-moz-placeholder {
              font: 15px hcyrregular;
-             color: var(--color); 
+             color: var(--darkColor); 
           }
         }
     }
     &__text, &__button {
-         width: 100%;
+        width: 100%;
         display: block;
-        background: #ccdde1;
+        background: var(--grayBlue);
         box-sizing: border-box;
-        border: 2px solid #ccdde1;
+        border: 2px solid var(--grayBlue);
         margin: 10px 0px;
         border-radius: 3px;
-        color: #2C2D33;
+        color: var(--darkColor);
         padding: 13px; 
     }
     &__button {
-        background: #B8C9CC;
+        background: var(--buttonColor);
         font: 20px hcyrregular;
         color: #fff;
         border: 0;
@@ -70,17 +71,17 @@
         &.error,
         .ng-submitted &.ng-invalid,
         &.ng-invalid.ng-touched {
-            background: #EF3737;
+            background: var(--invalidColor);
             &::-webkit-input-placeholder,
             &::-moz-placeholder,
             &:-ms-input-placeholder,
             &:-moz-placeholder {
-                color: #fff;
+                color: var(--white);
             }
         }
         &:focus {
             opacity: 1;
-            background: #fff;
+            background: var(--white);
             outline: 0;
         }
     }

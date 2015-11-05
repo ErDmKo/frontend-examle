@@ -30,15 +30,14 @@ gulp.task('copy', function() {
 });
 gulp.task('css', function () {
     var processors = [
-        cssnext,
-        postcssMixins,
         postcssImport({
             from: dirs.src + '/css/main.css'
         }),
+        postcssMixins,
         postcssVariables,
         postcssNested,
-        cssMqpacker,
         postcssInherit,
+        cssMqpacker,
         autoprefixer({
             browsers: ['last 2 versions', 'ie >= 8', '> 1%'],
         }),
@@ -61,8 +60,10 @@ gulp.task('js', function() {
     .pipe(plugins.ngAnnotate())
     .pipe(gulp.dest(dirs.dist + "/js"));
 });
-gulp.task('default', function() {
+gulp.task('watch', function() {
     gulp.watch(jsDirs, ['js']);
     gulp.watch(cssDirs, ['css']);
+});
+gulp.task('default', ['watch', 'js', 'css'], function() {
     plugins.livereload.listen();
 });

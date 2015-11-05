@@ -1,10 +1,9 @@
 .itemPreview {
-    color: #2C2D33;
+    color: var(--darkColor);
     text-decoration: none;
     display: inline-block;
     user-select: none;
     &__content {
-        
         font: 15px 'anglecia_pro_titleregular';
     }
     &__header {

@@ -1,5 +1,6 @@
 .baseFooter {
     position: absolute;
+    z-index: 2;
     &.static {
         position: static;
         padding: 20px 0px 0px;
