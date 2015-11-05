@@ -69,7 +69,7 @@
     </g>
     <g ig="mestoLogoEST" mesto-logo-hover="highenderSection" class="svgLogo__item">
         <g transform="translate(76.5, 78)">
-            <text>
+            <text x="0" y="0">
                 <tspan x="0" dy="1.0em">
                     Highender
                 </tspan>
@@ -182,7 +182,7 @@
     </g>
     <g id="mestoLogoO" mesto-logo-hover="movieSection"  class="svgLogo__item">
         <g transform="translate(193, 78)">
-            <text>
+            <text x="0" y="0">
                 <tspan x="0" dy="1.0em">
                    Movie
                 </tspan>
