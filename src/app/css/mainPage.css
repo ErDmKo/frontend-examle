@@ -72,6 +72,7 @@
         display: block;
         @media (min-width: 800px) {
             display: inline-block;
+            font-size: 36px;
         }
         text-decoration: none;
         color: var(--black);

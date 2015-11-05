@@ -11,6 +11,11 @@
     xml:space="preserve">
 <g> 
     <g id="mestoLogoM" mesto-logo-hover="eventsSection" class="svgLogo__item">
+        <rect
+            fill-opacity=0
+            width="70"
+            height="70">
+        </rect>
         <g>
             <defs>
                 <polygon id="SVGID_5_" points="32.7,51.1 27.4,63.2 2.6,8.8 2.6,3 11.4,3 			"/>
@@ -60,6 +65,12 @@
         </g>
     </g>
     <g ig="mestoLogoEST" mesto-logo-hover="highenderSection" class="svgLogo__item">
+        <rect
+            transform="translate(70, 0)"
+            fill-opacity="0"
+            width="110"
+            height="70">
+        </rect>
         <g>
             <defs>
                 <path id="SVGID_9_" d="M76.4,43.8c0,13.2,10.1,18.4,10.1,18.4V25.4C86.5,25.4,76.4,30.6,76.4,43.8z"/>
@@ -157,6 +168,12 @@
         </g>
     </g>
     <g id="mestoLogoO" mesto-logo-hover="movieSection"  class="svgLogo__item">
+        <rect
+            transform="translate(190, 0)"
+            fill-opacity="0"
+            width="70"
+            height="70">
+        </rect>
         <g>
             <defs>
                 <path id="SVGID_1_" d="M193,43.8c0,13.2,10.1,18.4,10.1,18.4V25.4C203.1,25.4,193,30.6,193,43.8z"/>
