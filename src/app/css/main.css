@@ -1,8 +1,11 @@
 @import 'reset.css';
 @import 'fonts.css';
 @import 'colors.css';
-@import 'baseEvents.css';
+@import 'mixins.css';
+
 @import 'feedBackPopUp.css';
+@import 'mainPage.css';
+@import 'baseEvents.css';
 @import 'baseFooter.css';
 @import 'topEventList.css';
 @import 'sliderJs.css';
@@ -15,6 +18,7 @@
 @import 'pagesList.css';
 @import 'popUpAnimator.css';
 @import 'fadeAnimator.css';
+@import 'svgLogo.css';
 
 body, html {
     width: 100%;
@@ -22,34 +26,4 @@ body, html {
     a {
         -webkit-tap-highlight-color: transparent;
     }
-}
-.mainPage {
-    background: url('../img/main_bg.png');
-    text-align: center;
-    &__wrapper, &:after {
-        display: inline-block;
-        vertical-align: middle;
-    }
-    &__svg {
-        width: 230px;
-    }
-    &__nav {
-      margin-top: 70px;  
-    }
-    &__item {
-        margin: 15px 0px;
-        display: block;
-        text-decoration: none;
-        color: var(--black);
-        font: 25px/100% hcyrregular;
-        &.disabled {
-            opacity: 0.2;
-        }
-    }
-    
-    &:after {
-        content: '';
-        height: 100%;
-    }
-    height: 100%;
 }

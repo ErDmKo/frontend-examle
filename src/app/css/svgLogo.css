@@ -1,0 +1,13 @@
+.svgLogo {
+    &__rect {
+        opacity: 0;
+        transition: opacity 1s;
+        fill: var(--white);
+    }
+    &__item:hover {
+        cursor: pointer;
+        .svgLogo__rect {
+           opacity: 1;
+        } 
+    }
+}

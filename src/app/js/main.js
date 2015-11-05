@@ -1,4 +1,9 @@
-import { SliderMain, SliderContent, SliderControll, SliderItem } from './topNews/directives/slider';
+import { 
+    SliderMain,
+    SliderContent,
+    SliderControll,
+    SliderItem
+} from './topNews/directives/slider';
 import { DraggController } from './topNews/directives/draggController';
 import { register } from './utils/register';
 import { 
@@ -11,6 +16,14 @@ import { MestoClickFade } from './clickFade/directives/clickFade';
 import { PopUpService } from './feedBack/services/popUpService';
 import { FeedbackResource } from './feedBack/services/feedbackResource';
 import { FeedbackFormController } from './feedBack/controllers/FormController';
+
+import { 
+    SVGLogoHover,
+    SVGLogoItem,
+    SVGLogoContanier,
+    SVGLogoBackground
+} from './mainPage/directives/logoDirectives';
+
 var app = angular.module('mesto', ['ngResource']);
 
 register('mesto')
@@ -30,6 +43,11 @@ register('mesto')
     .controller('feedbackFormController', FeedbackFormController)
 
     .directive('mestoClickFade', MestoClickFade)
+
+    .directive('mestoLogoHover', SVGLogoHover)
+    .directive('mestoSvgItem', SVGLogoItem)
+    .directive('mestoSvgLogo', SVGLogoContanier)
+    .directive('mestoSvgBackground', SVGLogoBackground)
 
 app.config(($resourceProvider, $httpProvider)=> {
     $httpProvider.defaults.xsrfCookieName = 'csrftoken';

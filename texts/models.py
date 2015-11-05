@@ -57,7 +57,7 @@ class TextSettings(models.Model):
     file = models.FileField(upload_to='settings', null=True, verbose_name='Файл', blank=True)
 
     def __str__(self):
-        return self.title
+        return self.val
 
     class Meta:
         verbose_name = 'текстовая переменная'

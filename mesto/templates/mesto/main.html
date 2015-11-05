@@ -1,15 +1,32 @@
 {% extends 'mesto/base.html' %}
 {% load staticfiles %}
 {% block 'content' %}
-    <main class="mainPage">
+    <main mesto-svg-logo class="mainPage">
+        <hr mesto-svg-background class="mainPage__background"/>
         <div class="mainPage__wrapper">
             <header class="mainPage__header">
                 {% include 'mesto/inc/logo_main.svg' %}
             </header>
             <nav class="mainPage__nav">
-                <a class="mainPage__item fadeAnimator__ancor" href="{% url 'events:top' %}">Events</a>
-                <a class="mainPage__item disabled fadeAnimator__ancor" href="#">Highender</a>
-                <a class="mainPage__item disabled fadeAnimator__ancor" href="#">Movie theater</a>
+                <a 
+                    mesto-svg-item="eventsSection"
+                    img-url="{{ settings.EVENT_BACKGROUND.file.url|default:"/static/img/logoM.jpg" }}"
+                    class="mainPage__item fadeAnimator__ancor"
+                    href="{% url 'events:top' %}">
+                    Events
+                </a>
+                <a 
+                    mesto-svg-item="highenderSection"
+                    class="mainPage__item disabled fadeAnimator__ancor"
+                    href="#">
+                    Highender
+                </a>
+                <a
+                    mesto-svg-item="movieSection"
+                    class="mainPage__item disabled fadeAnimator__ancor" 
+                    href="#">
+                    Movie theater
+                </a>
             </nav>
         </div>
     </main>
