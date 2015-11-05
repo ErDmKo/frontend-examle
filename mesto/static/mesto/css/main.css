@@ -988,14 +988,12 @@ html a {
   -webkit-tap-highlight-color: transparent;
 }
 
-@media (max-width: 800px) {
-
-  .mainPage__background {
-    display: none;
-  }
-}
-
 @media (min-width: 800px) {
+
+  .mainPage {
+    background-size: cover;
+    background-position: 50% 50%;
+  }
 
   .mainPage__wrapper {
     width: 99%;
@@ -1027,6 +1025,13 @@ html a {
   }
 
   .mainPage__item.disabled {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+
+  .mainPage__background {
     display: none;
   }
 }

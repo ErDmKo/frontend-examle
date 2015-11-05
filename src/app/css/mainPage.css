@@ -3,6 +3,10 @@
     background: url('../img/main_bg.png');
     text-align: center;
     position: relative;
+    @media (min-width: 800px) {
+        background-size: cover;
+        background-position: 50% 50%;
+    }
     &__background {
         @media (max-width: 800px) {
             display: none;
