@@ -1014,9 +1014,9 @@ html a {
 
   .mainPage__header {
     position: relative;
-    -webkit-transform: translateY(15%);
-        -ms-transform: translateY(15%);
-            transform: translateY(15%);
+    -webkit-transform: translateY(20%);
+        -ms-transform: translateY(20%);
+            transform: translateY(20%);
   }
 
   .mainPage__wrapper {

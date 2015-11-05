@@ -10,7 +10,7 @@
     &__header {
         @media (min-width: 800px) {
             position: relative;
-            transform: translateY(15%);
+            transform: translateY(20%);
         }
     }
     &__background {
