@@ -539,6 +539,11 @@ table {
   margin: 10px 0px;
 }
 
+.itemPage__content a {
+  position: relative;
+  text-decoration: line-through;
+}
+
 .itemPage__content em,
 .itemPage__content a {
   font-family: anglecia_pro_titleitalic;

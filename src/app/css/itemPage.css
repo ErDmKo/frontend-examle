@@ -22,6 +22,10 @@
          p {
              margin: 10px 0px;
          }
+         a {
+             position: relative;
+             text-decoration: line-through;
+         }
          em, a {
              font-family: anglecia_pro_titleitalic;
          }
