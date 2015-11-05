@@ -969,8 +969,24 @@ table {
   fill: #fff;
 }
 
+.svgLogo__small {
+  font-size: 5px;
+}
+
+.svgLogo__item text {
+  font: 12px/100% hcyrregular;
+  fill: #fff;
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+          transition: opacity 1s;
+}
+
 .svgLogo__item:hover {
   cursor: pointer;
+}
+
+.svgLogo__item:hover text {
+  opacity: 1;
 }
 
 .svgLogo__item:hover .svgLogo__rect {
@@ -1016,8 +1032,7 @@ html a {
   }
 
   .mainPage__item {
-    display: inline-block;
-    font-size: 36px;
+    display: none;
   }
 
   .mainPage__item {
@@ -1036,7 +1051,7 @@ html a {
 
   .mainPage__item.disabled:after {
     position: absolute;
-    content: 'в разработке';
+    content: 'В разработке';
   }
 }
 

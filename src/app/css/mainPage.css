@@ -71,8 +71,7 @@
         margin: 15px 0px;
         display: block;
         @media (min-width: 800px) {
-            display: inline-block;
-            font-size: 36px;
+            display: none;
         }
         text-decoration: none;
         color: var(--black);
@@ -94,7 +93,7 @@
                 }
                 &:after {
                     position: absolute;
-                    content: 'в разработке';
+                    content: 'В разработке';
                 }
             }
             opacity: 0.2;
