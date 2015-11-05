@@ -86,7 +86,15 @@
         }
         &.disabled {
             @media (min-width: 800px) {
-                display: none;
+                opacity: 0;
+                color: #fff;
+                &.active {
+                    opacity: 1
+                }
+                &:after {
+                    position: absolute;
+                    content: 'в разработке';
+                }
             }
             opacity: 0.2;
         }

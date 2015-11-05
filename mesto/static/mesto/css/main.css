@@ -1025,7 +1025,17 @@ html a {
   }
 
   .mainPage__item.disabled {
-    display: none;
+    opacity: 0;
+    color: #fff;
+  }
+
+  .mainPage__item.disabled.active {
+    opacity: 1;
+  }
+
+  .mainPage__item.disabled:after {
+    position: absolute;
+    content: 'в разработке';
   }
 }
 
