@@ -1012,6 +1012,13 @@ html a {
     background-position: 50% 50%;
   }
 
+  .mainPage__header {
+    position: relative;
+    -webkit-transform: translateY(15%);
+        -ms-transform: translateY(15%);
+            transform: translateY(15%);
+  }
+
   .mainPage__wrapper {
     width: 99%;
   }

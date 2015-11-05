@@ -7,6 +7,12 @@
         background-size: cover;
         background-position: 50% 50%;
     }
+    &__header {
+        @media (min-width: 800px) {
+            position: relative;
+            transform: translateY(15%);
+        }
+    }
     &__background {
         @media (max-width: 800px) {
             display: none;
