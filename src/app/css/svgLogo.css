@@ -9,7 +9,7 @@
     }
     &__item {
         text {
-            font: 12px/100% hcyrregular;
+            font: 11px/100% hcyrregular;
             fill: #fff;
             opacity: 0;
             transition: opacity 1s;
