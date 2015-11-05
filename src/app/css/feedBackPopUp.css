@@ -72,11 +72,8 @@
         .ng-submitted &.ng-invalid,
         &.ng-invalid.ng-touched {
             background: var(--invalidColor);
-            &::-webkit-input-placeholder,
-            &::-moz-placeholder,
-            &:-ms-input-placeholder,
-            &:-moz-placeholder {
-                color: var(--white);
+            &::placeholder {
+                color: #fff;
             }
         }
         &:focus {
