@@ -3,8 +3,10 @@
     background: url('../img/main_bg.png');
     text-align: center;
     position: relative;
+
     @media (min-width: 800px) {
         background-size: cover;
+        overflow: hidden;
         background-position: 50% 50%;
     }
     &__header {

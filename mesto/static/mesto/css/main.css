@@ -1009,6 +1009,7 @@ html a {
 
   .mainPage {
     background-size: cover;
+    overflow: hidden;
     background-position: 50% 50%;
   }
 
