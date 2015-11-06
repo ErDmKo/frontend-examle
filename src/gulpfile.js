@@ -45,6 +45,10 @@ gulp.task('css', function () {
     return gulp.src(dirs.src + '/css/main.css')
         .pipe(plugins.sourcemaps.init())
         .pipe(plugins.postcss(processors))
+        .on('error', function (err) {
+                console.log(err.toString());
+                this.emit("end");
+        })
         .pipe(plugins.sourcemaps.write('.'))
         .pipe(gulp.dest(dirs.dist + '/css'))
 });
@@ -55,6 +59,10 @@ gulp.task('js', function() {
     })
     .transform(babelify)
     .bundle()
+    .on('error', function (err) {
+            console.log(err.toString());
+            this.emit("end");
+    })
     .pipe(source('main.js'))
     .pipe(plugins.ngAnnotate())
     .pipe(gulp.dest(dirs.dist + "/js"));
