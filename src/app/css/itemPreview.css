@@ -3,8 +3,34 @@
     text-decoration: none;
     display: inline-block;
     user-select: none;
+    &.top {
+        @media (min-width: 800px) {
+            .itemPreview {
+                &__image {
+                    margin-left: calc(50% + 40px);
+                    width: auto;
+                    height: 60%;
+                    left: calc(50% - 30px);
+                }
+                &__wrapper {
+                    position: absolute;
+                    top: calc(50% - 70px);
+                    transform: translateY(-50%);
+                    z-index: 1;
+                }
+                &__content {
+                    width: calc(50% - 90px);
+                }
+                &__header {
+                    font: 59px/110% 'anglecia_pro_titleregular';
+                    margin-bottom: 50px;
+                }
+            }
+        }
+    }
     &__content {
         font: 15px 'anglecia_pro_titleregular';
+        text-align: left;
     }
     &__header {
         text-align: left;

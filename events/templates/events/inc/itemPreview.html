@@ -1,11 +1,13 @@
 <a 
     href="{% url request.resolver_match.namespace|add:":detail" slug=object.slug %}"
-    class="itemPreview fadeAnimator__ancor">
+    class="itemPreview fadeAnimator__ancor {{ modificator }}">
     <figure class="itemPreview__figure">
         <img class="itemPreview__image" src="{{ object.image.url }}"/>
-        <figcaption class="itemPreview__header">{{ object.title }}</figcaption>
+        <figcaption class="itemPreview__wrapper">
+            <header class="itemPreview__header">{{ object.title }}</header>
+            <section class="itemPreview__content">
+                {{ object.short_desc }}
+            </section>
+        </figcaption>
     </figure>
-    <section class="itemPreview__content">
-        {{ object.short_desc }}
-    </section>
 </a>

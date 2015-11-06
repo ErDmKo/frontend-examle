@@ -47,7 +47,6 @@ gulp.task('css', function () {
         .pipe(plugins.postcss(processors))
         .pipe(plugins.sourcemaps.write('.'))
         .pipe(gulp.dest(dirs.dist + '/css'))
-        .pipe(plugins.livereload());
 });
 gulp.task('js', function() {
     browserify({
@@ -63,6 +62,10 @@ gulp.task('js', function() {
 gulp.task('watch', function() {
     gulp.watch(jsDirs, ['js']);
     gulp.watch(cssDirs, ['css']);
+    gulp.watch(dirs.dist + '/css/main.css', function(files){
+        plugins.livereload.changed(files)
+    });
+
 });
 gulp.task('default', ['watch', 'js', 'css'], function() {
     plugins.livereload.listen();

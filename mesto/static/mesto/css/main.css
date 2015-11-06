@@ -449,6 +449,10 @@ table {
   position: relative;
 }
 
+.baseEvents__subheader {
+  display: none;
+}
+
 .baseEvents__header {
   text-align: center;
 }
@@ -518,6 +522,8 @@ table {
 .baseFooter__item {
   display: inline-block;
   opacity: 1;
+  -webkit-transition: color .5s, opacity .5s;
+          transition: color .5s, opacity .5s;
 }
 
 .baseFooter__item.active {
@@ -563,6 +569,7 @@ table {
   vertical-align: top;
   height: 100%;
   position: relative;
+  width: 100%;
 }
 
 .topEventList__item {
@@ -702,6 +709,7 @@ table {
 
 .itemPreview__content {
   font: 15px 'anglecia_pro_titleregular';
+  text-align: left;
 }
 
 .itemPreview__header {
@@ -1061,6 +1069,91 @@ html a {
   .mainPage__item.disabled:after {
     position: absolute;
     content: 'В разработке';
+  }
+
+  .baseEvents {
+    padding: 40px;
+  }
+
+  .baseEvents__subheader {
+    position: absolute;
+    display: block;
+    right: 0px;
+    color: #ccdde1;
+    font: 15px hcyrregular;
+  }
+
+  .baseEvents__header {
+    position: relative;
+    margin: 0 auto;
+    width: 120px;
+  }
+
+  .baseEvents__header__img {
+    width: 120px;
+  }
+
+  .baseEvents__menu {
+    top: 40px;
+    left: calc(100% - 20px);
+  }
+
+  .baseFooter {
+    bottom: 40px;
+    left: 40px;
+    right: 40px;
+    text-align: left;
+  }
+
+  .baseFooter__item {
+    margin-right: 10px;
+    opacity: .5;
+    color: #ccdde1;
+  }
+
+  .baseFooter__item.active,
+  .baseFooter__item:hover {
+    color: #000;
+    opacity: 1;
+  }
+
+  .topEventList__date {
+    left: -7px;
+    -webkit-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 1;
+    bottom: 70px;
+  }
+
+  .itemPreview.top .itemPreview__image {
+    margin-left: calc(50% + 40px);
+    width: auto;
+    height: 60%;
+    left: calc(50% - 30px);
+  }
+
+  .itemPreview.top .itemPreview__wrapper {
+    position: absolute;
+    top: calc(50% - 70px);
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .itemPreview.top .itemPreview__content {
+    width: calc(50% - 90px);
+  }
+
+  .itemPreview.top .itemPreview__header {
+    font: 59px/110% 'anglecia_pro_titleregular';
+    margin-bottom: 50px;
+  }
+
+  .mainMenu {
+    top: 40px;
+    left: 40px;
   }
 }
 

@@ -6,6 +6,11 @@
         mesto-feedback-contanier="feedBackPopUp">
         <header class="baseEvents__header">
             <img class="baseEvents__header__img" src="{% static 'mesto/img/logo_black.svg' %}"/>
+            <div class="baseEvents__subheader">
+            {% block 'subheader' %}
+                Events
+            {% endblock %}
+            </div>
         </header>
         <menu class="mainMenu">
             {% block 'menu_button' %}

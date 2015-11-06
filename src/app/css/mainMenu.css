@@ -2,11 +2,15 @@
     position: absolute;
     z-index: 1;
     top: 17px;
+    left: 17px;
+    @media (min-width: 800px) {
+        top: 40px;
+        left: 40px;
+    }
     &.right {
         right: 0px;
         left: auto;
     }
-    left: 17px;
     white-space: nowrap;
     &__svg {
         width: 32px;
