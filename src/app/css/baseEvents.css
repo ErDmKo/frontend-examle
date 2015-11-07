@@ -4,8 +4,9 @@
     box-sizing: border-box;
     padding: var(--padding);
     padding-bottom: 35px;
+    user-select: none;
     @media (min-width: 800px) {
-        padding: 40px;
+        padding: 0px;
     }
     position: relative;
     &__subheader {
@@ -19,10 +20,11 @@
         }
     }
     &__header {
+        user-select: none;
         text-align: center;
         @media (min-width: 800px) {
             position: relative;
-            margin: 0 auto;
+            margin: 40px auto 0;
             width: 120px;
         }
         &__img {

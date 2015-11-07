@@ -7,19 +7,20 @@
         @media (min-width: 800px) {
             .itemPreview {
                 &__image {
-                    margin-left: calc(50% + 40px);
-                    width: auto;
-                    height: 60%;
-                    left: calc(50% - 30px);
+                    width: 70%;
+                    margin-top: -200px;
+                    transform: translateX(calc(50% - 30px));
                 }
                 &__wrapper {
                     position: absolute;
-                    top: calc(50% - 70px);
+                    top: calc(50% - 110px);
                     transform: translateY(-50%);
                     z-index: 1;
+                    left: 0px;
+                    right: 0px;
                 }
                 &__content {
-                    width: calc(50% - 90px);
+                    width: calc(50% - 30px);
                 }
                 &__header {
                     font: 59px/110% 'anglecia_pro_titleregular';
@@ -29,6 +30,7 @@
         }
     }
     &__content {
+        user-select: all;
         font: 15px 'anglecia_pro_titleregular';
         text-align: left;
     }

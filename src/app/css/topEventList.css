@@ -3,6 +3,9 @@
     position: relative;
     overflow-x: hidden;
     box-sizing: border-box;
+    @media (min-width: 800px) {
+        overflow-x: auto;
+    }
     &__date {
         position: absolute;
         bottom: 10px;
@@ -13,10 +16,10 @@
         display: block;
         color: var(--grayBlue);
         @media (min-width: 800px) {
-            left: -7px;
+            left: 33px;
             transform: translateX(0%);
             opacity: 1;
-            bottom: 70px;
+            bottom: 140px;
         }
         &__day, &__month {
             display: inline-block;
@@ -53,5 +56,22 @@
         user-select: none;
         display: block;
         margin: 0 auto;
+        @media (min-width: 800px) {
+            height: 100%;
+            .topEventList__content {
+                width: 99%;
+                position: relative;
+            }
+            .topEventList__content,
+            &:after {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            &:after {
+                content: '';
+                width: 1px;
+                height: 100%;
+            }
+        }
     }
 }

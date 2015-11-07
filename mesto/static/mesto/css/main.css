@@ -446,6 +446,10 @@ table {
   box-sizing: border-box;
   padding: 17px;
   padding-bottom: 35px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   position: relative;
 }
 
@@ -454,6 +458,10 @@ table {
 }
 
 .baseEvents__header {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   text-align: center;
 }
 
@@ -708,6 +716,10 @@ table {
 }
 
 .itemPreview__content {
+  -webkit-user-select: all;
+     -moz-user-select: all;
+      -ms-user-select: all;
+          user-select: all;
   font: 15px 'anglecia_pro_titleregular';
   text-align: left;
 }
@@ -1072,7 +1084,7 @@ html a {
   }
 
   .baseEvents {
-    padding: 40px;
+    padding: 0px;
   }
 
   .baseEvents__subheader {
@@ -1085,7 +1097,7 @@ html a {
 
   .baseEvents__header {
     position: relative;
-    margin: 0 auto;
+    margin: 40px auto 0;
     width: 120px;
   }
 
@@ -1117,33 +1129,61 @@ html a {
     opacity: 1;
   }
 
+  .topEventList {
+    overflow-x: auto;
+  }
+
   .topEventList__date {
-    left: -7px;
+    left: 33px;
     -webkit-transform: translateX(0%);
         -ms-transform: translateX(0%);
             transform: translateX(0%);
     opacity: 1;
-    bottom: 70px;
+    bottom: 140px;
+  }
+
+  .topEventList__wrapper {
+    height: 100%;
+  }
+
+  .topEventList__wrapper .topEventList__content {
+    width: 99%;
+    position: relative;
+  }
+
+  .topEventList__wrapper .topEventList__content,
+  .topEventList__wrapper:after {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .topEventList__wrapper:after {
+    content: '';
+    width: 1px;
+    height: 100%;
   }
 
   .itemPreview.top .itemPreview__image {
-    margin-left: calc(50% + 40px);
-    width: auto;
-    height: 60%;
-    left: calc(50% - 30px);
+    width: 70%;
+    margin-top: -200px;
+    -webkit-transform: translateX(calc(50% - 30px));
+        -ms-transform: translateX(calc(50% - 30px));
+            transform: translateX(calc(50% - 30px));
   }
 
   .itemPreview.top .itemPreview__wrapper {
     position: absolute;
-    top: calc(50% - 70px);
+    top: calc(50% - 110px);
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
     z-index: 1;
+    left: 0px;
+    right: 0px;
   }
 
   .itemPreview.top .itemPreview__content {
-    width: calc(50% - 90px);
+    width: calc(50% - 30px);
   }
 
   .itemPreview.top .itemPreview__header {
