@@ -1005,13 +1005,17 @@ table {
   overflow: hidden;
 }
 
+.popUpAnimator.fixedPopUp .popUpAnimator__wrapper {
+  z-index: 10;
+}
+
 .popUpAnimator__content {
   background: #fff;
   position: absolute;
   top: 0px;
   left: 0px;
   width: 100%;
-  z-index: 3;
+  z-index: 10;
   height: 0;
   overflow: hidden;
   -webkit-transform: translateY(100%);

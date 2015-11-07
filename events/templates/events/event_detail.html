@@ -1,6 +1,8 @@
 {% extends 'events/base.html' %}
 {% block 'menu_back' %}
-<a class="mainMenu__item back fadeAnimator__ancor" href="{% url request.resolver_match.namespace|add:":top" %}">
+<a 
+    class="mainMenu__item back fadeAnimator__ancor"
+     href="{% url request.resolver_match.namespace|add:":top" %}">
 </a>
 {% endblock %}
 {% block 'news_active' %}
@@ -56,7 +58,7 @@
     {% endblock %}
     <div 
         mesto-feedback-item="feedBackPopUp"
-        class="popUpAnimator__content">
+        class="popupanimator__content">
         {% include 'mesto/inc/feedBackPopUp.html' with js=True %}
     </div>
 {% endblock %}
