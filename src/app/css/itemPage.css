@@ -1,6 +1,9 @@
 .itemPage {
     display: block;
     box-sizing: border-box;
+    @media (min-width: 800px) {
+        padding: 100px;
+    }
     &__header {
         margin: 50px 0px 20px;
         font: 25px/100% 'anglecia_pro_titleregular';

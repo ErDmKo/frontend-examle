@@ -1006,7 +1006,7 @@ table {
 }
 
 .popUpAnimator.fixedPopUp .popUpAnimator__wrapper {
-  z-index: 10;
+  z-index: 2;
 }
 
 .popUpAnimator__content {
@@ -1018,14 +1018,16 @@ table {
   z-index: 10;
   height: 0;
   overflow: hidden;
+  opacity: 0;
   -webkit-transform: translateY(100%);
       -ms-transform: translateY(100%);
           transform: translateY(100%);
-  -webkit-transition: -webkit-transform .5s ease, height 0s ease .5s;
-          transition: transform .5s ease, height 0s ease .5s;
+  -webkit-transition: -webkit-transform .5s ease, opacity 0s ease .5s, height 0s ease .5s;
+          transition: transform .5s ease, opacity 0s ease .5s, height 0s ease .5s;
 }
 
 .popUpAnimator__content.active {
+  opacity: 1;
   -webkit-transition: -webkit-transform .5s ease-in-out;
           transition: transform .5s ease-in-out;
   -webkit-transform: translateY(0%);
@@ -1183,8 +1185,26 @@ html a {
     text-align: left;
   }
 
+  .baseFooter.static {
+    margin: 0px;
+    text-align: right;
+    padding: 20px 40px 40px;
+  }
+
+  .baseFooter.static .baseFooter__item {
+    margin-right: 20px;
+    opacity: .5;
+    color: #000;
+  }
+
+  .baseFooter.static .baseFooter__item.active,
+  .baseFooter.static .baseFooter__item:hover {
+    color: #000;
+    opacity: 1;
+  }
+
   .baseFooter__item {
-    margin-right: 10px;
+    margin-right: 20px;
     opacity: .5;
     color: #ccdde1;
   }
@@ -1239,6 +1259,10 @@ html a {
     content: '';
     width: 1px;
     height: 100%;
+  }
+
+  .itemPage {
+    padding: 100px;
   }
 
   .itemPreview.top .itemPreview__image {

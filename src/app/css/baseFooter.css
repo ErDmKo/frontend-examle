@@ -1,11 +1,6 @@
 .baseFooter {
     position: absolute;
     z-index: 2;
-    &.static {
-        position: static;
-        padding: 20px 0px 0px;
-        margin-bottom: -15px;
-    }
     bottom: 20px;
     left: 20px;
     right: 20px;
@@ -15,6 +10,26 @@
         left: 40px;
         right: 40px;
         text-align: left;
+    }
+    &.static {
+        position: static;
+        padding: 20px 0px 0px;
+        margin-bottom: -15px;
+        @media (min-width: 800px) {
+            margin: 0px;
+            text-align: right;
+            padding: 20px 40px 40px;
+            .baseFooter__item {
+                margin-right: 20px;
+                opacity: .5;
+                color: #000;
+                &.active,
+                &:hover {
+                    color: #000;
+                    opacity: 1;
+                }
+            }
+        }
     }
     &__item, &:after {
         display: inline-block;
@@ -29,7 +44,7 @@
         opacity: 1;
         transition: color .5s, opacity .5s;
         @media (min-width: 800px) {
-            margin-right: 10px;
+            margin-right: 20px;
             opacity: .5;
             color: #ccdde1;
             &.active,
