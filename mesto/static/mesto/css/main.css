@@ -453,6 +453,11 @@ table {
   position: relative;
 }
 
+.baseEvents__content {
+  position: relative;
+  z-index: 0;
+}
+
 .baseEvents__subheader {
   display: none;
 }
@@ -607,6 +612,59 @@ table {
 
 .sliderJs {
   overflow: hidden;
+}
+
+.sliderJs__background {
+  z-index: 1;
+  pointer-events: none;
+  position: absolute;
+  height: 100%;
+  top: 0;
+}
+
+.sliderJs__background.left {
+  background: #fff;
+  width: calc(60%);
+  overflow: hidden;
+}
+
+.sliderJs__background.left:after,
+.sliderJs__background.left:before {
+  content: '';
+  position: absolute;
+}
+
+.sliderJs__background.left:before {
+  left: 150px;
+  top: -300px;
+  width: 12%;
+  height: 125%;
+  background: #ccdde1;
+  -webkit-transform: skew(22deg, -65deg);
+      -ms-transform: skew(22deg, -65deg);
+          transform: skew(22deg, -65deg);
+}
+
+.sliderJs__background.left:after {
+  background: #fff;
+  height: 100%;
+  width: 110px;
+}
+
+.sliderJs__background.right {
+  width: 30%;
+  left: 70%;
+  overflow: hidden;
+}
+
+.sliderJs__background.right .circle {
+  position: absolute;
+  border-radius: 50%;
+  height: 70%;
+  left: 50%;
+  bottom: 3%;
+  background: transparent;
+  box-shadow: 0px  0px 0px 1000px #fff;
 }
 
 .sliderJs__prev,
@@ -1085,20 +1143,24 @@ html a {
 
   .baseEvents {
     padding: 0px;
+    z-index: 1;
   }
 
   .baseEvents__subheader {
-    position: absolute;
-    display: block;
-    right: 0px;
+    position: relative;
+    display: inline-block;
+    top: 20px;
+    left: -40px;
     color: #ccdde1;
     font: 15px hcyrregular;
   }
 
   .baseEvents__header {
-    position: relative;
-    margin: 40px auto 0;
-    width: 120px;
+    z-index: 1;
+    position: absolute;
+    top: 40px;
+    text-align: center;
+    width: 100%;
   }
 
   .baseEvents__header__img {
@@ -1131,6 +1193,7 @@ html a {
 
   .topEventList {
     overflow-x: auto;
+    background: #ccdde1;
   }
 
   .topEventList__date {
@@ -1139,7 +1202,18 @@ html a {
         -ms-transform: translateX(0%);
             transform: translateX(0%);
     opacity: 1;
-    bottom: 140px;
+    bottom: 130px;
+    font: 33px/100% 'anglecia_pro_titleregular';
+    z-index: 1;
+  }
+
+  .topEventList__date__day {
+    font: 140px/74% 'anglecia_pro_titleregular';
+  }
+
+  .topEventList__slide {
+    margin-top: 0px;
+    padding-top: 100px;
   }
 
   .topEventList__wrapper {
@@ -1189,6 +1263,7 @@ html a {
   .itemPreview.top .itemPreview__header {
     font: 59px/110% 'anglecia_pro_titleregular';
     margin-bottom: 50px;
+    width: 80%;
   }
 
   .mainMenu {
@@ -1200,6 +1275,10 @@ html a {
 @media (max-width: 800px) {
 
   .mainPage__background {
+    display: none;
+  }
+
+  .sliderJs__background {
     display: none;
   }
 }

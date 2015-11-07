@@ -1,5 +1,51 @@
 .sliderJs {
     overflow: hidden;
+    &__background {
+        @media (max-width: 800px) {
+            display: none;
+        }
+        z-index: 1;
+        pointer-events: none;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        &.left {
+            background: #fff;
+            width: calc(60%);
+            overflow: hidden;
+            &:after, &:before {
+                content: '';
+                position: absolute;
+            }
+            &:before {
+                left: 150px;
+                top: -300px;
+                width: 12%;
+                height: 125%;
+                background: #ccdde1;
+                transform:  skew(22deg, -65deg);
+            }
+            &:after {
+                background: #fff;
+                height: 100%;
+                width: 110px;
+            }
+        }
+        &.right {
+            width: 30%;
+            left: 70%;
+            overflow: hidden;
+            .circle {
+                position: absolute;
+                border-radius: 50%;
+                height: 70%;
+                left: 50%;
+                bottom: 3%;
+                background: transparent;
+                box-shadow: 0px  0px 0px 1000px #fff;
+            }
+        }
+    }
     &__prev, &__next {
         position: absolute;
         top: 50%;

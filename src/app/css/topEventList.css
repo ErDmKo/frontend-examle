@@ -5,6 +5,7 @@
     box-sizing: border-box;
     @media (min-width: 800px) {
         overflow-x: auto;
+        background: #ccdde1;    
     }
     &__date {
         position: absolute;
@@ -19,7 +20,9 @@
             left: 33px;
             transform: translateX(0%);
             opacity: 1;
-            bottom: 140px;
+            bottom: 130px;
+            font: 33px/100% 'anglecia_pro_titleregular';
+            z-index: 1;
         }
         &__day, &__month {
             display: inline-block;
@@ -27,6 +30,9 @@
         }
         &__day {
             font: 160px/74% 'anglecia_pro_titleregular';
+            @media (min-width: 800px) {
+                font: 140px/74% 'anglecia_pro_titleregular';
+            }
         }
     }
     &__slide {
@@ -39,6 +45,10 @@
         height: 100%;
         position: relative;
         width: 100%;
+        @media (min-width: 800px) {
+            margin-top: 0px;
+            padding-top: 100px;
+        }
     }
     &__item {
         position: relative;

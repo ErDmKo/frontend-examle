@@ -25,6 +25,7 @@
                 &__header {
                     font: 59px/110% 'anglecia_pro_titleregular';
                     margin-bottom: 50px;
+                    width: 80%;
                 }
             }
         }
