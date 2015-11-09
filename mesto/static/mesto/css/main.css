@@ -1262,7 +1262,30 @@ html a {
   }
 
   .itemPage {
-    padding: 100px;
+    width: 70%;
+    margin: 100px auto 0;
+  }
+
+  .itemPage__header {
+    font-size: 90px;
+  }
+
+  .itemPage__date {
+    margin: 50px 0px 60px;
+    font-size: 16px;
+  }
+
+  .itemPage__image {
+    margin: 80px 0px;
+  }
+
+  .itemPage__desc,
+  .itemPage__content {
+    font-size: 22px;
+  }
+
+  .itemPage__content p {
+    margin: 45px 0px;
   }
 
   .itemPreview.top .itemPreview__image {
