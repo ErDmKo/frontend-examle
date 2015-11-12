@@ -7,7 +7,7 @@
         padding-right: 200px;
         &:after {
             content: '';
-            background: url(/static/mesto/img/detail_background.svg) no-repeat 50% 110%;
+            background: url(/static/mesto/img/detail_background.svg) no-repeat 50% 100%;
             background-size: 140%;
             height: 1500px;
             position: fixed;
