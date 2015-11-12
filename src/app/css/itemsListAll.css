@@ -75,8 +75,7 @@
         position: relative;
         @media (min-width: 800px) {
             height: auto;
-            width: auto;
-            max-width: 33.3333333%;
+            width: 33.3333333%;
         }
         &:nth-child(2) {
             background: var(--white);

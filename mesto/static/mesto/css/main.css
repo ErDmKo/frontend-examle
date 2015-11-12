@@ -1538,8 +1538,7 @@ html a {
 
   .itemsListAll__item {
     height: auto;
-    width: auto;
-    max-width: 33.3333333%;
+    width: 33.3333333%;
   }
 
   .itemsListAll__item:nth-child(2) .itemsListAll__desc,
