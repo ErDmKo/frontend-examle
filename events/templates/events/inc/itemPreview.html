@@ -3,6 +3,8 @@
     class="topEventList__content itemPreview fadeAnimator__ancor {{ modificator }}">
     <figure class="itemPreview__figure">
         <img class="itemPreview__image" src="{{ object.image.url }}"/>
+        <div class="itemPreview__blockImage" style="background-image: url({{ object.image.url }})">
+        </div>
         <figcaption class="itemPreview__wrapper">
             <header class="itemPreview__header">{{ object.title }}</header>
             <section class="itemPreview__content">

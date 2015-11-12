@@ -1,10 +1,35 @@
 .nextBlock {
+    @media (min-width: 800px) {
+        width: 70%;
+        margin: 100px auto;
+    }
+    &__wrapper {
+        @media (min-width: 800px) {
+            text-align: justify;
+            margin: 0px -40px;
+            &:after {
+                content: '';
+                width: 100%;
+                display: inline-block;
+            }
+        }
+    }
     &__header {
         margin: 30px 0px;
         font: 25px anglecia_pro_titleregular;
         text-align: center;
+        @media (min-width: 800px) {
+            font-size: 40px;
+            text-align: left;
+        }
     }
     &__item {
         margin: 30px 0px;
+        @media (min-width: 800px) {
+            margin: 30px 0px;
+            display: inline-block;
+            width: 49%;
+            vertical-align: top;
+        }
     }
 }

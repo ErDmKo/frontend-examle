@@ -2,7 +2,7 @@
 {% block 'events_active' %}{% endblock %}
 {% block 'news_active' %} active{% endblock %}
     {% block 'next_block' %}
-        {% include 'events/inc/nextBlock.html' with block_header="Следующие новости" object_list=object.get_next %}
+        {% include 'events/inc/nextBlock.html' with modificator='news detail' block_header="Следующие новости" object_list=object.get_next %}
     {% endblock %}
 {% block 'event_footer' %}
     {% include 'events/inc/baseFooter.html' with all_items_title="Все новости" static=True %}

@@ -3,6 +3,27 @@
     text-decoration: none;
     display: inline-block;
     user-select: none;
+    &.events {
+        @media (min-width: 800px) {
+            width: 100%;
+            .itemPreview {
+                &__header {
+                    text-align: center;
+                }
+                &__content {
+                    display: none;
+                }
+                &__image {
+                    display: none;
+                }
+                &__blockImage {
+                    height: 360px;
+                    background-size: cover;
+                    background-position: 50% 50%;
+                }
+            }
+        }
+    }
     &.top {
         @media (min-width: 800px) {
             .itemPreview {

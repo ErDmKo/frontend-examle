@@ -3,19 +3,21 @@
     <header class="nextBlock__header">
         {{ block_header|default:"Другие события" }}
     </header>
-    {% for object in object_list %}
-    <section class="nextBlock__item">
-        {% include 'events/inc/itemPreview.html' %}
-    </section>
-    {% if block_header %}
-        {% with object_list=object.get_next %}
-            {% for object in object_list %}
-            <section class="nextBlock__item">
-                {% include 'events/inc/itemPreview.html' %}
-            </section>
-            {% endfor %}
-        {% endwith %}
-    {% endif %}
-    {% endfor %}
+    <div class="nextBlock__wrapper">
+        {% for object in object_list %}
+        <section class="nextBlock__item">
+            {% include 'events/inc/itemPreview.html' %}
+        </section>
+        {% if block_header %}
+            {% with object_list=object.get_next %}
+                {% for object in object_list %}
+                <section class="nextBlock__item">
+                    {% include 'events/inc/itemPreview.html' %}
+                </section>
+                {% endfor %}
+            {% endwith %}
+        {% endif %}
+        {% endfor %}
+    </div>
 </article>
 {% endif %}

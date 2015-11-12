@@ -848,6 +848,11 @@ table {
   left: auto;
 }
 
+.mainMenu.bottom {
+  top: auto;
+  bottom: 50px;
+}
+
 .mainMenu__svg {
   width: 32px;
 }
@@ -1264,6 +1269,19 @@ html a {
   .itemPage {
     width: 70%;
     margin: 100px auto 0;
+    padding-right: 100px;
+  }
+
+  .itemPage:after {
+    content: '';
+    background: url(/static/mesto/img/detail_background.svg) no-repeat 50% 110%;
+    background-size: 140%;
+    height: 1500px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
   }
 
   .itemPage__header {
@@ -1286,6 +1304,28 @@ html a {
 
   .itemPage__content p {
     margin: 45px 0px;
+  }
+
+  .itemPreview.events {
+    width: 100%;
+  }
+
+  .itemPreview.events .itemPreview__header {
+    text-align: center;
+  }
+
+  .itemPreview.events .itemPreview__content {
+    display: none;
+  }
+
+  .itemPreview.events .itemPreview__image {
+    display: none;
+  }
+
+  .itemPreview.events .itemPreview__blockImage {
+    height: 360px;
+    background-size: cover;
+    background-position: 50% 50%;
   }
 
   .itemPreview.top .itemPreview__image {
@@ -1317,9 +1357,41 @@ html a {
     width: 80%;
   }
 
+  .nextBlock {
+    width: 70%;
+    margin: 100px auto;
+  }
+
+  .nextBlock__wrapper {
+    text-align: justify;
+    margin: 0px -40px;
+  }
+
+  .nextBlock__wrapper:after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+  }
+
+  .nextBlock__header {
+    font-size: 40px;
+    text-align: left;
+  }
+
+  .nextBlock__item {
+    margin: 30px 0px;
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+  }
+
   .mainMenu {
     top: 40px;
     left: 40px;
+  }
+
+  .mainMenu__item.detail {
+    display: none;
   }
 }
 
@@ -1330,6 +1402,10 @@ html a {
   }
 
   .sliderJs__background {
+    display: none;
+  }
+
+  .mainMenu.bottom {
     display: none;
   }
 }

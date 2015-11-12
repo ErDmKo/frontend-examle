@@ -4,6 +4,18 @@
     @media (min-width: 800px) {
         width: 70%;
         margin: 100px auto 0;
+        padding-right: 100px;
+        &:after {
+            content: '';
+            background: url(/static/mesto/img/detail_background.svg) no-repeat 50% 110%;
+            background-size: 140%;
+            height: 1500px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+        }
     }
     &__header {
         margin: 50px 0px 20px;

@@ -1,7 +1,7 @@
 {% extends 'events/base.html' %}
 {% block 'menu_back' %}
 <a 
-    class="mainMenu__item back fadeAnimator__ancor"
+    class="mainMenu__item back detail fadeAnimator__ancor"
      href="{% url request.resolver_match.namespace|add:":top" %}">
 </a>
 {% endblock %}
@@ -51,11 +51,17 @@
     </menu>
     {% endwith %}
     {% block 'next_block' %}
-        {% include 'events/inc/nextBlock.html' with object_list=object.get_next %}
+        {% include 'events/inc/nextBlock.html' with modificator='events detail' object_list=object.get_next %}
     {% endblock %}
     {% block 'event_footer' %}
         {% include 'events/inc/baseFooter.html' with static=True %}
     {% endblock %}
+    <menu class="mainMenu bottom">
+        <a 
+            class="mainMenu__item back fadeAnimator__ancor"
+             href="{% url request.resolver_match.namespace|add:":top" %}">
+        </a>
+    </menu> 
     <div 
         mesto-feedback-item="feedBackPopUp"
         class="popUpAnimator__content">

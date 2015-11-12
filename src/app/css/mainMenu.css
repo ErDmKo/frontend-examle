@@ -11,6 +11,13 @@
         right: 0px;
         left: auto;
     }
+    &.bottom {
+        top: auto;
+        bottom: 50px;
+        @media (max-width: 800px) {
+            display: none;
+        } 
+    }
     white-space: nowrap;
     &__svg {
         width: 32px;
@@ -41,6 +48,11 @@
             min-height: 20px;
             min-width: 20px;
             position: absolute;
+        }
+        &.detail {
+            @media (min-width: 800px) {
+                display: none;
+            }
         }
         &.back:after {
             content: '';
