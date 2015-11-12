@@ -1,7 +1,7 @@
 {% extends 'mesto/base.html' %}
 {% block 'content' %}
     <section class="itemsListAll">
-        <menu class="mainMenu white">
+        <menu class="mainMenu list">
             <a 
                 class="mainMenu__item  fadeAnimator__ancor"
                 href="{% url 'main' %}">
@@ -18,7 +18,16 @@
                 class="itemsListAll__item fadeAnimator__ancor"
                 style="background-image: url('{{ object.image.url }}')"
                 href="{% url request.resolver_match.namespace|add:":detail" slug=object.slug %}">
-                 <header class="itemsListAll__header">{{ object.title }}</header>
+                <section class="itemsListAll__text">
+                    <header class="itemsListAll__header">{{ object.title }}</header>
+                    <p class="itemsListAll__desc">{{ object.short_desc }}</p>
+                </section>
+                <time class="itemsListAll__date">
+                    {{ object.date|date:"M j Y" }}
+                </time>
+                <img 
+                    class="itemsListAll__img"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" />
             </a>
         {% endfor %}
         </article>

@@ -23,7 +23,7 @@
     &__svg {
         width: 32px;
     }
-    &.white {
+    &.list {
          .mainMenu__svg {
             rect {
                 fill: var(--white);
@@ -34,7 +34,20 @@
                   border-left: 1px solid var(--white);
                   border-top: 1px solid var(--white);
               }
-         }  
+         }
+         @media (min-width: 800px) {
+             .mainMenu__svg {
+                rect {
+                    fill: #000;
+                }
+             }
+             .mainMenu__item {
+                  &.back:after {
+                      border-left: 1px solid #000;
+                      border-top: 1px solid #000;
+                  }
+             }
+         }
     }
     &__item {
         text-decoration: none;
