@@ -52,6 +52,7 @@
         @media (min-width: 800px) {
             top: 40px;
             left: calc(100% - 20px);
+            position: fixed;
         }
         transform: translate(-30px, -100%) rotate(90deg);
         &__item {

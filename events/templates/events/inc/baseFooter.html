@@ -1,4 +1,4 @@
-<menu class="baseFooter {% if static %} static {% endif %}">
+<menu class="baseFooter {{ class }}">
     <a 
         class="fadeAnimator__ancor {% if select == 1  %} active {% endif %}baseFooter__item"
         href="{% url request.resolver_match.namespace|default:"events"|add:":all" %}">

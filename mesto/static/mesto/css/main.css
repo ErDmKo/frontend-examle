@@ -516,7 +516,7 @@ table {
   text-align: justify;
 }
 
-.baseFooter.static {
+.baseFooter.detail {
   position: static;
   padding: 20px 0px 0px;
   margin-bottom: -15px;
@@ -850,7 +850,7 @@ table {
 
 .mainMenu.bottom {
   top: auto;
-  bottom: 50px;
+  bottom: 43px;
 }
 
 .mainMenu__svg {
@@ -883,6 +883,12 @@ table {
   position: absolute;
 }
 
+.mainMenu__item.back {
+  color: #252324;
+  padding-left: 10px;
+  font: 12px hcyrregular;
+}
+
 .mainMenu__item.back:after {
   content: '';
   position: absolute;
@@ -893,7 +899,8 @@ table {
   height: 10px;
   border-left: 1px solid #252324;
   border-top: 1px solid #252324;
-  top: 0px;
+  top: 50%;
+  left: -10px;
 }
 
 .mainMenu__item img {
@@ -1181,6 +1188,7 @@ html a {
   .baseEvents__menu {
     top: 40px;
     left: calc(100% - 20px);
+    position: fixed;
   }
 
   .baseFooter {
@@ -1190,20 +1198,28 @@ html a {
     text-align: left;
   }
 
-  .baseFooter.static {
+  .baseFooter.detail {
+    display: inline-block;
+    position: fixed;
     margin: 0px;
+    right: 40px;
+    left: auto;
     text-align: right;
-    padding: 20px 40px 40px;
+    padding: 0px;
   }
 
-  .baseFooter.static .baseFooter__item {
-    margin-right: 20px;
+  .baseFooter.detail .baseFooter__item {
+    margin: 0px;
     opacity: .5;
     color: #000;
   }
 
-  .baseFooter.static .baseFooter__item.active,
-  .baseFooter.static .baseFooter__item:hover {
+  .baseFooter.detail .baseFooter__item + .baseFooter__item {
+    margin-left: 20px;
+  }
+
+  .baseFooter.detail .baseFooter__item.active,
+  .baseFooter.detail .baseFooter__item:hover {
     color: #000;
     opacity: 1;
   }
@@ -1269,7 +1285,7 @@ html a {
   .itemPage {
     width: 70%;
     margin: 100px auto 0;
-    padding-right: 100px;
+    padding-right: 200px;
   }
 
   .itemPage:after {
@@ -1277,7 +1293,7 @@ html a {
     background: url(/static/mesto/img/detail_background.svg) no-repeat 50% 110%;
     background-size: 140%;
     height: 1500px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
@@ -1291,6 +1307,8 @@ html a {
   .itemPage__date {
     margin: 50px 0px 60px;
     font-size: 16px;
+    color: #252324;
+    opacity: .5;
   }
 
   .itemPage__image {
@@ -1388,6 +1406,7 @@ html a {
   .mainMenu {
     top: 40px;
     left: 40px;
+    position: fixed;
   }
 
   .mainMenu__item.detail {

@@ -54,12 +54,13 @@
         {% include 'events/inc/nextBlock.html' with modificator='events detail' object_list=object.get_next %}
     {% endblock %}
     {% block 'event_footer' %}
-        {% include 'events/inc/baseFooter.html' with static=True %}
+        {% include 'events/inc/baseFooter.html' with class='detail' %}
     {% endblock %}
     <menu class="mainMenu bottom">
         <a 
             class="mainMenu__item back fadeAnimator__ancor"
-             href="{% url request.resolver_match.namespace|add:":top" %}">
+            href="{% url request.resolver_match.namespace|add:":top" %}">
+            Назад
         </a>
     </menu> 
     <div 

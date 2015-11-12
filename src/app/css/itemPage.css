@@ -4,13 +4,13 @@
     @media (min-width: 800px) {
         width: 70%;
         margin: 100px auto 0;
-        padding-right: 100px;
+        padding-right: 200px;
         &:after {
             content: '';
             background: url(/static/mesto/img/detail_background.svg) no-repeat 50% 110%;
             background-size: 140%;
             height: 1500px;
-            position: absolute;
+            position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
@@ -32,6 +32,8 @@
         @media (min-width: 800px) {
             margin: 50px 0px 60px;
             font-size: 16px;
+            color: #252324;
+            opacity: .5;
         }
     }
     &__image {

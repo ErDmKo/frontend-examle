@@ -11,16 +11,23 @@
         right: 40px;
         text-align: left;
     }
-    &.static {
+    &.detail {
         position: static;
         padding: 20px 0px 0px;
         margin-bottom: -15px;
         @media (min-width: 800px) {
+            display: inline-block;
+            position: fixed;
             margin: 0px;
+            right: 40px;
+            left: auto;
             text-align: right;
-            padding: 20px 40px 40px;
-            .baseFooter__item {
-                margin-right: 20px;
+            padding: 0px;
+            .baseFooter__item{
+                margin: 0px;
+                & + .baseFooter__item {
+                    margin-left: 20px;
+                }
                 opacity: .5;
                 color: #000;
                 &.active,
