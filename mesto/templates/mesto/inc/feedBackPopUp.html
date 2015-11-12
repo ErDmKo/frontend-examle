@@ -1,5 +1,5 @@
 {% load staticfiles %}
-    <main ng-controller="feedbackFormController as vm" class="feedBackPopUp">
+    <main ng-class="{'success': vm.success}" ng-controller="feedbackFormController as vm" class="feedBackPopUp">
         <menu class="mainMenu right">
             <a 
                 mesto-feedback-close="feedBackPopUp"
@@ -30,34 +30,36 @@
                 method="POST"
                 class="feedBackPopUp__form">
                 {% csrf_token %}
-                <input 
-                    name="first_name"
-                    required
-                    ng-model="vm.formData.first_name"
-                    value="{{ form.first_name.value|default:'' }}"
-                    class="{% if form.first_name.errors %}error {% endif %} feedBackPopUp__text"
-                    type="text"
-                    placeholder="Имя*"/>
-                <input
-                    name="phone"
-                    required
-                    ng-model="vm.formData.phone"
-                    value="{{ form.phone.value|default:'' }}"
-                    class="{% if form.phone.errors %}error {% endif %}feedBackPopUp__text"
-                    type="number"
-                    placeholder="Телефон*"/>
-                <input 
-                    name="email"
-                    ng-model="vm.formData.email"
-                    value="{{ form.email.value|default:'' }}"
-                    class="{% if form.email.errors %}error {% endif %}feedBackPopUp__text"
-                    type="email"
-                    placeholder="E-mail"/>
-                <textarea 
-                    name="comment"
-                    ng-model="vm.formData.comment"
-                    class="{% if form.comment.errors %}error {% endif %}feedBackPopUp__textarea feedBackPopUp__text"
-                    placeholder="Сообщение">{{ form.comment.value|default:'' }}</textarea>
+                <div class="feedBackPopUp__inputs">
+                    <input 
+                        name="first_name"
+                        required
+                        ng-model="vm.formData.first_name"
+                        value="{{ form.first_name.value|default:'' }}"
+                        class="{% if form.first_name.errors %}error {% endif %} feedBackPopUp__text"
+                        type="text"
+                        placeholder="Имя*"/>
+                    <input
+                        name="phone"
+                        required
+                        ng-model="vm.formData.phone"
+                        value="{{ form.phone.value|default:'' }}"
+                        class="{% if form.phone.errors %}error {% endif %}feedBackPopUp__text"
+                        type="number"
+                        placeholder="Телефон*"/>
+                    <input 
+                        name="email"
+                        ng-model="vm.formData.email"
+                        value="{{ form.email.value|default:'' }}"
+                        class="{% if form.email.errors %}error {% endif %}feedBackPopUp__text"
+                        type="email"
+                        placeholder="E-mail"/>
+                    <textarea 
+                        name="comment"
+                        ng-model="vm.formData.comment"
+                        class="{% if form.comment.errors %}error {% endif %}feedBackPopUp__textarea feedBackPopUp__text"
+                        placeholder="Сообщение">{{ form.comment.value|default:'' }}</textarea>
+                </div>
                 <button ng-click="vm.submit(feedbackForm)" class="feedBackPopUp__button">
                      Отправить сообщение
                 </button>

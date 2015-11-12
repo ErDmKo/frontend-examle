@@ -655,6 +655,7 @@ table {
   width: 30%;
   left: 70%;
   overflow: hidden;
+  pointer-events: all;
 }
 
 .sliderJs__background.right .circle {
@@ -1015,6 +1016,7 @@ table {
 
 .popUpAnimator.fixedPopUp {
   overflow: hidden;
+  z-index: 3;
 }
 
 .popUpAnimator.fixedPopUp .popUpAnimator__wrapper {
@@ -1040,8 +1042,8 @@ table {
 
 .popUpAnimator__content.active {
   opacity: 1;
-  -webkit-transition: -webkit-transform .5s ease-in-out;
-          transition: transform .5s ease-in-out;
+  -webkit-transition: opacity .5s ease-in-out;
+          transition: opacity .5s ease-in-out;
   -webkit-transform: translateY(0%);
       -ms-transform: translateY(0%);
           transform: translateY(0%);
@@ -1102,6 +1104,45 @@ html a {
 }
 
 @media (min-width: 800px) {
+
+  .feedBackPopUp {
+    width: 60%;
+    min-height: auto;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0px;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+    box-shadow: 10px 10px 70px 0px rgba(204, 221, 225, .7);
+  }
+
+  .feedBackPopUp .baseFooter {
+    display: none;
+  }
+
+  .feedBackPopUp__header.center {
+    margin: 30px 20px;
+  }
+
+  .feedBackPopUp__header__img {
+    display: none;
+  }
+
+  .feedBackPopUp__form {
+    padding: 0px;
+  }
+
+  .feedBackPopUp__inputs {
+    margin: 0px 50px 40px;
+  }
+
+  .feedBackPopUp__button {
+    margin: 0px;
+    border-radius: 0px;
+  }
 
   .mainPage {
     background-size: cover;
@@ -1411,6 +1452,12 @@ html a {
 
   .mainMenu__item.detail {
     display: none;
+  }
+
+  .popUpAnimator__content {
+    background: rgba(255,255,255, .7);
+    -webkit-transition: -webkit-transform 0s ease .5s, opacity .5s ease, height 0s ease .5s;
+            transition: transform 0s ease .5s, opacity .5s ease, height 0s ease .5s;
   }
 }
 

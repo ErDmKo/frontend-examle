@@ -7,6 +7,20 @@
     box-sizing: border-box;
     padding: var(--padding);
     position: relative;
+    @media (min-width: 800px) {
+        width: 60%;
+        min-height: auto;
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        padding: 0px;
+        transform: translateX(-50%) translateY(-50%);
+        box-shadow: 10px 10px 70px 0px rgba(204, 221, 225, .7);
+        .baseFooter {
+            display: none;
+        }
+    }
     &__header {
         text-align: center;
         font: 30px 'anglecia_pro_titleregular';
@@ -17,6 +31,9 @@
             align-items: center;
             height: 100%;
             margin: -17px 0px;
+            @media (min-width: 800px) {
+                margin: 30px 20px;
+            }
         }
         &__text {
             display: flex;
@@ -28,11 +45,16 @@
             left: 50%;
             transform: translateX(-50%);
             width: 30%;
+            @media (min-width: 800px) {
+                display: none;
+            }
         }
     }
     &__form {
         padding: 20px 0px;
-
+        @media (min-width: 800px) {
+            padding: 0px;
+        }
         input, textarea {
           font: 15px hcyrregular;
           opacity: .3;
@@ -43,6 +65,11 @@
              font: 15px hcyrregular;
              color: var(--darkColor); 
           }
+        }
+    }
+    &__inputs {
+        @media (min-width: 800px) {
+            margin: 0px 50px 40px;
         }
     }
     &__text, &__button {
@@ -62,7 +89,10 @@
         color: #fff;
         border: 0;
         padding: 17px;
-        
+        @media (min-width: 800px) {
+            margin: 0px;
+            border-radius: 0px
+        }
         &:hover {
             cursor: pointer;
         }
