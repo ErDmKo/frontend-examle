@@ -5,6 +5,7 @@ import {
     SliderItem
 } from './topNews/directives/slider';
 import { DraggController } from './topNews/directives/draggController';
+import { HorizontalScroll } from './topNews/directives/horizontalScroll';
 import { register } from './utils/register';
 import { 
     MestoFeedbackItem,
@@ -32,6 +33,8 @@ register('mesto')
     .directive('sliderContent', SliderContent)
     .directive('sliderItem', SliderItem)
     .directive('draggController', DraggController)
+
+    .directive('horizontalScroll', HorizontalScroll)
 
     .directive('mestoFeedbackItem', MestoFeedbackItem)
     .directive('mestoFeedbackToggle', MestoFeedbackToggle)
