@@ -23,7 +23,7 @@ export class HorizontalScroll {
                 if (/Macintosh/.test(navigator.userAgent)) {
                     element.scrollLeft = element.scrollLeft - delta_sum;
                 } else {
-                    element.scrollLeft = element.scrollLeft - delta_sum*70;
+                    element.scrollLeft = element.scrollLeft - delta_sum*20;
                 }
                 delta_sum = 0;
                 count = 0;
