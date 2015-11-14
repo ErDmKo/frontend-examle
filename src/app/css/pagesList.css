@@ -46,6 +46,27 @@
             border-top: 1px solid #000;
             border-right: 1px solid #000;
         }
+        &.last, &.first {
+            position: relative;
+            &:after {
+                content: '...';
+                position: absolute;
+                top: 50%;
+                margin-top: -12px;
+            }
+        }
+        &.last {
+            margin-left: 20px;
+            &:after {
+                left: -20px;
+            }
+        }
+        &.first {
+            margin-right: 20px;
+            &:after {
+                right: -20px;
+            }
+        }
         &.active, &:hover {
             opacity: 1;
         }

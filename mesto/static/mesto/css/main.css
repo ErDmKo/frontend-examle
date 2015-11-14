@@ -1071,6 +1071,35 @@ table {
   border-right: 1px solid #000;
 }
 
+.pagesList__item.last,
+.pagesList__item.first {
+  position: relative;
+}
+
+.pagesList__item.last:after,
+.pagesList__item.first:after {
+  content: '...';
+  position: absolute;
+  top: 50%;
+  margin-top: -12px;
+}
+
+.pagesList__item.last {
+  margin-left: 20px;
+}
+
+.pagesList__item.last:after {
+  left: -20px;
+}
+
+.pagesList__item.first {
+  margin-right: 20px;
+}
+
+.pagesList__item.first:after {
+  right: -20px;
+}
+
 .pagesList__item.active,
 .pagesList__item:hover {
   opacity: 1;
