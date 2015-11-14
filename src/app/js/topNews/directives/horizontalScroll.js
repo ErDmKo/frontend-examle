@@ -20,8 +20,8 @@ export class HorizontalScroll {
             console.log([delta, deltaX, deltaY]);
             clearTimeout(timeout);
             timeout = setTimeout(function(){
-                if (count > 1) {
-                    element.scrollLeft = element.scrollLeft - delta_sum/count;
+                if (/Macintosh/.test(navigator.userAgent)) {
+                    element.scrollLeft = element.scrollLeft - delta_sum;
                 } else {
                     element.scrollLeft = element.scrollLeft - delta_sum*count;
                 }
