@@ -1308,6 +1308,7 @@ html a {
   .topEventList {
     overflow-x: auto;
     background: #ccdde1;
+    height: 100%;
   }
 
   .topEventList__date {

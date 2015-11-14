@@ -17,7 +17,6 @@ export class HorizontalScroll {
             e.preventDefault();
             delta_sum += deltaY*12 || 0;
             count += 1;
-            console.log([delta, deltaX, deltaY]);
             clearTimeout(timeout);
             timeout = setTimeout(function(){
                 if (/Macintosh/.test(navigator.userAgent)) {
