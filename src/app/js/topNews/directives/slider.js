@@ -2,9 +2,22 @@ class SliderController {
     constructor() {
         this.items = [];
         this.slide = 0;
+        this._scrollPosition = 0;
+        this.setSlide = ()=>{};
+    }
+    set scrollPosition(val){
+        this.slide = this.items.reduce((outIndex, item, index)=>{
+            let center = val + item.elem.offsetWidth/2;
+            if(item.elem.offsetLeft < center) {
+                outIndex = index;
+            }
+            return outIndex;
+        }, 0);
+        this._scrollPosition = val;
+        this.setSlide(this.slide);
     }
     moveToSlide(position){
-        this.scrollHandler(this.items[position].elem.offsetLeft);
+        this.scrollHandler(this.items[position].elem.offsetLeft, true);
     }
     addItem(item) {
         this.items.push(item)
@@ -31,6 +44,10 @@ class SliderController {
         }
         return handler;
     }
+    setCounter(handler) {
+        this.setSlide = handler;
+        this.scrollPosition = 0;
+    }
     static factory(...args) {
         SliderController.instance = new SliderController(...args);
         return SliderController.instance;
@@ -43,17 +60,51 @@ export class SliderMain {
     }
 }
 export class SliderContent {
-    constructor() {
+
+    /*@ngInject*/
+    constructor(easingAnimator) {
+        this.easingAnimator = easingAnimator
+        this.easingAnimator.callBack = this.animate.bind(this);
         this.require = '^sliderMain';
         this.restrict = 'A';
     }
+    animate(info) {
+        this.element.scrollLeft = info.left;
+    }
     link(scope, element, attrs, sliderMain) {
-        sliderMain.addContent((val)=>{
-            element[0].scrollLeft = val
-        })
+        this.element = element[0];
+        sliderMain.addContent((val, animate)=>{
+            if (!animate) {
+                this.element.scrollLeft = val
+            } else {
+                this.easingAnimator.easeProp({
+                    left: this.element.scrollLeft
+                }, {
+                    left: val
+                })
+            }
+        });
+        element.on('scroll', ()=>{
+            sliderMain.scrollPosition = this.element.scrollLeft;
+        });
     }
 }
 
+export class SliderCounter {
+    /*@ngInject*/
+    constructor($timeout) {
+        this.$timeout = $timeout;
+        this.require = '^sliderMain';
+        this.restrict = 'A';
+    }
+    link($scope, element, attrs, sliderMain) {
+        sliderMain.setCounter((val)=>{
+            this.$timeout(()=>{
+                $scope.selectedSlide = (1e4+val+1+"").slice(-2);
+            })
+        })
+    }
+}
 export class SliderItem {
 
     constructor($window) {

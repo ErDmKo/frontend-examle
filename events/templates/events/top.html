@@ -12,6 +12,10 @@
         </div>
         <div class="sliderJs__background left">
         </div>
+        <div slider-counter class="sliderJs__counter topEventList__date">
+                <span ng-bind="selectedSlide" class="topEventList__date__day">{{ forloop.counter|stringformat:"02d" }}</span>
+                <span class="topEventList__date__month">/{{ object_list|length|stringformat:"02d" }}</span>
+        </div>
         <ul 
             slider-content
             dragg-controller

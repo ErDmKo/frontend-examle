@@ -614,6 +614,10 @@ table {
   overflow: hidden;
 }
 
+.sliderJs__counter.topEventList__date {
+  display: none;
+}
+
 .sliderJs__background {
   z-index: 1;
   pointer-events: none;
@@ -1312,6 +1316,7 @@ html a {
   }
 
   .topEventList__date {
+    display: none;
     left: 33px;
     -webkit-transform: translateX(0%);
         -ms-transform: translateX(0%);
@@ -1350,6 +1355,10 @@ html a {
     content: '';
     width: 1px;
     height: 100%;
+  }
+
+  .sliderJs__counter.topEventList__date {
+    display: block;
   }
 
   .itemPage {

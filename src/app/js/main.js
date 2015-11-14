@@ -1,22 +1,27 @@
+import { register } from './utils/register';
+
 import { 
     SliderMain,
     SliderContent,
     SliderControll,
+    SliderCounter,
     SliderItem
 } from './topNews/directives/slider';
+import { EasingAnimator } from './topNews/services/easingAnimator';
 import { DraggController } from './topNews/directives/draggController';
 import { HorizontalScroll } from './topNews/directives/horizontalScroll';
-import { register } from './utils/register';
+
+import { MestoClickFade } from './clickFade/directives/clickFade';
+
+import { PopUpService } from './feedBack/services/popUpService';
+import { FeedbackResource } from './feedBack/services/feedbackResource';
+import { FeedbackFormController } from './feedBack/controllers/FormController';
 import { 
     MestoFeedbackItem,
     MestoFeedbackToggle,
     MestoFeedbackClose,
     MestoFeedbackContnier
 } from './feedBack/directives/feedBack';
-import { MestoClickFade } from './clickFade/directives/clickFade';
-import { PopUpService } from './feedBack/services/popUpService';
-import { FeedbackResource } from './feedBack/services/feedbackResource';
-import { FeedbackFormController } from './feedBack/controllers/FormController';
 
 import { 
     SVGLogoHover,
@@ -32,9 +37,10 @@ register('mesto')
     .directive('sliderControll', SliderControll)
     .directive('sliderContent', SliderContent)
     .directive('sliderItem', SliderItem)
+    .directive('sliderCounter', SliderCounter)
     .directive('draggController', DraggController)
-
     .directive('horizontalScroll', HorizontalScroll)
+    .factory('easingAnimator', EasingAnimator)
 
     .directive('mestoFeedbackItem', MestoFeedbackItem)
     .directive('mestoFeedbackToggle', MestoFeedbackToggle)
