@@ -619,7 +619,7 @@ table {
   pointer-events: none;
   position: absolute;
   top: 0;
-  bottom: 20px;
+  bottom: 0px;
 }
 
 .sliderJs__background.left {
