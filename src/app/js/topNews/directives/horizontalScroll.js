@@ -17,13 +17,16 @@ export class HorizontalScroll {
             e.preventDefault();
             delta_sum += deltaY*12 || 0;
             count += 1;
+            console.log([delta, deltaX, deltaY]);
             clearTimeout(timeout);
             timeout = setTimeout(function(){
                 if (count > 1) {
-                element.scrollLeft = element.scrollLeft - delta_sum/count;
+                    element.scrollLeft = element.scrollLeft - delta_sum/count;
+                } else {
+                    element.scrollLeft = element.scrollLeft - delta_sum*count;
+                }
                 delta_sum = 0;
                 count = 0;
-                }
             }, 1);
 
         })    
