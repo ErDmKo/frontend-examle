@@ -8,8 +8,14 @@
     @media (min-width: 800px) {
         align-items: center;
     }
-    .mainMenu {
+    &__menu {
         margin-top: 10px;
+    }
+    &__footer {
+        display: none;
+        @media (min-width: 800px) {
+            display: block;
+        }
     }
     &__list {
         display: flex;
@@ -76,6 +82,20 @@
         @media (min-width: 800px) {
             height: auto;
             width: 33.3333333%;
+        }
+        &:nth-child(1) {
+            @media (min-width: 800px) {
+                &:before {
+                    content: '';
+                    z-index: 2;
+                    position: absolute;
+                    top: 20px;
+                    left: 20px;
+                    bottom: 20px;
+                    right: 20px;
+                    border: 3px solid #fff;
+                }
+            }
         }
         &:nth-child(2) {
             background: var(--white);

@@ -18,6 +18,7 @@
         @media (min-width: 800px) {
             border-color: #000;
             color: #000;
+            padding: 10px;
         }
         transition: opacity .5s;
         &.preview, &.next {
@@ -52,19 +53,20 @@
                 content: '...';
                 position: absolute;
                 top: 50%;
-                margin-top: -12px;
+                margin-top: -19px;
+                font-size: 24px;
             }
         }
         &.last {
-            margin-left: 20px;
+            margin-left: 28px;
             &:after {
-                left: -20px;
+                left: -28px;
             }
         }
         &.first {
-            margin-right: 20px;
+            margin-right: 28px;
             &:after {
-                right: -20px;
+                right: -28px;
             }
         }
         &.active, &:hover {

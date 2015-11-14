@@ -21,6 +21,12 @@
             display: none;
         }
     }
+    .feedBackPopUp &__close {
+        @media (min-width: 800px) {
+            position: absolute;
+            top: 15px;
+        }
+    }
     &__header {
         text-align: center;
         font: 30px 'anglecia_pro_titleregular';

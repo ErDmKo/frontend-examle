@@ -1,7 +1,7 @@
 {% extends 'mesto/base.html' %}
 {% block 'content' %}
     <section class="itemsListAll">
-        <menu class="mainMenu list">
+        <menu class="itemsListAll__menu mainMenu list">
             <a 
                 class="mainMenu__item  fadeAnimator__ancor"
                 href="{% url 'main' %}">
@@ -73,5 +73,13 @@
             {% endif %}
         </ul>
         {% endif %}
-</section>
+        <div 
+            mesto-feedback-item="feedBackPopUp"
+            class="popUpAnimator__content">
+            {% include 'mesto/inc/feedBackPopUp.html' with js=True %}
+        </div>
+        <div class="itemsListAll__footer">
+            {% include 'events/inc/baseFooter.html' with select=1 %}
+        </div>
+    </section>
 {% endblock %}

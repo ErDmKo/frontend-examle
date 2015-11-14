@@ -50,6 +50,7 @@
         display: inline-block;
         opacity: 1;
         transition: color .5s, opacity .5s;
+        position: relative;
         @media (min-width: 800px) {
             margin-right: 20px;
             opacity: .5;
@@ -62,6 +63,16 @@
         }
         &.active {
             opacity: .5;
+            &:after {
+                content: '';
+                position: absolute;
+                width: 18px;
+                height: 2px;
+                background: #000;
+                left: 0px;
+                bottom: -1px;
+
+            }
         }
     }
 }
