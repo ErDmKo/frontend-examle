@@ -1020,7 +1020,7 @@ table {
 .pagesList {
   position: absolute;
   bottom: 20px;
-  right: 0;
+  right: 20px;
   z-index: 1;
 }
 
@@ -1036,9 +1036,43 @@ table {
   border-radius: 100%;
   opacity: .5;
   margin: 0px 3px;
+  -webkit-transition: opacity .5s;
+          transition: opacity .5s;
 }
 
-.pagesList__item.active {
+.pagesList__item.preview,
+.pagesList__item.next {
+  position: relative;
+}
+
+.pagesList__item.preview:after,
+.pagesList__item.next:after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  left: 50%;
+  top: 50%;
+  margin-top: 1px;
+  -webkit-transform: scaleY(1.4) translate(-50%, -50%) rotate(45deg);
+      -ms-transform: scaleY(1.4) translate(-50%, -50%) rotate(45deg);
+          transform: scaleY(1.4) translate(-50%, -50%) rotate(45deg);
+}
+
+.pagesList__item.preview:after {
+  margin-left: 1px;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.pagesList__item.next:after {
+  margin-left: -1px;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.pagesList__item.active,
+.pagesList__item:hover {
   opacity: 1;
 }
 
@@ -1585,6 +1619,11 @@ html a {
 
   .mainMenu.bottom {
     display: none;
+  }
+
+  .pagesList__item.preview:after,
+  .pagesList__item.next:after {
+    border-color: #fff;
   }
 }
 /*# sourceMappingURL=main.css.map */

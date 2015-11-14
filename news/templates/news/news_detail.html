@@ -1,5 +1,8 @@
 {% extends 'events/event_detail.html' %}
 {% block 'events_active' %}{% endblock %}
+{% block 'subheader' %}
+    Новости
+{% endblock %}
 {% block 'news_active' %} active{% endblock %}
     {% block 'next_block' %}
         {% include 'events/inc/nextBlock.html' with modificator='news detail' block_header="Следующие новости" object_list=object.get_next %}

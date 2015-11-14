@@ -1,7 +1,7 @@
 .pagesList {
     position: absolute;
     bottom: 20px;
-    right: 0;
+    right: 20px;
     z-index: 1;
     &__item {
         color: var(--white);
@@ -19,7 +19,34 @@
             border-color: #000;
             color: #000;
         }
-        &.active {
+        transition: opacity .5s;
+        &.preview, &.next {
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                left: 50%;
+                top: 50%;
+                margin-top: 1px;
+                transform:  scaleY(1.4) translate(-50%, -50%) rotate(45deg);
+                @media (max-width: 800px) {
+                    border-color: #fff;
+                }
+            }
+        }
+        &.preview:after {
+            margin-left: 1px;
+            border-left: 1px solid #000;
+            border-bottom: 1px solid #000;
+        }
+        &.next:after {
+            margin-left: -1px;
+            border-top: 1px solid #000;
+            border-right: 1px solid #000;
+        }
+        &.active, &:hover {
             opacity: 1;
         }
     }
