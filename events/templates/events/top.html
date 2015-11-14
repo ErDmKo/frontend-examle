@@ -5,16 +5,12 @@
 {% block 'menu_back' %}
 {% endblock %}
 {% block 'main_content' %}
-    <div slider-main class="sliderJs">
+    <div slider-main class="sliderJs {% block 'slider_class' %} {% endblock %}">
         <div slider-controll="1" class="sliderJs__next">
         </div>
         <div slider-controll="-1" class="sliderJs__prev">
         </div>
         <div class="sliderJs__background left">
-        </div>
-        <div slider-counter class="sliderJs__counter topEventList__date">
-                <span ng-bind="selectedSlide" class="topEventList__date__day">{{ forloop.counter|stringformat:"02d" }}</span>
-                <span class="topEventList__date__month">/{{ object_list|length|stringformat:"02d" }}</span>
         </div>
         <ul 
             slider-content
@@ -40,6 +36,10 @@
             <img 
                 class="circle"
                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+        </div>
+        <div slider-counter class="sliderJs__counter topEventList__date">
+                <span ng-bind="selectedSlide" class="topEventList__date__day">{{ forloop.counter|stringformat:"02d" }}</span>
+                <span class="topEventList__date__month">/{{ object_list|length|stringformat:"02d" }}</span>
         </div>
     </div>
     <div 
