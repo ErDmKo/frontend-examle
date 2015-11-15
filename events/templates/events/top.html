@@ -16,17 +16,22 @@
             slider-content
             dragg-controller
             horizontal-scroll
-            class="topEventList sliderJs__content"> {% for event in object_list %}
+            class="topEventList sliderJs__content {% block 'topEventsClass' %} {% endblock %}"> {% for event in object_list %}
             <li
                 slider-item
                 class="topEventList__slide sliderJs__item">
+                <img 
+                    class="topEventList__image"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                 <time class="topEventList__date">
                     <span class="topEventList__date__day">{{ forloop.counter|stringformat:"02d" }}</span>
                     <span class="topEventList__date__month">/{{ object_list|length|stringformat:"02d" }}</span>
                 </time>
                 <article class="topEventList__item">
                     <div class="topEventList__wrapper">
-                    {% include 'events/inc/itemPreview.html' with object=event modificator='top' %}
+                        {% block 'injectPreview' %}
+                        {% include 'events/inc/itemPreview.html' with object=event modificator='top' %}
+                        {% endblock %}
                     </div>
                 </article>
             </li>

@@ -4,8 +4,10 @@
 {% block 'subheader' %}
     Новости
 {% endblock %}
-{% block 'slider_class' %}
-news
+{% block 'slider_class' %} news {% endblock %}
+{% block 'topEventsClass' %} news {% endblock %}
+{% block 'injectPreview' %}
+{% include 'events/inc/itemPreview.html' with object=event modificator='news' %}
 {% endblock %}
 {% block footer %}
     {% include 'events/inc/baseFooter.html' with all_items_title="Все новости" %}

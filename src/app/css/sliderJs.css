@@ -1,5 +1,9 @@
 .sliderJs {
     overflow: hidden;
+    @media (min-width: 800px) {
+        height: 100%;
+        background: #ccdde1;        
+    }
     &__counter.topEventList__date {
         display: none;
         @media (min-width: 800px) {

@@ -3,6 +3,9 @@
     text-decoration: none;
     display: inline-block;
     user-select: none;
+    &__emptyImage {
+        display: none;
+    }
     &.events {
         @media (min-width: 800px) {
             width: 100%;
@@ -18,6 +21,59 @@
                 }
                 &__blockImage {
                     height: 360px;
+                    background-size: cover;
+                    background-position: 50% 50%;
+                }
+            }
+        }
+    }
+    &.news {
+        @media (min-width: 800px) {
+            width: 100%;
+            .itemPreview {
+                &__header {
+                    text-align: center;
+                    margin: 0px;
+                    padding: 15px 0px;
+                    color: #fff;
+                }
+                &__content {
+                    color: #fff;
+                }
+                &__image {
+                    display: none;
+                }
+                &__figure {
+                    overflow: hidden;
+                    &:after {
+                        content: '';
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        background: rgba(0,0,0, .7);
+                        top: 0px;
+                        left: 0px;
+                    }   
+                }
+                &__wrapper {
+                    position: relative;
+                    z-index: 1;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column; 
+                    box-sizing: border-box;
+                    padding: 30px;
+                }
+                &__emptyImage {
+                    display: inline-block;
+                    width: 100%;
+                }
+                &__blockImage {
+                    position: absolute;
+                    width: 100%;
+                    top: 0px;
                     background-size: cover;
                     background-position: 50% 50%;
                 }
