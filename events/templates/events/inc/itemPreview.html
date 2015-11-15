@@ -9,6 +9,7 @@
                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
         </div>
         <div class="itemPreview__date">
+            {{ object.date|date:"M j Y" }}
         </div>
         <figcaption class="itemPreview__wrapper">
             <header class="itemPreview__header">{{ object.title }}</header>

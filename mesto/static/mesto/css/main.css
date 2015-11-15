@@ -863,6 +863,10 @@ table {
   display: none;
 }
 
+.itemPreview__date {
+  display: none;
+}
+
 .itemPreview__content {
   -webkit-user-select: all;
      -moz-user-select: all;
@@ -1738,6 +1742,21 @@ html a {
     color: #fff;
     font: 35px/100% anglecia_pro_titleregular;
     margin-bottom: 30px;
+    -webkit-transition: color 0.3s;
+            transition: color 0.3s;
+  }
+
+  .itemPreview.news .itemPreview__date {
+    display: block;
+    position: absolute;
+    color: #fff;
+    bottom: 30px;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    z-index: 1;
+    -webkit-transition: color 0.3s;
+            transition: color 0.3s;
   }
 
   .itemPreview.news .itemPreview__content {
@@ -1745,6 +1764,8 @@ html a {
     font: 15px/110% anglecia_pro_titleregular;
     width: 100%;
     text-align: left;
+    -webkit-transition: color 0.3s;
+            transition: color 0.3s;
   }
 
   .itemPreview.news .itemPreview__image {
@@ -1755,6 +1776,17 @@ html a {
     overflow: hidden;
   }
 
+  .itemPreview.news .itemPreview__figure:hover .itemPreview__header,
+  .itemPreview.news .itemPreview__figure:hover .itemPreview__content,
+  .itemPreview.news .itemPreview__figure:hover .itemPreview__date {
+    color: #000;
+  }
+
+  .itemPreview.news .itemPreview__figure:hover:after {
+    background: #F6F6F6;
+    cursor: pointer;
+  }
+
   .itemPreview.news .itemPreview__figure:after {
     content: '';
     width: 100%;
@@ -1763,6 +1795,8 @@ html a {
     background: rgba(0,0,0, .7);
     top: 0px;
     left: 0px;
+    -webkit-transition: background-color 0.3s;
+            transition: background-color 0.3s;
   }
 
   .itemPreview.news .itemPreview__wrapper {
