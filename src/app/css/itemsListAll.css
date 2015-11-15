@@ -5,10 +5,10 @@
     box-sizing: border-box;
     height: 100%;
     display: flex;
+    &.events {
+        background: #2C2D33;
+    }
     @media (min-width: 800px) {
-        &.events {
-            background: #2C2D33;
-        }
         align-items: center;
     }
     &__menu {

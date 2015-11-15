@@ -1011,6 +1011,10 @@ table {
   display: flex;
 }
 
+.itemsListAll.events {
+  background: #2C2D33;
+}
+
 .itemsListAll__menu {
   margin-top: 10px;
 }
@@ -1938,10 +1942,6 @@ html a {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-
-  .itemsListAll.events {
-    background: #2C2D33;
   }
 
   .itemsListAll__footer {
