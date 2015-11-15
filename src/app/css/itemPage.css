@@ -16,6 +16,9 @@
             right: 0;
             z-index: -1;
         }
+        &.news:after {
+            background: url(/static/mesto/img/gray_detail_background.svg) no-repeat 50% 100%;
+        }
     }
     &__header {
         margin: 50px 0px 20px;

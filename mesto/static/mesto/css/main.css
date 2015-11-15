@@ -714,6 +714,10 @@ table {
           transform: translateX(-211.5%) skew(22deg, -65deg) scale(1.7, 10);
 }
 
+.sliderJs.events .sliderJs__background.leftOverflow:after {
+  background: rgba(255, 255, 255, 1);
+}
+
 .sliderJs__background.right {
   width: 30%;
   left: 70%;
@@ -729,6 +733,10 @@ table {
   bottom: 3%;
   background: transparent;
   box-shadow: 0px  0px 0px 1000px rgba(255, 255, 255,.95);
+}
+
+.sliderJs.events .sliderJs__background.right .circle {
+  box-shadow: 0px  0px 0px 1000px rgba(255, 255, 255, 1);
 }
 
 .sliderJs__prev,
@@ -1616,6 +1624,10 @@ html a {
     left: 0;
     right: 0;
     z-index: -1;
+  }
+
+  .itemPage.news:after {
+    background: url(/static/mesto/img/gray_detail_background.svg) no-repeat 50% 100%;
   }
 
   .itemPage__header {
