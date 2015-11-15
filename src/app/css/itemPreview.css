@@ -43,6 +43,8 @@
                 &__content {
                     color: #fff;
                     font: 15px/110% anglecia_pro_titleregular;
+                    width: 100%;
+                    text-align: left;
                 }
                 &__image {
                     display: none;

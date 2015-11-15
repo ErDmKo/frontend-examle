@@ -8,10 +8,8 @@ class SliderController {
     set scrollPosition(val){
         this.slide = this.items.reduce((outIndex, item, index)=>{
             let center = val + item.elem.offsetWidth;
-            console.log([item.elemInfo.center, center])
             if(item.elemInfo.center < center) {
                 outIndex = index;
-                console.log(index);
             }
             return outIndex;
         }, 0);
@@ -32,16 +30,12 @@ class SliderController {
     }
     next(delta) {
         let next = this.slide + delta;
-        console.log(this.slide);
         if (next >= this.items.length) {
-            console.log('1');
             next = 0;
         } else if(next < 0) {
             next = this.items.length - 1;
-            console.log('2');
         }
         this.slide = next;
-        console.log([this.slide, next, delta]);
         this.moveToSlide(this.slide);
     }
     addController(delta) {
@@ -119,7 +113,6 @@ export class SliderItem {
         this.$window = angular.element($window);
     }
     get elemInfo() {
-        console.log('1');
         return {
             offsetLeft: this.elem.offsetLeft,
             center: this.elem.offsetLeft + this.elem.offsetWidth/2
