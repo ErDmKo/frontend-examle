@@ -10,6 +10,9 @@
         left: 40px;
         right: 40px;
         text-align: left;
+        &.list {
+            right: auto;
+        }
     }
     &.detail {
         position: static;

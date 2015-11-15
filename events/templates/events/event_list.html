@@ -79,7 +79,9 @@
             {% include 'mesto/inc/feedBackPopUp.html' with js=True %}
         </div>
         <div class="itemsListAll__footer">
-            {% include 'events/inc/baseFooter.html' with select=1 %}
+            {% block 'listFooter' %}
+            {% include 'events/inc/baseFooter.html' with select=1 class='list' %}
+            {% endblock %}
         </div>
     </section>
 {% endblock %}

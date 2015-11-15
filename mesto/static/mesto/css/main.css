@@ -1426,6 +1426,10 @@ html a {
     text-align: left;
   }
 
+  .baseFooter.list {
+    right: auto;
+  }
+
   .baseFooter.detail {
     display: inline-block;
     position: fixed;
