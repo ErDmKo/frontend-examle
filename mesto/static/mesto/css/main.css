@@ -554,6 +554,10 @@ table {
   bottom: -1px;
 }
 
+.baseFooter.list.events .baseFooter__item.active:after {
+  background: #fff;
+}
+
 .topEventList {
   white-space: nowrap;
   position: relative;
@@ -1145,6 +1149,11 @@ table {
           transform: scaleY(1.4) translate(-50%, -50%) rotate(45deg);
 }
 
+.pagesList.events .pagesList__item.preview:after,
+.pagesList.events .pagesList__item.next:after {
+  border-color: #fff;
+}
+
 .pagesList__item.preview:after {
   margin-left: 1px;
   border-left: 1px solid #000;
@@ -1466,6 +1475,11 @@ html a {
   .baseFooter__item:hover {
     color: #000;
     opacity: 1;
+  }
+
+  .baseFooter.list.events .baseFooter__item.active,
+  .baseFooter.list.events .baseFooter__item:hover {
+    color: #fff;
   }
 
   .topEventList {
@@ -1832,6 +1846,15 @@ html a {
     position: fixed;
   }
 
+  .mainMenu.list.events .mainMenu__svg rect {
+    fill: #fff;
+  }
+
+  .mainMenu.list.events .mainMenu__item.back:after {
+    border-left: 1px solid #fff;
+    border-top: 1px solid #fff;
+  }
+
   .mainMenu.list .mainMenu__svg rect {
     fill: #000;
   }
@@ -1850,6 +1873,10 @@ html a {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+
+  .itemsListAll.events {
+    background: #2C2D33;
   }
 
   .itemsListAll__footer {
@@ -1930,6 +1957,11 @@ html a {
     border-color: #000;
     color: #000;
     padding: 10px;
+  }
+
+  .pagesList.events .pagesList__item {
+    border-color: #fff;
+    color: #fff;
   }
 
   .popUpAnimator__content {

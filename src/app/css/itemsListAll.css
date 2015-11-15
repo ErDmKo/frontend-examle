@@ -6,6 +6,9 @@
     height: 100%;
     display: flex;
     @media (min-width: 800px) {
+        &.events {
+            background: #2C2D33;
+        }
         align-items: center;
     }
     &__menu {

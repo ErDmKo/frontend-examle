@@ -1,7 +1,7 @@
 {% extends 'mesto/base.html' %}
 {% block 'content' %}
-    <section class="itemsListAll">
-        <menu class="itemsListAll__menu mainMenu list">
+    <section class="itemsListAll {% block 'itemsListAllClass' %} events {% endblock %}">
+        <menu class="itemsListAll__menu mainMenu list {% block 'itemsListAllMenuClass' %} events {% endblock %}">
             <a 
                 class="mainMenu__item  fadeAnimator__ancor"
                 href="{% url 'main' %}">
@@ -32,7 +32,7 @@
         {% endfor %}
         </article>
         {% if is_paginated %}
-        <ul class="pagesList">
+        <ul class="pagesList {% block 'itemsListAllPaginationClass' %} events {% endblock %}">
             {% if page_obj.has_previous %}
             <a 
                 class="preview pagesList__item fadeAnimator__ancor"
@@ -80,7 +80,7 @@
         </div>
         <div class="itemsListAll__footer">
             {% block 'listFooter' %}
-            {% include 'events/inc/baseFooter.html' with select=1 class='list' %}
+            {% include 'events/inc/baseFooter.html' with select=1 class='list events' %}
             {% endblock %}
         </div>
     </section>

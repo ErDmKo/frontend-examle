@@ -1,4 +1,7 @@
 {% extends 'events/event_list.html' %}
+{% block 'itemsListAllClass' %} news {% endblock %}
+{% block 'itemsListAllMenuClass' %} news {% endblock %}
+{% block 'itemsListAllPaginationClass' %} news {% endblock %}
 {% block 'listFooter' %}
-    {% include 'events/inc/baseFooter.html' with all_items_title='Все новости' select=1 class='list' %}
+    {% include 'events/inc/baseFooter.html' with all_items_title='Все новости' select=1 class='list news' %}
 {% endblock %}

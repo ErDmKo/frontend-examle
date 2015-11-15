@@ -19,6 +19,10 @@
             border-color: #000;
             color: #000;
             padding: 10px;
+            .pagesList.events & {
+                border-color: #fff;
+                color: #fff;
+            }
         }
         transition: opacity .5s;
         &.preview, &.next {
@@ -32,6 +36,9 @@
                 top: 50%;
                 margin-top: 1px;
                 transform:  scaleY(1.4) translate(-50%, -50%) rotate(45deg);
+                 .pagesList.events & {
+                    border-color: #fff; 
+                 }
                 @media (max-width: 800px) {
                     border-color: #fff;
                 }

@@ -62,6 +62,9 @@
             &:hover {
                 color: #000;
                 opacity: 1;
+                .baseFooter.list.events & {
+                    color: #fff;   
+                }
             }
         }
         &.active {
@@ -74,7 +77,9 @@
                 background: #000;
                 left: 0px;
                 bottom: -1px;
-
+                .baseFooter.list.events & {
+                    background: #fff;
+                }
             }
         }
     }

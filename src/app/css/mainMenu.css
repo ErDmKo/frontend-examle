@@ -36,6 +36,19 @@
               }
          }
          @media (min-width: 800px) {
+             &.events  {
+                  .mainMenu__svg {
+                    rect {
+                        fill: var(--white);
+                    }
+                 }
+                 .mainMenu__item {
+                      &.back:after {
+                          border-left: 1px solid var(--white);
+                          border-top: 1px solid var(--white);
+                      }
+                 }
+             }
              .mainMenu__svg {
                 rect {
                     fill: #000;
