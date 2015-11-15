@@ -32,13 +32,17 @@
             width: 100%;
             .itemPreview {
                 &__header {
-                    text-align: center;
+                    text-align: left;
+                    width: 100%;
                     margin: 0px;
-                    padding: 15px 0px;
+                    padding: 0px;
                     color: #fff;
+                    font: 35px/100% anglecia_pro_titleregular;
+                    margin-bottom: 30px;
                 }
                 &__content {
                     color: #fff;
+                    font: 15px/110% anglecia_pro_titleregular;
                 }
                 &__image {
                     display: none;

@@ -41,6 +41,9 @@
             bottom: 130px;
             font: 33px/100% 'anglecia_pro_titleregular';
             z-index: 1;
+            .topEventList.news ~ & {
+                color: #e1e1e1;
+            }
         }
         &__day, &__month {
             display: inline-block;

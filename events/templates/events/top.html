@@ -18,7 +18,7 @@
             horizontal-scroll
             class="topEventList sliderJs__content {% block 'topEventsClass' %} {% endblock %}"> {% for event in object_list %}
             <li
-                slider-item
+                {% block 'sliderItemJs' %} slider-item {% endblock %}
                 class="topEventList__slide sliderJs__item">
                 <img 
                     class="topEventList__image"

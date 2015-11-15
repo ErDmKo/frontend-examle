@@ -2,7 +2,22 @@
     overflow: hidden;
     @media (min-width: 800px) {
         height: 100%;
-        background: #ccdde1;        
+        background: #ccdde1;       
+    }
+    &.news {
+        @media (min-width: 800px) {
+            background: #EBEBEB;
+            .sliderJs {
+                &__background {
+                    &.right {
+                        opacity: .9;
+                    }
+                    &.left:before {
+                        background: #EBEBEB;
+                    }
+                }
+            }
+        }
     }
     &__counter.topEventList__date {
         display: none;

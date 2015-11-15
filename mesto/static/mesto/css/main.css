@@ -1440,6 +1440,10 @@ html a {
     z-index: 1;
   }
 
+  .topEventList.news ~ .topEventList__date {
+    color: #e1e1e1;
+  }
+
   .topEventList__date__day {
     font: 140px/74% 'anglecia_pro_titleregular';
   }
@@ -1501,6 +1505,18 @@ html a {
   .sliderJs {
     height: 100%;
     background: #ccdde1;
+  }
+
+  .sliderJs.news {
+    background: #EBEBEB;
+  }
+
+  .sliderJs.news .sliderJs__background.right {
+    opacity: .9;
+  }
+
+  .sliderJs.news .sliderJs__background.left:before {
+    background: #EBEBEB;
   }
 
   .sliderJs__counter.topEventList__date {
@@ -1576,14 +1592,18 @@ html a {
   }
 
   .itemPreview.news .itemPreview__header {
-    text-align: center;
+    text-align: left;
+    width: 100%;
     margin: 0px;
-    padding: 15px 0px;
+    padding: 0px;
     color: #fff;
+    font: 35px/100% anglecia_pro_titleregular;
+    margin-bottom: 30px;
   }
 
   .itemPreview.news .itemPreview__content {
     color: #fff;
+    font: 15px/110% anglecia_pro_titleregular;
   }
 
   .itemPreview.news .itemPreview__image {
