@@ -629,6 +629,10 @@ table {
   overflow: hidden;
 }
 
+.sliderJs__twiter {
+  display: none;
+}
+
 .sliderJs__counter.topEventList__date {
   display: none;
 }
@@ -1545,6 +1549,18 @@ html a {
   .sliderJs {
     height: 100%;
     background: #ccdde1;
+  }
+
+  .sliderJs__twiter {
+    display: block;
+    height: 250px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    z-index: 3;
   }
 
   .sliderJs.news {

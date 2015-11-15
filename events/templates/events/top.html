@@ -49,6 +49,10 @@
                 <span ng-bind="selectedSlide" class="topEventList__date__day">{{ forloop.counter|stringformat:"02d" }}</span>
                 <span class="topEventList__date__month">/{{ object_list|length|stringformat:"02d" }}</span>
         </div>
+        <div class="sliderJs__twiter">
+        {% block 'twitter' %}
+        {% endblock %}
+        </div>
     </div>
     <div 
         mesto-feedback-item="feedBackPopUp"

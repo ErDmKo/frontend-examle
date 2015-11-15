@@ -4,6 +4,18 @@
         height: 100%;
         background: #ccdde1;       
     }
+    &__twiter {
+        display: none;
+        @media (min-width: 800px) { 
+            display: block;
+            height: 250px;
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+    }
     &.news {
         @media (min-width: 800px) {
             background: #EBEBEB;
