@@ -15,14 +15,14 @@ export class HorizontalScroll {
                 return;
             }
             e.preventDefault();
-            delta_sum += deltaY*12 || 0;
+            delta_sum += deltaY*8 || 0;
             count += 1;
             clearTimeout(timeout);
             timeout = setTimeout(function(){
                 if (/Macintosh/.test(navigator.userAgent)) {
                     element.scrollLeft = element.scrollLeft - delta_sum;
                 } else {
-                    element.scrollLeft = element.scrollLeft - delta_sum*20;
+                    element.scrollLeft = element.scrollLeft - delta_sum*15;
                 }
                 delta_sum = 0;
                 count = 0;

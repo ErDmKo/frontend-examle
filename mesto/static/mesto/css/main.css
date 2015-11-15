@@ -753,11 +753,16 @@ table {
 .sliderJs__next:after {
   content: '';
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 200%;
+  height: 200%;
   -webkit-transform: translateY(-50%) translateX(-10px);
       -ms-transform: translateY(-50%) translateX(-10px);
           transform: translateY(-50%) translateX(-10px);
+}
+
+.sliderJs.events .sliderJs__prev,
+.sliderJs.events .sliderJs__next {
+  display: none;
 }
 
 .sliderJs__prev {
@@ -1577,6 +1582,22 @@ html a {
 
   .sliderJs__counter.topEventList__date {
     display: block;
+  }
+
+  .sliderJs.news .sliderJs__prev,
+  .sliderJs.news .sliderJs__next {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+  }
+
+  .sliderJs.news .sliderJs__prev {
+    left: 25px;
+  }
+
+  .sliderJs.news .sliderJs__next {
+    right: 25px;
+    border-color: #fff;
   }
 
   .itemPage {

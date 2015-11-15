@@ -129,15 +129,31 @@
         &:after {
             content: '';
             position: absolute;
-            width: 30px;
-            height: 30px;
+            width: 200%;
+            height: 200%;
             transform: translateY(-50%) translateX(-10px);
+        }
+        .sliderJs.events & {
+            display: none;
+
+        }
+        .sliderJs.news & {
+            @media (min-width: 800px) {
+                width: 20px;
+                height: 20px;
+                opacity: 1;
+            }
         }
     }
     &__prev {
         left: 10px;
         border-left: 2px solid var(--nearBlack);
         border-bottom: 2px solid var(--nearBlack);
+        .sliderJs.news & { 
+            @media (min-width: 800px) {
+                left: 25px;
+            }
+        }
     }
     &__next {
         right: 10px;
@@ -146,6 +162,12 @@
         &:after {
             top: 10px;
             left: 0px;
+        }
+        .sliderJs.news & { 
+            @media (min-width: 800px) {
+                right: 25px;
+                border-color: #fff;
+            }
         }
     }
     &__slide {
