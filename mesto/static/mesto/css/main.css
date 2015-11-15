@@ -1700,6 +1700,32 @@ html a {
     background-position: 50% 50%;
   }
 
+  .itemPreview.fullnews {
+    width: 100%;
+  }
+
+  .itemPreview.fullnews .itemPreview__figure {
+    text-align: justify;
+  }
+
+  .itemPreview.fullnews .itemPreview__figure:after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+  }
+
+  .itemPreview.fullnews .itemPreview__date,
+  .itemPreview.fullnews .itemPreview__blockImage {
+    display: none;
+  }
+
+  .itemPreview.fullnews .itemPreview__image,
+  .itemPreview.fullnews .itemPreview__wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    width: 45%;
+  }
+
   .itemPreview.news {
     width: 100%;
   }
@@ -1832,6 +1858,11 @@ html a {
     display: inline-block;
     width: 49%;
     vertical-align: top;
+  }
+
+  .nextBlock.news .nextBlock__item {
+    width: 100%;
+    margin: 0px;
   }
 
   .socialList {

@@ -4,9 +4,10 @@
     Новости
 {% endblock %}
 {% block 'itemClass' %} news{% endblock %}
+{% block 'nextBlockClass' %} news {% endblock %}
 {% block 'news_active' %} active{% endblock %}
     {% block 'next_block' %}
-        {% include 'events/inc/nextBlock.html' with modificator='detail' block_header="Следующие новости" object_list=object.get_next %}
+        {% include 'events/inc/nextBlock.html' with nextBlockClass='news' modificator='detail fullnews' block_header="Следующие новости" object_list=object.get_next %}
     {% endblock %}
 {% block 'event_footer' %}
     {% include 'events/inc/baseFooter.html' with all_items_title="Все новости" class='detail' %}

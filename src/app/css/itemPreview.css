@@ -27,6 +27,29 @@
             }
         }
     }
+    &.fullnews {
+        @media (min-width: 800px) {
+            width: 100%;
+            .itemPreview {
+                &__figure {
+                    text-align: justify;
+                    &:after {
+                        content: '';
+                        width: 100%;
+                        display: inline-block;
+                    }
+                }
+                &__date, &__blockImage {
+                    display: none;
+                }
+                &__image, &__wrapper {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 45%;
+                }
+            }
+        }
+    }
     &.news {
         @media (min-width: 800px) {
             width: 100%;
