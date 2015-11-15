@@ -1871,10 +1871,13 @@ html a {
     height: auto;
     position: absolute;
     top: 50%;
+    left: 0px;
     padding: 0px 40px;
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .itemsListAll__date {

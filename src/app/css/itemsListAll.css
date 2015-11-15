@@ -42,8 +42,9 @@
             top: 50%;
             left: 0px;
             padding: 0px 40px;
-            transform: translateY(-50%)
+            transform: translateY(-50%);
             width: 100%;
+            box-sizing: border-box;
         }
     }
     &__date{
