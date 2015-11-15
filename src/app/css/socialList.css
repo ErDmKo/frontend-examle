@@ -5,7 +5,13 @@
 
     text-align: center;
     margin: 50px;
+    @media (min-width: 800px) {
+        margin: 50px auto;
+        text-align: left;
+        width: 70%;
+    }
     &__item {
+        text-align: center;
         text-decoration: none;
         color: var(--white);
         display: inline-block;

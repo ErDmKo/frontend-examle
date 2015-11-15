@@ -898,6 +898,7 @@ table {
 }
 
 .socialList__item {
+  text-align: center;
   text-decoration: none;
   color: #fff;
   display: inline-block;
@@ -1815,6 +1816,12 @@ html a {
     vertical-align: top;
   }
 
+  .socialList {
+    margin: 50px auto;
+    text-align: left;
+    width: 70%;
+  }
+
   .mainMenu {
     top: 40px;
     left: 40px;
@@ -1861,10 +1868,13 @@ html a {
 
   .itemsListAll__text {
     display: block;
-    height: 0;
-    position: relative;
-    top: 40px;
+    height: auto;
+    position: absolute;
+    top: 50%;
     padding: 0px 40px;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 
   .itemsListAll__date {

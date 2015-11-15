@@ -37,10 +37,11 @@
     &__text {
         @media (min-width: 800px) {
             display: block;
-            height: 0;
-            position: relative;
-            top: 40px;
+            height: auto;
+            position: absolute;
+            top: 50%;
             padding: 0px 40px;
+            transform: translateY(-50%)
         }
     }
     &__date{
