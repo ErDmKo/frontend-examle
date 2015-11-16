@@ -142,9 +142,11 @@
             height: 200%;
             transform: translateY(-50%) translateX(-10px);
         }
-        .sliderJs.events & {
-            display: none;
+        @media (min-width: 800px) {
+            .sliderJs.events & {
+                display: none;
 
+            }
         }
         .sliderJs.news & {
             @media (min-width: 800px) {

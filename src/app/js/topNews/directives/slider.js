@@ -4,10 +4,12 @@ class SliderController {
         this.slide = 0;
         this._scrollPosition = 0;
         this.setSlide = ()=>{};
+        this.moveToSlideTimeout = null;
     }
     set scrollPosition(val){
         this.slide = this.items.reduce((outIndex, item, index)=>{
-            let center = val + item.elem.offsetWidth;
+            //console.log(item.elemInfo.offsetWidth);
+            let center = val + item.elemInfo.offsetWidth;
             if(item.elemInfo.center < center) {
                 outIndex = index;
             }
@@ -17,11 +19,15 @@ class SliderController {
         this.setSlide(this.slide);
     }
     moveToSlide(position){
-        this.scrollHandler(this.items[position].elemInfo.offsetLeft, true);
+        clearTimeout(this.moveToSlideTimeout);
+        this.moveToSlideTimeout = setTimeout(()=>{
+            this.scrollHandler(this.items[position].elemInfo.offsetLeft, true);
+        }, 1);
     }
     addItem(item) {
-        this.items.push(item)
-        return () => {
+        let index = this.items.push(item) - 1;
+        return (newInfo) => {
+            this.items[index].elemInfo = newInfo;
             this.moveToSlide(this.slide);
         }
     }
@@ -106,36 +112,43 @@ export class SliderCounter {
     }
 }
 export class SliderItem {
-
+    /*@ngInject*/
     constructor($window) {
         this.require = '^sliderMain';
         this.restrict = 'A';
         this.$window = angular.element($window);
+        this.elems = [];
     }
-    get elemInfo() {
+    getElemInfo(index) {
+        let element = this.elems[index];
         return {
-            offsetLeft: this.elem.offsetLeft,
-            center: this.elem.offsetLeft + this.elem.offsetWidth/2
-        }
+            offsetLeft: element.offsetLeft,
+            center: element.offsetLeft + element.offsetWidth/2,
+            offsetWidth: element.offsetWidth
+        };
     }
     link(scope, element, attrs, sliderMain) {
-        this.elem = element[0];
+        let index = this.elems.push(element[0]) - 1;
         let handler = sliderMain.addItem({
-            elem: this.elem,
-            elemInfo: this.elemInfo
+            elem: this.elems[index],
+            elemInfo: this.getElemInfo(index)
         });
-        element.on('resize', () => {
-            handler.bind(sliderMain)
+        window.addEventListener('resize', ()=>{
+            handler(this.getElemInfo(index));
         });
-        window.addEventListener('resize', handler.bind(sliderMain));
     }
 }
 export class SmallSliderItem extends SliderItem {
-
-    get elemInfo() {
+    
+    getElemInfo(index) {
+        if (document.body.offsetWidth < 800) {
+            return super.getElemInfo(index);
+        }
+        let element = this.elems[index];
         return {
-            offsetLeft: this.elem.offsetLeft - this.elem.offsetWidth,
-            center: this.elem.offsetLeft - this.elem.offsetWidth/2
+            offsetLeft: element.offsetLeft - element.offsetWidth,
+            center: element.offsetLeft - element.offsetWidth/2,
+            offsetWidth: element.offsetWidth
         }
     }
 }

@@ -777,11 +777,6 @@ table {
           transform: translateY(-50%) translateX(-10px);
 }
 
-.sliderJs.events .sliderJs__prev,
-.sliderJs.events .sliderJs__next {
-  display: none;
-}
-
 .sliderJs__prev {
   left: 10px;
   border-left: 2px solid #252324;
@@ -1622,6 +1617,11 @@ html a {
 
   .sliderJs__counter.topEventList__date {
     display: block;
+  }
+
+  .sliderJs.events .sliderJs__prev,
+  .sliderJs.events .sliderJs__next {
+    display: none;
   }
 
   .sliderJs.news .sliderJs__prev,
