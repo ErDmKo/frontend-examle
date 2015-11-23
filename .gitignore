@@ -1,4 +1,5 @@
 mesto/settings/local.py
+.DS_Store
 .env
 .idea
 *css.map

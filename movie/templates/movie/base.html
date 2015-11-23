@@ -1,0 +1,35 @@
+{% extends 'mesto/base.html' %}
+{% load staticfiles %}
+{% block 'content' %}
+<div class="movieMain">
+    <header class="moveMain__header">
+        <img class="moveMain__header__img" src="{% static 'mesto/img/logo_color-01.svg' %}"/>
+        <div class="moveMain__subheader">
+        {% block 'subheader' %}
+            Каталог
+        {% endblock %}
+        </div>
+    </header>
+    <menu class="mainMenu">
+        {% block 'menu_button' %}
+        <a class="mainMenu__item fadeAnimator__ancor" href="{% url 'main' %}">
+            {% include 'mesto/inc/menu.svg' %}
+        </a>
+        {% endblock %}
+    </menu>
+    <main class="popUpAnimator__wrapper movieMain__content">
+        {% block 'main_content' %}
+        {% endblock %}
+    </main>
+    {% block footer %}
+        <footer class="movieFooter">
+            <menu class="movieFooter__menu">
+                <a href="" class="movieFooter__item">Скоро в кино</a>
+            </menu>
+            <menu class="movieFooter__socialList">
+                <a class="movieFooter__social inst" href="/"></a>
+            </menu>
+        </footer>
+    {% endblock %}
+</div>
+{% endblock %}

@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'events',
     'news',
     'texts',
+    'movie',
 )
 
 MIDDLEWARE_CLASSES = (
