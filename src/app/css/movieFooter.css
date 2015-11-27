@@ -1,0 +1,26 @@
+.movieFooter {
+    background: #000;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    &__item {
+        text-decoration: none;
+        color: #2BF4A7;
+        font: 12px hcyrregular;
+    }
+    &__socialList  {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+    }
+    &__social {
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+        background: url(../img/instaIcon.svg) no-repeat 50% 50%;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

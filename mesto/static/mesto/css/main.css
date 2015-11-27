@@ -1288,6 +1288,68 @@ table {
 
 .movieMain {
   background: #000;
+  height: 100%;
+}
+
+.movieMain__menu rect {
+  fill: #D52FAD;
+}
+
+.movieMain__menu rect:nth-child(2) {
+  fill: #2BF4A7;
+}
+
+.movieMain__header {
+  position: absolute;
+  top: 13px;
+  width: 126px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  text-align: center;
+}
+
+.movieMain__header__img {
+  width: 100%;
+}
+
+.movieMain__subheader {
+  color: #2bf4a7;
+  font: 12px hcyrregular;
+  position: absolute;
+  right: 0px;
+}
+
+.movieFooter {
+  background: #000;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+}
+
+.movieFooter__item {
+  text-decoration: none;
+  color: #2BF4A7;
+  font: 12px hcyrregular;
+}
+
+.movieFooter__socialList {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+.movieFooter__social {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background: url(../img/instaIcon.svg) no-repeat 50% 50%;
+}
+
+.movieFooter__social:hover {
+  cursor: pointer;
 }
 
 body,

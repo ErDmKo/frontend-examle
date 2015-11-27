@@ -19,7 +19,9 @@
 @import 'popUpAnimator.css';
 @import 'fadeAnimator.css';
 @import 'svgLogo.css';
+
 @import 'movieMain.css';
+@import 'movieFooter.css';
 
 body, html {
     width: 100%;

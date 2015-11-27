@@ -1,3 +1,30 @@
 .movieMain {
     background: #000;
+    height: 100%;
+    &__menu {
+        rect {
+            fill: #D52FAD;
+            &:nth-child(2) {
+                fill: #2BF4A7;
+            }
+        }
+    }
+    &__header {
+        position: absolute;
+        top: 13px;
+        width: 126px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        &__img {
+            width: 100%;
+
+        }
+    }
+    &__subheader {
+        color: #2bf4a7;
+        font: 12px hcyrregular;
+        position: absolute;
+        right: 0px;
+    }
 }
