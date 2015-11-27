@@ -12,7 +12,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', generic.TemplateView.as_view(template_name='mesto/main.html'), name='main'),
-    url(r'^movie/', include(movie_urls, namespace='movie')),
+    url(r'^movietheater/', include(movie_urls, namespace='movie')),
     url(r'^api/', include(api_urls, namespace='api')),
     url(r'^events/', include(events_urls, namespace='events')),
     url(r'^news/', include(news_urls, namespace='news')),

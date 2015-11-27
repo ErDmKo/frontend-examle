@@ -19,7 +19,7 @@ class Show(texts_models.Text):
     original_title = models.CharField(
         max_length=255,
         verbose_name='Оригинальное название') 
-    original_title = models.BigIntegerField(
+    year = models.BigIntegerField(
         verbose_name='Год')
     rating = models.FloatField(
         verbose_name='Рейтинг')
@@ -27,4 +27,12 @@ class Show(texts_models.Text):
         verbose_name='Продолжительность в мин')
     trailer = models.TextField(
         verbose_name = 'Ссылка на видео трейлера')
+    ord = models.SmallIntegerField(default=50, verbose_name = 'Порядок')
         
+    def __src__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['ord']
+        verbose_name = 'Релиз'
+        verbose_name_plural = 'Релизы'

@@ -1,3 +1,44 @@
 {% extends 'movie/base.html' %}
 {% block 'main_content' %}
+    <div slider-main class="sliderJsMovie">
+        <div slider-controll="1" class="sliderJsMovie__next">
+        </div>
+        <div slider-controll="-1" class="sliderJsMovie__prev">
+        </div>
+        <div class="sliderJsMovie__background left">
+        </div>
+        <ul 
+            slider-content
+            horizontal-scroll
+            class="sliderJsMovie__content"> {% for show in object_list %}
+            <li
+                slider-item
+                class="sliderJsMovie__item">
+                <article class="showSlide">
+                    <header class="showSlide__header">
+                        <div class="showSlide__title">
+                            {{ show.title }}
+                        </div>
+                        <div class="showSlide__original_title">
+                            {{ show.original_title }}
+                        </div>
+                        <div class="showSlide__subheader">
+                            {{ show.year }} - {{ show.genre }}
+                        </div>
+                        <div class="showSlide__rating">
+                            {{ show.rating }}
+                        </div>
+                    </header>
+                    <footer class="showSlide__desc">
+                        <a href="{% url 'movie:calendar' %}" class="showSlide__button">
+                            Расписание
+                        </a>
+                        <a href="{% url 'movie:detail' slug=show.slug %}" class="showSlide__toDetail">
+                            Описание фильма
+                        </a>
+                    </footer>
+                </article>
+            </li>
+        {% endfor %}
+        </ul>
 {% endblock %}
