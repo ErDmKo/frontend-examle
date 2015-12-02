@@ -22,6 +22,9 @@
 
 @import 'movieMain.css';
 @import 'movieFooter.css';
+@import 'sliderJsMovie.css';
+@import 'showSlide.css';
+
 
 body, html {
     width: 100%;

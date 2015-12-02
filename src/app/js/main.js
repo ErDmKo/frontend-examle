@@ -31,7 +31,9 @@ import {
     SVGLogoBackground
 } from './mainPage/directives/logoDirectives';
 
-var app = angular.module('mesto', ['ngResource']);
+import { ShowMovieController } from './movieShow/controllers/playShow.js'
+
+var app = angular.module('mesto', ['ngResource', 'youtube-embed']);
 
 register('mesto')
     .directive('sliderMain', SliderMain)
@@ -59,6 +61,8 @@ register('mesto')
     .directive('mestoSvgItem', SVGLogoItem)
     .directive('mestoSvgLogo', SVGLogoContanier)
     .directive('mestoSvgBackground', SVGLogoBackground)
+
+    .controller('showMovieController', ShowMovieController)
 
 app.config(($resourceProvider, $httpProvider)=> {
     $httpProvider.defaults.xsrfCookieName = 'csrftoken';

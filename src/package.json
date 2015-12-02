@@ -44,5 +44,8 @@
     "postcss-mixins": "^2.1.0",
     "postcss-nested": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "angular-youtube-embed": "^1.1.1"
   }
 }

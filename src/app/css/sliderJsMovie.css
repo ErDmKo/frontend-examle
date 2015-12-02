@@ -1,0 +1,66 @@
+.sliderJsMovie {
+    color: #fff;
+    height: 100%;
+    padding: 100px 0px 40px;
+    box-sizing: border-box;
+    position: relative;
+    &__next, &__prev {
+        position: absolute;
+        top: 70px;
+        width: 30px;
+        height: 20px;
+        &:after, &:before {
+            content: '';
+            position: absolute;
+        }
+        &:before {
+            width: 10px;
+            height: 10px;
+            border-left: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+        }
+        &:after {
+            top: 50%;
+            height: 1px;
+            background:  #fff;
+            width: 100%;
+            margin-top: 0.5px;
+        }
+    }
+    &__prev {
+        left: 20px;
+        &:before {
+            transform: translateY(50%) rotate(45deg);
+            border-color: #2BF4A7;
+        }
+        &:after {
+            background-color: #2BF4A7;
+        }
+    }
+    &__next {
+        right: 20px;
+        &:before {
+            right: 0px;
+            transform: translateY(50%) rotate(-135deg);
+            border-color: #D52FAD;
+        }
+        &:after {
+            background-color: #D52FAD;
+        }
+    }
+    &__content {
+        position: absolute;
+        top: 100px;
+        bottom: 50px;
+        width: 100%;
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+    &__item {
+        display: inline-block;
+        height: 100%;
+        position: relative;
+        width: 100%;
+        white-space: normal;
+    }
+}
