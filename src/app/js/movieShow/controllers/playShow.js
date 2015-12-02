@@ -14,7 +14,7 @@ export class ShowMovieController {
         });
         $scope.$on('youtube.player.ended', ($event, player) => {
             let videoObj = this.getVideoObj(player);
-            videoObj.active = true;
+            videoObj.active = false;
         });
     }
     getVideoObj(player){
