@@ -17,7 +17,7 @@
     }
     &__titleWraper {
         &:first-child {
-            flex-basis: 1%;
+            flex-basis: 70%;
         }
         flex-basis: 100%;
     }
@@ -69,6 +69,7 @@
             width: 100%;
             position: absolute;
             bottom: 1px;
+            left: 0;
         }
     }
     &__title {

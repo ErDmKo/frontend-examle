@@ -36,3 +36,12 @@ class Show(texts_models.Text):
         ordering = ['ord']
         verbose_name = 'Релиз'
         verbose_name_plural = 'Релизы'
+
+class Screening(models.Model):
+    show = models.ForeignKey(Show, verbose_name="Релиз")
+    date = models.DateTimeField(verbose_name="Дата и время показа")
+
+    class Meta:
+        ordering = ['date']
+        verbose_name = 'Сеанс'
+        verbose_name_plural = 'Сеансы'

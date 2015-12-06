@@ -1,6 +1,13 @@
 .movieMain {
     background: #000;
     height: 100%;
+    &__back {
+        border-top: 1px solid  #2BF4A7;
+        border-left: 1px solid  #2BF4A7;
+        width: 10px;
+        height: 10px;
+        transform: rotate(-45deg);
+    }
     &__menu {
         rect {
             fill: #D52FAD;

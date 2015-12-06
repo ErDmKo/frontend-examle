@@ -1,6 +1,7 @@
 from django.conf.urls import include, url
 from django.views import generic
 from . import models
+from . import views
 
 urlpatterns = [
     url(r'^$', 
@@ -9,10 +10,9 @@ urlpatterns = [
             template_name='movie/main.html'),
         name='main'),
     url(r'^calendar/$', 
-        generic.list.ListView.as_view(
-            queryset=models.Show.objects.all(),
-            template_name='movie/calendar.html'
-    ), name='calendar'),
+        views.SreeeningListByDate.as_view(),
+        name='calendar'
+    ),
     url(r'^catalog/$', 
         generic.list.ListView.as_view(
             queryset=models.Show.objects.all(),

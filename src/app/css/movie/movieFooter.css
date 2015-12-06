@@ -1,9 +1,9 @@
 .movieFooter {
-    background: #000;
     position: absolute;
     bottom: 20px;
     left: 20px;
     right: 20px;
+    z-index: 2;
     &__item {
         text-decoration: none;
         color: #2BF4A7;
@@ -21,6 +21,11 @@
         background: url(../img/instaIcon.svg) no-repeat 50% 50%;
         &:hover {
             cursor: pointer;
+        }
+        &.options {
+            width: 25px;
+            height: 25px;
+            background: url(../img/options.svg) no-repeat 50% 50% / cover;
         }
     }
 }

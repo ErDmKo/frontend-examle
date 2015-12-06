@@ -54,7 +54,7 @@
         bottom: 50px;
         width: 100%;
         white-space: nowrap;
-        overflow-x: auto;
+        overflow-x: hidden;
     }
     &__item {
         display: inline-block;

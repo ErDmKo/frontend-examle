@@ -1,6 +1,52 @@
 {% extends 'movie/base.html' %}
+{% block 'menu_button' %}
+    <a class="mainMenu__item movieMain__back fadeAnimator__ancor" href="{% url 'movie:main' %}">
+    </a>
+{% endblock %}
 {% block 'main_content' %}
+    {% regroup object_list by date|date:"j E" as date_list %}
     <article class="calendarPage">
-        Calendar
+        <div class="calendarPage__list">
+            {% for date_info in date_list %}
+            <dl class="calendarPage__item">
+                <dt class="calendarPage__date">
+                    <time>
+                        {% if date_info.grouper == now_date|date:"j E" %}
+                            Сегодня
+                        {% else %}
+                            {{ date_info.grouper }}
+                        {% endif %}
+                    </time>
+                </dt>
+                {% for screening in date_info.list %}
+                <dd class="calendarPage__desc">
+                    <a 
+                        class="calendarPage__wrapper"
+                        href="{% url 'movie:detail' slug=screening.show.slug %}">
+                        <time class="calendarPage__time">{{ screening.date|date:"H:i" }}</time>
+                        <div class="calendarPage__info">Подробнее</div>
+                        <div 
+                            class="calendarPage__img"
+                            style="background-image: url({{ screening.show.image.url }})">
+                            <img 
+                                class="calendarPage__image"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                        </div>
+                    </a>
+                </dd>
+                {% endfor %}
+            </dl>
+            {% endfor %}
+        </div>
     </article>
+    {% block footer %}
+        <footer class="movieFooter">
+            <menu class="movieFooter__menu">
+                <a href="{% url 'movie:calendar' %}" class="movieFooter__item">Скоро в кино</a>
+            </menu>
+            <menu class="movieFooter__socialList">
+                <a class="movieFooter__social options"></a>
+            </menu>
+        </footer>
+    {% endblock %}
 {% endblock %}

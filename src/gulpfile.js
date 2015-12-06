@@ -2,7 +2,7 @@ var pkg = require('./package.json');
 
 var dirs = pkg['dev-configs'].directories;
 var jsDirs = [dirs.src + '/js/*.js', dirs.src+'/js/**/*.js'];
-var cssDirs = [dirs.src + '/css/*.css'];
+var cssDirs = [dirs.src + '/css/**/*.css'];
 
 var browserify = require('browserify');
 var babelify = require('babelify');

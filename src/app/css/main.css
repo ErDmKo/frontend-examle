@@ -3,27 +3,29 @@
 @import 'colors.css';
 @import 'mixins.css';
 
-@import 'feedBackPopUp.css';
-@import 'mainPage.css';
-@import 'baseEvents.css';
-@import 'baseFooter.css';
-@import 'topEventList.css';
-@import 'sliderJs.css';
-@import 'itemPage.css';
-@import 'itemPreview.css';
-@import 'nextBlock.css';
-@import 'socialList.css';
-@import 'mainMenu.css';
-@import 'itemsListAll.css';
-@import 'pagesList.css';
 @import 'popUpAnimator.css';
 @import 'fadeAnimator.css';
 @import 'svgLogo.css';
 
-@import 'movieMain.css';
-@import 'movieFooter.css';
-@import 'sliderJsMovie.css';
-@import 'showSlide.css';
+@import 'events/feedBackPopUp.css';
+@import 'events/mainPage.css';
+@import 'events/baseEvents.css';
+@import 'events/baseFooter.css';
+@import 'events/topEventList.css';
+@import 'events/sliderJs.css';
+@import 'events/itemPage.css';
+@import 'events/itemPreview.css';
+@import 'events/nextBlock.css';
+@import 'events/socialList.css';
+@import 'events/mainMenu.css';
+@import 'events/itemsListAll.css';
+@import 'events/pagesList.css';
+
+@import 'movie/movieMain.css';
+@import 'movie/movieFooter.css';
+@import 'movie/sliderJsMovie.css';
+@import 'movie/showSlide.css';
+@import 'movie/calendarPage.css';
 
 
 body, html {
