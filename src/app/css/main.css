@@ -28,9 +28,12 @@
 @import 'movie/calendarPage.css';
 @import 'movie/movieMobileMenu.css';
 @import 'movie/customSelect.css';
-
+@import 'movie/showDetailPage.css';
+@import 'movie/whiteMovieBlock.css';
 
 body, html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     width: 100%;
     height: 100%;
     a {

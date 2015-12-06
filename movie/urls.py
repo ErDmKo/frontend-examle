@@ -9,7 +9,7 @@ urlpatterns = [
             queryset=models.Show.objects.filter(on_top=True)[:10],
             template_name='movie/main.html'),
         name='main'),
-    url(r'^calendar/$', 
+    url(r'^calendar/', 
         views.ScreeeningListByDate.as_view(),
         name='calendar'
     ),

@@ -1,0 +1,131 @@
+{% extends 'movie/base.html' %}
+{% block 'head' %}
+    <script src="https://www.youtube.com/player_api"></script>
+{% endblock %}
+{% block 'menu_button' %}
+    <a class="mainMenu__item movieMain__back fadeAnimator__ancor" href="{% url 'movie:main' %}">
+    </a>
+{% endblock %}
+{% block 'main_content' %}
+<article class="showDetailPage">
+    <div class="showDetailPage__preview"
+        ng-controller="showMovieController as vm" 
+        ng-class="{active: vm.video['{{ object.trailer }}'].active }"
+        style="background-image: url({{ object.image.url }})">
+        <img 
+            class="showDetailPage__image"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+        <div class="showDetailPage__play">
+            {% include 'mesto/inc/playTrangle.svg' %}
+        </div>
+        <youtube-video 
+           class="showDetailPage__video"
+           player-vars="{
+                controls: 0,
+                showinfo: 0,
+                modestbranding: 1
+           }"
+           video-url="'{{ object.trailer }}'">
+        </youtube-video>
+    </div>
+    <header class="showDetailPage__header">
+        <h1 class="showDetailPage__title">{{ object.title }}</h1>            
+        <h2 class="showDetailPage__subtitle">{{ object.original_title }}</h2>            
+        <div class="showDetailPage__addInfo">
+            <span class="showDetailPage__item">{{ object.genre }}</span>
+            <span class="showDetailPage__item">{{ object.year }}</span>
+        </div>
+    </header>
+    {% with url=request.build_absolute_uri %}
+    <section class="showDetailPage__socialRating">
+        <menu class="socialList showDetailPage__social">
+            <a
+                class="socialList__item vk"
+                href="http://vk.com/share.php?url={{ url }}"
+                onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                Vk
+            </a>
+            <a 
+                class="socialList__item fb"
+                href="http://www.facebook.com/share.php?u={{ url }}&title={{ object.title|urlencode }}"
+                onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                Fb
+            </a>
+            <a 
+                class="socialList__item tw"
+                href="http://twitter.com/intent/tweet?status={{ object.title|urlencode }}+{{ url}}"
+                onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                Tw
+            </a>
+        </menu>
+        <div class="showDetailPage__rating">
+            <div class="showDetailPage__ratingVal">
+                {{ object.rating }}
+            </div>
+            <div class="showDetailPage__ratingDesc">
+                IMDb
+            </div>
+        </div>
+    </section>
+    {% endwith %}
+    <section class="whiteMovieBlock">
+        <time class="whiteMovieBlock__header">{{ object.duration }} мин</time>
+        <dl class="whiteMovieBlock__info">
+            <dt class="whiteMovieBlock__subheader">Режисcер:</dt>
+            <dd class="whiteMovieBlock__desc">{{ object.director }}</dd>
+            <dt class="whiteMovieBlock__subheader">В ролях:</dt>
+            <dd class="whiteMovieBlock__desc">{{ object.roles }}</dd>
+        </dl>
+        <div  class="whiteMovieBlock__shortDesc">
+            {{ object.short_desc }}
+            <span ng-hide="full" ng-click="full=1" class="whiteMovieBlock__more">Развернуть</span>
+        </div>
+        <div class="whiteMovieBlock__fullDesc" ng-show="full">
+            {{ object.desc|safe }}
+        </div>
+        {% regroup object.screening_set.all by date|date:"j E" as date_list %}
+        <div class="whiteMovieBlock__schedule">
+            <header class="whiteMovieBlock__schedule__header">
+                Расписание кинопоказа
+            </header>
+            <dl class="customSelect whiteMovieBlock__customSelect" mesto-custom-select>
+                <dt
+                    mesto-custom-select-placeholder
+                    class="customSelect__placeholder"
+                    alt="0">
+                    Выберите дату
+                </dt>
+                <dd class="customSelect__list whiteMovieBlock__customSelect__list">
+                {% for date in date_list %}
+                    <li 
+                        mesto-custom-select-item
+                        class="customSelect__item whiteMovieBlock__customSelect__item">
+                        <input
+                            ng-model="selectDate"
+                            type="radio"
+                            id="genre{{ date.list.0.id }}"
+                            ng-value="'{{ date.grouper }}'"/>
+                        <label
+                            class="customSelect__label"
+                            for="genre{{ date.list.0.id }}">
+                            {{ date.grouper }}
+                    </li>
+                {% endfor %}
+                </dd>
+            </dl>
+            <ul class="whiteMovieBlock__timeView">
+                {% for screening in object.screening_set.all %}
+                    <li
+                        class="whiteMovieBlock__timeItem"
+                        ng-show="selectDate == '{{ screening.date|date:"j E" }}'">
+                        {{ screening.date|date:"H:i" }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+       <a class="whiteMovieBlock__footer" href="{% url 'movie:calendar' %}">Сегодня в кино</a>
+    </section>
+</article>
+    {% block footer %}
+    {% endblock %}
+{% endblock %}

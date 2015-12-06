@@ -42,6 +42,7 @@
     </article>
     <div 
         mesto-feedback-item="mobileFilterMenu"
+        ng-controller="showsFilterController as vm"
         class="movieMobileMenu">
         <div mesto-feedback-close="mobileFilterMenu" class="movieMobileMenu__close">
             {% include 'mesto/inc/black_cross.svg' %}
@@ -60,7 +61,7 @@
                         mesto-custom-select-item
                         class="customSelect__item">
                         <input
-                            ng-model="select.genre"
+                            ng-model="vm.select.genre"
                             type="radio"
                             id="genre{{ genre.id }}"
                             ng-value="{{ genre.id }}"/>
@@ -85,7 +86,7 @@
                         mesto-custom-select-item
                         class="customSelect__item">
                         <input
-                            ng-model="select.year"
+                            ng-model="vm.select.year"
                             type="radio"
                             id="year2015"
                             ng-value="2015"/>
@@ -109,18 +110,21 @@
                         mesto-custom-select-item
                         class="customSelect__item">
                         <input
-                            ng-model="select.raiting"
+                            ng-model="vm.select.rating"
                             type="radio"
                             id="rating8"
                             ng-value="8.2"/>
                         <label
                             class="customSelect__label"
-                            for="rating8.2">
+                            for="rating8">
                             8.2
                         </label>
                     </li>
                 </dd>
             </dl>
+            <div ng-click="vm.search()" class="movieMobileMenu__button">
+                Поиск
+            </div>
         </div>
     </div>
     <div 

@@ -1,0 +1,115 @@
+.showDetailPage {
+    background: #10131E;
+    box-sizing: border-box;
+    color: #fff;
+    padding: 100px 20px 20px;
+    &__preview {
+        background: 50% 50% / cover;
+        position: relative;
+    }
+    &__image {
+        width: 100%;
+    }
+    &__video {
+        position: absolute;
+        left: 0px;
+        right: 0;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        bottom: 0px;
+        opacity: 0;
+        transition: .5s opacity;
+        .showDetailPage__preview.active & {
+            opacity: 1;
+        }
+    }
+    &__play {
+        position: absolute;
+        width: 30px;
+        top: 50%;
+        left: 50%;
+        height: 29px;
+        transform: translate(-50%, -50%);
+        &:before {
+            width: 90px;
+            height: 90px;
+            content: '';
+            position: absolute;
+            background: rgba(0,0,0,.5);
+            border-radius: 100px;
+            border: 3px solid #2BF4A7;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        svg {
+            position: relative;
+            transform: translate(3px,0px);
+        }
+        polygon {
+            fill: transparent;
+            stroke: #2BF4A7;
+            stroke-width: 3;
+            stroke-linecap:round;
+            stroke-linejoin:round;
+        }
+    }
+    &__title {
+        font: 25px/25px hcyrregular;
+        margin: 17px 0px 10px;
+    }
+    &__subtitle {
+        font: 14px hcyrregular;
+        color: #3C3C3B;
+        margin : 10px 0px;
+    }
+    &__item {
+        font: 14px hcyrregular;
+        color: #fff;
+        opacity: .5;
+        text-transform: capitalize;
+        display: inline-block;
+        position: relative;
+        & + & {
+            margin-left: 20px;
+            &:after {
+                content: '';
+                position: absolute;
+                width: 1px;
+                background: #fff;
+                top: 2px;
+                bottom: 2px;
+                left: -12px;
+            }
+        }
+    }
+    &__social {
+        display: inline-block;
+        margin: 40px 0px 20px;
+        &Rating {
+            position: relative;
+            
+            margin-right: -20px;
+        }
+    }
+    &__rating {
+        width: 30%;
+        background: #D52FAD;
+        position:absolute;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &Val {
+            font: 32px HarmoniaSansProCyr-Light;
+        }
+        &Desc {
+            font: 15px hcyrregular;
+        }
+    }
+}

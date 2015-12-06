@@ -39,6 +39,8 @@ import {
     MestoCustomSelectPlaceholder
 } from './movieShow/directives/customSelect.js'
 
+import { ShowsFilterController } from './movieShow/controllers/showsFilterController.js' 
+
 var app = angular.module('mesto', ['ngResource', 'youtube-embed']);
 
 register('mesto')
@@ -73,6 +75,8 @@ register('mesto')
     .directive('mestoCustomSelect', MestoCustomSelect)
     .directive('mestoCustomSelectItem', MestoCustomSelectItem)
     .directive('mestoCustomSelectPlaceholder', MestoCustomSelectPlaceholder)
+
+    .controller('showsFilterController', ShowsFilterController)
 
 app.config(($resourceProvider, $httpProvider)=> {
     $httpProvider.defaults.xsrfCookieName = 'csrftoken';

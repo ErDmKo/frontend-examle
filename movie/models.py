@@ -1,3 +1,4 @@
+import datetime
 from django.db import models
 from texts import models as texts_models 
 
@@ -19,6 +20,13 @@ class Show(texts_models.Text):
     on_top = models.BooleanField(
         default=False,
         verbose_name = 'Вывод на главную')
+    on_archive = models.BooleanField(
+        default=False,
+        verbose_name = 'Показывать как архивный')
+    short_desc = models.CharField(
+        blank = True,
+        max_length=255,
+        verbose_name='Короткое описание')
     image = models.ImageField(
         upload_to = 'movie_headers',
         verbose_name='Изображение для списка')
@@ -56,9 +64,15 @@ class Show(texts_models.Text):
         verbose_name = 'Релиз'
         verbose_name_plural = 'Релизы'
 
+class ScreeningManager(models.Manager):
+    def get_query_set(self):
+        return super(ScreeningManager, self).get_query_set().filter(date__gt=datetime.datetime.now())
+
 class Screening(models.Model):
     show = models.ForeignKey(Show, verbose_name="Релиз")
     date = models.DateTimeField(verbose_name="Дата и время показа")
+
+    objects = ScreeningManager()
 
     class Meta:
         ordering = ['date']
