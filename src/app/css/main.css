@@ -26,6 +26,8 @@
 @import 'movie/sliderJsMovie.css';
 @import 'movie/showSlide.css';
 @import 'movie/calendarPage.css';
+@import 'movie/movieMobileMenu.css';
+@import 'movie/customSelect.css';
 
 
 body, html {

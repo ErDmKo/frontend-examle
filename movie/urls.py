@@ -10,7 +10,7 @@ urlpatterns = [
             template_name='movie/main.html'),
         name='main'),
     url(r'^calendar/$', 
-        views.SreeeningListByDate.as_view(),
+        views.ScreeeningListByDate.as_view(),
         name='calendar'
     ),
     url(r'^catalog/$', 

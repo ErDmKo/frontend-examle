@@ -1,6 +1,20 @@
 from django.db import models
 from texts import models as texts_models 
 
+class Genre(models.Model):
+    title = models.CharField(
+        max_length=200,
+        verbose_name='Название')
+    ord = models.SmallIntegerField(default=50, verbose_name = 'Порядок')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['ord']
+        verbose_name = 'Жанр'
+        verbose_name_plural = 'Жанры'
+
 class Show(texts_models.Text):
     on_top = models.BooleanField(
         default=False,
@@ -8,9 +22,11 @@ class Show(texts_models.Text):
     image = models.ImageField(
         upload_to = 'movie_headers',
         verbose_name='Изображение для списка')
-    genre = models.CharField(
-        max_length=255,
-        verbose_name='Жанр')
+    genre_list = models.ManyToManyField(
+        Genre,
+        verbose_name="Жанры",
+        blank=True, 
+        symmetrical=False)
     director = models.CharField(
         max_length=255,
         verbose_name='Режисер')
@@ -29,7 +45,10 @@ class Show(texts_models.Text):
         verbose_name = 'Ссылка на видео трейлера')
     ord = models.SmallIntegerField(default=50, verbose_name = 'Порядок')
         
-    def __src__(self):
+    def genre(self):
+        return self.genre_list.all()[0] if self.genre_list.count() else ''
+
+    def __str__(self):
         return self.title
 
     class Meta:

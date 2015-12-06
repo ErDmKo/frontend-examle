@@ -5,7 +5,8 @@
 {% endblock %}
 {% block 'main_content' %}
     {% regroup object_list by date|date:"j E" as date_list %}
-    <article class="calendarPage">
+    <article
+        class="calendarPage">
         <div class="calendarPage__list">
             {% for date_info in date_list %}
             <dl class="calendarPage__item">
@@ -39,14 +40,145 @@
             {% endfor %}
         </div>
     </article>
+    <div 
+        mesto-feedback-item="mobileFilterMenu"
+        class="movieMobileMenu">
+        <div mesto-feedback-close="mobileFilterMenu" class="movieMobileMenu__close">
+            {% include 'mesto/inc/black_cross.svg' %}
+        </div>
+        <div class="movieMobileMenu__list short">
+            <dl class="customSelect" mesto-custom-select>
+                <dt
+                    mesto-custom-select-placeholder
+                    class="customSelect__placeholder"
+                    alt="0">
+                    Выберите жанр
+                </dt>
+                <dd class="customSelect__list">
+                {% for genre in genre_list %}
+                    <li 
+                        mesto-custom-select-item
+                        class="customSelect__item">
+                        <input
+                            ng-model="select.genre"
+                            type="radio"
+                            id="genre{{ genre.id }}"
+                            ng-value="{{ genre.id }}"/>
+                        <label
+                            class="customSelect__label"
+                            for="genre{{ genre.id }}">
+                            {{ genre.title }}
+                        </label>
+                    </li>
+                {% endfor %}
+                </dd>
+            </dl>
+            <dl class="customSelect" mesto-custom-select>
+                <dt
+                    mesto-custom-select-placeholder
+                    class="customSelect__placeholder"
+                    alt="1">
+                    Выберите год
+                </dt>
+                <dd class="customSelect__list">
+                    <li 
+                        mesto-custom-select-item
+                        class="customSelect__item">
+                        <input
+                            ng-model="select.year"
+                            type="radio"
+                            id="year2015"
+                            ng-value="2015"/>
+                        <label
+                            class="customSelect__label"
+                            for="year2015">
+                            2015
+                        </label>
+                    </li>
+                </dd>
+            </dl>
+            <dl class="customSelect" mesto-custom-select>
+                <dt
+                    mesto-custom-select-placeholder
+                    class="customSelect__placeholder"
+                    alt="2">
+                    Выбрать рейтинг
+                </dt>
+                <dd class="customSelect__list">
+                    <li 
+                        mesto-custom-select-item
+                        class="customSelect__item">
+                        <input
+                            ng-model="select.raiting"
+                            type="radio"
+                            id="rating8"
+                            ng-value="8.2"/>
+                        <label
+                            class="customSelect__label"
+                            for="rating8.2">
+                            8.2
+                        </label>
+                    </li>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div 
+        mesto-feedback-item="mobileMenu"
+        class="movieMobileMenu">
+        <div mesto-feedback-toggle="mobileMenu" class="movieMobileMenu__close">
+            {% include 'mesto/inc/black_cross.svg' %}
+        </div>
+        <ul class="movieMobileMenu__list">
+            <li class="movieMobileMenu__item">
+                <a 
+                    class="movieMobileMenu__ancor"
+                    href="{% url 'movie:calendar' %}">
+                    Сегодня в кино
+                 </a>
+            </li>
+            <li class="movieMobileMenu__item">
+                <a 
+                    class="movieMobileMenu__ancor"
+                    href="{% url 'movie:calendar' %}">
+                    Скоро в кино
+                </a>
+            </li>
+            <li class="movieMobileMenu__item">
+                <a
+                    class="movieMobileMenu__ancor"
+                    href="{% url 'movie:catalog' %}">
+                    Каталог фильмов
+                 </a>
+            </li>
+            <li class="movieMobileMenu__item">
+                <a
+                    class="movieMobileMenu__ancor"
+                    href="{% url 'movie:archive' %}">
+                    Архиф фильмов
+                 </a>
+            </li>
+            <li class="movieMobileMenu__item">
+                <a
+                    class="movieMobileMenu__ancor"
+                    href="{% url 'movie:about' %}">
+                    О кинотеатре
+                 </a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
     {% block footer %}
         <footer class="movieFooter">
-            <menu class="movieFooter__menu">
-                <a href="{% url 'movie:calendar' %}" class="movieFooter__item">Скоро в кино</a>
+            <menu
+                mesto-feedback-toggle="mobileMenu"
+                class="movieFooter__menu">
+                <a class="movieFooter__item">Скоро в кино</a>
             </menu>
-            <menu class="movieFooter__socialList">
+            <menu
+                mesto-feedback-toggle="mobileFilterMenu"
+                class="movieFooter__socialList">
                 <a class="movieFooter__social options"></a>
             </menu>
         </footer>
     {% endblock %}
-{% endblock %}

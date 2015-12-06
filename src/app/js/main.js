@@ -33,6 +33,12 @@ import {
 
 import { ShowMovieController } from './movieShow/controllers/playShow.js'
 
+import { 
+    MestoCustomSelect,
+    MestoCustomSelectItem,
+    MestoCustomSelectPlaceholder
+} from './movieShow/directives/customSelect.js'
+
 var app = angular.module('mesto', ['ngResource', 'youtube-embed']);
 
 register('mesto')
@@ -63,6 +69,10 @@ register('mesto')
     .directive('mestoSvgBackground', SVGLogoBackground)
 
     .controller('showMovieController', ShowMovieController)
+
+    .directive('mestoCustomSelect', MestoCustomSelect)
+    .directive('mestoCustomSelectItem', MestoCustomSelectItem)
+    .directive('mestoCustomSelectPlaceholder', MestoCustomSelectPlaceholder)
 
 app.config(($resourceProvider, $httpProvider)=> {
     $httpProvider.defaults.xsrfCookieName = 'csrftoken';

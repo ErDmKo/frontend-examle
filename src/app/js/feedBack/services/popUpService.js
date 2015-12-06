@@ -1,5 +1,6 @@
 class PopUp {
-    constructor(itemHandler){
+    constructor(itemHandler, name){
+        this.name = name;
         this.itemHandler = itemHandler;
     }
     toggleItem() {
@@ -14,7 +15,7 @@ export class PopUpService {
         this.popUps = {};
     }
     addItem(itemName, handler) {
-        this.popUps[itemName] = new PopUp(handler);
+        this.popUps[itemName] = new PopUp(handler, itemName);
     }
     close(itemName) {
         if (!itemName) {
@@ -39,7 +40,7 @@ export class PopUpService {
             e.preventDefault();
             ([this.popUps[popUpName]] || [])
                 .forEach((popUp)=>{
-                   popUp.toggleItem();
+                    popUp.toggleItem();
                 })
         }
     }

@@ -49,12 +49,12 @@ export class MestoFeedbackItem {
         this.restrict = 'A';
         this.popUpSerivice = popUpSerivice;
     }
-    toggle() {
-        this.element.toggleClass(MestoFeedbackItem.TOGGLE_CLASS);
+    toggle(element) {
+        element.toggleClass(MestoFeedbackItem.TOGGLE_CLASS);
     }
     link(scope, element, attrs) {
         this.element = element;
         this.popUpSerivice
-            .addItem(attrs.mestoFeedbackItem, this.toggle.bind(this));
+            .addItem(attrs.mestoFeedbackItem, this.toggle.bind(this, element));
     }
 }
