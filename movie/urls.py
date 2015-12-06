@@ -14,20 +14,19 @@ urlpatterns = [
         name='calendar'
     ),
     url(r'^catalog/$', 
-        generic.list.ListView.as_view(
-            queryset=models.Show.objects.all(),
-            template_name='movie/catalog.html'
-    ), name='catalog'),
+        views.Catalog.as_view(),
+        name='catalog'
+    ),
     url(r'^archive/$', 
-        generic.list.ListView.as_view(
-            queryset=models.Show.objects.all(),
-            template_name='movie/archive.html'
-    ), name='archive'),
+        views.Archive.as_view(), 
+        name='archive'
+    ),
     url(r'^about/$', 
-        generic.list.ListView.as_view(
-            queryset=models.Show.objects.all(),
+        generic.TemplateView.as_view(
             template_name='movie/about.html'
-    ), name='about'),
+        ),
+        name='about'
+    ),
     url(
         r'^(?P<slug>[\w\-]+)/$',
         generic.detail.DetailView.as_view(

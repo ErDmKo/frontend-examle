@@ -1,0 +1,25 @@
+.aboutPage {
+    position: absolute;
+    overflow-y: auto;
+    top: 70px;
+    left: 20px; 
+    right: 20px;
+    bottom: 50px;
+    color: #fff;
+    font: 15px hcyrregular;
+    &__header {
+        font-size: 27px;
+        margin: 20px 0px;
+    }
+    &__big {
+        font-size: 18px;
+        margin: 15px 0px;
+    }
+    &__medium { 
+        margin: 10px 0px;
+    }
+    &__small { 
+        opacity: .8;
+        margin: 10px 0px;
+    }
+}

@@ -1,6 +1,5 @@
-{% extends 'movie/base.html' %}
-{% block 'main_content' %}
-    <article class="catalogPage">
-        Archive
-    </article>
+{% extends 'movie/catalog.html' %}
+{% block 'mobileMenu' %}
+    {% include 'movie/inc/mobile_menu.html' with selected="archive" %}
 {% endblock %}
+{% block 'mobileMenuName' %}Архив фильмов{% endblock %}

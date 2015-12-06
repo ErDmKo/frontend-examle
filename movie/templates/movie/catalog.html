@@ -1,6 +1,37 @@
 {% extends 'movie/base.html' %}
+{% block 'menu_button' %}
+    <a class="mainMenu__item movieMain__back fadeAnimator__ancor" href="{% url 'movie:main' %}">
+    </a>
+{% endblock %}
 {% block 'main_content' %}
     <article class="catalogPage">
-        Catalog
+        <div class="catalogPage__list">
+            {% for show in object_list %}
+            <div 
+                class="catalogPage__item"
+                style="background-image: url({{ show.image.url }})">
+                <img 
+                    class="catalogPage__image"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+            </div>
+            {% endfor %}
+        </div>
     </article>
+    {% block 'mobileMenu' %}
+        {% include 'movie/inc/mobile_menu.html' with selected="catalog" %}
+    {% endblock %}
+{% endblock %}
+{% block footer %}
+    <footer class="movieFooter">
+        <menu
+            mesto-feedback-toggle="mobileMenu"
+            class="movieFooter__menu">
+            <a class="movieFooter__item">{% block 'mobileMenuName' %}Каталог фильмов{% endblock %}</a>
+        </menu>
+        <menu
+            mesto-feedback-toggle="mobileFilterMenu"
+            class="movieFooter__socialList">
+            <a class="movieFooter__social options"></a>
+        </menu>
+    </footer>
 {% endblock %}

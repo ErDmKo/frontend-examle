@@ -30,6 +30,8 @@
 @import 'movie/customSelect.css';
 @import 'movie/showDetailPage.css';
 @import 'movie/whiteMovieBlock.css';
+@import 'movie/catalogPage.css';
+@import 'movie/aboutPage.css';
 
 body, html {
     -webkit-font-smoothing: antialiased;

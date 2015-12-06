@@ -23,6 +23,9 @@ class Show(texts_models.Text):
     on_archive = models.BooleanField(
         default=False,
         verbose_name = 'Показывать как архивный')
+    on_catalog = models.BooleanField(
+        default=False,
+        verbose_name = 'Показывать в каталоге')
     short_desc = models.CharField(
         blank = True,
         max_length=255,

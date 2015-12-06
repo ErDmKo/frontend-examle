@@ -6,7 +6,6 @@ export class ShowsFilterController {
         this.select = {};
     }
     search() {
-        console.log(this.select);
-        window.location.href = `${CONFIG.urls.showFiltes}?${jQuery.param(this.select)}`;
+        window.location.href = `${window.location.href.split('?')[0]}?${jQuery.param(this.select)}`;
     }
 }
