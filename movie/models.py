@@ -45,7 +45,8 @@ class Show(texts_models.Text):
         verbose_name='Роли')
     original_title = models.CharField(
         max_length=255,
-        verbose_name='Оригинальное название') 
+        verbose_name='Оригинальное название', 
+        help_text='Пример Mission: Impossible — Rogue Nation')
     year = models.BigIntegerField(
         verbose_name='Год')
     rating = models.FloatField(
@@ -53,7 +54,8 @@ class Show(texts_models.Text):
     duration = models.BigIntegerField(
         verbose_name='Продолжительность в мин')
     trailer = models.TextField(
-        verbose_name = 'Ссылка на видео трейлера')
+        verbose_name = 'Ссылка на видео трейлера',
+        help_text='Пример Li7bv9lbaBo')
     ord = models.SmallIntegerField(default=50, verbose_name = 'Порядок')
         
     def genre(self):
