@@ -2262,6 +2262,7 @@ table {
 }
 
 .catalogPage__item {
+  display: block;
   margin: 20px 0px;
   background: 50% 50% / cover;
   position: relative;

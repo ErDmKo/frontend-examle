@@ -28,10 +28,14 @@
                             </div>
                         </div>
                         <div class="showSlide__titleWraper showSlide__smallDesc">
-                            <a href="{% url 'movie:calendar' %}" class="showSlide__button">
-                                Расписание
+                            <a 
+                               class="fadeAnimator__ancor showSlide__button"
+                               href="{% url 'movie:calendar' %}" >
+                               Расписание
                             </a>
-                            <a href="{% url 'movie:detail' slug=show.slug %}" class="showSlide__toDetail">
+                            <a 
+                                class="fadeAnimator__ancor showSlide__toDetail"
+                                href="{% url 'movie:detail' slug=show.slug %}">
                                 Описание фильма
                             </a>
                         </div>

@@ -28,6 +28,7 @@
         width: 100%;
     }
     &__item {
+        display: block;
         margin: 20px 0px;
         background: 50% 50% / cover;
         position: relative;

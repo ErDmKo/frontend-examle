@@ -7,13 +7,14 @@
     <article class="catalogPage">
         <div class="catalogPage__list">
             {% for show in object_list %}
-            <div 
-                class="catalogPage__item"
+            <a 
+                class="catalogPage__item fadeAnimator__ancor"
+                href="{% url 'movie:detail' slug=show.slug %}"
                 style="background-image: url({{ show.image.url }})">
                 <img 
                     class="catalogPage__image"
                     src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
-            </div>
+            </a>
             {% endfor %}
         </div>
     </article>
