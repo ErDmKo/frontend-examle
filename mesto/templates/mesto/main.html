@@ -18,15 +18,14 @@
                 <a 
                     mesto-svg-item="highenderSection"
                     img-url="{{ settings.EST_BACKGROUND.file.url|default:"/static/mesto/img/logoM.jpg" }}"
-                    class="mainPage__item fadeAnimator__ancor"
-                    href="{% url 'movie:main' %}">
+                    class="mainPage__item disabled fadeAnimator__ancor">
                     Highender
                 </a>
                 <a
                     mesto-svg-item="movieSection"
                     img-url="{{ settings.O_BACKGROUND.file.url|default:"/static/mesto/img/logoM.jpg" }}"
-                    class="mainPage__item disabled fadeAnimator__ancor" 
-                    href="#">
+                    class="mainPage__item fadeAnimator__ancor" 
+                    href="{% url 'movie:main' %}">
                     Movie theater
                 </a>
             </nav>
