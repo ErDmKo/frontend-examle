@@ -4,8 +4,9 @@
     &__back {
         border-top: 1px solid  #2BF4A7;
         border-left: 1px solid  #2BF4A7;
-        width: 10px;
-        height: 10px;
+        width: 15px;
+        margin-top: 4px;
+        height: 15px;
         transform: rotate(-45deg);
     }
     &__menu {

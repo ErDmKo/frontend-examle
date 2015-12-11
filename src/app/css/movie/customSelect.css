@@ -5,6 +5,19 @@
     & + & {
         margin-top: 20px;
     }
+    &.black {
+        &.open {
+            border: 2px solid transparent;
+            
+            &:after {
+                border: 2px solid #D52FAD;
+                border-top: 0;
+                border-left: 0;
+                z-index: 2 
+            }
+        }
+        
+    }
     &.open:after{
         margin-top: -5px;
         transform: rotate(-135deg);
@@ -24,7 +37,7 @@
         transform: rotate(45deg);
     }
     &__list {
-        top: 0%;
+        top: 0;
         background: #000;
         z-index: 10;
         box-shadow: 0px 9px 30px rgba(0,0,0,.2);
@@ -46,6 +59,10 @@
     }
     &__placeholder, &__label {
         font: 13px HarmoniaSansProCyr-SemiBd;
+        .customSelect.black & {
+            z-index: 2;
+            position: relative;
+        }
     }
     padding: 15px 27px;
     position: relative;
@@ -71,6 +88,15 @@
         box-sizing: border-box;
         left: 0px;
         top: 100%;
+        .customSelect.black & {
+            top: -7px;
+            z-index: 1;
+            padding-top: 40px;
+            background: rgba(0,0,0,.7);
+            border: 2px solid #D52FAD;
+            border-radius: 30px;
+
+        }
         input[type="radio"] {
           position: absolute;
           width: 0;
@@ -88,6 +114,9 @@
     &__item {
         pointer-events: all;
         margin: 0px 30px;
+        .customSelect.black & {
+            margin: 10px 25px;
+        }
     }
     &__label {
         display: block;

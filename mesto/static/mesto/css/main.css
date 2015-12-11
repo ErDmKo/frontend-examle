@@ -1327,8 +1327,9 @@ table {
 .movieMain__back {
   border-top: 1px solid  #2BF4A7;
   border-left: 1px solid  #2BF4A7;
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  margin-top: 4px;
+  height: 15px;
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
@@ -1399,6 +1400,10 @@ table {
   width: 25px;
   height: 25px;
   background: url(../img/options.svg) no-repeat 50% 50% / cover;
+}
+
+.fixedPopup .movieFooter__social.options {
+  display: none;
 }
 
 .sliderJsMovie {
@@ -1568,9 +1573,7 @@ table {
 }
 
 .showSlide__subheader {
-  position: absolute;
-  right: 0px;
-  top: 23px;
+  float: right;
 }
 
 .showSlide__button {
@@ -1602,9 +1605,9 @@ table {
 
 .showSlide__title {
   box-sizing: border-box;
-  padding-right: 120px;
   color: #2BF4A7;
   font: 20px/20px HarmoniaSansProCyr-Bold;
+  text-decoration: none;
 }
 
 .showSlide__play {
@@ -1888,6 +1891,17 @@ table {
   margin-top: 20px;
 }
 
+.customSelect.black.open {
+  border: 2px solid transparent;
+}
+
+.customSelect.black.open:after {
+  border: 2px solid #D52FAD;
+  border-top: 0;
+  border-left: 0;
+  z-index: 2;
+}
+
 .customSelect.open:after {
   margin-top: -5px;
   -webkit-transform: rotate(-135deg);
@@ -1913,7 +1927,7 @@ table {
 }
 
 .customSelect__list {
-  top: 0%;
+  top: 0;
   background: #000;
   z-index: 10;
   box-shadow: 0px 9px 30px rgba(0,0,0,.2);
@@ -1941,6 +1955,12 @@ table {
   font: 13px HarmoniaSansProCyr-SemiBd;
 }
 
+.customSelect.black .customSelect__placeholder,
+.customSelect.black .customSelect__label {
+  z-index: 2;
+  position: relative;
+}
+
 .customSelect.open {
   z-index: 2;
 }
@@ -1964,6 +1984,15 @@ table {
   top: 100%;
 }
 
+.customSelect.black .customSelect__list {
+  top: -7px;
+  z-index: 1;
+  padding-top: 40px;
+  background: rgba(0,0,0,.7);
+  border: 2px solid #D52FAD;
+  border-radius: 30px;
+}
+
 .customSelect__list input[type="radio"] {
   position: absolute;
   width: 0;
@@ -1982,6 +2011,10 @@ table {
 .customSelect__item {
   pointer-events: all;
   margin: 0px 30px;
+}
+
+.customSelect.black .customSelect__item {
+  margin: 10px 25px;
 }
 
 .customSelect__label {

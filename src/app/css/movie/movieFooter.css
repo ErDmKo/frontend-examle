@@ -26,6 +26,9 @@
             width: 25px;
             height: 25px;
             background: url(../img/options.svg) no-repeat 50% 50% / cover;
+            .fixedPopup & {
+                display: none;
+            }
         }
     }
 }

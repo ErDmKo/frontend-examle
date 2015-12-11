@@ -17,20 +17,20 @@
                 <article class="showSlide">
                     <div class="showSlide__titleBlock">
                         <div class="showSlide__titleWraper">
-                            <div class="showSlide__title">
-                                {{ show.title }}
-                            </div>
-                            <div class="showSlide__original_title">
-                                {{ show.original_title }}
-                            </div>
                             <div class="showSlide__subheader">
                                 {{ show.year }} - {{ show.genre }}
+                            </div>
+                            <a href="{% url 'movie:detail' slug=show.slug %}" class="showSlide__title">
+                                {{ show.title }}
+                            </a>
+                            <div class="showSlide__original_title">
+                                {{ show.original_title }}
                             </div>
                         </div>
                         <div class="showSlide__titleWraper showSlide__smallDesc">
                             <a 
                                class="fadeAnimator__ancor showSlide__button"
-                               href="{% url 'movie:calendar' %}" >
+                               href="{% url 'movie:detail' slug=show.slug %}#schedule"  >
                                Расписание
                             </a>
                             <a 
@@ -64,7 +64,7 @@
                         </youtube-video>
                     </header>
                     <footer class="showSlide__desc">
-                        <a href="{% url 'movie:calendar' %}" class="showSlide__button">
+                        <a href="{% url 'movie:detail' slug=show.slug %}#schedule" class="showSlide__button">
                             Расписание
                         </a>
                         <a href="{% url 'movie:detail' slug=show.slug %}" class="showSlide__toDetail">

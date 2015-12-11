@@ -86,7 +86,7 @@
         {% regroup object.screening_set.all by date|date:"j E" as date_list %}
         <div class="whiteMovieBlock__schedule">
             <header class="whiteMovieBlock__schedule__header">
-                Расписание кинопоказа
+                <a id="schedule">Расписание кинопоказа</a>
             </header>
             <dl class="customSelect whiteMovieBlock__customSelect" mesto-custom-select>
                 <dt

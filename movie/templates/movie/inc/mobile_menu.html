@@ -6,7 +6,7 @@
         {% include 'mesto/inc/black_cross.svg' %}
     </div>
     <div class="movieMobileMenu__list short">
-        <dl class="customSelect" mesto-custom-select>
+        <dl class="customSelect {{ customSelectModifer }}" mesto-custom-select>
             <dt
                 mesto-custom-select-placeholder
                 class="customSelect__placeholder"
@@ -32,7 +32,7 @@
             {% endfor %}
             </dd>
         </dl>
-        <dl class="customSelect" mesto-custom-select>
+        <dl class="customSelect {{ customSelectModifer }}" mesto-custom-select>
             <dt
                 mesto-custom-select-placeholder
                 class="customSelect__placeholder"
@@ -56,7 +56,7 @@
                 </li>
             </dd>
         </dl>
-        <dl class="customSelect" mesto-custom-select>
+        <dl class="customSelect {{ customSelectModifer }}" mesto-custom-select>
             <dt
                 mesto-custom-select-placeholder
                 class="customSelect__placeholder"
@@ -81,7 +81,7 @@
             </dd>
         </dl>
         <div ng-click="vm.search()" class="movieMobileMenu__button">
-            Поиск
+            Найти
         </div>
     </div>
 </div>
@@ -117,7 +117,7 @@
             <a
                 class="movieMobileMenu__ancor {% if selected == "archive" %} active {% endif %}"
                 href="{% url 'movie:archive' %}">
-                Архиф фильмов
+                Архив фильмов
              </a>
         </li>
         <li class="movieMobileMenu__item">

@@ -44,9 +44,7 @@
         flex-direction: column;
     }
     &__subheader {
-        position: absolute;
-        right: 0px;
-        top: 23px;
+        float: right;
     }
     &__button {
         color: #2BF4A7;
@@ -74,9 +72,9 @@
     }
     &__title {
         box-sizing: border-box;
-        padding-right: 120px;
         color: #2BF4A7;
         font: 20px/20px HarmoniaSansProCyr-Bold;
+        text-decoration: none;
     }
     &__play {
         position: absolute;
