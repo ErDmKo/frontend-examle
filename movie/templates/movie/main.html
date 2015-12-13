@@ -5,6 +5,34 @@
 {% endblock %}
 {% block 'main_content' %}
     <div slider-main ng-controller="showMovieController as vm" class="sliderJsMovie">
+        <menu class="sliderJsMovie__menu">
+            <a
+                href="{% url 'movie:catalog' %}"
+                class="fadeAnimator__ancor sliderJsMovie__menu__item">
+                Каталог фильмов
+            </a>
+            <a 
+                href="{% url 'movie:archive' %}"
+                class="fadeAnimator__ancor sliderJsMovie__menu__item">
+                Архив фильмов
+            </a>
+            <a 
+                href="{% url 'movie:about' %}"
+                class="fadeAnimator__ancor sliderJsMovie__menu__item">
+                О кинотеатре
+            </a>
+        </menu>
+
+        <div class="sliderJsMovie__before">
+            <img 
+                class="sliderJsMovie__before__image"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+        </div>
+        <div class="sliderJsMovie__after">
+            <img 
+                class="sliderJsMovie__after__image"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+        </div>
         <div slider-controll="1" class="sliderJsMovie__next">
         </div>
         <div slider-controll="-1" class="sliderJsMovie__prev">
@@ -13,7 +41,7 @@
             horizontal-scroll
             class="sliderJsMovie__content"> {% for show in object_list %}
             <li
-                slider-item
+                uni-slider-item
                 class="sliderJsMovie__item">
                 <article class="showSlide">
                     <div class="showSlide__top">
@@ -82,7 +110,6 @@
                                Расписание
                             </a>
                         </div>
-                        
                         <article>
                             <header class="smallDesc__header">
                                 Продолжительность

@@ -28,6 +28,10 @@
             width: 100%;
 
         }
+        @media (min-width: 800px) {
+            top: 33px;
+            z-index: 1;
+        }
     }
     &__subheader {
         color: #2bf4a7;

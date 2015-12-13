@@ -8,8 +8,10 @@ class SliderController {
     }
     set scrollPosition(val){
         this.slide = this.items.reduce((outIndex, item, index)=>{
-            //console.log(item.elemInfo.offsetWidth);
             let center = val + item.elemInfo.offsetWidth;
+            if (item.elemInfo.setActive) {
+                item.elemInfo.setActive(val - item.elemInfo.offsetLeft);
+            }
             if(item.elemInfo.center < center) {
                 outIndex = index;
             }
@@ -136,6 +138,30 @@ export class SliderItem {
         window.addEventListener('resize', ()=>{
             handler(this.getElemInfo(index));
         });
+    }
+}
+export class UniSliderItem extends SliderItem {
+    getElemInfo(index) {
+        if (document.body.offsetWidth < 800) {
+            return super.getElemInfo(index);
+        }
+        let element = this.elems[index];
+        return {
+            offsetLeft: !index? 0:
+                element.offsetLeft - this.elems[0].offsetLeft,
+            center: !index? element.offsetLeft + element.offsetWidth/2 :
+                this.elems[index-1].offsetLeft + this.elems[index-1].offsetWidth/2
+                 + element.offsetWidth,
+            offsetWidth: element.offsetWidth,
+            setActive: (delta)=>{
+                element.style.opacity = Math.max(0, 1.2-Math.abs(delta/element.offsetWidth));
+                if (Math.abs(element.style.opacity - 1) > 0.3) {
+                    element.classList.remove('active')
+                } else {
+                    element.classList.add('active')
+                }
+            }
+        }
     }
 }
 export class SmallSliderItem extends SliderItem {

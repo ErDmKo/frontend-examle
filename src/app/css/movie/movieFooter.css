@@ -1,6 +1,7 @@
 .movieFooter {
     position: absolute;
     bottom: 20px;
+    z-index: 2;
     left: 20px;
     right: 20px;
     @media (min-width: 800px) {
@@ -8,7 +9,6 @@
         bottom: 40px;
         right: 40px;
     }
-    z-index: 2;
     &__item {
         text-decoration: none;
         color: #2BF4A7;

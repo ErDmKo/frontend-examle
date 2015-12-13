@@ -6,7 +6,8 @@ import {
     SliderControll,
     SliderCounter,
     SliderItem,
-    SmallSliderItem
+    SmallSliderItem,
+    UniSliderItem
 } from './topNews/directives/slider';
 import { EasingAnimator } from './topNews/services/easingAnimator';
 import { DraggController } from './topNews/directives/draggController';
@@ -49,6 +50,7 @@ register('mesto')
     .directive('sliderContent', SliderContent)
     .directive('sliderItem', SliderItem)
     .directive('smallSliderItem', SmallSliderItem)
+    .directive('uniSliderItem', UniSliderItem)
     .directive('sliderCounter', SliderCounter)
     .directive('draggController', DraggController)
     .directive('horizontalScroll', HorizontalScroll)

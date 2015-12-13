@@ -6,6 +6,50 @@
     position: relative;
     @media (min-width: 800px) {
         padding: 0px;
+        overflow: hidden;
+    }
+    &__before, &__after {
+        position: absolute;
+        height: 120%;
+        background: linear-gradient(to top, #af5fb3 0%,#dabfb2 27%,#2fe9a8 82%,#6bccad 100%);
+        top: 50%;
+        left: 50%;
+        border-radius: 100%;
+        display: none;
+        transform: translate(-50%, -50%);
+        clip: rect(0px 220px 6000px 0px);
+        &__image {
+            height: 100%;
+        }
+        @media (min-width: 800px) {
+            display: block;
+        }
+    }
+    &__after {
+        
+        background: linear-gradient(to bottom, #dc84b0 0%,#f04bab 35%,#00e3ad 82%,#3897b0 100%);
+        transform-origin: 50% 50%;
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+    &__menu {
+        display: none;
+        position: absolute;
+        right:  40px;
+        top: 40px;
+        text-align: right;
+        z-index: 1;
+        @media (min-width: 800px) {
+            display: block;
+        }
+        &__item {
+            color: #fff;
+            display: block;
+            text-decoration: none;
+            margin: 10px 0px;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
     }
     &__info {
         display: none;
@@ -74,9 +118,10 @@
         @media (min-width: 800px) {
             bottom: 0px;
             top: 0px;
+            font-size: 0;
             &:after,  &:before {
                 content: '';
-                width: 15%;
+                width: 20%;
                 height: 100%;
                 display: inline-block;
                 vertical-align: middle;
@@ -90,7 +135,7 @@
         width: 100%;
         white-space: normal;
         @media (min-width: 800px) {
-            width: 70%;
+            width: 60%;
             height: auto;
             vertical-align: middle;
             position: static;
