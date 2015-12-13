@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block 'content' %}
 <div class="movieMain" mesto-feedback-contanier="mobileFilterMenu">
-    <a href="{% url 'movie:main' %}" class="movieMain__header">
+    <a href="{% url 'movie:main' %}" class="movieMain__header{% block 'mainMenuClass' %} {% endblock %}">
         <img class="movieMain__header__img" src="{% static 'mesto/img/logo_color-01.svg' %}"/>
         <div class="movieMain__subheader">
         {% block 'subheader' %}

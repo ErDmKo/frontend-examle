@@ -44,10 +44,19 @@
         &.short {
             width: 70%;
         }
+        @media (min-width: 800px) {
+            position: static;
+            transform: none;
+        }
     }
     &__item {
         text-align: center;
         margin: 30px;
+        @media (min-width: 800px) {
+            margin: 20px 0px;
+            text-align: left;
+            font-size: 29px;
+        }
     }
     &__ancor {
         text-decoration: none;

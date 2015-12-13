@@ -1,4 +1,7 @@
 {% extends 'movie/catalog.html' %}
+{% block 'menu_list' %}
+    {% include 'movie/inc/menu_list.html' with selected="archive" %}
+{% endblock %}
 {% block 'mobileMenu' %}
     {% include 'movie/inc/mobile_menu.html' with selected="archive" %}
 {% endblock %}

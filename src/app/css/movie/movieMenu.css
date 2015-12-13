@@ -1,0 +1,45 @@
+.movieMenu {
+    height: 100%;
+    position: relative;
+    padding: 50px;
+    box-sizing: border-box;
+    svg {
+        height: 45px;
+        width: 45px;
+        rect {
+            fill: #fff;
+        }
+    }
+    &__header {
+        margin-bottom: 80px;
+        &__img {
+            width: 75%;
+            margin-right: 10px;
+        }
+    }
+    &__header__img, &__subheader {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__footer {
+        position: absolute;
+        bottom: 40px;
+    }
+    &__button {
+        font: 21px hcyrregular;
+        padding: 15px 30px;
+        text-align: center;
+        border: 2px solid #2BF4A7;
+        border-radius: 30px;
+        width: 100%;
+        margin-bottom: 70px;
+        &:hover {
+          cursor: pointer;  
+        }
+    }
+    &__text {
+        opacity: .3;
+        font: 15px hcyrregular;
+    }
+}

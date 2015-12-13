@@ -33,7 +33,13 @@
 @import 'movie/catalogPage.css';
 @import 'movie/aboutPage.css';
 @import 'movie/smallDesc.css';
+@import 'movie/movieMenu.css';
 
+.hideBig {
+    @media (min-width: 800px) {
+        display: none;
+    }
+}
 body, html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

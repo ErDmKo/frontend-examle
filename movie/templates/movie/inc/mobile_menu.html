@@ -91,41 +91,5 @@
     <div mesto-feedback-toggle="mobileMenu" class="movieMobileMenu__close">
         {% include 'mesto/inc/black_cross.svg' %}
     </div>
-    <ul class="movieMobileMenu__list">
-        <li class="movieMobileMenu__item">
-            <a 
-                class="movieMobileMenu__ancor{% if selected == 'calendar' %} active {% endif %}"
-                href="{% url 'movie:calendar' %}">
-                Сегодня в кино
-             </a>
-        </li>
-        <li class="movieMobileMenu__item">
-            <a 
-                class="movieMobileMenu__ancor"
-                href="{% url 'movie:calendar' %}">
-                Скоро в кино
-            </a>
-        </li>
-        <li class="movieMobileMenu__item">
-            <a
-                class="movieMobileMenu__ancor {% if selected == "catalog" %} active {% endif %}"
-                href="{% url 'movie:catalog' %}">
-                Каталог фильмов
-             </a>
-        </li>
-        <li class="movieMobileMenu__item">
-            <a
-                class="movieMobileMenu__ancor {% if selected == "archive" %} active {% endif %}"
-                href="{% url 'movie:archive' %}">
-                Архив фильмов
-             </a>
-        </li>
-        <li class="movieMobileMenu__item">
-            <a
-                class="movieMobileMenu__ancor"
-                href="{% url 'movie:about' %}">
-                О кинотеатре
-             </a>
-        </li>
-    </ul>
-</div>
+    {% include 'movie/inc/menu_list.html' %}
+ </div>

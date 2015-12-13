@@ -1,16 +1,51 @@
 {% extends 'movie/base.html' %}
+{% load staticfiles %}
+{% block 'mainMenuClass' %}
+    hideBig
+{% endblock %}
 {% block 'menu_button' %}
     <a class="mainMenu__item movieMain__back fadeAnimator__ancor" href="{% url 'movie:main' %}">
     </a>
 {% endblock %}
 {% block 'main_content' %}
     <article class="catalogPage">
+        <div class="catalogPage__menu">
+            <div class="movieMenu">
+                <header class="movieMenu__header">
+                    <a 
+                        class="movieMenu__imgAncor"
+                        href="{% url 'movie:main' %}">
+                        <img class="movieMenu__header__img" src="{% static 'mesto/img/logo_color-01.svg' %}"/>
+                    </a>
+                    <a 
+                        class="movieMenu__subheader"
+                        href="{% url 'main' %}">
+                            {% include 'mesto/inc/menu.svg' %}
+                    </a>
+                </header>
+                {% block 'menu_list' %}
+                    {% include 'movie/inc/menu_list.html' with customSelectModifer="black" selected="catalog" %}
+                {% endblock %}
+                <footer class="movieMenu__footer">
+                    <div class="movieMenu__button">
+                        Заказать фильм
+                    </div>
+                    <article class="movieMenu__text">
+                        <div>Все права защищены законом.</div>
+                        <div>{% now "Y" %}</div>
+                    </article>
+                </footer>
+            </div>
+        </div>
         <div class="catalogPage__list">
             {% for show in object_list %}
             <a 
                 class="catalogPage__item fadeAnimator__ancor"
                 href="{% url 'movie:detail' slug=show.slug %}"
                 style="background-image: url({{ show.image.url }})">
+                <div class="catalogPage__rating">
+                    {{ show.rating }}
+                </div>
                 <img 
                     class="catalogPage__image"
                     src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
@@ -23,7 +58,7 @@
     {% endblock %}
 {% endblock %}
 {% block footer %}
-    <footer class="movieFooter">
+    <footer class="movieFooter hideBig">
         <menu
             mesto-feedback-toggle="mobileMenu"
             class="movieFooter__menu">

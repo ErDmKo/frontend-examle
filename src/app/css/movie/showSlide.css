@@ -78,7 +78,6 @@
         transition: .5s opacity;
         @media (min-width: 800px) {
             z-index:1;
-            display: none;
         }
         .showSlide__header.active & {
             opacity: 1;
