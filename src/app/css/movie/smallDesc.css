@@ -1,6 +1,23 @@
 .smallDesc {
     display: none;
-    
+    @media (min-width: 800px) {
+        padding: 30px;
+        display: block;
+        background: #fff;
+        position: absolute;
+        bottom: 0;
+        color: #000;
+        font: 15px hcyrregular;
+        left: 50%;
+        width: 495px;
+        transform: translateX(-50%) translateY(100%);
+        opacity: 0;
+        transition: opacity .7s, transform .5s;
+        &.active {
+            opacity: .9;
+            transform: translateX(-50%) translateY(0%);
+        }
+    }
     &__header {
         font-size: 14px;
 

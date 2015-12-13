@@ -155,7 +155,7 @@ export class UniSliderItem extends SliderItem {
             offsetWidth: element.offsetWidth,
             setActive: (delta)=>{
                 element.style.opacity = Math.max(0, 1.2-Math.abs(delta/element.offsetWidth));
-                if (Math.abs(element.style.opacity - 1) > 0.3) {
+                if (Math.abs(element.style.opacity - 1) > 0.2) {
                     element.classList.remove('active')
                 } else {
                     element.classList.add('active')

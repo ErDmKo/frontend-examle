@@ -44,8 +44,8 @@
                 uni-slider-item
                 class="sliderJsMovie__item">
                 <article class="showSlide">
-                    <div class="showSlide__top">
-                    </div>
+                    <!--div class="showSlide__top">
+                    </div-->
                     <div class="showSlide__titleBlock">
                         <div class="showSlide__titleWraper">
                             <div class="showSlide__subheader">
@@ -97,38 +97,41 @@
                             video-url="'{{ show.trailer }}'">
                         </youtube-video>
                     </header>
-                    <div class="showSlide__bottom smallDesc">
-                        <div class="smallDesc__right">
-                            <a 
-                                class="fadeAnimator__ancor smallDesc__toDetail"
-                                href="{% url 'movie:detail' slug=show.slug %}">
-                                Описание фильма</a>
-                            
-                            <a 
-                               class="fadeAnimator__ancor showSlide__button"
-                               href="{% url 'movie:detail' slug=show.slug %}#schedule"  >
-                               Расписание
-                            </a>
-                        </div>
-                        <article>
-                            <header class="smallDesc__header">
-                                Продолжительность
-                            </header>
-                            <section class="smallDesc__info">
-                                {{ show.duration }} min
-                            </section>
-                        </article>
-                        <article>
-                            <header class="smallDesc__header">
-                                Краткое описание
-                            </header>
-                            <section class="smallDesc__info">
-                                {{ show.short_desc }} min
-                            </section>
-                        </article>
-                    </div>
                 </article>
             </li>
         {% endfor %}
         </ul>
+        
+        {% for show in object_list %}
+        <div slider-counter class="smallDesc" ng-class="{active: {{ forloop.counter }} == selectedSlide}">
+            <div class="smallDesc__right">
+                <a 
+                    class="fadeAnimator__ancor smallDesc__toDetail"
+                    href="{% url 'movie:detail' slug=show.slug %}">
+                    Описание фильма</a>
+                
+                <a 
+                   class="fadeAnimator__ancor showSlide__button"
+                   href="{% url 'movie:detail' slug=show.slug %}#schedule"  >
+                   Расписание
+                </a>
+            </div>
+            <article>
+                <header class="smallDesc__header">
+                    Продолжительность
+                </header>
+                <section class="smallDesc__info">
+                    {{ show.duration }} min
+                </section>
+            </article>
+            <article>
+                <header class="smallDesc__header">
+                    Краткое описание
+                </header>
+                <section class="smallDesc__info">
+                    {{ show.short_desc }} min
+                </section>
+            </article>
+        </div>
+        {% endfor %}
 {% endblock %}

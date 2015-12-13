@@ -1447,6 +1447,7 @@ table {
 }
 
 .sliderJsMovie__menu {
+  font: 15px hcyrregular;
   display: none;
   position: absolute;
   right: 40px;
@@ -3347,6 +3348,31 @@ html a {
     display: block;
     height: auto;
     width: 100%;
+  }
+
+  .smallDesc {
+    padding: 30px;
+    display: block;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    color: #000;
+    font: 15px hcyrregular;
+    left: 50%;
+    width: 495px;
+    -webkit-transform: translateX(-50%) translateY(100%);
+        -ms-transform: translateX(-50%) translateY(100%);
+            transform: translateX(-50%) translateY(100%);
+    opacity: 0;
+    -webkit-transition: opacity .7s, -webkit-transform .5s;
+            transition: opacity .7s, transform .5s;
+  }
+
+  .smallDesc.active {
+    opacity: .9;
+    -webkit-transform: translateX(-50%) translateY(0%);
+        -ms-transform: translateX(-50%) translateY(0%);
+            transform: translateX(-50%) translateY(0%);
   }
 }
 

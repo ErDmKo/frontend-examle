@@ -32,6 +32,7 @@
         transform: translate(-50%, -50%) rotate(180deg);
     }
     &__menu {
+        font: 15px hcyrregular;
         display: none;
         position: absolute;
         right:  40px;
