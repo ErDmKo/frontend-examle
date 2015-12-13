@@ -3,6 +3,23 @@
     height: 100%;
     box-sizing: border-box;
     padding: 0px 20px;
+    @media (min-width: 800px) {
+        padding: 0;
+        height: 100%;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__top, &__bottom {
+        flex-basis: 50%;
+        align-self: stretch;
+    }
+    &__bottom {
+        background: #fff;
+        width: 70%;
+        margin: 0 auto;
+    }
     &__titleBlock {
         position: absolute;
         top: 50%;
@@ -14,12 +31,26 @@
         padding: 20px 0px 0px;
         display: flex;
         flex-direction: column;
+        @media (min-width: 800px) {
+            position: static;
+            padding: 0px;
+        }
     }
     &__titleWraper {
         &:first-child {
             flex-basis: 70%;
+            @media (min-width: 800px) {
+                display: flex;
+                flex-direction: column;
+                padding: 40px;
+            }
         }
         flex-basis: 100%;
+        @media (min-width: 800px) {
+            position: absolute;
+            z-index:1;
+            display: none;
+        }
     }
     &__video {
         position: absolute;
@@ -32,7 +63,10 @@
         bottom: 0px;
         opacity: 0;
         transition: .5s opacity;
-        
+        @media (min-width: 800px) {
+            z-index:1;
+            display: none;
+        }
         .showSlide__header.active & {
             opacity: 1;
         }
@@ -42,9 +76,17 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        @media (min-width: 800px) {
+            position: absolute;
+            
+        }
     }
     &__subheader {
         float: right;
+        @media (min-width: 800px) {
+            float: none;
+            order: 1;
+        }
     }
     &__button {
         color: #2BF4A7;
@@ -75,6 +117,14 @@
         color: #2BF4A7;
         font: 20px/20px HarmoniaSansProCyr-Bold;
         text-decoration: none;
+        @media (min-width: 800px) {
+            font: 25px/25px HarmoniaSansProCyr-Bold;
+        }
+    }
+    &__original_title {
+        @media (min-width: 800px) {
+            font: 20px hcyrregular;
+        }
     }
     &__play {
         position: absolute;
@@ -114,14 +164,22 @@
         right: 20px;
         background: no-repeat 50% 50%;
         background-size: cover;
+        @media (min-width: 800px) {
+            position: relative;
+            left: 0px;
+            right: 0px;
+        }
         &:after {
             content: '';
             height: 100px;
-            background: linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.50) 50%, rgba(0,0,0,0) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.50) 50%, rgba(0,0,0,0) 100%);
             position: absolute;
             left: 0px;
             width: 100%;
             top: 0px;
+            @media (min-width: 800px) {
+                height: 300px;
+            }
         }
     }
     &__rating {
@@ -132,17 +190,28 @@
         color: #D52FAD;
         font: 32px HarmoniaSansProCyr-Light;
         margin: 10px;
+        @media (min-width: 800px) {
+            font: 80px/80px HarmoniaSansProCyr-Light;
+            margin: 30px 40px;
+        }
     }
     &__image {
         height: 50%;
+        @media (min-width: 800px) {
+            display: none;
+        }
+    }
+    &__bigImage {
+        display: none;
+        @media (min-width: 800px) {
+            display: block;
+            height: auto;
+            width: 100%;
+        }
     }
     &__desc {
         position: absolute;
         bottom: 0;
         display: none;
-        height: 50%;
-        left: 20px;
-        right: 20px;
-        background: red;
     }
 }

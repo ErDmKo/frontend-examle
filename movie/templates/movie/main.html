@@ -1,4 +1,5 @@
 {% extends 'movie/base.html' %}
+{% load staticfiles %}
 {% block 'head' %}
     <script src="https://www.youtube.com/player_api"></script>
 {% endblock %}
@@ -15,6 +16,8 @@
                 slider-item
                 class="sliderJsMovie__item">
                 <article class="showSlide">
+                    <div class="showSlide__top">
+                    </div>
                     <div class="showSlide__titleBlock">
                         <div class="showSlide__titleWraper">
                             <div class="showSlide__subheader">
@@ -45,6 +48,9 @@
                         style="background-image: url({{ show.image.url }})"
                         class="showSlide__header">
                         <img 
+                            class="showSlide__bigImage"
+                            src="{% static 'mesto/img/16x9.gif' %}"/>
+                        <img 
                             class="showSlide__image"
                             src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
                         <div class="showSlide__rating">
@@ -63,16 +69,18 @@
                             video-url="'{{ show.trailer }}'">
                         </youtube-video>
                     </header>
-                    <footer class="showSlide__desc">
-                        <a href="{% url 'movie:detail' slug=show.slug %}#schedule" class="showSlide__button">
-                            Расписание
-                        </a>
-                        <a href="{% url 'movie:detail' slug=show.slug %}" class="showSlide__toDetail">
-                            Описание фильма
-                        </a>
-                    </footer>
+                    <div class="showSlide__bottom">
+                    </div>
                 </article>
             </li>
         {% endfor %}
         </ul>
+        <footer class="sliderJsMovie__info">
+            <a href="" class="showSlide__button">
+                Расписание
+            </a>
+            <a href="" class="showSlide__toDetail">
+                Описание фильма
+            </a>
+        </footer>
 {% endblock %}

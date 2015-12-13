@@ -4,6 +4,12 @@
     padding: 100px 0px 40px;
     box-sizing: border-box;
     position: relative;
+    @media (min-width: 800px) {
+        padding: 0px;
+    }
+    &__info {
+        display: none;
+    }
     &__next, &__prev {
         position: absolute;
         top: 70px;
@@ -55,6 +61,17 @@
         width: 100%;
         white-space: nowrap;
         overflow-x: hidden;
+        @media (min-width: 800px) {
+            bottom: 0px;
+            top: 0px;
+            &:after,  &:before {
+                content: '';
+                width: 15%;
+                height: 100%;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
     }
     &__item {
         display: inline-block;
@@ -62,5 +79,11 @@
         position: relative;
         width: 100%;
         white-space: normal;
+        @media (min-width: 800px) {
+            width: 70%;
+            height: auto;
+            vertical-align: middle;
+            position: static;
+        }
     }
 }
