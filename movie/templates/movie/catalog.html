@@ -9,6 +9,9 @@
 {% endblock %}
 {% block 'main_content' %}
     <article class="catalogPage">
+        <div class="catalogPage__filters">
+           {% include 'movie/inc/filter_list.html' with customSelectModifer='transparent' %} 
+        </div>
         <div class="catalogPage__menu">
             <div class="movieMenu">
                 <header class="movieMenu__header">

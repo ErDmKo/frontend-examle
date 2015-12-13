@@ -18,6 +18,14 @@
         }
         
     }
+    &.transparent {
+        display: inline-block;
+        width: 125px;
+        margin-top: 0px;
+        & + & {
+            margin-left: 10px;
+        }
+    }
     &.open:after{
         margin-top: -5px;
         transform: rotate(-135deg);

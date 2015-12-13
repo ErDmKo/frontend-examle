@@ -1,0 +1,74 @@
+<dl class="customSelect {{ customSelectModifer }}" mesto-custom-select>
+    <dt
+        mesto-custom-select-placeholder
+        class="customSelect__placeholder"
+        alt="0">
+        Выберите жанр
+    </dt>
+    <dd class="customSelect__list">
+    {% for genre in genre_list %}
+        <li 
+            mesto-custom-select-item
+            class="customSelect__item">
+            <input
+                ng-model="vm.select.genre"
+                type="radio"
+                id="genre{{ genre.id }}"
+                ng-value="{{ genre.id }}"/>
+            <label
+                class="customSelect__label"
+                for="genre{{ genre.id }}">
+                {{ genre.title }}
+            </label>
+        </li>
+    {% endfor %}
+    </dd>
+</dl>
+<dl class="customSelect {{ customSelectModifer }}" mesto-custom-select>
+    <dt
+        mesto-custom-select-placeholder
+        class="customSelect__placeholder"
+        alt="1">
+        Выберите год
+    </dt>
+    <dd class="customSelect__list">
+        <li 
+            mesto-custom-select-item
+            class="customSelect__item">
+            <input
+                ng-model="vm.select.year"
+                type="radio"
+                id="year2015"
+                ng-value="2015"/>
+            <label
+                class="customSelect__label"
+                for="year2015">
+                2015
+            </label>
+        </li>
+    </dd>
+</dl>
+<dl class="customSelect {{ customSelectModifer }}" mesto-custom-select>
+    <dt
+        mesto-custom-select-placeholder
+        class="customSelect__placeholder"
+        alt="2">
+        Выбрать рейтинг
+    </dt>
+    <dd class="customSelect__list">
+        <li 
+            mesto-custom-select-item
+            class="customSelect__item">
+            <input
+                ng-model="vm.select.rating"
+                type="radio"
+                id="rating8"
+                ng-value="8.2"/>
+            <label
+                class="customSelect__label"
+                for="rating8">
+                8.2
+            </label>
+        </li>
+    </dd>
+</dl>
