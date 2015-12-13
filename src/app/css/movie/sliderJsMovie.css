@@ -15,6 +15,10 @@
         top: 70px;
         width: 30px;
         height: 20px;
+        z-index: 1;
+        @media (min-width: 800px) {
+            top: 50%;
+        }
         &:after, &:before {
             content: '';
             position: absolute;
@@ -35,6 +39,9 @@
     }
     &__prev {
         left: 20px;
+        @media (min-width: 800px) {
+            left: 40px;
+        }
         &:before {
             transform: translateY(50%) rotate(45deg);
             border-color: #2BF4A7;
@@ -45,6 +52,9 @@
     }
     &__next {
         right: 20px;
+        @media (min-width: 800px) {
+            right: 40px;
+        }
         &:before {
             right: 0px;
             transform: translateY(50%) rotate(-135deg);

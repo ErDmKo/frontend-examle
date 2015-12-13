@@ -3,6 +3,11 @@
     bottom: 20px;
     left: 20px;
     right: 20px;
+    @media (min-width: 800px) {
+        left: 40px;
+        bottom: 40px;
+        right: 40px;
+    }
     z-index: 2;
     &__item {
         text-decoration: none;
@@ -19,6 +24,9 @@
         width: 17px;
         height: 17px;
         background: url(../img/instaIcon.svg) no-repeat 50% 50%;
+        @media (min-width: 800px) {
+            
+        }
         &:hover {
             cursor: pointer;
         }

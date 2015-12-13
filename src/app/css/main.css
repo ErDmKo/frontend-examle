@@ -32,6 +32,7 @@
 @import 'movie/whiteMovieBlock.css';
 @import 'movie/catalogPage.css';
 @import 'movie/aboutPage.css';
+@import 'movie/smallDesc.css';
 
 body, html {
     -webkit-font-smoothing: antialiased;

@@ -69,18 +69,39 @@
                             video-url="'{{ show.trailer }}'">
                         </youtube-video>
                     </header>
-                    <div class="showSlide__bottom">
+                    <div class="showSlide__bottom smallDesc">
+                        <div class="smallDesc__right">
+                            <a 
+                                class="fadeAnimator__ancor smallDesc__toDetail"
+                                href="{% url 'movie:detail' slug=show.slug %}">
+                                Описание фильма</a>
+                            
+                            <a 
+                               class="fadeAnimator__ancor showSlide__button"
+                               href="{% url 'movie:detail' slug=show.slug %}#schedule"  >
+                               Расписание
+                            </a>
+                        </div>
+                        
+                        <article>
+                            <header class="smallDesc__header">
+                                Продолжительность
+                            </header>
+                            <section class="smallDesc__info">
+                                {{ show.duration }} min
+                            </section>
+                        </article>
+                        <article>
+                            <header class="smallDesc__header">
+                                Краткое описание
+                            </header>
+                            <section class="smallDesc__info">
+                                {{ show.short_desc }} min
+                            </section>
+                        </article>
                     </div>
                 </article>
             </li>
         {% endfor %}
         </ul>
-        <footer class="sliderJsMovie__info">
-            <a href="" class="showSlide__button">
-                Расписание
-            </a>
-            <a href="" class="showSlide__toDetail">
-                Описание фильма
-            </a>
-        </footer>
 {% endblock %}

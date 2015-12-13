@@ -12,13 +12,21 @@
         justify-content: center;
     }
     &__top, &__bottom {
-        flex-basis: 50%;
-        align-self: stretch;
+        display: none;
+        @media (min-width: 800px) {
+            display: block;
+            flex-basis: 100%;
+            align-self: stretch;
+        }
     }
     &__bottom {
         background: #fff;
         width: 70%;
         margin: 0 auto;
+        color: #000;
+        box-sizing: border-box;
+        padding: 20px;
+        font-size: 18px;
     }
     &__titleBlock {
         position: absolute;

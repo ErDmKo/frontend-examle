@@ -1,0 +1,21 @@
+.smallDesc {
+    display: none;
+    &__header {
+        font-size: 14px;
+
+    }
+    &__info {
+        display: block;
+        margin-bottom: 30px;
+    }
+    &__right {
+        float: right;
+        padding-top: 20px;
+    }
+    &__toDetail {
+        color: #000;
+        font: 18px HarmoniaSansProCyr-SemiBd;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+}
