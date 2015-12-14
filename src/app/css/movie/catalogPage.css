@@ -76,6 +76,9 @@
     } 
     &__image {
         width: 100%;
+        @media (min-width: 800px) {
+            display: none;
+        }
     }
     &__item {
         display: block;

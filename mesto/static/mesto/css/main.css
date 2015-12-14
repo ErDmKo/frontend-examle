@@ -3533,6 +3533,10 @@ html a {
     text-align: center;
   }
 
+  .catalogPage__image {
+    display: none;
+  }
+
   .catalogPage__item {
     display: inline-block;
     width: 390px;
