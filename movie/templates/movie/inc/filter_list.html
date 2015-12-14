@@ -1,4 +1,6 @@
-<dl class="customSelect {{ customSelectModifer }}" mesto-custom-select>
+<dl 
+    class="customSelect {{ customSelectModifer }}"
+    mesto-custom-select="vm.select.genre">
     <dt
         mesto-custom-select-placeholder
         class="customSelect__placeholder"
@@ -6,12 +8,28 @@
         Выберите жанр
     </dt>
     <dd class="customSelect__list">
+        <li 
+            mesto-custom-select-item
+            class="customSelect__item">
+            <input
+                ng-model="vm.select.genre"
+                ng-change="vm.change()"
+                type="radio"
+                id="genre"
+                ng-value=""/>
+            <label
+                class="customSelect__label"
+                for="genre">
+                Oчистить
+            </label>
+        </li>
     {% for genre in genre_list %}
         <li 
             mesto-custom-select-item
             class="customSelect__item">
             <input
                 ng-model="vm.select.genre"
+                ng-change="vm.change()"
                 type="radio"
                 id="genre{{ genre.id }}"
                 ng-value="{{ genre.id }}"/>
@@ -24,7 +42,9 @@
     {% endfor %}
     </dd>
 </dl>
-<dl class="customSelect {{ customSelectModifer }}" mesto-custom-select>
+<dl 
+    class="customSelect {{ customSelectModifer }}"
+    mesto-custom-select="vm.select.year">
     <dt
         mesto-custom-select-placeholder
         class="customSelect__placeholder"
@@ -37,6 +57,22 @@
             class="customSelect__item">
             <input
                 ng-model="vm.select.year"
+                ng-change="vm.change()"
+                type="radio"
+                id="year"
+                ng-value=""/>
+            <label
+                class="customSelect__label"
+                for="year">
+                Oчистить
+            </label>
+        </li>
+        <li 
+            mesto-custom-select-item
+            class="customSelect__item">
+            <input
+                ng-model="vm.select.year"
+                ng-change="vm.change()"
                 type="radio"
                 id="year2015"
                 ng-value="2015"/>
@@ -48,27 +84,48 @@
         </li>
     </dd>
 </dl>
-<dl class="customSelect {{ customSelectModifer }}" mesto-custom-select>
+<dl 
+    class="customSelect {{ customSelectModifer }}"
+    mesto-custom-select="vm.select.rating">
     <dt
         mesto-custom-select-placeholder
         class="customSelect__placeholder"
         alt="2">
         Выбрать рейтинг
     </dt>
+    {% verbatim %}
     <dd class="customSelect__list">
         <li 
             mesto-custom-select-item
             class="customSelect__item">
             <input
                 ng-model="vm.select.rating"
+                ng-change="vm.change()"
                 type="radio"
-                id="rating8"
-                ng-value="8.2"/>
+                id="rating"
+                ng-value=""/>
             <label
                 class="customSelect__label"
-                for="rating8">
-                8.2
+                for="rating">
+                Oчистить
+            </label>
+        </li>
+        <li 
+            mesto-custom-select-item
+            ng-repeat="rating in ['5-5.9', '6-6.9', '7-7.9', '8-8.9', '9-10']"
+            class="customSelect__item">
+            <input
+                ng-model="vm.select.rating"
+                ng-change="vm.change()"
+                type="radio"
+                ng-attr-id="{{ 'rating'+rating.split('-')[0] }}"
+                ng-value="rating"/>
+            <label
+                class="customSelect__label"
+                ng-bind="rating"
+                ng-attr-for="{{ 'rating'+rating.split('-')[0] }}">
             </label>
         </li>
     </dd>
+    {% endverbatim %}
 </dl>

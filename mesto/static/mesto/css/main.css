@@ -2009,11 +2009,11 @@ table {
   margin-top: 20px;
 }
 
-.customSelect.black.open {
+.customSelect.transparent.open {
   border: 2px solid transparent;
 }
 
-.customSelect.black.open:after {
+.customSelect.transparent.open:after {
   border: 2px solid #D52FAD;
   border-top: 0;
   border-left: 0;
@@ -2083,8 +2083,8 @@ table {
   font: 13px HarmoniaSansProCyr-SemiBd;
 }
 
-.customSelect.black .customSelect__placeholder,
-.customSelect.black .customSelect__label {
+.customSelect.transparent .customSelect__placeholder,
+.customSelect.transparent .customSelect__label {
   z-index: 2;
   position: relative;
 }
@@ -2112,7 +2112,7 @@ table {
   top: 100%;
 }
 
-.customSelect.black .customSelect__list {
+.customSelect.transparent .customSelect__list {
   top: -7px;
   z-index: 1;
   padding-top: 40px;
@@ -2141,7 +2141,7 @@ table {
   margin: 0px 30px;
 }
 
-.customSelect.black .customSelect__item {
+.customSelect.transparent .customSelect__item {
   margin: 10px 25px;
 }
 
