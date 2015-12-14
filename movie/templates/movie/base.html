@@ -1,6 +1,16 @@
 {% extends 'mesto/base.html' %}
 {% load staticfiles %}
 {% block 'content' %}
+<div 
+    mesto-feedback-item="dotsMenu"
+    class="movieMobileMenu main">
+    <div mesto-feedback-toggle="dotsMenu" class="movieMobileMenu__close">
+        {% include 'mesto/inc/black_cross.svg' %}
+    </div>
+    {% block 'dots_menu' %}
+        {% include 'movie/inc/menu_list.html' %}
+    {% endblock %}
+ </div>
 <div class="movieMain" mesto-feedback-contanier="mobileFilterMenu">
     <a href="{% url 'movie:main' %}" class="movieMain__header{% block 'mainMenuClass' %} {% endblock %}">
         <img class="movieMain__header__img" src="{% static 'mesto/img/logo_color-01.svg' %}"/>
@@ -9,6 +19,8 @@
             Movie Theater
         {% endblock %}
         </div>
+    </a>
+    <a mesto-feedback-toggle="dotsMenu" class="movieMain__dots hideBig">
     </a>
     <menu class="mainMenu">
         {% block 'menu_button' %}
@@ -23,9 +35,6 @@
     </main>
     {% block footer %}
         <footer class="movieFooter">
-            <menu class="movieFooter__menu">
-                <a href="{% url 'movie:calendar' %}" class="movieFooter__item">Скоро в кино</a>
-            </menu>
             <menu class="movieFooter__socialList">
                 <a class="movieFooter__social inst" href="/"></a>
             </menu>

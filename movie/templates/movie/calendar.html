@@ -3,6 +3,9 @@
     <a class="mainMenu__item movieMain__back fadeAnimator__ancor" href="{% url 'movie:main' %}">
     </a>
 {% endblock %}
+{% block 'dots_menu' %}
+    {% include 'movie/inc/menu_list.html' with selected="calendar" %}
+{% endblock %}
 {% block 'main_content' %}
     {% regroup object_list by date|date:"j E" as date_list %}
     <article
@@ -40,15 +43,9 @@
             {% endfor %}
         </div>
     </article>
-    {% include 'movie/inc/mobile_menu.html' with customSelectModifer="black" selected="calendar" %}
 {% endblock %}
 {% block footer %}
     <footer class="movieFooter">
-        <menu
-            mesto-feedback-toggle="mobileMenu"
-            class="movieFooter__menu">
-            <a class="movieFooter__item">Скоро в кино</a>
-        </menu>
         <menu
             mesto-feedback-toggle="mobileFilterMenu"
             class="movieFooter__socialList">

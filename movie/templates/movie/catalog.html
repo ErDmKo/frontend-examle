@@ -7,6 +7,9 @@
     <a class="mainMenu__item movieMain__back fadeAnimator__ancor" href="{% url 'movie:main' %}">
     </a>
 {% endblock %}
+{% block 'dots_menu' %}
+    {% include 'movie/inc/menu_list.html' with selected="catalog" %}
+{% endblock %}
 {% block 'main_content' %}
     <article class="catalogPage">
         <div class="catalogPage__filters">
@@ -56,17 +59,9 @@
             {% endfor %}
         </div>
     </article>
-    {% block 'mobileMenu' %}
-        {% include 'movie/inc/mobile_menu.html' with customSelectModifer="black" selected="catalog" %}
-    {% endblock %}
 {% endblock %}
 {% block footer %}
     <footer class="movieFooter hideBig">
-        <menu
-            mesto-feedback-toggle="mobileMenu"
-            class="movieFooter__menu">
-            <a class="movieFooter__item">{% block 'mobileMenuName' %}Каталог фильмов{% endblock %}</a>
-        </menu>
         <menu
             mesto-feedback-toggle="mobileFilterMenu"
             class="movieFooter__socialList">

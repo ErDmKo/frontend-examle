@@ -40,6 +40,7 @@ export class PopUpService {
             e.preventDefault();
             ([this.popUps[popUpName]] || [])
                 .forEach((popUp)=>{
+                    console.log(popUpName);
                     popUp.toggleItem();
                 })
         }

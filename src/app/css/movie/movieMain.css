@@ -17,6 +17,20 @@
             }
         }
     }
+    &__dots {
+        z-index: 1;
+        position: absolute;
+        right: 20px;
+        top: -10px;
+        width: 40px;
+        height: 70px;
+        &:after {
+            content: '...';
+            color: #CCDDE1;
+            font-size: 50px;
+
+        }
+    }
     &__header {
         position: absolute;
         top: 13px;

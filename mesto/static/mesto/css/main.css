@@ -1343,6 +1343,21 @@ table {
   fill: #2BF4A7;
 }
 
+.movieMain__dots {
+  z-index: 1;
+  position: absolute;
+  right: 20px;
+  top: -10px;
+  width: 40px;
+  height: 70px;
+}
+
+.movieMain__dots:after {
+  content: '...';
+  color: #CCDDE1;
+  font-size: 50px;
+}
+
 .movieMain__header {
   position: absolute;
   top: 13px;
@@ -1888,6 +1903,10 @@ table {
           transform: translate(-100%);
   -webkit-transition: -webkit-transform .4s;
           transition: transform .4s;
+}
+
+.movieMobileMenu.main {
+  z-index: 3;
 }
 
 .movieMobileMenu__button {
