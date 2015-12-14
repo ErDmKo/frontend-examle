@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<div class="movieMenu">
+    <header class="movieMenu__header">
+        <a 
+            class="movieMenu__imgAncor"
+            href="{% url 'movie:main' %}">
+            <img class="movieMenu__header__img" src="{% static 'mesto/img/logo_color-01.svg' %}"/>
+        </a>
+        <a 
+            class="movieMenu__subheader"
+            href="{% url 'main' %}">
+                {% include 'mesto/inc/menu.svg' %}
+        </a>
+    </header>
+    {% include 'movie/inc/menu_list.html' with customSelectModifer="black" selected=selected %}
+    <footer class="movieMenu__footer">
+        <div
+            mesto-feedback-toggle="callTheSaul"
+            class="movieMenu__button">
+            Заказать фильм
+        </div>
+        <article class="movieMenu__text">
+            <div>Все права защищены законом.</div>
+            <div>{% now "Y" %}</div>
+        </article>
+    </footer>
+</div>

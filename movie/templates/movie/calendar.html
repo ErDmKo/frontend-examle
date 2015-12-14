@@ -1,4 +1,7 @@
 {% extends 'movie/base.html' %}
+{% block 'mainMenuClass' %}
+    hideBig
+{% endblock %}
 {% block 'menu_button' %}
     <a class="mainMenu__item movieMain__back fadeAnimator__ancor" href="{% url 'movie:main' %}">
     </a>
@@ -7,9 +10,20 @@
     {% include 'movie/inc/menu_list.html' with selected="calendar" %}
 {% endblock %}
 {% block 'main_content' %}
+    {% include 'movie/inc/call_the_saul.html' %}
     {% regroup object_list by date|date:"j E" as date_list %}
     <article
         class="calendarPage">
+        <div 
+            ng-controller="showsFilterController as vm"
+            class="calendarPage__filters">
+           {% include 'movie/inc/filter_list.html' with customSelectModifer='transparent' %} 
+        </div>
+        <div class="catalogPage__menu">
+        {% block 'menu_list' %}
+            {% include 'movie/inc/desktop_menu.html' with selected='calendar' %}
+        {% endblock %}
+        </div>
         <div class="calendarPage__list">
             {% for date_info in date_list %}
             <dl class="calendarPage__item">
