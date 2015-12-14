@@ -83,7 +83,7 @@
         <div class="whiteMovieBlock__fullDesc" ng-show="full">
             {{ object.desc|safe }}
         </div>
-        {% regroup object.screening_set.all by date|date:"j E" as date_list %}
+        {% regroup object.screening_set.all by date|date:"j E l" as date_list %}
         <div class="whiteMovieBlock__schedule">
             <header class="whiteMovieBlock__schedule__header">
                 <a id="schedule">Расписание кинопоказа</a>
@@ -125,7 +125,7 @@
                 {% for screening in object.screening_set.all %}
                     <li
                         class="whiteMovieBlock__timeItem"
-                        ng-show="selectDate == '{{ screening.date|date:"j E" }}'">
+                        ng-show="selectDate == '{{ screening.date|date:"j E l" }}'">
                         {{ screening.date|date:"H:i" }}
                     </li>
                 {% endfor %}
