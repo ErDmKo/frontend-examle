@@ -2583,19 +2583,10 @@ table {
   top: 0px;
   bottom: 0px;
   left: 0px;
-  z-index: 1;
+  z-index: 2;
   right: 0px;
   background: rgba(0,0,0,.8);
   color: #fff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: none;
-  font: 20px hcyrregular;
-}
-
-.callTheSaul.active {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2617,6 +2608,22 @@ table {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+  font: 20px hcyrregular;
+  -webkit-transform: translate(-100%);
+      -ms-transform: translate(-100%);
+          transform: translate(-100%);
+  opacity: 0;
+  -webkit-transition: opacity .5s, -webkit-transform 0s .5s;
+          transition: opacity .5s, transform 0s .5s;
+}
+
+.callTheSaul.active {
+  opacity: 1;
+  -webkit-transition: opacity .5s, -webkit-transform 0s .0s;
+          transition: opacity .5s, transform 0s .0s;
+  -webkit-transform: translate(0%);
+      -ms-transform: translate(0%);
+          transform: translate(0%);
 }
 
 .callTheSaul__close {

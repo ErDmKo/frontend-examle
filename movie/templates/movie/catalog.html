@@ -11,6 +11,7 @@
     {% include 'movie/inc/menu_list.html' with selected="catalog" %}
 {% endblock %}
 {% block 'main_content' %}
+    {% include 'movie/inc/call_the_saul.html' %}
     <article class="catalogPage">
         <div 
             ng-controller="showsFilterController as vm"
@@ -35,7 +36,9 @@
                     {% include 'movie/inc/menu_list.html' with customSelectModifer="black" selected="catalog" %}
                 {% endblock %}
                 <footer class="movieMenu__footer">
-                    <div class="movieMenu__button">
+                    <div
+                        mesto-feedback-toggle="callTheSaul"
+                        class="movieMenu__button">
                         Заказать фильм
                     </div>
                     <article class="movieMenu__text">
