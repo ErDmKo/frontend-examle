@@ -1,4 +1,7 @@
 {% extends 'movie/base.html' %}
+{% block 'dots_menu' %}
+    {% include 'movie/inc/menu_list.html' with selected="about" %}
+{% endblock %}
 {% block 'main_content' %}
 <div class="aboutPage">
     {{ page.desc|safe }}

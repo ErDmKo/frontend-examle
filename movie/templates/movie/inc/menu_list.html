@@ -29,7 +29,7 @@
     </li>
     <li class="movieMobileMenu__item">
         <a
-            class="movieMobileMenu__ancor"
+            class="movieMobileMenu__ancor {% if selected == "about" %} active {% endif %}"
             href="{% url 'movie:about' %}">
             О кинотеатре
          </a>
