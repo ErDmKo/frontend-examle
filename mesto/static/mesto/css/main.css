@@ -1910,6 +1910,40 @@ table {
           transform: translate(0%);
 }
 
+.movieMobileMenu__select {
+  font-size: 12px;
+  display: block;
+  width: 100%;
+  background: transparent;
+  margin: 10px 0px;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 15px 30px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 30px;
+  outline: none;
+  position: relative;
+}
+
+.movieMobileMenu__select:after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  margin-top: -10px;
+  right: 30px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
 .movieMobileMenu__close {
   position: absolute;
   right: 20px;

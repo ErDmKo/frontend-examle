@@ -6,7 +6,44 @@
         {% include 'mesto/inc/black_cross.svg' %}
     </div>
     <div class="movieMobileMenu__list short">
-        {% include 'movie/inc/filter_list.html' %}
+        <select
+            ng-model="vm.select.genre"
+            class="movieMobileMenu__select">
+            <option value="" disabled selected>Выберите жанр</option>
+            {% for genre in genre_list %}
+                <option value="{{ genre.id }}">
+                {{ genre.title }}
+                </option>
+            {% endfor %}
+        </select>
+        <select
+            ng-model="vm.select.year"
+            class="movieMobileMenu__select">
+            <option value="" disabled selected>Выберите год</option>
+            <option value="2015">
+                2015
+            </option>
+        </select>
+        <select 
+            ng-model="vm.select.rating"
+            class="movieMobileMenu__select">
+            <option value="" disabled selected>Выбрать рейтинг</option>
+            <option value="5-5.9">
+                5-5.9 
+            </option>
+            <option value="6-6.9">
+                6-6.9
+            </option>
+            <option value="7-7.9">
+                7-7.9
+            </option>
+            <option value="8-8.9">
+                8-8.9
+            </option>
+            <option value="9-10">
+                9-10
+            </option>
+        </select>
         <div ng-click="vm.search()" class="movieMobileMenu__button">
             Найти
         </div>

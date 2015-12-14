@@ -29,7 +29,12 @@ class Catalog(ScreeeningListByDate):
     def get_queryset(self):
         qs = self.queryset
         if self.request.GET.get('rating'):
-            qs = qs.filter(rating = self.request.GET['rating'])
+            rating = self.request.GET['rating']
+            if '-' not in rating:
+                qs = qs.filter(rating = rating)
+            else:
+                rating_start, rating_end = rating.split('-')
+                qs = qs.filter(rating__gte = rating_start, rating__lte=rating_end)
         if self.request.GET.get('year'):
             qs = qs.filter(year = self.request.GET['year'])
         if self.request.GET.get('genre'):
