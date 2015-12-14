@@ -112,3 +112,10 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'removePlugins': 'stylesheetparser',
+        'allowedContent': True,
+        'contentsCss': '/static/mesto/css/main.css'
+    }
+}
