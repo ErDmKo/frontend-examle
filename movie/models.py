@@ -58,8 +58,14 @@ class Show(texts_models.Text):
         help_text='Пример Li7bv9lbaBo')
     ord = models.SmallIntegerField(default=50, verbose_name = 'Порядок')
         
+    def get_rating(self):
+        return str(self.rating).replace('.', ',')
+
     def genre(self):
         return self.genre_list.all()[0] if self.genre_list.count() else ''
+
+    def get_dates(self):
+        return self.screening_set.filter(date__gt=datetime.datetime.now())
 
     def __str__(self):
         return self.title

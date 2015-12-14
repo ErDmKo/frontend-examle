@@ -1,8 +1,9 @@
+import datetime
 from django.views import generic 
 from . import models 
 
 class ScreeeningListByDate(generic.ListView):
-    queryset=models.Screening.objects.all()
+    queryset=models.Screening.objects.filter(date__gt=datetime.datetime.now())
     template_name='movie/calendar.html'
 
     def get_queryset(self):

@@ -47,7 +47,7 @@
                 href="{% url 'movie:detail' slug=show.slug %}"
                 style="background-image: url({{ show.image.url }})">
                 <div class="catalogPage__rating">
-                    {{ show.rating }}
+                    {{ show.get_rating }}
                 </div>
                 <img 
                     class="catalogPage__image"

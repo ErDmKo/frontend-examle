@@ -60,7 +60,7 @@
         </menu>
         <div class="showDetailPage__rating">
             <div class="showDetailPage__ratingVal">
-                {{ object.rating }}
+                {{ object.get_rating }}
             </div>
             <div class="showDetailPage__ratingDesc">
                 IMDb
@@ -83,7 +83,7 @@
         <div class="whiteMovieBlock__fullDesc" ng-show="full">
             {{ object.desc|safe }}
         </div>
-        {% regroup object.screening_set.all by date|date:"j E l" as date_list %}
+        {% regroup object.get_dates by date|date:"j E l" as date_list %}
         <div class="whiteMovieBlock__schedule">
             <header class="whiteMovieBlock__schedule__header">
                 <a id="schedule">Расписание кинопоказа</a>
