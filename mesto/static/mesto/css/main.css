@@ -2093,6 +2093,12 @@ table {
   z-index: 2;
 }
 
+.customSelect__placeholder {
+  white-space: nowrap;
+  width: 80%;
+  overflow: hidden;
+}
+
 .customSelect__placeholder,
 .customSelect__placeholder:hover {
   cursor: pointer;
