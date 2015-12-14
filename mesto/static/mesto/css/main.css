@@ -1324,6 +1324,10 @@ table {
   height: 100%;
 }
 
+.movieMain.fixedPopUp {
+  overflow: hidden;
+}
+
 .movieMain__back {
   border-top: 1px solid  #2BF4A7;
   border-left: 1px solid  #2BF4A7;
@@ -2158,6 +2162,10 @@ table {
   padding: 100px 20px 20px;
 }
 
+.showDetailPage.fixedPopUp {
+  position: fixed;
+}
+
 .showDetailPage__preview {
   background: 50% 50% / cover;
   position: relative;
@@ -2387,6 +2395,7 @@ table {
   text-align: center;
   margin: 0px 0px;
   font-size: 56px;
+  text-decoration: underline;
 }
 
 .whiteMovieBlock__footer {
@@ -2567,6 +2576,62 @@ table {
 .movieMenu__text {
   opacity: .3;
   font: 15px hcyrregular;
+}
+
+.callTheSaul {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 1;
+  right: 0px;
+  background: rgba(0,0,0,.8);
+  color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: none;
+  font: 20px hcyrregular;
+}
+
+.callTheSaul.active {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.callTheSaul__close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.callTheSaul__close svg {
+  width: 20px;
+  height: 20px;
+}
+
+.callTheSaul__close svg rect {
+  fill: #fff;
 }
 
 body,

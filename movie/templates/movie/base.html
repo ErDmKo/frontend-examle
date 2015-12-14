@@ -11,7 +11,9 @@
         {% include 'movie/inc/menu_list.html' %}
     {% endblock %}
  </div>
-<div class="movieMain" mesto-feedback-contanier="mobileFilterMenu">
+<div class="movieMain" 
+    mesto-feedback-contanier="dotsMenu"
+    mesto-feedback-contanier="mobileFilterMenu">
     <a href="{% url 'movie:main' %}" class="movieMain__header{% block 'mainMenuClass' %} {% endblock %}">
         <img class="movieMain__header__img" src="{% static 'mesto/img/logo_color-01.svg' %}"/>
         <div class="movieMain__subheader">

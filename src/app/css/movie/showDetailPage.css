@@ -3,6 +3,9 @@
     box-sizing: border-box;
     color: #fff;
     padding: 100px 20px 20px;
+    &.fixedPopUp {
+        position: fixed;
+    }
     &__preview {
         background: 50% 50% / cover;
         position: relative;

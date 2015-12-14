@@ -4,12 +4,14 @@ class PopUp {
         this.itemHandler = itemHandler;
     }
     toggleItem() {
-        if (PopUp.contanierHandler) {
-            PopUp.contanierHandler();
+        if (PopUp.contanierHandler[this.name]) {
+            PopUp.contanierHandler[this.name]();
         }
         this.itemHandler();
     }
 }
+PopUp.contanierHandler = {};
+
 export class PopUpService {
     constructor() {
         this.popUps = {};
@@ -32,15 +34,14 @@ export class PopUpService {
             } 
         }
     }
-    addContanier(popUpName, hander) {
-        PopUp.contanierHandler = hander;
+    addContanier(popUpName, hander, index) {
+        PopUp.contanierHandler[popUpName] = hander;
     }
     addToggler(popUpName) {
         return (e) => {
             e.preventDefault();
             ([this.popUps[popUpName]] || [])
                 .forEach((popUp)=>{
-                    console.log(popUpName);
                     popUp.toggleItem();
                 })
         }

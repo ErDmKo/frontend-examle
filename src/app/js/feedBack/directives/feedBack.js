@@ -21,7 +21,7 @@ export class MestoFeedbackContnier {
         this.popUpSerivice = popUpSerivice;
     }
     link(scope, element, attrs) {
-        let handler = () => {
+        let handler = (name) => {
             element.toggleClass(MestoFeedbackContnier.TOGGLE_CLASS);
         }
         this.popUpSerivice

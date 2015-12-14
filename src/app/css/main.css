@@ -34,6 +34,7 @@
 @import 'movie/aboutPage.css';
 @import 'movie/smallDesc.css';
 @import 'movie/movieMenu.css';
+@import 'movie/callTheSaul.css';
 
 .hideBig {
     @media (min-width: 800px) {

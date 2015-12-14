@@ -1,6 +1,9 @@
 .movieMain {
     background: #10131E;
     height: 100%;
+    &.fixedPopUp {
+        overflow: hidden;
+    }
     &__back {
         border-top: 1px solid  #2BF4A7;
         border-left: 1px solid  #2BF4A7;
