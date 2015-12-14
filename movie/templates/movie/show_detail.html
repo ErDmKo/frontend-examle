@@ -88,7 +88,7 @@
             <header class="whiteMovieBlock__schedule__header">
                 <a id="schedule">Расписание кинопоказа</a>
             </header>
-            <dl class="customSelect whiteMovieBlock__customSelect" mesto-custom-select>
+            <!--dl class="customSelect whiteMovieBlock__customSelect" mesto-custom-select>
                 <dt
                     mesto-custom-select-placeholder
                     class="customSelect__placeholder"
@@ -112,7 +112,14 @@
                     </li>
                 {% endfor %}
                 </dd>
-            </dl>
+            </dl-->
+            <select 
+                class="whiteMovieBlock__select"
+                ng-model="selectDate">
+                {% for date in date_list %}
+                    <option value="{{ date.grouper }}">{{ date.grouper }}</option>
+                {% endfor %}
+            </select>
             <ul class="whiteMovieBlock__timeView">
                 {% for screening in object.screening_set.all %}
                     <li

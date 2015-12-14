@@ -22,6 +22,17 @@
     &__shortDesc, &__fullDesc {
         font-size: 16px;
     }
+    &__select {
+        display: block;
+        appearance: none;
+        border-radius: 30px;
+        outline: none;
+        background: transparent;
+        font-size: 15px;
+        width: 100%;
+        padding: 15px 30px;
+        border: 2px solid #E4E5E9;
+    }
     &__more {
         color: #9C9B9B;
         text-decoration: underline;
