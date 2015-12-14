@@ -14,7 +14,7 @@
         style="background-image: url({{ object.image.url }})">
         <img 
             class="showDetailPage__image"
-            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+            src="{{ object.image.url }}"/>
         <div class="showDetailPage__play">
             {% include 'mesto/inc/playTrangle.svg' %}
         </div>
@@ -88,31 +88,6 @@
             <header class="whiteMovieBlock__schedule__header">
                 <a id="schedule">Расписание кинопоказа</a>
             </header>
-            <!--dl class="customSelect whiteMovieBlock__customSelect" mesto-custom-select>
-                <dt
-                    mesto-custom-select-placeholder
-                    class="customSelect__placeholder"
-                    alt="0">
-                    Выберите дату
-                </dt>
-                <dd class="customSelect__list whiteMovieBlock__customSelect__list">
-                {% for date in date_list %}
-                    <li 
-                        mesto-custom-select-item
-                        class="customSelect__item whiteMovieBlock__customSelect__item">
-                        <input
-                            ng-model="selectDate"
-                            type="radio"
-                            id="genre{{ date.list.0.id }}"
-                            ng-value="'{{ date.grouper }}'"/>
-                        <label
-                            class="customSelect__label"
-                            for="genre{{ date.list.0.id }}">
-                            {{ date.grouper }}
-                    </li>
-                {% endfor %}
-                </dd>
-            </dl-->
             <select 
                 class="whiteMovieBlock__select"
                 ng-model="selectDate">
