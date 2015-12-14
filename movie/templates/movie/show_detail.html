@@ -116,6 +116,7 @@
             <select 
                 class="whiteMovieBlock__select"
                 ng-model="selectDate">
+                <option value="" disabled selected>Выберите дату</option>
                 {% for date in date_list %}
                     <option value="{{ date.grouper }}">{{ date.grouper }}</option>
                 {% endfor %}
