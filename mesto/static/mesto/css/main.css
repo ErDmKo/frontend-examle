@@ -3588,8 +3588,35 @@ html a {
     padding: 0px 50px;
   }
 
+  .calendarPage__image {
+    display: none;
+  }
+
+  .calendarPage__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .calendarPage__desc {
+    display: inline-block;
+    width: 390px;
+    height: 490px;
+    margin: 10px 0px;
+    margin-left: 10px;
+  }
+
   .calendarPage__date {
     text-align: center;
+    font: 45px hcyrregular;
+    color: #000;
+  }
+
+  .calendarPage__info {
+    font-size: 45px;
+  }
+
+  .calendarPage__time {
+    font-size: 73px;
   }
 
   .movieMobileMenu__list {
