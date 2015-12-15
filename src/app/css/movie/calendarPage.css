@@ -87,6 +87,9 @@
         &:first-child {
             margin: 0;
         }
+        @media (min-width: 800px) {
+            text-align: center;
+        }
     }
     &__date {
         font: 14px HarmoniaSansProCyr-SemiBd;

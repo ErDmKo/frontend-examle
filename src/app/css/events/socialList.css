@@ -30,5 +30,11 @@
         &.tw {
             background: var(--twColor);
         }
+        .showDetailPage__social & {
+            @media (min-width: 800px) {
+                display: block;
+                margin: 20px 0px;
+            }
+        }
     }
 }

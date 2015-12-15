@@ -2,114 +2,128 @@
 {% block 'head' %}
     <script src="https://www.youtube.com/player_api"></script>
 {% endblock %}
+{% block 'mainMenuClass' %}
+    hideBig
+{% endblock %}
 {% block 'menu_button' %}
-    <a class="mainMenu__item movieMain__back fadeAnimator__ancor" href="{% url 'movie:main' %}">
+    <a class="mainMenu__item hideBig movieMain__back fadeAnimator__ancor" href="{% url 'movie:main' %}">
     </a>
 {% endblock %}
 {% block 'main_content' %}
 {% include 'movie/inc/call_the_saul.html' %}
 <article mesto-feedback-contanier="callTheSaul" class="showDetailPage">
-    <div class="showDetailPage__preview"
-        ng-controller="showMovieController as vm" 
-        ng-class="{active: vm.video['{{ object.trailer }}'].active }"
-        style="background-image: url({{ object.image.url }})">
-        <img 
-            class="showDetailPage__image"
-            src="{{ object.image.url }}"/>
-        <div class="showDetailPage__play">
-            {% include 'mesto/inc/playTrangle.svg' %}
-        </div>
-        <youtube-video 
-           class="showDetailPage__video"
-           player-vars="{
-                controls: 0,
-                showinfo: 0,
-                modestbranding: 1
-           }"
-           video-url="'{{ object.trailer }}'">
-        </youtube-video>
+    <div class="showDetailPage__menu">
+    {% block 'menu_list' %}
+        {% include 'movie/inc/desktop_menu.html' %}
+    {% endblock %}
     </div>
-    <header class="showDetailPage__header">
-        <h1 class="showDetailPage__title">{{ object.title }}</h1>            
-        <h2 class="showDetailPage__subtitle">{{ object.original_title }}</h2>            
-        <div class="showDetailPage__addInfo">
-            <span class="showDetailPage__item">{{ object.genre }}</span>
-            <span class="showDetailPage__item">{{ object.year }}</span>
-        </div>
-    </header>
-    {% with url=request.build_absolute_uri %}
-    <section class="showDetailPage__socialRating">
-        <menu class="socialList showDetailPage__social">
-            <a
-                class="socialList__item vk"
-                href="http://vk.com/share.php?url={{ url }}"
-                onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                Vk
-            </a>
-            <a 
-                class="socialList__item fb"
-                href="http://www.facebook.com/share.php?u={{ url }}&title={{ object.title|urlencode }}"
-                onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                Fb
-            </a>
-            <a 
-                class="socialList__item tw"
-                href="http://twitter.com/intent/tweet?status={{ object.title|urlencode }}+{{ url}}"
-                onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                Tw
-            </a>
-        </menu>
-        <div class="showDetailPage__rating">
-            <div class="showDetailPage__ratingVal">
-                {{ object.get_rating }}
-            </div>
-            <div class="showDetailPage__ratingDesc">
-                IMDb
+    <div class="showDetailPage__flex">
+        <div class="showDetailPage__preview"
+            ng-controller="showMovieController as vm" 
+            ng-class="{active: vm.video['{{ object.trailer }}'].active }"
+            style="background-image: url({{ object.image.url }})">
+            <div class="showDetailPage__wrapper">
+                <img 
+                    class="showDetailPage__image"
+                    src="{{ object.image.url }}"/>
+                <div class="showDetailPage__play">
+                    {% include 'mesto/inc/playTrangle.svg' %}
+                </div>
+                <youtube-video 
+                   class="showDetailPage__video"
+                   player-vars="{
+                        controls: 0,
+                        showinfo: 0,
+                        modestbranding: 1
+                   }"
+                   video-url="'{{ object.trailer }}'">
+                </youtube-video>
             </div>
         </div>
-    </section>
-    {% endwith %}
-    <section class="whiteMovieBlock">
-        <time class="whiteMovieBlock__header">{{ object.duration }} мин</time>
-        <dl class="whiteMovieBlock__info">
-            <dt class="whiteMovieBlock__subheader">Режисcер:</dt>
-            <dd class="whiteMovieBlock__desc">{{ object.director }}</dd>
-            <dt class="whiteMovieBlock__subheader">В ролях:</dt>
-            <dd class="whiteMovieBlock__desc">{{ object.roles }}</dd>
-        </dl>
-        <div  class="whiteMovieBlock__shortDesc">
-            {{ object.short_desc }}
-            <span ng-hide="full" ng-click="full=1" class="whiteMovieBlock__more">Развернуть</span>
-        </div>
-        <div class="whiteMovieBlock__fullDesc" ng-show="full">
-            {{ object.desc|safe }}
-        </div>
-        {% regroup object.get_dates by date|date:"j E l" as date_list %}
-        <div class="whiteMovieBlock__schedule">
-            <header class="whiteMovieBlock__schedule__header">
-                <a id="schedule">Расписание кинопоказа</a>
-            </header>
-            <select 
-                class="whiteMovieBlock__select"
-                ng-model="selectDate">
-                <option value="" disabled selected>Выберите дату</option>
-                {% for date in date_list %}
-                    <option value="{{ date.grouper }}">{{ date.grouper }}</option>
-                {% endfor %}
-            </select>
-            <ul class="whiteMovieBlock__timeView">
-                {% for screening in object.screening_set.all %}
-                    <li
-                        class="whiteMovieBlock__timeItem"
-                        mesto-feedback-toggle="callTheSaul"
-                        ng-show="selectDate == '{{ screening.date|date:"j E l" }}'">
-                        {{ screening.date|date:"H:i" }}
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-       <a class="whiteMovieBlock__footer" href="{% url 'movie:calendar' %}">Сегодня в кино</a>
-    </section>
+        <header class="showDetailPage__header">
+            <h1 class="showDetailPage__title">{{ object.title }}</h1>            
+            <h2 class="showDetailPage__subtitle">{{ object.original_title }}</h2>            
+            <div class="showDetailPage__addInfo">
+                <span class="showDetailPage__item">{{ object.genre }}</span>
+                <span class="showDetailPage__item">{{ object.year }}</span>
+            </div>
+        </header>
+        {% with url=request.build_absolute_uri %}
+        <section class="showDetailPage__socialRating">
+            <div class="showDetailPage__rating">
+                <div class="showDetailPage__ratingVal">
+                    {{ object.get_rating }}
+                </div>
+                <div class="showDetailPage__ratingDesc">
+                    IMDb
+                </div>
+            </div>
+            <menu class="socialList showDetailPage__social">
+                <a
+                    class="socialList__item vk"
+                    href="http://vk.com/share.php?url={{ url }}"
+                    onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                    Vk
+                </a>
+                <a 
+                    class="socialList__item fb"
+                    href="http://www.facebook.com/share.php?u={{ url }}&title={{ object.title|urlencode }}"
+                    onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                    Fb
+                </a>
+                <a 
+                    class="socialList__item tw"
+                    href="http://twitter.com/intent/tweet?status={{ object.title|urlencode }}+{{ url}}"
+                    onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                    Tw
+                </a>
+            </menu>
+        </section>
+        {% endwith %}
+        <section class="whiteMovieBlock">
+            <time class="whiteMovieBlock__header">{{ object.duration }} мин</time>
+            <dl class="whiteMovieBlock__info">
+                <dt class="whiteMovieBlock__subheader">Режисcер:</dt>
+                <dd class="whiteMovieBlock__desc">{{ object.director }}</dd>
+                <dt class="whiteMovieBlock__subheader">В ролях:</dt>
+                <dd class="whiteMovieBlock__desc">{{ object.roles }}</dd>
+            </dl>
+            <div  class="whiteMovieBlock__shortDesc">
+                {{ object.short_desc }}
+                <span ng-hide="full" ng-click="full=1" class="whiteMovieBlock__more">Развернуть</span>
+            </div>
+            <div class="whiteMovieBlock__fullDesc" ng-show="full">
+                {{ object.desc|safe }}
+            </div>
+            {% regroup object.get_dates by date|date:"j E l" as date_list %}
+        </section>
+        <section class="whiteMovieBlock">
+            <div class="whiteMovieBlock__schedule">
+                <header class="whiteMovieBlock__schedule__header">
+                    <a id="schedule">Расписание кинопоказа</a>
+                </header>
+                <select 
+                    class="whiteMovieBlock__select"
+                    ng-model="selectDate">
+                    <option value="" disabled selected>Выберите дату</option>
+                    {% for date in date_list %}
+                        <option value="{{ date.grouper }}">{{ date.grouper }}</option>
+                    {% endfor %}
+                </select>
+                <ul class="whiteMovieBlock__timeView">
+                    {% for screening in object.screening_set.all %}
+                        <li
+                            class="whiteMovieBlock__timeItem"
+                            mesto-feedback-toggle="callTheSaul"
+                            ng-show="selectDate == '{{ screening.date|date:"j E l" }}'">
+                            {{ screening.date|date:"H:i" }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+           <a class="whiteMovieBlock__footer" href="{% url 'movie:calendar' %}">Сегодня в кино</a>
+        </section>
+    </div>
 </article>
     {% block footer %}
     {% endblock %}
