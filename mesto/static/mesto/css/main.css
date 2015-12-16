@@ -2497,6 +2497,17 @@ table {
   font: 15px hcyrregular;
 }
 
+.aboutPage__menu {
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  background: #000;
+  left: 0px;
+  display: none;
+  width: 420px;
+  color: #fff;
+}
+
 .aboutPage__header {
   font-size: 27px;
   margin: 20px 0px;
@@ -3507,7 +3518,11 @@ html a {
   }
 
   .showSlide__titleBlock {
-    position: static;
+    position: relative;
+    z-index: 9999999;
+    top: 0;
+    left: 0px;
+    right: 0px;
     padding: 0px;
   }
 
@@ -3522,6 +3537,7 @@ html a {
         -ms-flex-direction: column;
             flex-direction: column;
     padding: 40px;
+    z-index: 1;
   }
 
   .showSlide__titleWraper {
@@ -3840,6 +3856,20 @@ html a {
     margin-left: 10px;
   }
 
+  .aboutPage {
+    position: static;
+    box-sizing: boder-box;
+    padding: 0px 50px 0px 470px;
+    background: #fff;
+    color: #000;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .aboutPage__menu {
+    display: block;
+  }
+
   .smallDesc {
     padding: 30px;
     display: block;
@@ -3847,6 +3877,7 @@ html a {
     position: absolute;
     bottom: 0;
     color: #000;
+    z-index: 1;
     font: 15px hcyrregular;
     left: 50%;
     width: 495px;

@@ -1,9 +1,33 @@
 {% extends 'movie/base.html' %}
+{% block 'mainMenuClass' %}
+    hideBig
+{% endblock %}
 {% block 'dots_menu' %}
     {% include 'movie/inc/menu_list.html' with selected="about" %}
 {% endblock %}
+{% block 'menu_button' %}
+<a class="mainMenu__item hideBig movieMain__menu fadeAnimator__ancor" href="{% url 'main' %}">
+    {% include 'mesto/inc/menu.svg' %}
+</a>
+{% endblock %}
 {% block 'main_content' %}
+{% include 'movie/inc/call_the_saul.html' %}
 <div class="aboutPage">
-    {{ page.desc|safe }}
+    <div class="aboutPage__menu">
+        {% include 'movie/inc/desktop_menu.html' with selected='about' %}
+    </div>
+    <div class="aboutPage__content">
+        {{ page.desc|safe }}
+    </div>
 </div>
+{% endblock %}
+{% block footer %}
+    <footer class="hideBig movieFooter">
+        <menu class="movieFooter__menu">
+            <a href="{% url 'movie:calendar' %}" class="movieFooter__item">Скоро в кино</a>
+        </menu>
+        <menu class="movieFooter__socialList">
+            <a class="movieFooter__social inst" href="/"></a>
+        </menu>
+    </footer>
 {% endblock %}

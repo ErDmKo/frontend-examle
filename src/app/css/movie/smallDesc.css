@@ -7,6 +7,7 @@
         position: absolute;
         bottom: 0;
         color: #000;
+        z-index: 1;
         font: 15px hcyrregular;
         left: 50%;
         width: 495px;

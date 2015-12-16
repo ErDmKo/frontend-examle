@@ -7,7 +7,33 @@
     bottom: 50px;
     color: #fff;
     font: 15px hcyrregular;
+    @media (min-width: 800px) {
+        position: static;
+        box-sizing: boder-box;
+        padding: 0px 50px 0px 470px;
+        background: #fff;
+        color: #000;
+        height: 100%;
+        overflow-y: auto;
+    }
+    &__menu {
+        position: absolute;
+        top: 0px;
+        height: 100%;
+        background: #000;
+        left: 0px;
+        display: none;
+        width: 420px;
+        color: #fff;
+        @media (min-width: 800px) {
+            display: block;
+        }
+    }
+    &__menu {
+        @media (min-width: 800px) {
 
+        }
+    }
     &__header {
         font-size: 27px;
         margin: 20px 0px;
