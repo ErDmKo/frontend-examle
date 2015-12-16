@@ -107,7 +107,13 @@
                     ng-model="selectDate">
                     <option value="" disabled selected>Выберите дату</option>
                     {% for date in date_list %}
-                        <option value="{{ date.grouper }}">{{ date.grouper }}</option>
+                        <option value="{{ date.grouper }}">
+                            {% if date.grouper == now_date|date:"j E l" %}
+                                Сегодня
+                            {% else %}
+                                {{ date.grouper }}
+                            {% endif %}
+                        </option>
                     {% endfor %}
                 </select>
                 <ul class="whiteMovieBlock__timeView">
