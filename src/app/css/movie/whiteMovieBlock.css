@@ -95,6 +95,10 @@
             text-decoration: underline;
             @media (min-width: 800px) {
                 text-align: left;
+                display: inline-block;
+                & + & {
+                    margin-left: 30px;
+                }
             }
         }
     }

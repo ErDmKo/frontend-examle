@@ -3806,6 +3806,11 @@ html a {
 
   .whiteMovieBlock__timeItem {
     text-align: left;
+    display: inline-block;
+  }
+
+  .whiteMovieBlock__timeItem + .whiteMovieBlock__timeItem {
+    margin-left: 30px;
   }
 
   .catalogPage:after {
