@@ -102,6 +102,9 @@
                 & + & {
                     margin-left: 30px;
                 }
+                &:hover {
+                    cursor: pointer;
+                }
             }
         }
     }

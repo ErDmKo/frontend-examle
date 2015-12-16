@@ -3817,6 +3817,10 @@ html a {
     margin-left: 30px;
   }
 
+  .whiteMovieBlock__timeItem:hover {
+    cursor: pointer;
+  }
+
   .catalogPage:after {
     display: none;
   }
