@@ -56,6 +56,9 @@
         color: #9C9B9B;
         text-decoration: underline;
         display: block;
+        &:hover {
+            cursor: pointer;
+        }
     }
     &__schedule {
         @media (min-width: 800px) {
