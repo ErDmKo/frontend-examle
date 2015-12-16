@@ -59,7 +59,7 @@ class Show(texts_models.Text):
     ord = models.SmallIntegerField(default=50, verbose_name = 'Порядок')
         
     def get_rating(self):
-        return str(self.rating).replace('.', ',')
+        return str(self.rating).replace(',', '.')
 
     def genre(self):
         return self.genre_list.all()[0] if self.genre_list.count() else ''
