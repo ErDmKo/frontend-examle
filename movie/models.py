@@ -86,6 +86,6 @@ class Screening(models.Model):
     objects = ScreeningManager()
 
     class Meta:
-        ordering = ['date']
+        ordering = ['-date']
         verbose_name = 'Сеанс'
         verbose_name_plural = 'Сеансы'
