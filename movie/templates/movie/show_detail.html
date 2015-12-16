@@ -97,6 +97,7 @@
             </div>
             {% regroup object.get_dates by date|date:"j E l" as date_list %}
         </section>
+        {% if date_list|length %}
         <section class="whiteMovieBlock" ng-controller="showDetail">
             <div class="whiteMovieBlock__schedule">
                 <header class="whiteMovieBlock__schedule__header">
@@ -130,6 +131,7 @@
             </div>
            <a class="whiteMovieBlock__footer" href="{% url 'movie:calendar' %}">Сегодня в кино</a>
         </section>
+        {% endif %}
     </div>
 </article>
     {% block footer %}

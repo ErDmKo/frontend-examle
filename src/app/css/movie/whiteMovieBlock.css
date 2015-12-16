@@ -85,7 +85,7 @@
     }
     &__time {
         &View {
-            min-height: 200px;
+            min-height: 20px;
             margin: 20px 0px;
         }
         &Item {
