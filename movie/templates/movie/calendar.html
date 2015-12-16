@@ -40,7 +40,7 @@
                 <dd class="calendarPage__desc">
                     <a 
                         class="calendarPage__wrapper"
-                        href="{% url 'movie:detail' slug=screening.show.slug %}">
+                        href="{% url 'movie:detail' slug=screening.show.slug %}?date={{ screening.date|date:"j E l" }}#schedule">
                         <time class="calendarPage__time">{{ screening.date|date:"H:i" }}</time>
                         <div class="calendarPage__info">Подробнее</div>
                         <div 
