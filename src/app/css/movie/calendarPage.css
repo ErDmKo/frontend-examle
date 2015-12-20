@@ -4,6 +4,9 @@
     color: #fff;
     padding: 0px 0px 0px;
     background: linear-gradient(164deg, rgba(113,39,178, .5) 0%, rgba(33,235,171,.5) 45%, rgba(206,208,179,.5) 100%);
+    @media (min-width: 800px) {
+        background: url(/static/mesto/img/mestoBg.jpg) no-repeat 50% 50% / cover;
+    }
     &:after {
         content: '';
         position: absolute;
@@ -113,7 +116,10 @@
         font: 35px hcyrregular;
     }
     &__info  {
-        display: none;
+        bottom: 10px;
+        text-decoration: none;
+        color: #fff;
+        top: auto;
         @media (min-width: 800px) {
             font-size: 45px;
         }
@@ -122,13 +128,15 @@
         }
     }
     &__time {
-        color: #2BF4A7;
         @media (min-width: 800px) {
             font-size: 73px;
         }
-        .calendarPage__wrapper:hover & {
-            display: none;
+        &__item {
+            color: #2BF4A7;
+            text-decoration: none;
+            &:hover {
+                color: #D52FAD;
+            }
         }
-
     }
 }

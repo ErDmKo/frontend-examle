@@ -14,6 +14,9 @@ export class HorizontalScroll {
                 count = 0;
                 return;
             }
+            if (attrs.horizontalScroll > 0 && attrs.horizontalScroll < window.innerWidth) {
+                return;
+            }
             e.preventDefault();
             delta_sum += deltaY*8 || 0;
             count += 1;

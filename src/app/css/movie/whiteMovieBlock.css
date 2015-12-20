@@ -104,6 +104,7 @@
                 }
                 &:hover {
                     cursor: pointer;
+                    color: #D52FAD;
                 }
             }
         }
@@ -113,5 +114,8 @@
         color: #000;
         font: 15px hcyrregular;
         padding-bottom: 10px;
+        @media (min-width: 800px) {
+            color: #fff;
+        }
     }
 }

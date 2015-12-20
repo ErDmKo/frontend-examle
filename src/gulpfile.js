@@ -23,7 +23,8 @@ var libs = [
     'node_modules/angular/angular.min.js',
     'node_modules/angular-resource/angular-resource.min.js',
     'node_modules/hamsterjs/hamster.js',
-    'node_modules/angular-youtube-embed/src/angular-youtube-embed.js'
+    'node_modules/angular-youtube-embed/src/angular-youtube-embed.js',
+    'node_modules/angular-scroll/angular-scroll.min.js',
 ]
 
 gulp.task('copy', function() {

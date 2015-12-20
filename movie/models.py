@@ -71,7 +71,7 @@ class Show(texts_models.Text):
         return self.title
 
     class Meta:
-        ordering = ['ord']
+        ordering = ['ord', 'title']
         verbose_name = 'Релиз'
         verbose_name_plural = 'Релизы'
 

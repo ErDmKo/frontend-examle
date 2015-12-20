@@ -1440,6 +1440,7 @@ table {
   background: -webkit-linear-gradient(bottom, #af5fb3 0%, #dabfb2 27%, #2fe9a8 82%, #6bccad 100%);
   background: linear-gradient(to top, #af5fb3 0%,#dabfb2 27%,#2fe9a8 82%,#6bccad 100%);
   top: 50%;
+  min-width: 900px;
   left: 50%;
   border-radius: 100%;
   display: none;
@@ -1479,7 +1480,8 @@ table {
   color: #fff;
   display: block;
   text-decoration: none;
-  margin: 10px 0px;
+  margin: 7px 0px;
+  font-size: 21px;
 }
 
 .sliderJsMovie__menu__item:first-child {
@@ -1497,6 +1499,11 @@ table {
   width: 30px;
   height: 20px;
   z-index: 1;
+}
+
+.sliderJsMovie__next:hover,
+.sliderJsMovie__prev:hover {
+  cursor: pointer;
 }
 
 .sliderJsMovie__next:after,
@@ -1643,6 +1650,10 @@ table {
   opacity: 0;
   -webkit-transition: .5s opacity;
           transition: .5s opacity;
+}
+
+.sliderJsMovie__item.active .showSlide__video {
+  display: block;
 }
 
 .showSlide__header.active .showSlide__video {
@@ -1883,19 +1894,23 @@ table {
 }
 
 .calendarPage__info {
-  display: none;
+  bottom: 10px;
+  text-decoration: none;
+  color: #fff;
+  top: auto;
 }
 
 .calendarPage__wrapper:hover .calendarPage__info {
   display: block;
 }
 
-.calendarPage__time {
+.calendarPage__time__item {
   color: #2BF4A7;
+  text-decoration: none;
 }
 
-.calendarPage__wrapper:hover .calendarPage__time {
-  display: none;
+.calendarPage__time__item:hover {
+  color: #D52FAD;
 }
 
 .movieMobileMenu {
@@ -2041,7 +2056,13 @@ table {
           transform: rotate(-135deg);
 }
 
-.customSelect:after {
+.customSelect,
+.customSelect__wrapper {
+  position: relative;
+}
+
+.customSelect:after,
+.customSelect__wrapper:after {
   content: '';
   pointer-events: none;
   position: absolute;
@@ -2058,10 +2079,20 @@ table {
           transform: rotate(45deg);
 }
 
+.customSelect__wrapper {
+  display: inline-block;
+}
+
+.customSelect__wrapper:after {
+  border: 2px solid #ccc;
+  border-top: 0;
+  border-left: 0;
+}
+
 .customSelect__list {
   top: 0;
   background: #000;
-  z-index: 10;
+  z-index: 20;
   box-shadow: 0px 9px 30px rgba(0,0,0,.2);
 }
 
@@ -2143,7 +2174,6 @@ table {
 
 .customSelect.open .customSelect__list {
   display: block;
-  pointer-events: none;
 }
 
 .customSelect__item {
@@ -3431,14 +3461,38 @@ html a {
   }
 
   .movieMain__header {
+    width: 290px;
     top: 33px;
     z-index: 1;
+  }
+
+  .movieMain__subheader {
+    font-size: 21px;
   }
 
   .movieFooter {
     left: 40px;
     bottom: 40px;
     right: 40px;
+  }
+
+  .movieFooter__item {
+    font-size: 21px;
+  }
+
+  .movieFooter__social {
+    position: relative;
+  }
+
+  .movieFooter__social:after {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    bottom: -15px;
+    right: -15px;
+    border: 2px solid #fff;
+    border-radius: 50%;
   }
 
   .sliderJsMovie {
@@ -3552,6 +3606,7 @@ html a {
 
   .showSlide__video {
     z-index: 1;
+    display: none;
   }
 
   .showSlide__smallDesc {
@@ -3597,6 +3652,10 @@ html a {
     display: block;
     height: auto;
     width: 100%;
+  }
+
+  .calendarPage {
+    background: url(/static/mesto/img/mestoBg.jpg) no-repeat 50% 50% / cover;
   }
 
   .calendarPage:after {
@@ -3664,9 +3723,14 @@ html a {
   }
 
   .movieMobileMenu__item {
-    margin: 20px 0px;
+    margin: 0px 0px;
     text-align: left;
     font-size: 29px;
+  }
+
+  .movieMobileMenu__ancor {
+    display: block;
+    padding: 10px 0px;
   }
 
   .showDetailPage {
@@ -3819,6 +3883,15 @@ html a {
 
   .whiteMovieBlock__timeItem:hover {
     cursor: pointer;
+    color: #D52FAD;
+  }
+
+  .whiteMovieBlock__footer {
+    color: #fff;
+  }
+
+  .catalogPage {
+    background: url(/static/mesto/img/mestoBg.jpg) no-repeat 50% 50% / cover;
   }
 
   .catalogPage:after {
@@ -3907,6 +3980,10 @@ html a {
     -webkit-transform: translateX(-50%) translateY(0%);
         -ms-transform: translateX(-50%) translateY(0%);
             transform: translateX(-50%) translateY(0%);
+  }
+
+  .callTheSaul {
+    font-size: 73px;
   }
 
   .hideBig {

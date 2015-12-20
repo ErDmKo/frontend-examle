@@ -1,16 +1,23 @@
-<ul class="movieMobileMenu__list">
+<ul
+    du-scroll-container="calendarList"
+    du-spy-context
+    class="movieMobileMenu__list">
     <li class="movieMobileMenu__item">
         <a 
-            class="movieMobileMenu__ancor{% if selected == 'calendar' %} active {% endif %}"
-            href="{% url 'movie:calendar' %}">
-            Сегодня в кино
+            class="movieMobileMenu__ancor"
+            du-smooth-scroll
+            du-scrollspy="today"
+            href="{% url 'movie:calendar' %}#today">
+            Сегодня в кинотеатре
          </a>
     </li>
     <li class="movieMobileMenu__item">
         <a 
             class="movieMobileMenu__ancor"
-            href="{% url 'movie:calendar' %}">
-            Скоро в кино
+            du-smooth-scroll
+            du-scrollspy="day2"
+            href="{% url 'movie:calendar' %}#day2">
+            Скоро в кинотеатре
         </a>
     </li>
     <li class="movieMobileMenu__item">

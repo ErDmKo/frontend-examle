@@ -43,7 +43,11 @@ import {
 import { ShowsFilterController } from './movieShow/controllers/showsFilterController.js' 
 import { ShowDetail } from './movieShow/controllers/showDetail.js' 
 
-var app = angular.module('mesto', ['ngResource', 'youtube-embed']);
+var app = angular.module('mesto', [
+    'ngResource',
+    'duScroll',
+    'youtube-embed'
+]);
 
 register('mesto')
     .directive('sliderMain', SliderMain)

@@ -13,6 +13,7 @@
         height: 120%;
         background: linear-gradient(to top, #af5fb3 0%,#dabfb2 27%,#2fe9a8 82%,#6bccad 100%);
         top: 50%;
+        min-width: 900px;
         left: 50%;
         border-radius: 100%;
         display: none;
@@ -26,7 +27,6 @@
         }
     }
     &__after {
-        
         background: linear-gradient(to bottom, #dc84b0 0%,#f04bab 35%,#00e3ad 82%,#3897b0 100%);
         transform-origin: 50% 50%;
         transform: translate(-50%, -50%) rotate(180deg);
@@ -46,7 +46,8 @@
             color: #fff;
             display: block;
             text-decoration: none;
-            margin: 10px 0px;
+            margin: 7px 0px;
+            font-size: 21px;
             &:first-child {
                 margin-top: 0;
             }
@@ -63,6 +64,9 @@
         z-index: 1;
         @media (min-width: 800px) {
             top: 50%;
+        }
+        &:hover {
+            cursor: pointer;
         }
         &:after, &:before {
             content: '';

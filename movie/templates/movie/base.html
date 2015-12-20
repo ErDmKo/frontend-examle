@@ -15,7 +15,7 @@
     mesto-feedback-contanier="dotsMenu"
     mesto-feedback-contanier="mobileFilterMenu">
     <a href="{% url 'movie:main' %}" class="movieMain__header{% block 'mainMenuClass' %} {% endblock %}">
-        <img class="movieMain__header__img" src="{% static 'mesto/img/logo_color-01.svg' %}"/>
+        <img class="movieMain__header__img" src="{% static 'mesto/img/logo_color-01.png' %}"/>
         <div class="movieMain__subheader">
         {% block 'subheader' %}
             Movie Theater
@@ -41,7 +41,10 @@
                 <a href="{% url 'movie:calendar' %}" class="movieFooter__item">Скоро в кино</a>
             </menu>
             <menu class="movieFooter__socialList">
-                <a class="movieFooter__social inst" href="/"></a>
+                <a 
+                    class="movieFooter__social inst"
+                    target="_blank"
+                    href="https://www.instagram.com/mesto_2/"></a>
             </menu>
         </footer>
     {% endblock %}

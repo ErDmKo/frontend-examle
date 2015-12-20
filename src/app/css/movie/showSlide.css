@@ -81,8 +81,12 @@
         bottom: 0px;
         opacity: 0;
         transition: .5s opacity;
+        .sliderJsMovie__item.active & {
+            display: block;
+        }
         @media (min-width: 800px) {
             z-index:1;
+            display: none;
         }
         .showSlide__header.active & {
             opacity: 1;

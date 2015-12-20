@@ -70,7 +70,7 @@
         text-align: center;
         margin: 30px;
         @media (min-width: 800px) {
-            margin: 20px 0px;
+            margin: 0px 0px;
             text-align: left;
             font-size: 29px;
         }
@@ -81,6 +81,10 @@
         font: 25px HarmoniaSansProCyr-Light;
         &:hover, &.active {
             color: #2BF4A7;
+        }
+        @media (min-width: 800px) {
+            display: block;
+            padding: 10px 0px;
         }
     }
 }

@@ -24,9 +24,18 @@
             {% include 'movie/inc/desktop_menu.html' with selected='calendar' %}
         {% endblock %}
         </div>
-        <div class="calendarPage__list">
+        <div 
+            du-scroll-container
+            id="calendarList"
+            class="calendarPage__list">
             {% for date_info in date_list %}
-            <dl class="calendarPage__item">
+            <dl 
+                {% if date_info.grouper == now_date|date:"j E" %}
+                id="today"
+                {% else %}
+                id="day{{ forloop.counter }}"
+                {% endif %}
+                class="calendarPage__item">
                 <dt class="calendarPage__date">
                     <time>
                         {% if date_info.grouper == now_date|date:"j E" %}
@@ -36,24 +45,39 @@
                         {% endif %}
                     </time>
                 </dt>
-                {% for screening in date_info.list %}
+                {% regroup date_info.list by show.id as show_info %}
+                {% for show in show_info %}
                 <dd class="calendarPage__desc">
-                    <a 
-                        class="calendarPage__wrapper"
-                        href="{% url 'movie:detail' slug=screening.show.slug %}?date={{ screening.date|date:"j E l" }}#schedule">
-                        <time class="calendarPage__time">{{ screening.date|date:"H:i" }}</time>
-                        <div class="calendarPage__info">Подробнее</div>
+                    <div
+                        class="calendarPage__wrapper">
+                        <div class="calendarPage__time">
+                        {% for screening in show.list %}
+                            <a
+                               href="{% url 'movie:detail' slug=screening.show.slug %}?date={{ screening.date|date:"j E l" }}#schedule"
+                               class="calendarPage__time__item">
+                               {{ screening.date|date:"H:i" }}
+                            </a>
+                        {% endfor %}
+                        </div>
+                        <a 
+                            href="{% url 'movie:detail' slug=show.list.0.show.slug %}"
+                            class="calendarPage__info">
+                            Подробнее
+                        </a>
                         <div 
                             class="calendarPage__img"
-                            style="background-image: url({{ screening.show.image.url }})">
+                            style="background-image: url({{ show.list.0.show.image.url }})">
                             <img 
                                 class="calendarPage__image"
-                                src="{{ screening.show.image.url }}"/>
+                                src="{{ show.list.0.show.image.url }}"/>
                         </div>
-                    </a>
+                    </div>
                 </dd>
                 {% endfor %}
             </dl>
+            {% if forloop.last %}
+            </div>
+            {% endif %}
             {% endfor %}
         </div>
     </article>

@@ -3,7 +3,7 @@ export class ShowsFilterController {
     /*@ngInject*/
     constructor($scope, $window) {
         this.$window = $window;
-        this.pathArray = window.location.href.split('?')
+        this.pathArray = window.location.href.split('#')[0].split('?')
         this.select = this.pathArray.length > 1? this.pathArray[1]
             .split('&')
             .reduce((dict, val)=>{

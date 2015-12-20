@@ -13,6 +13,9 @@
         text-decoration: none;
         color: #2BF4A7;
         font: 12px hcyrregular;
+        @media (min-width: 800px) {
+            font-size: 21px;
+        }
     }
     &__socialList  {
         position: absolute;
@@ -25,7 +28,17 @@
         height: 17px;
         background: url(../img/instaIcon.svg) no-repeat 50% 50%;
         @media (min-width: 800px) {
-            
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                left: -15px;
+                top: -15px;
+                bottom: -15px;
+                right: -15px;
+                border: 2px solid #fff;
+                border-radius: 50%;
+            }
         }
         &:hover {
             cursor: pointer;

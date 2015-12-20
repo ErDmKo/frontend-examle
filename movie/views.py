@@ -9,7 +9,12 @@ class ScreeeningListByDate(generic.ListView):
     def get_queryset(self):
         qs = super(ScreeeningListByDate, self).get_queryset()
         if self.request.GET.get('rating'):
-            qs = qs.filter(show__rating = self.request.GET['rating'])
+            rating = self.request.GET['rating']
+            if '-' not in rating:
+                qs = qs.filter(show__rating = rating)
+            else:
+                rating_start, rating_end = rating.split('-')
+                qs = qs.filter(show__rating__gte = rating_start, show__rating__lte=rating_end)
         if self.request.GET.get('year'):
             qs = qs.filter(show__year = self.request.GET['year'])
         if self.request.GET.get('genre'):

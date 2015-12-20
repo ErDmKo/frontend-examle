@@ -4,7 +4,7 @@
         <a 
             class="movieMenu__imgAncor"
             href="{% url 'movie:main' %}">
-            <img class="movieMenu__header__img" src="{% static 'mesto/img/logo_color-01.svg' %}"/>
+            <img class="movieMenu__header__img" src="{% static 'mesto/img/logo_color-01.png' %}"/>
         </a>
         <a 
             class="movieMenu__subheader"
@@ -15,11 +15,18 @@
     {% include 'movie/inc/menu_list.html' with customSelectModifer="black" selected=selected %}
     <footer class="movieMenu__footer">
         <div
+            {% if not order_movie %} hidden {% endif %}
             mesto-feedback-toggle="callTheSaul"
             class="movieMenu__button">
             Заказать фильм
         </div>
         <article class="movieMenu__text">
+               <a 
+                 class="whiteMovieBlock__footer"
+                 target="_blank"
+                 href="http://grissli.ru/">
+                 Дизайн и разработка сайта - GRISSLI
+              </a>
             <div>Все права защищены законом.</div>
             <div>{% now "Y" %}</div>
         </article>

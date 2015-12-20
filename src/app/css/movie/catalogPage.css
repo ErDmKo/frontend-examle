@@ -8,6 +8,9 @@
             rgba(113,39,178, .5) 0%, 
             rgba(33,235,171,.5) 45%, 
             rgba(206,208,179,.5) 100%);
+    @media (min-width: 800px) {
+        background: url(/static/mesto/img/mestoBg.jpg) no-repeat 50% 50% / cover;
+    }
     &:after {
         content: '';
         position: absolute;

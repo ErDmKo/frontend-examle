@@ -43,9 +43,9 @@
         text-align: center;
         &__img {
             width: 100%;
-
         }
         @media (min-width: 800px) {
+            width: 290px;
             top: 33px;
             z-index: 1;
         }
@@ -55,5 +55,8 @@
         font: 12px hcyrregular;
         position: absolute;
         right: 0px;
+        @media (min-width: 800px) {
+            font-size: 21px;
+        }
     }
 }

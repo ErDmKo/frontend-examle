@@ -14,7 +14,7 @@
 <article mesto-feedback-contanier="callTheSaul" class="showDetailPage">
     <div class="showDetailPage__menu">
     {% block 'menu_list' %}
-        {% include 'movie/inc/desktop_menu.html' %}
+        {% include 'movie/inc/desktop_menu.html' with order_movie=True %}
     {% endblock %}
     </div>
     <div class="showDetailPage__flex">
@@ -103,21 +103,23 @@
                 <header class="whiteMovieBlock__schedule__header">
                     <a id="schedule">Расписание кинопоказа</a>
                 </header>
-                <select 
-                    class="whiteMovieBlock__select"
-                    ng-model="selectDate">
-                    <option value="" disabled >Выберите дату</option>
-                    {% for date in date_list %}
-                        <option
-                            value="{{ date.grouper }}">
-                            {% if date.grouper == now_date|date:"j E l" %}
-                                Сегодня
-                            {% else %}
-                                {{ date.grouper }}
-                            {% endif %}
-                        </option>
-                    {% endfor %}
-                </select>
+                <div class="customSelect__wrapper">
+                    <select 
+                        class="whiteMovieBlock__select"
+                        ng-model="selectDate">
+                        <option value="" disabled >Выберите дату</option>
+                        {% for date in date_list %}
+                            <option
+                                value="{{ date.grouper }}">
+                                {% if date.grouper == now_date|date:"j E l" %}
+                                    Сегодня
+                                {% else %}
+                                    {{ date.grouper }}
+                                {% endif %}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
                 <ul class="whiteMovieBlock__timeView">
                     {% for screening in object.screening_set.all %}
                         <li
