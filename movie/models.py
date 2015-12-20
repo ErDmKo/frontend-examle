@@ -26,10 +26,6 @@ class Show(texts_models.Text):
     on_catalog = models.BooleanField(
         default=False,
         verbose_name = 'Показывать в каталоге')
-    short_desc = models.CharField(
-        blank = True,
-        max_length=255,
-        verbose_name='Короткое описание')
     image = models.ImageField(
         upload_to = 'movie_headers',
         verbose_name='Изображение для списка')
@@ -60,6 +56,10 @@ class Show(texts_models.Text):
         
     def get_rating(self):
         return str(self.rating).replace(',', '.')
+
+    @property
+    def short_desc(self):
+        return self.desc
 
     def genre(self):
         return self.genre_list.all()[0] if self.genre_list.count() else ''

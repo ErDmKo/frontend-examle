@@ -129,7 +129,7 @@
                     Краткое описание
                 </header>
                 <section class="smallDesc__info">
-                    {{ show.short_desc }} min
+                    {{ show.short_desc|striptags|slice:"200"|safe }}...
                 </section>
             </article>
         </div>

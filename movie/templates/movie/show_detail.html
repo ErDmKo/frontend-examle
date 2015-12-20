@@ -88,11 +88,11 @@
                 <dt class="whiteMovieBlock__subheader">В ролях:</dt>
                 <dd class="whiteMovieBlock__desc">{{ object.roles }}</dd>
             </dl>
-            <div  class="whiteMovieBlock__shortDesc">
-                {{ object.short_desc }}
-                <span ng-hide="full" ng-click="full=1" class="whiteMovieBlock__more">Развернуть</span>
+            <div ng-hide="full" class="whiteMovieBlock__shortDesc">
+                {{ object.short_desc|striptags|slice:"200"|safe }} ...
+                <span ng-click="full=1" class="whiteMovieBlock__more">Развернуть</span>
             </div>
-            <div class="whiteMovieBlock__fullDesc" ng-show="full">
+            <div class="whiteMovieBlock__shortDesc" ng-show="full">
                 {{ object.desc|safe }}
             </div>
             {% regroup object.get_dates by date|date:"j E l" as date_list %}
