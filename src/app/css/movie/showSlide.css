@@ -185,6 +185,7 @@
         right: 20px;
         background: no-repeat 50% 50%;
         background-size: cover;
+        user-select: none;
         @media (min-width: 800px) {
             position: relative;
             left: 0px;
