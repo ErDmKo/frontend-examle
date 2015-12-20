@@ -48,7 +48,6 @@
                 {% regroup date_info.list|dictsort:"show.id" by show.id as show_info %}
                 {% for show in show_info %}
                 <dd class="calendarPage__desc">
-                    {{ show.grouper }}
                     <div
                         class="calendarPage__wrapper">
                         <div class="calendarPage__time">

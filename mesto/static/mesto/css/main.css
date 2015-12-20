@@ -1898,7 +1898,7 @@ table {
 }
 
 .calendarPage__info {
-  bottom: 10px;
+  bottom: 0px;
   text-decoration: none;
   color: #fff;
   top: auto;
@@ -3716,7 +3716,7 @@ html a {
   }
 
   .calendarPage__time {
-    font-size: 73px;
+    font: 73px/73px hcyrregular;
   }
 
   .movieMobileMenu__list {

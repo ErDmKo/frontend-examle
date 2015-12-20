@@ -116,7 +116,7 @@
         font: 35px hcyrregular;
     }
     &__info  {
-        bottom: 10px;
+        bottom: 0px;
         text-decoration: none;
         color: #fff;
         top: auto;
@@ -129,7 +129,7 @@
     }
     &__time {
         @media (min-width: 800px) {
-            font-size: 73px;
+            font: 73px/73px hcyrregular;
         }
         &__item {
             color: #2BF4A7;
