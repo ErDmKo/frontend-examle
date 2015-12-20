@@ -45,7 +45,7 @@
                         {% endif %}
                     </time>
                 </dt>
-                {% regroup date_info.list by show.id|add:"1" as show_info %}
+                {% regroup date_info.list by show.id|add:"r" as show_info %}
                 {% for show in show_info %}
                 <dd class="calendarPage__desc">
                     {{ show.grouper }}
