@@ -1908,6 +1908,10 @@ table {
   display: block;
 }
 
+.calendarPage__time {
+  text-align: center;
+}
+
 .calendarPage__time__item {
   color: #2BF4A7;
   text-decoration: none;
