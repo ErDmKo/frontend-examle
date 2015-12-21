@@ -38,7 +38,9 @@
     {% block footer %}
         <footer class="movieFooter">
             <menu class="movieFooter__menu">
-                <a href="{% url 'movie:calendar' %}" class="movieFooter__item">Скоро в кино</a>
+                <a href="{% url 'movie:calendar' %}#today" class="movieFooter__item">
+                    Скоро в кинотеартре
+                </a>
             </menu>
             <menu class="movieFooter__socialList">
                 <a 

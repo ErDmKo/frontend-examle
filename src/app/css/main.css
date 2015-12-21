@@ -41,6 +41,12 @@
         display: none;
     }
 }
+.showBig {
+    display: none;
+    @media (min-width: 800px) {
+        display: block;
+    }
+}
 body, html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

@@ -2,6 +2,8 @@
     color: #fff;
     border: 2px solid #fff;
     border-radius: 30px;
+    position: relative;
+    z-index: 1;
     & + & {
         margin-top: 20px;
     }
@@ -19,7 +21,7 @@
     }
     &.transparent {
         display: inline-block;
-        width: 125px;
+        width: 180px;
         margin-top: 0px;
         & + & {
             margin-left: 10px;
@@ -82,16 +84,15 @@
             position: relative;
         }
     }
-    padding: 15px 27px;
-    position: relative;
-    z-index: 1;
     &.open {
         z-index: 2;
     }
     text-align: left;
     &__placeholder {
         white-space: nowrap;
-        width: 80%;
+        padding: 15px 27px;
+        width: 100%;
+        box-sizing: border-box;
         overflow: hidden;
         &, &:hover {
             cursor: pointer

@@ -2022,7 +2022,6 @@ table {
   color: #fff;
   border: 2px solid #fff;
   border-radius: 30px;
-  padding: 15px 27px;
   position: relative;
   z-index: 1;
   text-align: left;
@@ -2045,7 +2044,7 @@ table {
 
 .customSelect.transparent {
   display: inline-block;
-  width: 125px;
+  width: 180px;
   margin-top: 0px;
 }
 
@@ -2134,7 +2133,9 @@ table {
 
 .customSelect__placeholder {
   white-space: nowrap;
-  width: 80%;
+  padding: 15px 27px;
+  width: 100%;
+  box-sizing: border-box;
   overflow: hidden;
 }
 
@@ -2710,6 +2711,10 @@ table {
 
 .callTheSaul__close svg rect {
   fill: #fff;
+}
+
+.showBig {
+  display: none;
 }
 
 body,
@@ -3716,7 +3721,7 @@ html a {
   }
 
   .calendarPage__info {
-    font-size: 45px;
+    font-size: 25px;
   }
 
   .calendarPage__time {
@@ -3745,6 +3750,9 @@ html a {
     padding: 0px;
     white-space: nowrap;
     font-size: 0;
+    background: #fff;
+    min-width: 100%;
+    min-height: 100%;
   }
 
   .showDetailPage__wrapper {
@@ -4001,6 +4009,10 @@ html a {
 
   .hideBig {
     display: none;
+  }
+
+  .showBig {
+    display: block;
   }
 }
 

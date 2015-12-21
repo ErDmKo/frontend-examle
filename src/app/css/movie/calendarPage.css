@@ -121,7 +121,7 @@
         color: #fff;
         top: auto;
         @media (min-width: 800px) {
-            font-size: 45px;
+            font-size: 25px;
         }
         .calendarPage__wrapper:hover & {
             display: block;
