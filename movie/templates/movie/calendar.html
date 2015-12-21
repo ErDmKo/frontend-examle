@@ -29,12 +29,14 @@
             id="calendarList"
             class="calendarPage__list">
             {% for date_info in date_list %}
-            <dl 
-                {% if date_info.grouper == now_date|date:"j E" %}
-                id="today"
-                {% else %}
-                id="day"
+            {% if date_info.grouper == now_date|date:"j E" %}
+                <div id="today">
+            {% else %}
+                {% if forloop.counter == 1 %}
+                    <div id="day">
                 {% endif %}
+            {% endif %}
+            <dl 
                 class="calendarPage__item">
                 <dt class="calendarPage__date">
                     <time>
@@ -75,8 +77,12 @@
                 </dd>
                 {% endfor %}
             </dl>
-            {% if forloop.last %}
-            </div>
+            {% if date_info.grouper == now_date|date:"j E" %}
+                </div> <div id="day">
+            {% else %}
+                {% if forloop.last %}
+                    </div>
+                {% endif %}
             {% endif %}
             {% endfor %}
         </div>
