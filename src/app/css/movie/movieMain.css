@@ -13,6 +13,11 @@
         transform: rotate(-45deg);
     }
     &__menu {
+        @media (min-width: 800px) {
+            svg {
+                width: 42px;
+            }
+        }
         rect {
             fill: #D52FAD;
             &:nth-child(2) {

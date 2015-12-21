@@ -29,6 +29,7 @@
         background: url(../img/instaIcon.svg) no-repeat 50% 50%;
         @media (min-width: 800px) {
             position: relative;
+            margin-right: 15px;
             &:after {
                 content: '';
                 position: absolute;

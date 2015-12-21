@@ -3477,6 +3477,10 @@ html a {
     color: #fff;
   }
 
+  .movieMain__menu svg {
+    width: 42px;
+  }
+
   .movieMain__header {
     width: 290px;
     top: 33px;
@@ -3499,6 +3503,7 @@ html a {
 
   .movieFooter__social {
     position: relative;
+    margin-right: 15px;
   }
 
   .movieFooter__social:after {
@@ -3529,14 +3534,40 @@ html a {
   .sliderJsMovie__next,
   .sliderJsMovie__prev {
     top: 50%;
+    width: 40px;
+  }
+
+  .sliderJsMovie__next:before,
+  .sliderJsMovie__prev:before {
+    width: 20px;
+    height: 20px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    margin-top: -10px;
+  }
+
+  .sliderJsMovie__next:after,
+  .sliderJsMovie__prev:after {
+    height: 2px;
+    margin-top: 1px;
   }
 
   .sliderJsMovie__prev {
-    left: 40px;
+    left: 45px;
+  }
+
+  .sliderJsMovie__prev:before {
+    border-color: #2BF4A7;
+    left: 1px;
   }
 
   .sliderJsMovie__next {
-    right: 40px;
+    right: 45px;
+  }
+
+  .sliderJsMovie__next:before {
+    border-color: #D52FAD;
+    right: 1px;
   }
 
   .sliderJsMovie__content {
