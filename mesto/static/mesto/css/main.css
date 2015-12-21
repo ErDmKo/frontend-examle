@@ -2379,8 +2379,12 @@ table {
   margin: 10px 0px 20px;
 }
 
-.whiteMovieBlock__subheader {
+.whiteMovieBlock__info {
   margin-top: 20px;
+}
+
+.whiteMovieBlock__subheader {
+  margin-top: 0px;
 }
 
 .whiteMovieBlock__desc {
@@ -3860,6 +3864,11 @@ html a {
     -webkit-order: 5;
         -ms-flex-order: 5;
             order: 5;
+  }
+
+  .whiteMovieBlock__subheader,
+  .whiteMovieBlock__desc {
+    display: inline;
   }
 
   .whiteMovieBlock__select {

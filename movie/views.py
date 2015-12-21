@@ -3,11 +3,10 @@ from django.views import generic
 from . import models 
 
 class ScreeeningListByDate(generic.ListView):
-    queryset=models.Screening.objects.filter(date__gt=datetime.datetime.now())
     template_name='movie/calendar.html'
 
     def get_queryset(self):
-        qs = super(ScreeeningListByDate, self).get_queryset()
+        qs=models.Screening.objects.filter(date__gt=datetime.datetime.now())
         if self.request.GET.get('rating'):
             rating = self.request.GET['rating']
             if '-' not in rating:
