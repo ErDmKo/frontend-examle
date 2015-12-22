@@ -110,6 +110,9 @@ DATABASES = {
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
+STATIC_ROOT  = os.path.join(BASE_DIR, '../static/')
+MEDIA_ROOT  = os.path.join(BASE_DIR, '../media/')
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
 
 STATIC_URL = '/static/'
 CKEDITOR_CONFIGS = {
