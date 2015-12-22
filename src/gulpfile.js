@@ -72,6 +72,14 @@ gulp.task('js', function() {
     .pipe(plugins.ngAnnotate())
     .pipe(gulp.dest(dirs.dist + "/js"));
 });
+gulp.task('build', ['js', 'css'], function() {
+    gulp.src(dirs.dist + "/js/main.js")
+        .pipe(plugins.uglify())
+        .pipe(gulp.dest(dirs.dist + '/js/'));
+    gulp.src(dirs.dist + "/css/main.css")
+        .pipe(plugins.minifyCss())
+        .pipe(gulp.dest(dirs.dist + '/css/'));
+})
 gulp.task('watch', function() {
     gulp.watch(jsDirs, ['js']);
     gulp.watch(cssDirs, ['css']);
