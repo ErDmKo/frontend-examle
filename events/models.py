@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 from texts import models as texts_models 
 
 
@@ -21,6 +22,9 @@ class Event(texts_models.Text):
 
     def __src__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('events:detail', kwargs={'slug': self.slug})
 
     def get_next(self):
         return self.related_events.all()

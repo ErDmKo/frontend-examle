@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 from texts import models as texts_models 
 
 class News(texts_models.Text):
@@ -14,6 +15,9 @@ class News(texts_models.Text):
 
     def __src__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('news:detail', kwargs={'slug': self.slug})
 
     def get_next(self):
         return [self.get_next_by_date()]
