@@ -48,7 +48,8 @@
                 <a 
                     class="movieFooter__social inst"
                     target="_blank"
-                    href="https://www.instagram.com/mesto_2/"></a>
+                    href='{{ settings.URL_INSTAGRAM|default:"https://www.instagram.com/mesto_2/" }}'>
+                </a>
             </menu>
         </footer>
     {% endblock %}
