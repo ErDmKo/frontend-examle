@@ -33,10 +33,14 @@
                 class="sliderJsMovie__after__image"
                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
         </div>
+        {% if object_list|length != 1 %}
         <div slider-controll="1" class="sliderJsMovie__next">
         </div>
+        {% endif %}
+        {% if object_list|length != 1 %}
         <div slider-controll="-1" class="sliderJsMovie__prev">
         </div>
+        {% endif %}
         <ul slider-content
             horizontal-scroll="800"
             class="sliderJsMovie__content"> {% for show in object_list %}
