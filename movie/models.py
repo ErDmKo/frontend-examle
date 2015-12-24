@@ -1,4 +1,5 @@
 import datetime
+from django.core.urlresolvers import reverse
 from django.db import models
 from texts import models as texts_models 
 
@@ -56,6 +57,9 @@ class Show(texts_models.Text):
         
     def get_rating(self):
         return str(self.rating).replace(',', '.')
+
+    def get_absolute_url(self):
+        return reverse('movie:detail', kwargs={'slug': self.slug})
 
     @property
     def short_desc(self):
