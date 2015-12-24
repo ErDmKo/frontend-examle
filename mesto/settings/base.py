@@ -25,7 +25,7 @@ SECRET_KEY = 'r4kq8ir$c+u*daf!_y3^1$6wzez6x!+fto7#!hp+ojpu2x7%ve'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mesto2.ru']
 
 
 # Application definition
