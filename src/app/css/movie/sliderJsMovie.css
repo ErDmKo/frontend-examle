@@ -174,5 +174,11 @@
             vertical-align: middle;
             position: static;
         }
+        &.clone {
+            opacity: .3 !important;
+            &.show {
+                opacity: 1 !important;
+            }
+        }
     }
 }

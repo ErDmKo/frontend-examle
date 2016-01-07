@@ -11,6 +11,10 @@ class SliderController {
                 resolve(length);
             }
         });
+        this.clones = {
+            start: '',
+            end: ''
+        }
     }
     setType(typeName){
         if (document.body.offsetWidth < 800) {
@@ -19,9 +23,20 @@ class SliderController {
         this.typeName = typeName;
         this.ready.then((length)=>{
             if (this.typeName == "switch" && length >= 2) {
-                this.switch(0, length);
+                this.clones.start = this.items[this.items.length-1].elem.cloneNode(1);
+                this.clones.start.classList.add('clone');
+                this.items[0].elem.parentNode
+                    .insertBefore(
+                        this.clones.start,
+                        this.items[0].elem
+                    )
+                this.clones.end = this.items[0].elem.cloneNode(1);
+                this.clones.end.classList.add('clone');
+                this.items[0].elem.parentNode
+                    .appendChild(
+                        this.clones.end
+                    )
                 window.dispatchEvent(new Event('resize'));
-                this.items[0].elem.parentNode.insertBefore(this.items[0].elem, this.items[0].elem.cloneNode(1))
             }
         })
     }
@@ -49,7 +64,7 @@ class SliderController {
         let parentNode = this.items[0].elem.parentNode;
         let nodeList = Array.prototype.slice
             .call(parentNode.children)
-        parentNode.insertBefore(to === null ? to : nodeList[to], nodeList[from]);
+        //parentNode.insertBefore(to === null ? to : nodeList[to], nodeList[from]);
     }
     moveToSlide(position){
         clearTimeout(this.moveToSlideTimeout);
@@ -73,29 +88,33 @@ class SliderController {
     next(delta) {
         let next = this.slide + delta;
         if (this.typeName == "switch") {
-            if (next == this.items.length) {
-              this.switch(0, this.items.length - 1);
-              this.switch(0, this.items.length - 1);
-              next = 0;
+            let elementInfo = this.items[this.slide].getElemInfo();
+            let promise;
+            if (next >= this.items.length) {
+                next = 0;
+                this.clones.end.classList.add('show');
+                promise = this.scrollHandler(
+                    elementInfo.offsetLeft+elementInfo.offsetWidth,
+                    true
+                );
             } else if (next < 0) {
                 next = this.items.length - 1;
-                this.switch(null, 0);
-                this.switch(null, 0);
-            } else if (next == 0) {
-                this.switch(0, this.items.length - 1);
-            } else if (next >= this.items.length - 1) {
-                this.switch(null, 0);
+                this.clones.start.classList.add('show');
+                promise = this.scrollHandler(
+                    elementInfo.offsetLeft-elementInfo.offsetWidth,
+                    true);
             } else {
-                this.items.forEach((e) => {
-                    e.elem.parentNode.appendChild(e.elem);
-                })
+                this.scrollHandler(this.items[next].getElemInfo().offsetLeft, true);
             }
-            setTimeout(()=>{
-                this.scrollHandler(this.items[this.slide]
-                .getElemInfo().offsetLeft);
-                this.moveToSlide(next);
-                this.slide = next;
-            }, 0);
+            promise.then(()=> {
+                let elementInfo = this.items[next].getElemInfo();
+                this.clones.start.classList.remove('show');
+                this.clones.end.classList.remove('show');
+                this.scrollHandler(
+                elementInfo.offsetLeft,
+                false);
+            })
+            this.slide = next;
             return;
         }
         if (next >= this.items.length) {
@@ -150,7 +169,7 @@ export class SliderContent {
             if (!animate) {
                 this.element.scrollLeft = val
             } else {
-                this.easingAnimator.easeProp({
+                return this.easingAnimator.easeProp({
                     left: this.element.scrollLeft
                 }, {
                     left: val

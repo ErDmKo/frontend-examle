@@ -19,25 +19,27 @@ export class EasingAnimator {
         });
     }
     easeProp (obj, propDict) {
-        console.log(1);
         propDict = propDict || {};
         var self = this,
             t = 0,
             out_vals = JSON.parse(JSON.stringify(obj));
         clearInterval(this.easingInterval);
-        self.easingInterval = setInterval(()=>{
-            t+= this.step;
-            if (t >= this.duration) {
-                clearInterval(this.easingInterval);
-                this.callBack(propDict);
-                return;
-            }
-            var percent = this.easingFn(t, 0, 1, this.duration);
-            Object.keys(propDict).forEach((key, i) => {
-                let old_val = obj[key];
-                out_vals[key] = old_val - percent*(old_val - propDict[key]);
-            });
-            this.callBack(out_vals);
-        }, this.step);
+        return new Promise((resolve, reject) => {
+            self.easingInterval = setInterval(()=>{
+                t+= this.step;
+                if (t >= this.duration) {
+                    clearInterval(this.easingInterval);
+                    this.callBack(propDict);
+                    resolve();
+                    return;
+                }
+                var percent = this.easingFn(t, 0, 1, this.duration);
+                Object.keys(propDict).forEach((key, i) => {
+                    let old_val = obj[key];
+                    out_vals[key] = old_val - percent*(old_val - propDict[key]);
+                });
+                this.callBack(out_vals);
+            }, this.step);
+        })
     }
 };
