@@ -3,7 +3,7 @@ export class EasingAnimator {
     constructor(opt){
         var opt = {};
         this.easingInterval = opt.easingInterval;
-        this.duration = opt.duration || 1000;
+        this.duration = opt.duration || 500;
         this.step = opt.step || 50;
         this.easingFn = (t, b, c, d) =>{
             if ((t/=d/2) < 1) return c/2*t*t*t*t + b;
@@ -19,6 +19,7 @@ export class EasingAnimator {
         });
     }
     easeProp (obj, propDict) {
+        console.log(1);
         propDict = propDict || {};
         var self = this,
             t = 0,

@@ -4,7 +4,10 @@
     <script src="https://www.youtube.com/player_api"></script>
 {% endblock %}
 {% block 'main_content' %}
-    <div slider-main ng-controller="showMovieController as vm" class="sliderJsMovie">
+    <div 
+        slider-main="switch"
+        ng-controller="showMovieController as vm"
+        class="sliderJsMovie">
         <menu class="sliderJsMovie__menu">
             <a
                 href="{% url 'movie:catalog' %}"

@@ -25,11 +25,20 @@
         @media (min-width: 800px) {
             display: block;
         }
-    }
-    &__after {
+        transition: transform ease-out 1s 1.2s;
+   }
+   &__before {
+       .fadeAnimator.fade & {
+            transform: translate(-100%, -50%); 
+       }
+   }
+   &__after {
         background: linear-gradient(to bottom, #dc84b0 0%,#f04bab 35%,#00e3ad 82%,#3897b0 100%);
         transform-origin: 50% 50%;
         transform: translate(-50%, -50%) rotate(180deg);
+        .fadeAnimator.fade & {
+            transform: translate(0%, -50%) rotate(180deg); 
+        }
     }
     &__menu {
         font: 15px hcyrregular;
