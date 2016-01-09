@@ -83,7 +83,6 @@
         transition: .5s opacity;
         .sliderJsMovie__item.active & {
             display: block;
-            display: none;
         }
         @media (min-width: 800px) {
             z-index:1;
