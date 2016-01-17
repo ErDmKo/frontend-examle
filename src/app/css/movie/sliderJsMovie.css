@@ -25,11 +25,11 @@
         @media (min-width: 800px) {
             display: block;
         }
-        transition: transform ease-out 1s 1.2s;
+        transition: transform ease-out .5s .3s;
    }
    &__before {
        .fadeAnimator.fade & {
-            transform: translate(-100%, -50%); 
+            transform: translate(-20%, -50%); 
        }
    }
    &__after {
@@ -37,7 +37,7 @@
         transform-origin: 50% 50%;
         transform: translate(-50%, -50%) rotate(180deg);
         .fadeAnimator.fade & {
-            transform: translate(0%, -50%) rotate(180deg); 
+            transform: translate(-76%, -50%) rotate(180deg); 
         }
     }
     &__menu {
@@ -153,6 +153,12 @@
             bottom: 0px;
             top: 0px;
             font-size: 0;
+            opacity: 1;
+            transition: transform linear .5s 1.3s, opacity  linear .4s 1.3s;
+            .fadeAnimator.fade & {
+                opacity: 0;
+                transform: translateY(1%);
+            }
             &:after,  &:before {
                 content: '';
                 width: 20%;

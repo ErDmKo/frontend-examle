@@ -80,6 +80,7 @@
                     </div>
                     <header 
                         ng-class="{active: vm.video['{{ show.trailer }}'].active }"
+                        ng-init="vm.addVideo('{{ show.trailer }}', '{{ forloop.last }}')"
                         style="background-image: url({{ show.image.url }})"
                         class="showSlide__header">
                         <img 
@@ -95,6 +96,7 @@
                             {% include 'mesto/inc/playTrangle.svg' %}
                         </div>
                         <youtube-video 
+                            ng-if="vm.video['{{ show.trailer }}'].load"
                             class="showSlide__video"
                             player-vars="{
                                 controls: 0,

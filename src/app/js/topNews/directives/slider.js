@@ -36,6 +36,7 @@ class SliderController {
                     .appendChild(
                         this.clones.end
                     )
+                this.moveToSlide(this.slide, false);
                 window.dispatchEvent(new Event('resize'));
             }
         })
@@ -66,10 +67,11 @@ class SliderController {
             .call(parentNode.children)
         //parentNode.insertBefore(to === null ? to : nodeList[to], nodeList[from]);
     }
-    moveToSlide(position){
+    moveToSlide(position, animate){
+        animate = animate === undefined ? true: animate;
         clearTimeout(this.moveToSlideTimeout);
         this.moveToSlideTimeout = setTimeout(()=>{
-            this.scrollHandler(this.items[position].getElemInfo().offsetLeft, true);
+            this.scrollHandler(this.items[position].getElemInfo().offsetLeft, animate);
         }, 0);   
     }
     addItem(item) {
@@ -104,8 +106,9 @@ class SliderController {
                     elementInfo.offsetLeft-elementInfo.offsetWidth,
                     true);
             } else {
-                this.scrollHandler(this.items[next].getElemInfo().offsetLeft, true);
+                promise = this.scrollHandler(this.items[next].getElemInfo().offsetLeft, true);
             }
+            
             promise.then(()=> {
                 let elementInfo = this.items[next].getElemInfo();
                 this.clones.start.classList.remove('show');
